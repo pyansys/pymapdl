@@ -1,0 +1,82 @@
+# Build documentation
+name: Documentation Build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-20.04
+
+    env:
+      DISPLAY: ':99.0'
+      MAPDL_IMAGE: 'docker.pkg.github.com/pyansys/pymapdl/mapdl:v21.1.0'
+      PYMAPDL_PORT: 32771  # default won't work on azure
+      PYMAPDL_START_INSTANCE: FALSE
+      PYANSYS_OFF_SCREEN: True
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.1.4
+        with:
+          python-version: 3.7
+
+      - name: Install, start, and test the virtual framebuffer
+        run: |
+          .ci/setup_headless_display.sh
+          pip install -r .ci/requirements_test_xvfb.txt
+          python .ci/display_test.py
+
+      - name: Install ansys-mapdl-core
+        run: |
+          pip install -r requirements_build.txt
+          python setup.py bdist_wheel
+          pip install dist/ansys*.whl
+          python -c "from ansys.mapdl import core as pymapdl; print(pymapdl.Report())"
+
+      - name: Pull, launch, and validate MAPDL service
+        run: |
+          echo $GH_PAT | docker login -u $GH_USERNAME --password-stdin docker.pkg.github.com
+          docker pull $MAPDL_IMAGE
+          docker run -e ANSYSLMD_LICENSE_FILE=1055@$LICENSE_SERVER --restart always --name mapdl -p $PYMAPDL_PORT:50052 $MAPDL_IMAGE -smp > log.txt &
+          grep -q 'Server listening on' <(timeout 60 tail -f log.txt)
+          python -c "from ansys.mapdl.core import launch_mapdl; print(launch_mapdl())"
+        env:
+          LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
+          GH_PAT: ${{ secrets.REPO_DOWNLOAD_PAT }}
+  
+      - name: Build Documentation
+        run: |
+          sudo apt install pandoc -qy
+          pip install -r requirements_docs.txt
+          make -C docs html
+  
+      - name: Upload Documentation
+        uses: actions/upload-artifact@v2.2.1
+        with:
+          name: Documentation
+          path: docs/build/html
+          retention-days: 7
+
+      - name: Deploy Documentation
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          git clone --no-checkout --depth 1 https://$GH_PAT@github.com/pyansys/pymapdl.git /tmp/gh_pages
+          cd /tmp/gh_pages
+          git checkout --orphan gh-pages
+          rm -rf *
+          git config user.name $GH_USERNAME
+          git config user.email $GH_EMAIL
+          cp -r $GITHUB_WORKSPACE/docs/build/html/* .
+          touch .nojekyll
+          git add .
+          git commit -am "CI: Updated site via $GITHUB_SHA"
+          git push -u origin gh-pages -f
+        env:
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
+          GH_PAT: ${{ secrets.REPO_DOWNLOAD_PAT }}
+          GH_EMAIL: ${{ secrets.GH_EMAIL }}

@@ -1,0 +1,126 @@
+# azure pipelines build and test ansys-mapdl-core
+
+variables:
+  ALLOW_PLOTTING: true
+  package_name: ansys-mapdl-core
+  SHELLOPTS: 'errexit:pipefail'
+
+trigger:
+  branches:
+    include:
+    - '*'
+    exclude:
+    - 'gh-pages'
+  tags:
+    include:
+    - '*'
+
+jobs:
+- job: Linux
+  variables:
+    python.version: '3.7'  # due to VTK 8.1.2 requirement for docbuild
+    DISPLAY: ':99.0'
+    MAPDL_IMAGE: 'docker.pkg.github.com/pyansys/pymapdl/mapdl:v21.1.0'
+    PYMAPDL_PORT: 32771  # default of 50052 does not work on azure devops
+    PYMAPDL_START_INSTANCE: FALSE
+    PYANSYS_OFF_SCREEN: True
+  pool:
+    vmImage: 'ubuntu-20.04'
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(python.version)'
+      displayName: 'Use Python $(python.version)'
+
+    - script: |
+        uname -a
+      displayName: Display kernel version
+
+    - script: |
+        .ci/setup_headless_display.sh
+        pip install -r .ci/requirements_test_xvfb.txt
+        python .ci/display_test.py
+      displayName: Install and start a virtual framebuffer
+
+    - script: |
+        pip install -r requirements_build.txt
+        python setup.py bdist_wheel
+        pip install dist/ansys*.whl
+        python -c "from ansys.mapdl import core as pymapdl; print(pymapdl.Report())"
+      displayName: Build, install, and validate installation of ansys-mapdl-core
+
+    - script: |
+        set -ex
+        echo $(GH_PAT) | docker login -u $(GH_USERNAME) --password-stdin docker.pkg.github.com
+        docker pull $(MAPDL_IMAGE)
+        docker run -e ANSYSLMD_LICENSE_FILE=1055@$(LICENSE_SERVER) --restart always --name mapdl -p $(PYMAPDL_PORT):50052 $(MAPDL_IMAGE) -smp > log.txt &
+        grep -q 'Server listening on' <(timeout 60 tail -f log.txt)
+        python -c "from ansys.mapdl.core import launch_mapdl; print(launch_mapdl())"
+      displayName: Pull, launch, and validate MAPDL service
+
+    - script: |
+        pip install -r requirements_test.txt
+        pip install pytest-azurepipelines
+        pytest -v --junitxml=junit/test-results.xml --cov --cov-report=xml --cov-report=html
+      displayName:  'Test Core API'
+
+    - script: |
+        cat log.txt
+      displayName:  'Display MAPDL Logs'
+      condition: always()
+
+    - script: |
+        pip install twine
+        python setup.py sdist
+        twine upload --skip-existing dist/*
+      displayName: 'Upload to PyPi when tagged'
+      condition: contains(variables['Build.SourceBranch'], 'refs/tags/')
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: $(PYPI_TOKEN)
+        TWINE_REPOSITORY_URL: "https://upload.pypi.org/legacy/"
+
+
+# - job: Windows
+#   strategy:
+#     matrix:
+#       Python36:
+#         python.version: '3.6'
+#       Python37:
+#         python.version: '3.7'
+#       Python38:
+#         python.version: '3.8'
+#   pool:
+#     vmImage: 'vs2017-win2016'
+#   steps:
+#     - task: UsePythonVersion@0
+#       inputs:
+#         versionSpec: $(python.version)
+#         addToPath: true
+#     - powershell: |
+#         powershell .ci/install_opengl.ps1
+#       displayName: 'Install OpenGL'
+#     - template: .ci/build_wheel.yml
+#     - template: .ci/install_pyansys.yml
+#     - template: .ci/unit_testing.yml
+#     - template: .ci/azure-publish-dist.yml
+
+
+# - job: macOS
+#   strategy:
+#     matrix:
+#       Python36:
+#         python.version: '3.6'
+#       Python37:
+#         python.version: '3.7'
+#       Python38:
+#         python.version: '3.8'
+#   pool:
+#     vmImage: 'macOS-10.15'
+#   steps:
+#     - script: .ci/macos-install-python.sh '$(python.version)'
+#       displayName: Install Python
+#     - template: .ci/build_wheel.yml
+#     - template: .ci/install_pyansys.yml
+#     - template: .ci/unit_testing_allow_error.yml
+#     - template: .ci/azure-publish-dist.yml

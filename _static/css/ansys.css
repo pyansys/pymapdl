@@ -1,0 +1,69 @@
+:root {
+  --ansysGold: #FFB71B;
+  --ansysBronze: #C89211;
+  --pythonBlue: #3972a1;
+}
+
+body {
+ font-family: 'Source Sans Pro', sans-serif;
+ color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--pythonBlue);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.sig-prename {
+    color: var(--ansysBronze);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sig-name {
+    color: var(--ansysBronze);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.docutils {
+    color: var(--ansysBronze);
+    font-family: "Source Code Pro", "Courier New", monospace;
+}
+
+.navbar-light {
+    background: black !important;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+    color: var(--ansysGold);
+}
+
+.navbar-nav>.active>.nav-link {
+    color: var(--ansysGold) !important;
+}
+
+a.headerlink:hover {
+    background-color: var(--pythonBlue);
+}
+
+a.headerlink {
+    /* background-color: var(--pythonBlue); */
+    color: var(--pythonBlue);
+}
+
+
+@font-face {
+    font-family: "Source Sans Pro Light";
+    src: url(../fonts/SourceSansPro-Light.ttf);
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+}

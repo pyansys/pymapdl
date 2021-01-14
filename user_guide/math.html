@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APDL Math Overview &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Create a Pool of MAPDL Instances" href="pool.html" />
+    <link rel="prev" title="Translating Scripts" href="convert.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../api/index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="launcher.html">Initial Setup and Launching MAPDL Locally</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mapdl.html">PyMAPDL Language and Usage</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mapdl_examples.html">ANSYS APDL Interactive Control Examples</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">Interactive Plotting</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh_geometry.html">Mesh and Geometry</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">Post-Processing</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Setting and Retrieving Parameters</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Translating Scripts</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">APDL Math Overview</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">Create a Pool of MAPDL Instances</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">File Explorer Overview</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mapdl-matrix-example" class="nav-link">MAPDL Matrix Example</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#apdlmath-reference" class="nav-link">APDLMath Reference</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="apdl-math-overview">
+<span id="mapdl-math-class-ref"></span><h1>APDL Math Overview<a class="headerlink" href="#apdl-math-overview" title="Permalink to this headline">¶</a></h1>
+<p>APDL Math provides the ability to access and manipulate the large
+sparse matrices and solve a variety of eigenproblems.  PyMAPDL classes
+and bindings present APDL Math in a similar manner to the popular
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code> libraries.  The APDL Math command set is based
+on tools for manipulating large mathematical matrices and vectors that
+provide access to standard linear algebra operations, access to the
+powerful sparse linear solvers of ANSYS Mechanical APDL (MAPDL), and
+the ability to solve eigenproblems.</p>
+<p>Python and MATLAB’s eigensolver is based on the publicly available
+LAPACK libraries and provides reasonable solve time for relatively
+small DOF (degree of freedom) eigenproblems of perhaps 100,000.
+However, ANSYS’s solvers are designed for the scale of 100s of
+millions of DOF and there are a variety of situations where users can
+directly leverage ANSYS’s high performance solvers on a variety of
+eigenproblems.  Fortunately, you can leverage this without relearning
+an entirely new language as this has been written in a similar manner
+as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.  For example, here is a comparison between
+the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> linear algebra solver and ANSYS’s solver:</p>
+<table class="table" id="id1">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> vs PyMAPDL Math Implementation</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">ansys.mapdl.math</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k_py</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">sparse</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">m_py</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="n">sparse</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">k_py</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">neqv</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="n">m_py</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">k_py</span><span class="p">,</span> <span class="n">triu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">m_py</span><span class="p">,</span> <span class="n">triu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>What follows is a basic example and a detailed description of the
+PyMAPDL Math API.  For additional PyMAPDL Math examples, visit
+<a class="reference internal" href="../examples/index.html#ref-apdl-math-examples"><span class="std std-ref">PyMapdl Math Examples</span></a>.</p>
+<div class="section" id="mapdl-matrix-example">
+<h2>MAPDL Matrix Example<a class="headerlink" href="#mapdl-matrix-example" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how to send an MAPDL Math matrix from MAPDL
+to Python and then send it back to be solved.  While this example runs
+<code class="docutils literal notranslate"><span class="pre">MapdlMath.eigs</span></code> on mass and stiffness matrices generated from
+MAPDL, you could instead use mass and stiffness matrices generated
+from an external FEM tool, or even modify the mass and stiffness
+matrices within Python.</p>
+<p>First, solve the first 10 modes of a 1 x 1 x 1 steel meter cube
+in MAPDL.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+
+<span class="c1"># setup the full file</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">186</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">esize</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vmesh</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a material (nominal steel in SI)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;EX&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">210E9</span><span class="p">)</span>  <span class="c1"># Elastic moduli in Pa (kg/(m*s**2))</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;DENS&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7800</span><span class="p">)</span>  <span class="c1"># Density in kg/m3</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;NUXY&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Poisson&#39;s Ratio</span>
+
+<span class="c1"># solve first 10 non-trivial modes</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">modal_analysis</span><span class="p">(</span><span class="n">nmode</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freqb</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># store the first 10 natural frequencies</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;LIST&#39;</span><span class="p">)</span>
+<span class="n">w_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s\d*\.\d\s&#39;</span><span class="p">,</span> <span class="n">resp</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w_n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now have solved for the first 10 modes of the cube:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">1475.1</span> <span class="mf">1475.1</span> <span class="mf">2018.8</span> <span class="mf">2018.8</span> <span class="mf">2018.8</span> <span class="mf">2024.8</span> <span class="mf">2024.8</span> <span class="mf">2024.8</span> <span class="mf">2242.2</span> <span class="mf">2274.8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next, load the mass and stiffness matrices that are stored by default
+at <code class="docutils literal notranslate"><span class="pre">&lt;jobname&gt;.full</span></code>.  First, create an instance of <code class="docutils literal notranslate"><span class="pre">MapdlMath</span></code> as
+<code class="docutils literal notranslate"><span class="pre">mm</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+
+<span class="c1"># load by default from file.full</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">stiff</span><span class="p">()</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mass</span><span class="p">()</span>
+
+<span class="c1"># convert to numpy</span>
+<span class="n">k_py</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="n">m_py</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k_py</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These matrices are now solely stored within Python now that we’ve
+cleared <code class="docutils literal notranslate"><span class="pre">mapdl</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>      <span class="mf">37019230769.223404</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="mf">10283119658.117708</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>      <span class="mf">10283119658.117706</span>
+<span class="p">:</span>   <span class="p">:</span>
+<span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">241</span><span class="p">)</span>  <span class="mf">11217948717.943113</span>
+<span class="p">(</span><span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">)</span>  <span class="mf">50854700854.68495</span>
+<span class="p">(</span><span class="mi">242</span><span class="p">,</span> <span class="mi">242</span><span class="p">)</span>  <span class="mf">95726495726.47179</span>
+</pre></div>
+</div>
+<p>The final step is to send these matrices back to MAPDL to be solved.
+While we have cleared MAPDL, we could have shutdown MAPDL, or even
+transferred them to a different MAPDL session to be solved.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_stiff</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">k_py</span><span class="p">,</span> <span class="n">triu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">my_mass</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">m_py</span><span class="p">,</span> <span class="n">triu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># solve for the first 10 modes above 1 Hz</span>
+<span class="n">nmode</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">mapdl_vec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">nmode</span><span class="p">,</span> <span class="n">my_stiff</span><span class="p">,</span> <span class="n">my_mass</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">eigval</span> <span class="o">=</span> <span class="n">mapdl_vec</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigval</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As expected, the natural frequencies obtained from <code class="docutils literal notranslate"><span class="pre">eigs</span></code> is
+identical to the result from <code class="docutils literal notranslate"><span class="pre">SOLVE</span></code> within MAPDL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">1475.1333421</span>  <span class="mf">1475.1333426</span>  <span class="mf">2018.83737064</span> <span class="mf">2018.83737109</span> <span class="mf">2018.83737237</span>
+ <span class="mf">2024.78684466</span> <span class="mf">2024.78684561</span> <span class="mf">2024.7868466</span>  <span class="mf">2242.21532585</span> <span class="mf">2274.82997741</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you wish to obtain the eigenvectors as well as the eigenvalues,
+initialize a matrix <code class="docutils literal notranslate"><span class="pre">eigvec</span></code> and send that to the <code class="docutils literal notranslate"><span class="pre">eigs</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmode</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">eigvec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">my_stiff</span><span class="o">.</span><span class="n">nrow</span><span class="p">,</span> <span class="n">nmode</span><span class="p">)</span>  <span class="c1"># for eigenvectors</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">nmode</span><span class="p">,</span> <span class="n">my_stiff</span><span class="p">,</span> <span class="n">my_mass</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The MAPDL Math matrix <code class="docutils literal notranslate"><span class="pre">eigvec</span></code> now contains the eigenvectors for the
+solution.</p>
+</div>
+<div class="section" id="apdlmath-reference">
+<h2>APDLMath Reference<a class="headerlink" href="#apdlmath-reference" title="Permalink to this headline">¶</a></h2>
+<p>For additional details, please see the <a class="reference internal" href="../api/math.html#ref-math-api"><span class="std std-ref">Math Module</span></a> reference.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="convert.html" title="previous page">Translating Scripts</a>
+    <a class='right-next' id="next-link" href="pool.html" title="next page">Create a Pool of MAPDL Instances</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

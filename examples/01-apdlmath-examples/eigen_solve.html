@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using APDLMath to solve Eigenproblems &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Binary MAPDL File Explorer" href="explore_mapdl_files.html" />
+    <link rel="prev" title="PyMAPDL APDLMath Basic Operations" href="basic_operations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api/index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#verify-the-accuracy-of-eigenresults" class="nav-link">Verify the accuracy of eigenresults</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-01-apdlmath-examples-eigen-solve-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="using-apdlmath-to-solve-eigenproblems">
+<span id="ref-mapdl-math-eigen-solve"></span><span id="sphx-glr-examples-01-apdlmath-examples-eigen-solve-py"></span><h1>Using APDLMath to solve Eigenproblems<a class="headerlink" href="#using-apdlmath-to-solve-eigenproblems" title="Permalink to this headline">¶</a></h1>
+<p>Use APDLMath to solve eigenproblems.</p>
+<p>This example uses a verification manual input file, but you can use
+your own sparse or dense matrices and solve those.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core.examples</span> <span class="kn">import</span> <span class="n">vmfiles</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="c1"># Start MAPDL as a service and create an APDLMath object</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">loglevel</span><span class="o">=</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
+<span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+</pre></div>
+</div>
+<p>First we get the <cite>STIFF</cite> and <cite>MASS</cite> matrices from the full file
+after running the input file from Verification Manual 153</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">vmfiles</span><span class="p">[</span><span class="s1">&#39;vm153&#39;</span><span class="p">])</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">stiff</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s2">&quot;PRSMEMB.full&quot;</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s2">&quot;PRSMEMB.full&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Display size of the M and K matrices</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(126, 126)
+(126, 126)
+</pre></div>
+</div>
+<p>Allocate an array to store the eigenshapes.
+where <cite>nev</cite> is the number of eigenvalues requested</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nev</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">nrow</span><span class="p">,</span> <span class="n">nev</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dense APDLMath Matrix (126, 10)
+</pre></div>
+</div>
+<p>Perform the the modal analysis.</p>
+<p>The algorithm is automatically chosen with respect to the matrices
+properties (e.g. scalar, storage, symmetry…)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calling MAPDL to solve the eigenproblem...&#39;</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">nev</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time to solve this problem: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Calling MAPDL to solve the eigenproblem...
+Elapsed time to solve this problem: 0.03831624984741211
+</pre></div>
+</div>
+<p>This is the vector of eigenfrequencies.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>BGEUWL :
+ Size : 10
+  3.381e+02   3.381e+02   6.266e+02   6.266e+02   9.283e+02      &lt;       5
+  9.283e+02   1.250e+03   1.250e+03   1.424e+03   1.424e+03      &lt;       10
+</pre></div>
+</div>
+<div class="section" id="verify-the-accuracy-of-eigenresults">
+<h2>Verify the accuracy of eigenresults<a class="headerlink" href="#verify-the-accuracy-of-eigenresults" title="Permalink to this headline">¶</a></h2>
+<p>Check the residual error for the first eigenresult
+<span class="math notranslate nohighlight">\(R_1=||(K-\lambda_1.M).\phi_1||_2\)</span></p>
+<p>First, we compute <span class="math notranslate nohighlight">\(\lambda_1 = \omega_1^2 = (2.\pi.f_1)^2\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eigenfrequency (Hz)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">omega</span><span class="o">*</span><span class="n">omega</span>
+</pre></div>
+</div>
+<p>Then we get the 1st Eigenshape <span class="math notranslate nohighlight">\(\phi_1\)</span>, and compute
+<span class="math notranslate nohighlight">\(K.\phi_1\)</span> and <span class="math notranslate nohighlight">\(M.\phi_1\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># APDL Command: *MULT,K,,Phi,,KPhi</span>
+<span class="n">kphi</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<span class="c1"># APDL Command: *MULT,M,,Phi,,MPhi</span>
+<span class="n">mphi</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, compute the <cite>math</cite>:||K.phi_1||_2 quantity and normalize the
+residual value.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># APDL Command: *MULT,K,,Phi,,KPhi</span>
+<span class="n">kphi</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+
+<span class="c1"># APDL Command: *NRM,KPhi,NRM2,KPhiNrm</span>
+<span class="n">kphinrm</span> <span class="o">=</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then we add these two vectors, using the <span class="math notranslate nohighlight">\(\lambda_1\)</span> scalar
+factor and finally compute the normalized residual value
+<span class="math notranslate nohighlight">\(\frac{R_1}{||K.\phi_1||_2}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># APDL Command: *AXPY,-lambda,,MPhi,1,,KPhi</span>
+<span class="n">mphi</span> <span class="o">*=</span> <span class="n">lam</span>
+<span class="n">kphi</span> <span class="o">-=</span> <span class="n">mphi</span>
+
+<span class="c1"># Compute the residual</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">/</span><span class="n">kphinrm</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>3.503338761293556e-11
+</pre></div>
+</div>
+<p>This residual can be computed for all eigenmodes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_res</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute the residual for a given eigenmode&quot;&quot;&quot;</span>
+    <span class="c1"># Eigenfrequency (Hz)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">ev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># omega = 2.pi.Frequency</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span>
+
+    <span class="c1"># lambda = omega^2</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">omega</span><span class="o">*</span><span class="n">omega</span>
+
+    <span class="c1"># i-th eigenshape</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># K.Phi</span>
+    <span class="n">kphi</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+    <span class="c1"># M.Phi</span>
+    <span class="n">mphi</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+    <span class="c1"># Normalization scalar value</span>
+    <span class="n">kphinrm</span> <span class="o">=</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+
+    <span class="c1"># (K-\lambda.M).Phi</span>
+    <span class="n">mphi</span> <span class="o">*=</span> <span class="n">lam</span>
+    <span class="n">kphi</span> <span class="o">-=</span> <span class="n">mphi</span>
+
+    <span class="c1"># return the residual</span>
+    <span class="k">return</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">/</span><span class="n">kphinrm</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nev</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">ev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">get_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">] : Freq = </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="se">\t</span><span class="s1"> - Residual = </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq = 338.0666635506364   - Residual = 3.503338761293556e-11
+[1] : Freq = 338.06666355063646  - Residual = 5.095765571157227e-11
+[2] : Freq = 626.6450980927036   - Residual = 1.7852148894677666e-11
+[3] : Freq = 626.645098092704    - Residual = 2.17372918531887e-11
+[4] : Freq = 928.2598500574518   - Residual = 1.72025442075496e-11
+[5] : Freq = 928.2598500574528   - Residual = 6.747910207805831e-12
+[6] : Freq = 1249.8421074363514  - Residual = 2.815524037478371e-11
+[7] : Freq = 1249.8421074363525  - Residual = 7.546271373844357e-12
+[8] : Freq = 1423.993890941669   - Residual = 4.5372004789272195e-10
+[9] : Freq = 1423.9938909416699  - Residual = 1.2160010951553228e-09
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.959 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-eigen-solve-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/ef9fd55df8801750a912151e4ce1ff42/eigen_solve.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">eigen_solve.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/5707d009d45a6e97bbf12be8d88b56a5/eigen_solve.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">eigen_solve.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="basic_operations.html" title="previous page">PyMAPDL APDLMath Basic Operations</a>
+    <a class='right-next' id="next-link" href="explore_mapdl_files.html" title="next page">Binary MAPDL File Explorer</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

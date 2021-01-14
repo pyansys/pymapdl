@@ -1,0 +1,24 @@
+
+:orphan:
+
+.. _sphx_glr_examples_01-apdlmath-examples_sg_execution_times:
+
+Computation times
+=================
+**00:18.635** total execution time for **examples_01-apdlmath-examples** files:
+
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_dense_matrix.py` (``solve_dense_matrix.py``)   | 00:15.432 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_eigen_solve.py` (``eigen_solve.py``)                 | 00:00.959 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_sparse_matrix.py` (``solve_sparse_matrix.py``) | 00:00.783 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_scipy_sparse_matrix.py` (``scipy_sparse_matrix.py``) | 00:00.770 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_explore_mapdl_files.py` (``explore_mapdl_files.py``) | 00:00.321 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_basic_operations.py` (``basic_operations.py``)       | 00:00.187 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_01-apdlmath-examples_use_numpy_arrays.py` (``use_numpy_arrays.py``)       | 00:00.183 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+

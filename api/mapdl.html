@@ -1,0 +1,1556 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAPDL Object &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MAPDL Launcher" href="launcher.html" />
+    <link rel="prev" title="API Reference" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="active">
+                    <a href="">MAPDL Object</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="launcher.html">MAPDL Launcher</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Convert Function</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">PyMAPDL Plotting Methods</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Parameters Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh.html">Mesh Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="geometry.html">Geometry Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">PyMAPDL Post-Processing API</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="math.html">Math Module</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">MapdlLocalPool Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">ansXpl Class</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pymapdl-grpc-class" class="nav-link">PyMAPDL gRPC Class</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="mapdl-object">
+<span id="ref-mapdl-api"></span><h1>MAPDL Object<a class="headerlink" href="#mapdl-object" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl.</code><code class="sig-name descname">_MapdlCore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loglevel</span><span class="o">=</span><span class="default_value">'DEBUG'</span></em>, <em class="sig-param"><span class="n">use_vtk</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log_apdl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">local</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">start_parm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains methods in common between all Mapdl subclasses</p>
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.add_file_handler">
+<code class="sig-name descname">add_file_handler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">'DEBUG'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.add_file_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a file handler to the mapdl log.  This allows you to
+redirect the APDL logging to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Filename of the log.</p></li>
+<li><p><strong>append</strong> (<em>bool</em>) – When <code class="docutils literal notranslate"><span class="pre">True</span></code>, appends to an existing log file.  When
+<code class="docutils literal notranslate"><span class="pre">False</span></code>, overwrites the log file if it already exists.</p></li>
+<li><p><strong>level</strong> (<em>str</em>) – Log level.  Must be one of: <code class="docutils literal notranslate"><span class="pre">'DEBUG',</span> <span class="pre">'INFO',</span> <span class="pre">'WARNING',</span> <span class="pre">'ERROR'</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Start writing the log to a new file named “mapdl.log”</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">add_file_handler</span><span class="p">(</span><span class="s1">&#39;mapdl.log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.allow_ignore">
+<em class="property">property </em><code class="sig-name descname">allow_ignore</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.allow_ignore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalid commands will be ignored rather than exceptions</p>
+<p>A command executed in the wrong processor will raise an
+exception when <code class="docutils literal notranslate"><span class="pre">allow_ignore=False</span></code>.  This is the default
+behavior.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Exception:  K is not a recognized POST1 command, abbreviation, or macro.</span>
+</pre></div>
+</div>
+<p>Ignore these messages by setting allow_ignore=True</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">allow_ignore</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="go">2020-06-08 21:39:58,094 [INFO] : K is not a</span>
+<span class="go">recognized POST1 command, abbreviation, or macro.  This</span>
+<span class="go">command will be ignored.</span>
+</pre></div>
+</div>
+<p><strong>* WARNING *</strong> CP = 0.372 TIME= 21:39:58
+K is not a recognized POST1 command, abbreviation, or macro.
+This command will be ignored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.aplot">
+<code class="sig-name descname">aplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">na1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">na2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.aplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: APLOT</p>
+<p>Displays the selected areas from <code class="docutils literal notranslate"><span class="pre">na1</span></code> to <code class="docutils literal notranslate"><span class="pre">na2</span></code> in steps
+of <code class="docutils literal notranslate"><span class="pre">ninc</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>na1</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum area to display.</p></li>
+<li><p><strong>na2</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum area to display</p></li>
+<li><p><strong>ninc</strong> (<em>int</em><em>, </em><em>optional</em>) – Increment between minimum and maximum area.</p></li>
+<li><p><strong>degen</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>str</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>optional</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>scale</strong> – Scale factor for the size of the degeneracy-marker star.
+The scale is the size in window space (-1 to 1 in both
+directions) (defaults to .075).  This option is ignored
+when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected areas using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.  As
+this creates a temporary surface mesh, this may have a
+long execution time for large meshes.</p></li>
+<li><p><strong>quality</strong> (<em>int</em><em>, </em><em>optional</em>) – Quality of the mesh to display.  Varies between 1 (worst)
+to 10 (best) when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_area_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display area numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_line_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>color_areas</strong> (<em>bool</em><em>, </em><em>optional</em>) – Randomly color areas when <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_lines</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot lines and areas.  Change the thickness of the lines
+with <code class="docutils literal notranslate"><span class="pre">line_width=</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot areas between 1 and 4 in increments of 2.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot all areas and randomly color the areas.  Label center of
+areas by their number.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_area_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color_areas</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.chain_commands">
+<em class="property">property </em><code class="sig-name descname">chain_commands</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.chain_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chain several mapdl commands.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">read</span><span class="o">=</span><span class="default_value">'NOSTART'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: /CLEAR</p>
+<p>Clears the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>read</strong> – <p>File read option:</p>
+<p>START - Reread startXXX.ans file.</p>
+<p>NOSTART - Do not reread startXXX.ans file (default).</p>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Resets the ANSYS database to the conditions at the beginning of the
+problem.  Sets the import and Boolean options back to the ANSYS
+default. All items are deleted from the database and memory values are
+set to zero for items derived from database information.  All files are
+left intact.  This command is useful between multiple analyses in the
+same run, or between passes of a multipass analysis (such as between
+the substructure generation, use, and expansion passes).  Should not be
+used in a do-loop since loop counters will be reset.  The start162.ans
+file will be reread (by default) after the database is cleared, unless
+Read is set to NOSTART.  Additional commands cannot be stacked (using
+the $ separator) on the same line as the /CLEAR command.</p>
+<p>Use care when placing the /CLEAR command within branching constructs
+(for example, those employing *DO or *IF commands).  The command
+deletes all parameters including the looping parameter for do-loops.
+(You can preserve your iteration parameter by issuing a PARSAV command
+prior to the /CLEAR command, then following the /CLEAR command with a
+PARRES command.)</p>
+<p>/CLEAR resets the jobname to match the currently open session .LOG and
+.ERR files. This will return the jobname to its original value, or to
+the most recent value specified on /FILNAME with KEY = 1.</p>
+<p>This command is valid only at the Begin level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.eplot">
+<code class="sig-name descname">eplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.eplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the currently selected elements.</p>
+<p>APDL Command: EPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected elements using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.
+Defaults to current <code class="docutils literal notranslate"><span class="pre">use_vtk</span></code> setting.</p></li>
+<li><p><strong>show_node_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the node numbers of surface nodes.</p></li>
+<li><p><strong>**kwargs</strong> – See <code class="docutils literal notranslate"><span class="pre">help(ansys.mapdl.core.plotter.general_plotter)</span></code> for more
+keyword arguments related to visualizing using <code class="docutils literal notranslate"><span class="pre">vtk</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">186</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">esize</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vmesh</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vgen</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                show_node_numbering=True)</span>
+</pre></div>
+</div>
+<p>Save a screenshot to disk without showing the plot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                window_size=[1920, 1080], screenshot=&#39;screenshot.png&#39;,</span>
+<span class="go">                off_screen=True)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.exit">
+<code class="sig-name descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exit from MAPDL</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.geometry">
+<em class="property">property </em><code class="sig-name descname">geometry</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geometry (CAD) information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par</span><span class="o">=</span><span class="default_value">'__floatparameter__'</span></em>, <em class="sig-param"><span class="n">entity</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">entnum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it1num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it2num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: *GET</p>
+<p>Retrieves a value and stores it as a scalar parameter or part
+of an array parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>par</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the resulting parameter. See *SET for name
+restrictions.</p></li>
+<li><p><strong>entity</strong> – Entity keyword. Valid keywords are NODE, ELEM, KP, LINE, AREA,
+VOLU, PDS, etc., as shown for Entity = in the tables below.</p></li>
+<li><p><strong>entnum</strong> – The number or label for the entity (as shown for ENTNUM = in the
+tables below). In some cases, a zero (or blank) ENTNUM represents
+all entities of the set.</p></li>
+<li><p><strong>item1</strong> – The name of a particular item for the given entity. Valid items are
+as shown in the Item1 columns of the tables below.</p></li>
+<li><p><strong>it1num</strong> – The number (or label) for the specified Item1 (if any). Valid
+IT1NUM values are as shown in the IT1NUM columns of the tables
+below. Some Item1 labels do not require an IT1NUM value.</p></li>
+<li><p><strong>item2</strong> – A second set of item labels and numbers to further qualify the item
+for which data are to be retrieved. Most items do not require this
+level of information.</p></li>
+<li><p><strong>it2num</strong> – A second set of item labels and numbers to further qualify the item
+for which data are to be retrieved. Most items do not require this
+level of information.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>par</strong> – Floating point value of the parameter.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Retrieve the number of nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span>
+<span class="go">3003</span>
+</pre></div>
+</div>
+<p>Retrieve the number of nodes using keywords.  Note that the
+parameter name is optional.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">entity</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="n">item1</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span>
+<span class="go">3003</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>GET retrieves a value for a specified item and stores the value as a
+scalar parameter, or as a value in a user-named array parameter. An
+item is identified by various keyword, label, and number combinations.
+Usage is similar to the SET command except that the parameter values
+are retrieved from previously input or calculated results. For example,
+GET,A,ELEM,5,CENT,X returns the centroid x-location of element 5 and
+stores the result as parameter A. GET command operations, along with
+the associated Get functions return values in the active coordinate
+system unless stated otherwise. A Get function is an alternative in-
+line function that can be used to retrieve a value instead of the GET
+command (see Using In-line Get Functions for more information).</p>
+<p>Both GET and VGET retrieve information from the active data stored in
+memory. The database is often the source, and sometimes the information
+is retrieved from common memory blocks that the program uses to
+manipulate information. Although POST1 and POST26 operations use a
+.rst file, GET data is accessed from the database or from the common
+blocks. Get operations do not access the .rst file directly. For
+repeated gets of sequential items, such as from a series of elements,
+see the VGET command.</p>
+<p>Most items are stored in the database after they are calculated and are
+available anytime thereafter. Items are grouped according to where they
+are usually first defined or calculated. Preprocessing data will often
+not reflect the calculated values generated from section data. Do not
+use GET to obtain data from elements that use calculated section data,
+such as beams or shells. Most of the general items listed below are
+available from all modules. Each of the sections for accessing GET
+parameters are shown in the following order:</p>
+<p>GET General Entity Items</p>
+<p>GET Preprocessing Entity Items</p>
+<p>GET Solution Entity Items</p>
+<p>GET Postprocessing Entity Items</p>
+<p>GET Probabilistic Design Entity Items</p>
+<p>The GET command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">entity</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">entnum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it1num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it2num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the *GET command and returns a Python value.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">help(mapdl.starget)</span></code> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity</strong> – Entity keyword. Valid keywords are NODE, ELEM, KP, LINE, AREA,
+VOLU, PDS, etc., as shown for Entity = in the tables below.</p></li>
+<li><p><strong>entnum</strong> – The number or label for the entity (as shown for ENTNUM = in the
+tables below). In some cases, a zero (or blank) ENTNUM represents
+all entities of the set.</p></li>
+<li><p><strong>item1</strong> – The name of a particular item for the given entity. Valid items are
+as shown in the Item1 columns of the tables below.</p></li>
+<li><p><strong>it1num</strong> – The number (or label) for the specified Item1 (if any). Valid
+IT1NUM values are as shown in the IT1NUM columns of the tables
+below. Some Item1 labels do not require an IT1NUM value.</p></li>
+<li><p><strong>item2</strong> – A second set of item labels and numbers to further qualify the item
+for which data are to be retrieved. Most items do not require this
+level of information.</p></li>
+<li><p><strong>it2num</strong> – A second set of item labels and numbers to further qualify the item
+for which data are to be retrieved. Most items do not require this
+level of information.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>par</strong> – Floating point value of the parameter.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Retrieve the number of nodes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span>
+<span class="go">3003</span>
+</pre></div>
+</div>
+<p>Retrieve the number of nodes using keywords.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">entity</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="n">item1</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span>
+<span class="go">3003</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.jobname">
+<em class="property">property </em><code class="sig-name descname">jobname</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.jobname" title="Permalink to this definition">¶</a></dt>
+<dd><p>MAPDL job name.</p>
+<p>This is requested from the active mapdl instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.kplot">
+<code class="sig-name descname">kplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">np2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">lab</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.kplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the selected keypoints.</p>
+<p>APDL Command: KPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np1</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>np2</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>ninc</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>lab</strong> – <p>Determines what keypoints are plotted (one of the following):</p>
+<p>(blank) - Plots all keypoints.</p>
+<p>HPT - Plots only those keypoints that are hard points.</p>
+</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected lines using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.</p></li>
+<li><p><strong>show_keypoint_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.last_response">
+<em class="property">property </em><code class="sig-name descname">last_response</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.last_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last response from MAPDL.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">last_response</span><span class="p">()</span>
+<span class="go">&#39;KEYPOINT      1   X,Y,Z=   1.00000       1.00000       1.00000&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.load_parameters">
+<code class="sig-name descname">load_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depreciated in favor of <code class="docutils literal notranslate"><span class="pre">mapdl.parameters</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.load_table">
+<code class="sig-name descname">load_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">var1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">var2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">var3</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a table from Python to MAPDL</p>
+<p>Uses *TREAD to transfer the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – An alphanumeric name used to identify this table.  Name
+may be up to 32 characters, beginning with a letter and
+containing only letters, numbers, and underscores.
+Examples: <code class="docutils literal notranslate"><span class="pre">&quot;ABC&quot;</span> <span class="pre">&quot;A3X&quot;</span> <span class="pre">&quot;TOP_END&quot;</span></code>.</p></li>
+<li><p><strong>array</strong> (<em>np.ndarray</em><em> or </em><em>List</em>) – List as a table or <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array.</p></li>
+<li><p><strong>var1</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A primary variable (listed below) or can be an independent
+parameter. If specifying an independent parameter, then
+you must define an additional table for the independent
+parameter. The additional table must have the same name as
+the independent parameter and may be a function of one or
+more primary variables or another independent
+parameter. All independent parameters must relate to a
+primary variable.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TIME&quot;</span></code>: Time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;FREQ&quot;</span></code>: Frequency</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;X&quot;</span></code>: X-coordinate location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Y&quot;</span></code>: Y-coordinate location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Z&quot;</span></code>: Z-coordinate location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TEMP&quot;</span></code>: Temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;VELOCITY&quot;</span></code>: Velocity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>]: Pressure        PRESSURE [</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;GAP&quot;</span></code>: Geometric gap/penetration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;SECTOR&quot;</span></code>: Cyclic sector number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;OMEGS&quot;</span></code>: Amplitude of the rotational velocity vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ECCENT&quot;</span></code>: Eccentricity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;THETA&quot;</span></code>: Phase shift</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ELEM&quot;</span></code>: Element number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;NODE&quot;</span></code>: Node number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;CONC&quot;</span></code>: Concentration</p></li>
+</ul>
+</p></li>
+<li><p><strong>var2</strong> (<em>str</em><em>, </em><em>optional</em>) – See <code class="docutils literal notranslate"><span class="pre">var1</span></code></p></li>
+<li><p><strong>var3</strong> (<em>str</em><em>, </em><em>optional</em>) – See <code class="docutils literal notranslate"><span class="pre">var1</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_conv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
+<span class="go">                        [120, 0.001],</span>
+<span class="go">                        [130, 0.005],</span>
+<span class="go">                        [700, 0.005],</span>
+<span class="go">                        [710, 0.002],</span>
+<span class="go">                        [1000, 0.002]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">load_table</span><span class="p">(</span><span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span> <span class="n">my_conv</span><span class="p">,</span> <span class="s1">&#39;TIME&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;MY_TABLE&#39;</span><span class="p">]</span>
+<span class="go">array([0.0001, 0.0001, 0.0005, 0.0005, 0.0002, 0.0002])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.lplot">
+<code class="sig-name descname">lplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nl1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nl2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.lplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: LPLOT</p>
+<p>Displays the selected lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>nl2</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>ninc</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected lines using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.</p></li>
+<li><p><strong>show_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_keypoints</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display keypoints associated with current lines.  Only
+valid with <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_keypoint_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Number keypoints.  Only valid when show_keypoints is True</p></li>
+<li><p><strong>**kwargs</strong> – See <code class="docutils literal notranslate"><span class="pre">help(pyvista.plot)</span></code> for more keyword arguments
+related to visualizing using <code class="docutils literal notranslate"><span class="pre">vtk</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">vtk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Mesh divisions on plotted lines are controlled by the LDIV option of
+the /PSYMB command.</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.mesh">
+<em class="property">property </em><code class="sig-name descname">mesh</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mesh information.</p>
+<p class="rubric">Examples</p>
+<p>Return an array of the active nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nodes</span>
+<span class="go">array([[ 1.,  0.,  0.],</span>
+<span class="go">       [ 2.,  0.,  0.],</span>
+<span class="go">       [ 3.,  0.,  0.],</span>
+<span class="go">       [ 4.,  0.,  0.],</span>
+<span class="go">       [ 5.,  0.,  0.],</span>
+<span class="go">       [ 6.,  0.,  0.],</span>
+<span class="go">       [ 7.,  0.,  0.],</span>
+<span class="go">       [ 8.,  0.,  0.],</span>
+<span class="go">       [ 9.,  0.,  0.],</span>
+<span class="go">       [10.,  0.,  0.]])</span>
+</pre></div>
+</div>
+<p>Return an array of the node numbers of the active nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum</span>
+<span class="go">array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=int32)</span>
+</pre></div>
+</div>
+<p>Simply query and print the geometry</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+<span class="go">  ANSYS Mapdl Mesh</span>
+<span class="go">  Number of Nodes:              321</span>
+<span class="go">  Number of Elements:           40</span>
+<span class="go">  Number of Element Types:      1</span>
+<span class="go">  Number of Node Components:    2</span>
+<span class="go">  Number of Element Components: 2</span>
+</pre></div>
+</div>
+<p>Access the geometry as a VTK object</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">grid</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.modal_analysis">
+<code class="sig-name descname">modal_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'lanb'</span></em>, <em class="sig-param"><span class="n">nmode</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">freqb</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">freqe</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">cpxmod</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nrmkey</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">modtype</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">memory_option</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">elcalc</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.modal_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a modal with basic settings analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em>) – <p>Mode-extraction method to be used for the modal analysis.
+Defaults to lanb (block lanczos).  Must be one of the following:</p>
+<ul>
+<li><p>LANB : Block Lanczos</p></li>
+<li><p>LANPCG : PCG Lanczos</p></li>
+<li><p>SNODE : Supernode modal solver</p></li>
+<li><p>SUBSP : Subspace algorithm</p></li>
+<li><p>UNSYM : Unsymmetric matrix</p></li>
+<li><p>DAMP : Damped system</p></li>
+<li><p>QRDAMP : Damped system using QR algorithm</p></li>
+<li><p>VT : Variational Technology</p></li>
+</ul>
+</p></li>
+<li><p><strong>nmode</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of modes to extract. The value can depend on
+the value supplied for Method. NMODE has no default and
+must be specified. If Method = LANB, LANPCG, or SNODE, the
+number of modes that can be extracted can equal the DOFs
+in the model after the application of all boundary
+conditions.</p></li>
+<li><p><strong>freqb</strong> (<em>float</em><em>, </em><em>optional</em>) – The beginning, or lower end, of the frequency range of
+interest.</p></li>
+<li><p><strong>freqe</strong> (<em>float</em><em>, </em><em>optional</em>) – The ending, or upper end, of the frequency range of
+interest (in Hz). The default for Method = SNODE is
+described below. The default for all other methods is to
+calculate all modes, regardless of their maximum
+frequency.</p></li>
+<li><p><strong>cpxmod</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Complex eigenmode key. Valid only when <code class="docutils literal notranslate"><span class="pre">method='QRDAMP'</span></code>
+or <code class="docutils literal notranslate"><span class="pre">method='unsym'</span></code></p>
+<ul>
+<li><p>AUTO : Determine automatically if the eigensolutions are
+real or complex and output them accordingly. This is
+the default for <code class="docutils literal notranslate"><span class="pre">method='UNSYM'</span></code>.  Not supported for
+Method = QRDAMP.</p></li>
+<li><p>ON or CPLX : Calculate and output complex eigenmode
+shapes.</p></li>
+<li><p>OFF or REAL : Do not calculate complex eigenmode
+shapes. This is required if a mode-
+superposition analysis is intended after the
+modal analysis for Method = QRDAMP. This is the
+default for this method.</p></li>
+</ul>
+</p></li>
+<li><p><strong>nrmkey</strong> (<em>bool</em><em>, </em><em>optional</em>) – Mode shape normalization key.  When <code class="docutils literal notranslate"><span class="pre">True</span></code> (default),
+normalize the mode shapes to the mass matrix.  When False,
+Normalize the mode shapes to unity instead of to the mass
+matrix.  If a subsequent spectrum or mode-superposition
+analysis is planned, the mode shapes should be normalized
+to the mass matrix.</p></li>
+<li><p><strong>modtype</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Type of modes calculated by the eigensolver. Only
+applicable to the unsymmetric eigensolver.</p>
+<ul>
+<li><p>Blank : Right eigenmodes. This value is the default.</p></li>
+<li><p>BOTH : Right and left eigenmodes. The left eigenmodes are
+written to Jobname.LMODE.  This option must be
+activated if a mode-superposition analysis is intended.</p></li>
+</ul>
+</p></li>
+<li><p><strong>memory_option</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Memory allocation option:</p>
+<ul>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">DEFAULT</span></code> - Default Memory mode</dt><dd><p>Use the default memory allocation strategy for
+the sparse solver. The default strategy attempts
+to run in the INCORE memory mode. If there is
+not enough available physical memory when the
+solver starts to run in the <code class="docutils literal notranslate"><span class="pre">INCORE</span></code> memory
+mode, the solver will then attempt to run in the
+<code class="docutils literal notranslate"><span class="pre">OUTOFCORE</span></code> memory mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">INCORE</span></code> - In-core memory mode</dt><dd><p>Use a memory allocation strategy in the sparse
+solver that will attempt to obtain enough memory
+to run with the entire factorized matrix in
+memory. This option uses the most amount of
+memory and should avoid doing any I/O. By
+avoiding I/O, this option achieves optimal solver
+performance. However, a significant amount of
+memory is required to run in this mode, and it is
+only recommended on machines with a large amount
+of memory. If the allocation for in-core memory
+fails, the solver will automatically revert to
+out-of-core memory mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">OUTOFCORE</span></code> - Out of core memory mode.</dt><dd><p>Use a memory allocation strategy in the sparse
+solver that will attempt to allocate only
+enough work space to factor each individual
+frontal matrix in memory, but will store the
+entire factorized matrix on disk. Typically,
+this memory mode results in poor performance
+due to the potential bottleneck caused by the
+I/O to the various files written by the
+solver.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>elcalc</strong> (<em>bool</em><em>, </em><em>optional</em>) – Calculate element results, reaction forces, energies, and
+the nodal degree of freedom solution.  Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>response</strong> – Output from MAPDL SOLVE command.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Modal analysis using default parameters for the first 6 modes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">modal_analysis</span><span class="p">(</span><span class="n">nmode</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>For models that involve a non-symmetric element stiffness
+matrix, as in the case of a contact element with frictional
+contact, the QRDAMP eigensolver (MODOPT, QRDAMP) extracts
+modes in the modal subspace formed by the eigenmodes from the
+symmetrized eigenproblem. The QRDAMP eigensolver symmetrizes
+the element stiffness matrix on the first pass of the
+eigensolution, and in the second pass, eigenmodes are
+extracted in the modal subspace of the first eigensolution
+pass. For such non- symmetric eigenproblems, you should verify
+the eigenvalue and eigenmode results using the non-symmetric
+matrix eigensolver (MODOPT,UNSYM).</p>
+<p>The DAMP and QRDAMP options cannot be followed by a subsequent
+spectrum analysis. The UNSYM method supports spectrum analysis
+when eigensolutions are real.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.nplot">
+<code class="sig-name descname">nplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">knum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.nplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: NPLOT</p>
+<p>Displays nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>knum</strong> (<em>bool</em><em>, </em><em>int</em><em>, </em><em>optional</em>) – <p>Node number key:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> : No node numbers on display (default).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> : Include node numbers on display.</p></li>
+</ul>
+</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected nodes using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.
+Defaults to current <code class="docutils literal notranslate"><span class="pre">use_vtk</span></code> setting as set on the
+initialization of MAPDL.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot using VTK while showing labels and changing the background</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">knum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vtk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+<span class="go">                show_bounds=True)</span>
+</pre></div>
+</div>
+<p>Plot without using VTK</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">vtk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Only selected nodes [NSEL] are displayed.  Elements need not
+be defined.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.open_apdl_log">
+<code class="sig-name descname">open_apdl_log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'w'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_apdl_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start writing all APDL commands to an ANSYS input file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Filename of the log.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.open_gui">
+<code class="sig-name descname">open_gui</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_result</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_gui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves existing database and opens up APDL GUI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include_result</strong> (<em>bool</em><em>, </em><em>optional</em>) – Allow the result file to be post processed in the GUI.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.parameters">
+<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection of MAPDL parameters obtainable from the <code class="docutils literal notranslate"><span class="pre">*GET</span></code>
+command or <code class="docutils literal notranslate"><span class="pre">GET</span></code> command.</p>
+<p class="rubric">Examples</p>
+<p>Simply list all parameters except for MAPDL MATH parameters</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span>
+<span class="go">ARR                              : ARRAY DIM (3, 1, 1)</span>
+<span class="go">PARM_FLOAT                       : 20.0</span>
+<span class="go">PARM_INT                         : 10.0</span>
+<span class="go">PARM_LONG_STR                    : &quot;stringstringstringstringstringst&quot;</span>
+<span class="go">PARM_STR                         : &quot;string&quot;</span>
+<span class="go">PORT                             : 50052.0</span>
+</pre></div>
+</div>
+<p>Get a parameter</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;PARM_FLOAT&#39;</span><span class="p">]</span>
+<span class="go">20.0</span>
+</pre></div>
+</div>
+<p>Get an array parameter</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;ARR&#39;</span><span class="p">]</span>
+<span class="go">array([1., 2., 3.])</span>
+</pre></div>
+</div>
+<p>Get the current routine</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">routine</span>
+<span class="go">&#39;PREP7&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">units</span>
+<span class="go">&#39;SI&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">csys</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.post_processing">
+<em class="property">property </em><code class="sig-name descname">post_processing</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.post_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post-process an active MAPDL session.</p>
+<p class="rubric">Examples</p>
+<p>Get the nodal displacement in the X direction for the first
+result set.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_x</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">array([1.07512979e-04, 8.59137773e-05, 5.70690047e-05, ...,</span>
+<span class="go">       5.70333124e-05, 8.58600402e-05, 1.07445726e-04])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function">
+<code class="sig-name descname">read_float_from_inline_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function_str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a APDL inline function to get a float value from ANSYS.
+Take note, that internally an APDL parameter
+“__floatparameter__” is created/overwritten.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>function_str</strong> (<em>str</em>) – String containing an inline function as used in APDL.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>value</strong> – Value returned by inline function.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inline_function</span> <span class="o">=</span> <span class="s2">&quot;node(</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span> <span class="o">=</span> <span class="n">apdl</span><span class="o">.</span><span class="n">read_float_from_inline_function</span><span class="p">(</span><span class="n">inline_function</span><span class="p">)</span>
+<span class="go">75.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter">
+<code class="sig-name descname">read_float_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depreciated in favor of <code class="docutils literal notranslate"><span class="pre">mapdl.parameters[parameter_name]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler">
+<code class="sig-name descname">remove_file_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the filehander from the log</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.result">
+<em class="property">property </em><code class="sig-name descname">result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binary interface to the result file using <code class="docutils literal notranslate"><span class="pre">ansys.mapdl.reader.Result</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">PyMAPDL-Reader Result file object</span>
+<span class="go">Units       : User Defined</span>
+<span class="go">Version     : 18.2</span>
+<span class="go">Cyclic      : False</span>
+<span class="go">Result Sets : 1</span>
+<span class="go">Nodes       : 3083</span>
+<span class="go">Elements    : 977</span>
+</pre></div>
+</div>
+<p>Available Results:
+EMS : Miscellaneous summable items (normally includes face pressures)
+ENF : Nodal forces
+ENS : Nodal stresses
+ENG : Element energies and volume
+EEL : Nodal elastic strains
+ETH : Nodal thermal strains (includes swelling strains)
+EUL : Element euler angles
+EMN : Miscellaneous nonsummable items
+EPT : Nodal temperatures
+NSL : Nodal displacements
+RF  : Nodal reaction forces</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">write_to_log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs APDL command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>str</em>) – ANSYS APDL command.</p></li>
+<li><p><strong>write_to_log</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overrides APDL log writing.  Default True.  When set to
+False, will not write command to log, even if APDL
+command logging is enabled.</p></li>
+<li><p><strong>kwargs</strong> (<em>Optional keyword arguments</em>) – These keyword arguments are interface specific.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>command_output</strong> – Command output from ANSYS.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;/PREP7&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Equivalent Pythonic method:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>When two or more commands need to be run non-interactively
+(i.e. <code class="docutils literal notranslate"><span class="pre">*VWRITE</span></code>) use</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ansys</span><span class="o">.</span><span class="n">non_interactive</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ansys</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1),VALUE(1,1),VALUE(1,2),VALUE(1,3)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ansys</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,&#39;   &#39;,F10.1,&#39;  &#39;,F10.1,&#39;   &#39;,1F5.3)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.set_log_level">
+<code class="sig-name descname">set_log_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loglevel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.set_log_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets log level</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>loglevel</strong> (<em>str</em><em>, </em><em>int</em>) – Log level.  Must be one of: <code class="docutils literal notranslate"><span class="pre">'DEBUG',</span> <span class="pre">'INFO',</span> <span class="pre">'WARNING',</span> <span class="pre">'ERROR'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Set the log level to debug</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the log level to info</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s1">&#39;INFO&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the log level to warning</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s1">&#39;WARNING&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the log level to error</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.version">
+<em class="property">property </em><code class="sig-name descname">version</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>MAPDL build version</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">version</span>
+<span class="go">20.2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.vplot">
+<code class="sig-name descname">vplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nv1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nv2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.vplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the selected volumes.</p>
+<p>APDL Command: VPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nv1</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>nv2</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>ninc</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>degen</strong> – Degeneracy marker.  <code class="docutils literal notranslate"><span class="pre">&quot;blank&quot;</span></code> No degeneracy marker is
+used (default), or <code class="docutils literal notranslate"><span class="pre">&quot;DEGE&quot;</span></code>.  A red star is placed on
+keypoints at degeneracies (see the Modeling and Meshing
+Guide).  Not available if /FACET,WIRE is set.  Ignored
+when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>scale</strong> – Scale factor for the size of the degeneracy-marker star.  The scale
+is the size in window space (-1 to 1 in both directions) (defaults
+to .075).  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected volumes using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.  As
+this creates a temporary surface mesh, this may have a
+long execution time for large meshes.</p></li>
+<li><p><strong>quality</strong> (<em>int</em><em>, </em><em>optional</em>) – quality of the mesh to display.  Varies between 1 (worst)
+to 10 (best).  Applicable when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot while displaying area numbers</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_area_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="pymapdl-grpc-class">
+<h2>PyMAPDL gRPC Class<a class="headerlink" href="#pymapdl-grpc-class" title="Permalink to this headline">¶</a></h2>
+<p>Methods specific to the modern gRPC interface</p>
+<dl class="py class">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl_grpc.</code><code class="sig-name descname">MapdlGrpc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">'127.0.0.1'</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">loglevel</span><span class="o">=</span><span class="default_value">'WARNING'</span></em>, <em class="sig-param"><span class="n">cleanup_on_exit</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">log_apdl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_no_abort</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_temp_files</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class connects to a GRPC MAPDL server and allows commands
+to be passed to a persistent session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ip</strong> (<em>str</em><em>, </em><em>optional</em>) – IP address to connect to the server.  Defaults to ‘localhost’.</p></li>
+<li><p><strong>port</strong> (<em>int</em><em>, </em><em>optional</em>) – Port to connect to the mapdl server.  Defaults to 50052.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – Maximum allowable time to connect to the MAPDL server.</p></li>
+<li><p><strong>loglevel</strong> (<em>str</em><em>, </em><em>optional</em>) – Sets which messages are printed to the console.  Default
+‘INFO’ prints out all ANSYS messages, ‘WARNING` prints only
+messages containing ANSYS warnings, and ‘ERROR’ prints only
+error messages.</p></li>
+<li><p><strong>cleanup_on_exit</strong> (<em>bool</em><em>, </em><em>optional</em>) – Exit MAPDL when python exits or the mapdl Python instance is
+garbage collected.</p></li>
+<li><p><strong>set_no_abort</strong> (<em>bool</em><em>, </em><em>optional</em>) – Sets MAPDL to not abort at the first error within /BATCH mode.
+Default <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>remove_temp_files</strong> (<em>bool</em><em>, </em><em>optional</em>) – Removes temporary files on exit if MAPDL is local.  Default
+<code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Connect to an instance of MAPDL already running on locally on the
+default port 50052.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.mapdl.core</span> <span class="k">as</span> <span class="nn">pymapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">pymapdl</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Connect to an instance of MAPDL running on the LAN on a default port</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">pymapdl</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">(</span><span class="s1">&#39;192.168.1.101&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Connect to an instance of MAPDL running on the LAN on a non-default port</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">pymapdl</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">(</span><span class="s1">&#39;192.168.1.101&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">60001</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param">
+<code class="sig-name descname">Param</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var">
+<code class="sig-name descname">Var</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy">
+<em class="property">property </em><code class="sig-name descname">busy</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy" title="Permalink to this definition">¶</a></dt>
+<dd><p>True when MAPDL gRPC server is executing a command</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.cdread">
+<code class="sig-name descname">cdread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">option</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">fname</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ext</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">fnamei</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">exti</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.cdread" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: CDREAD</p>
+<p>Reads a file of solid model and database information into the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>option</strong> – <p>Selects which data to read:</p>
+<p>ALL - Read all geometry, material property, load, and
+component data (default).  Solid model geometry and loads
+will be read from the file Fnamei.Exti.  All other data
+will be read from the file Fname.Ext.</p>
+<p>DB - Read all database information contained in file
+Fname.Ext. This file should contain all information
+mentioned above except the solid model loads. If reading a
+.CDB file written with the GEOM option of the CDWRITE
+command, element types [ET] compatible with the
+connectivity of the elements on the file must be defined
+prior to reading.</p>
+<p>SOLID - Read the solid model geometry and solid model
+loads from the file Fnamei.Exti.  This file could have
+been written by the CDWRITE or IGESOUT command.</p>
+<p>COMB - Read the combined solid model and database
+information from the file Fname.Ext.</p>
+</p></li>
+<li><p><strong>fname</strong> – File name and directory path (248 characters maximum, including the
+characters needed for the directory path).  An unspecified
+directory path defaults to the working directory; in this case, you
+can use all 248 characters for the file name.</p></li>
+<li><p><strong>ext</strong> – Filename extension (eight-character maximum).</p></li>
+<li><p><strong>fnamei</strong> – Name of the IGES file and its directory path (248 characters
+maximum, including directory). If you do not specify a directory
+path, it will default to your working directory and you can use all
+248 characters for the file name.</p></li>
+<li><p><strong>exti</strong> – Filename extension (eight-character maximum).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This command causes coded files of solid model (in IGES format) and
+database (in command format) information to be read.  These files are
+normally written by the CDWRITE or IGESOUT command.  Note that the
+active coordinate system in these files has been reset to Cartesian
+(CSYS,0).</p>
+<p>If a set of data exists prior to the CDREAD operation, that data set is
+offset upward to allow the new data to fit without overlap. The
+NOOFFSET command allows this offset to be ignored on a set-by-set
+basis, causing the existing data set to be overwritten with the new
+data set.</p>
+<p>When you write the geometry data using the CDWRITE,GEOM option, you use
+the CDREAD,DB option to read the geometry information.</p>
+<p>Using the CDREAD,COMB option will not write NUMOFF commands to offset
+entity ID numbers if there is no solid model in the database.</p>
+<p>Multiple CDB file imports cannot have elements with real constants in
+one file and section definitions in another. The section attributes
+will override the real constant attributes.  If you use CDREAD to
+import multiple CDB files, define all of the elements using only real
+constants, or using only section definitions.  Combining real constants
+and section definitions is not recommended.</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download">
+<code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download_result">
+<code class="sig-name descname">download_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">progress_bar</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">preference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download remote result files to a local directory</p>
+<p class="rubric">Examples</p>
+<p>Download remote result files into the current working directory</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">download_result</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.exit">
+<code class="sig-name descname">exit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exit MAPDL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – Save the database on exit.  Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input">
+<code class="sig-name descname">input</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.is_alive">
+<em class="property">property </em><code class="sig-name descname">is_alive</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>True when there is an active connect to the gRPC server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_error_file">
+<code class="sig-name descname">list_error_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_error_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listing of errors written in JOBNAME.err</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files">
+<code class="sig-name descname">list_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the files in the working directory of MAPDL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>files</strong> – List of files in the working directory of MAPDL.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">files</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">list_files</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="go">file.lock</span>
+<span class="go">file0.bat</span>
+<span class="go">file0.err</span>
+<span class="go">file0.log</span>
+<span class="go">file0.page</span>
+<span class="go">file1.err</span>
+<span class="go">file1.log</span>
+<span class="go">file1.out</span>
+<span class="go">file1.page</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.locked">
+<em class="property">property </em><code class="sig-name descname">locked</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance is in use within a pool</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.math">
+<em class="property">property </em><code class="sig-name descname">math</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.math" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL math interface</p>
+<p class="rubric">Examples</p>
+<p>Get the stiffness matrix from MAPDL</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">stiff</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">&lt;60x60 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">    with 1734 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+<p>Get the mass matrix from mapdl</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">stiff</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">&lt;60x60 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">    with 1734 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.post_processing">
+<em class="property">property </em><code class="sig-name descname">post_processing</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.post_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post-process in an active MAPDL session.</p>
+<p class="rubric">Examples</p>
+<p>Get the nodal displacement in the X direction for the first
+result set.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_x</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">array([1.07512979e-04, 8.59137773e-05, 5.70690047e-05, ...,</span>
+<span class="go">       5.70333124e-05, 8.58600402e-05, 1.07445726e-04])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.result">
+<em class="property">property </em><code class="sig-name descname">result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binary interface to the result file using <code class="docutils literal notranslate"><span class="pre">pyansys.Result</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">PyANSYS MAPDL Result file object</span>
+<span class="go">Units       : User Defined</span>
+<span class="go">Version     : 18.2</span>
+<span class="go">Cyclic      : False</span>
+<span class="go">Result Sets : 1</span>
+<span class="go">Nodes       : 3083</span>
+<span class="go">Elements    : 977</span>
+</pre></div>
+</div>
+<p>Available Results:
+EMS : Miscellaneous summable items (normally includes face pressures)
+ENF : Nodal forces
+ENS : Nodal stresses
+ENG : Element energies and volume
+EEL : Nodal elastic strains
+ETH : Nodal thermal strains (includes swelling strains)
+EUL : Element euler angles
+EMN : Miscellaneous nonsummable items
+EPT : Nodal temperatures
+NSL : Nodal displacements
+RF  : Nodal reaction forces</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param">
+<code class="sig-name descname">scalar_param</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.thermal_result">
+<em class="property">property </em><code class="sig-name descname">thermal_result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.thermal_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>The thermal result object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload">
+<code class="sig-name descname">upload</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.xpl">
+<em class="property">property </em><code class="sig-name descname">xpl</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.xpl" title="Permalink to this definition">¶</a></dt>
+<dd><p>MAPDL file exploer</p>
+<p>Iteratively navigate through MAPDL files.</p>
+<p class="rubric">Examples</p>
+<p>Read the MASS record from the “file.full” file</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys</span> <span class="kn">import</span> <span class="n">Mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">Mapdl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpl</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">xpl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpl</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;file.full&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="n">xpl</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;MASS&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">array([ 4,  7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52,</span>
+<span class="go">       55, 58,  1], dtype=int32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">API Reference</a>
+    <a class='right-next' id="next-link" href="launcher.html" title="next page">MAPDL Launcher</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

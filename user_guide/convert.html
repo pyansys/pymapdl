@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translating Scripts &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="APDL Math Overview" href="math.html" />
+    <link rel="prev" title="Setting and Retrieving Parameters" href="parameters.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../api/index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="launcher.html">Initial Setup and Launching MAPDL Locally</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mapdl.html">PyMAPDL Language and Usage</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mapdl_examples.html">ANSYS APDL Interactive Control Examples</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">Interactive Plotting</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh_geometry.html">Mesh and Geometry</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">Post-Processing</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Setting and Retrieving Parameters</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">Translating Scripts</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="math.html">APDL Math Overview</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">Create a Pool of MAPDL Instances</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">File Explorer Overview</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#caveats" class="nav-link">Caveats</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#script-translation" class="nav-link">Script Translation</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#example-vm1-statically-indeterminate-reaction-force-analysis" class="nav-link">Example: VM1 - Statically Indeterminate Reaction Force Analysis</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#vm7-plastic-compression-of-a-pipe-assembly" class="nav-link">VM7 - Plastic Compression of a Pipe Assembly</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="translating-scripts">
+<h1>Translating Scripts<a class="headerlink" href="#translating-scripts" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code> module contains a few basic functions to translate
+existing MAPDL scripts into PyMAPDL scripts.  Ideally, all math
+and variable setting would take place within Python as much as
+possible as APDL commands are less transparent and more difficult to
+debug.</p>
+<div class="section" id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
+<p>These examples only show an automatic translation of a verification
+file and not optimized code.  Should it be necessary to pull
+parameters or arrays from ansys, use the <code class="docutils literal notranslate"><span class="pre">get_value</span></code> command, which
+is quite similar to the MAPDL <code class="docutils literal notranslate"><span class="pre">GET</span></code> command as in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;NODE&#39;</span> <span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span> <span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="go">4.532094298033</span>
+</pre></div>
+</div>
+<p>Alternatively, if a parameter is already defined, you can access it
+using <code class="docutils literal notranslate"><span class="pre">mapdl.parameters</span></code> with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span>
+<span class="go">ARR                              : ARRAY DIM (3, 1, 1)</span>
+<span class="go">PARM_FLOAT                       : 20.0</span>
+<span class="go">PARM_INT                         : 10.0</span>
+<span class="go">PARM_LONG_STR                    : &quot;stringstringstringstringstringst&quot;</span>
+<span class="go">PARM_STR                         : &quot;string&quot;</span>
+<span class="go">DEF_Y                            : 4.532094298033</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;DEF_Y&#39;</span><span class="p">]</span>
+<span class="go">4.532094298033</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="script-translation">
+<h2>Script Translation<a class="headerlink" href="#script-translation" title="Permalink to this headline">¶</a></h2>
+<p>Existing ANSYS scripts can be translated using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyansys</span>
+<span class="n">inputfile</span> <span class="o">=</span> <span class="s1">&#39;ansys_inputfile.inp&#39;</span>
+<span class="n">pyscript</span> <span class="o">=</span> <span class="s1">&#39;pyscript.py&#39;</span>
+<span class="n">pyansys</span><span class="o">.</span><span class="n">convert_script</span><span class="p">(</span><span class="n">inputfile</span><span class="p">,</span> <span class="n">pyscript</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of particular note in the following examples is how most of the
+commands can be called as a method to the ansys object rather than
+sending a string as a command.  Additionally, take note that some
+commands require the <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">mapdl.non_interactive:</span></code> directive since
+some commands require and may break the server connection for some
+interfaces (e.g. CORBA) or are invalid (as in gRPC).</p>
+<p>Also note that APDL macros that use <code class="docutils literal notranslate"><span class="pre">*CREATE</span></code> have been replaced
+with python functions.  This will make the code easier to debug
+should it be necessary to insert a <code class="docutils literal notranslate"><span class="pre">breakpoint</span></code> in the script.</p>
+<div class="section" id="example-vm1-statically-indeterminate-reaction-force-analysis">
+<h3>Example: VM1 - Statically Indeterminate Reaction Force Analysis<a class="headerlink" href="#example-vm1-statically-indeterminate-reaction-force-analysis" title="Permalink to this headline">¶</a></h3>
+<p>ANSYS MAPDL contains over 200 verification files used for ANSYS
+validation and demonstration.  These validation files are used here to
+demo the use of the PyMAPDL file translator
+<code class="docutils literal notranslate"><span class="pre">ansys.mapdl.core.convert_script</span></code> and are available in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">examples</span><span class="o">.</span><span class="n">vmfiles</span><span class="p">[</span><span class="s1">&#39;vm1&#39;</span><span class="p">]</span>
+<span class="go">&#39;.../ansys/mapdl/core/examples/verif/vm1.dat&#39;</span>
+</pre></div>
+</div>
+<p>This example translates the verification example <code class="docutils literal notranslate"><span class="pre">&quot;vm1.dat&quot;</span></code>.
+First, the MAPDL code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/COM,ANSYS MEDIA REL. 150 (11/8/2013) REF. VERIF. MANUAL: REL. 150
+/VERIFY,VM1
+/PREP7
+/TITLE, VM1, STATICALLY INDETERMINATE REACTION FORCE ANALYSIS
+C***      STR. OF MATL., TIMOSHENKO, PART 1, 3RD ED., PAGE 26, PROB.10
+ANTYPE,STATIC                  ! STATIC ANALYSIS
+ET,1,LINK180
+SECTYPE,1,LINK
+SECDATA,1                          ! CROSS SECTIONAL AREA (ARBITRARY) = 1
+MP,EX,1,30E6
+N,1
+N,2,,4
+N,3,,7
+N,4,,10
+E,1,2                          ! DEFINE ELEMENTS
+EGEN,3,1,1
+D,1,ALL,,,4,3                  ! BOUNDARY CONDITIONS AND LOADING
+F,2,FY,-500
+F,3,FY,-1000
+FINISH
+/SOLU
+OUTPR,BASIC,1
+OUTPR,NLOAD,1
+SOLVE
+FINISH
+/POST1
+NSEL,S,LOC,Y,10
+FSUM
+*GET,REAC_1,FSUM,,ITEM,FY
+NSEL,S,LOC,Y,0
+FSUM
+*GET,REAC_2,FSUM,,ITEM,FY
+
+*DIM,LABEL,CHAR,2
+*DIM,VALUE,,2,3
+LABEL(1) = &#39;R1, lb&#39;,&#39;R2, lb &#39;
+*VFILL,VALUE(1,1),DATA,900.0,600.0
+*VFILL,VALUE(1,2),DATA,ABS(REAC_1),ABS(REAC_2)
+*VFILL,VALUE(1,3),DATA,ABS(REAC_1 / 900) ,ABS( REAC_2 / 600)
+/OUT,vm1,vrt
+/COM
+/COM,------------------- VM1 RESULTS COMPARISON ---------------------
+/COM,
+/COM,         |   TARGET   |   Mechanical APDL   |   RATIO
+/COM,
+*VWRITE,LABEL(1),VALUE(1,1),VALUE(1,2),VALUE(1,3)
+(1X,A8,&#39;   &#39;,F10.1,&#39;  &#39;,F10.1,&#39;   &#39;,1F5.3)
+/COM,----------------------------------------------------------------
+/OUT
+FINISH
+*LIST,vm1,vrt
+</pre></div>
+</div>
+<p>This verification file was translated using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.mapdl.core</span> <span class="k">as</span> <span class="nn">pymapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pymapdl</span><span class="o">.</span><span class="n">convert_script</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">vmfiles</span><span class="p">[</span><span class="s1">&#39;vm1&#39;</span><span class="p">],</span> <span class="s1">&#39;vm1.py&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Translated code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Script generated by ansys-mapdl-core version 0.57.0&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,ANSYS MEDIA REL. 150 (11/8/2013) REF. VERIF. MANUAL: REL. 150&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/VERIFY,VM1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/PREP7&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/TITLE, VM1, STATICALLY INDETERMINATE REACTION FORCE ANALYSIS&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C***      STR. OF MATL., TIMOSHENKO, PART 1, 3RD ED., PAGE 26, PROB.10&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">antype</span><span class="p">(</span><span class="s2">&quot;STATIC&quot;</span><span class="p">)</span>  <span class="c1">#STATIC ANALYSIS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;LINK180&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;LINK&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#CROSS SECTIONAL AREA (ARBITRARY) = 1</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;EX&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">30E6</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1">#DEFINE ELEMENTS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">egen</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1">#BOUNDARY CONDITIONS AND LOADING</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;FY&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;FY&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/SOLU&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">outpr</span><span class="p">(</span><span class="s2">&quot;BASIC&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">outpr</span><span class="p">(</span><span class="s2">&quot;NLOAD&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/POST1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">fsum</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*GET,REAC_1,FSUM,,ITEM,FY&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">fsum</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*GET,REAC_2,FSUM,,ITEM,FY&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,LABEL,CHAR,2&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,VALUE,,2,3&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LABEL(1) = &#39;R1, lb&#39;,&#39;R2, lb &#39;&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE(1,1),DATA,900.0,600.0&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE(1,2),DATA,ABS(REAC_1),ABS(REAC_2)&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE(1,3),DATA,ABS(REAC_1 / 900) ,ABS( REAC_2 / 600)&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,vm1,vrt&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,------------------- VM1 RESULTS COMPARISON ---------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,         |   TARGET   |   Mechanical APDL   |   RATIO&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">non_interactive</span><span class="p">:</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1),VALUE(1,1),VALUE(1,2),VALUE(1,3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,&#39;   &#39;,F10.1,&#39;  &#39;,F10.1,&#39;   &#39;,1F5.3)&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,----------------------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*LIST,vm1,vrt&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Results from running the converted file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2018</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span> <span class="mi">23</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">022</span> <span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">pyansys</span><span class="o">.</span><span class="n">ansys</span><span class="p">:</span>
+<span class="o">-------------------</span> <span class="n">VM1</span> <span class="n">RESULTS</span> <span class="n">COMPARISON</span> <span class="o">---------------------</span>
+<span class="o">|</span>   <span class="n">TARGET</span>   <span class="o">|</span>   <span class="n">Mechanical</span> <span class="n">APDL</span>   <span class="o">|</span>   <span class="n">RATIO</span>
+<span class="o">/</span><span class="n">INPUT</span> <span class="n">FILE</span><span class="o">=</span>    <span class="n">LINE</span><span class="o">=</span>       <span class="mi">0</span>
+<span class="n">R1</span><span class="p">,</span> <span class="n">lb</span>          <span class="mf">900.0</span>       <span class="mf">900.0</span>   <span class="mf">1.000</span>
+<span class="n">R2</span><span class="p">,</span> <span class="n">lb</span>          <span class="mf">600.0</span>       <span class="mf">600.0</span>   <span class="mf">1.000</span>
+<span class="o">----------------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>You can verify the reaction forces with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rst</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span><span class="p">,</span> <span class="n">forces</span> <span class="o">=</span> <span class="n">rst</span><span class="o">.</span><span class="n">nodal_static_forces</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">forces</span><span class="p">)</span>
+<span class="go">[[   0. -600.    0.]</span>
+<span class="go"> [   0.  250.    0.]</span>
+<span class="go"> [   0.  500.    0.]</span>
+<span class="go"> [   0. -900.    0.]]</span>
+</pre></div>
+</div>
+<p>Note that some of the commands with <code class="docutils literal notranslate"><span class="pre">/</span></code> are not directly translated
+to functions and are instead run as “classic” commands like
+<code class="docutils literal notranslate"><span class="pre">mapdl.run('/COM')</span></code>.  Also, please note that the <code class="docutils literal notranslate"><span class="pre">*VWRITE</span></code> command
+requires a command immediately following it.  This normally locks the
+interface, so it’s implemented in the background as an input file
+using <code class="docutils literal notranslate"><span class="pre">mapdl.non_interactive</span></code>.</p>
+</div>
+<div class="section" id="vm7-plastic-compression-of-a-pipe-assembly">
+<h3>VM7 - Plastic Compression of a Pipe Assembly<a class="headerlink" href="#vm7-plastic-compression-of-a-pipe-assembly" title="Permalink to this headline">¶</a></h3>
+<p>Here is the input file from VM7:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/COM,ANSYS MEDIA REL. 150 (11/8/2013) REF. VERIF. MANUAL: REL. 150
+/VERIFY,VM7
+/PREP7
+/TITLE, VM7, PLASTIC COMPRESSION OF A PIPE ASSEMBLY
+C***          MECHANICS OF SOLIDS, CRANDALL AND DAHL, 1959, PAGE 180, EX. 5.1
+C***          USING PIPE288, SOLID185 AND SHELL181 ELEMENTS
+THETA=6                              ! SUBTENDED ANGLE
+ET,1,PIPE288,,,,2
+ET,2,SOLID185
+ET,3,SHELL181,,,2                    ! FULL INTEGRATION
+SECTYPE,1,SHELL
+SECDATA,0.5,1,0,5                      ! THICKNESS (SHELL181)
+SECTYPE,2,SHELL
+SECDATA,0.5,2,0,5                      ! THICKNESS (SHELL181)
+SECTYPE,3,PIPE
+SECDATA,4.9563384,0.5                ! OUTSIDE DIA. AND WALL THICKNESS FOR INSIDE TUBE (PIPE288)
+SECTYPE,4,PIPE
+SECDATA,8.139437,0.5                 ! OUTSIDE DIA. AND WALL THICKNESS FOR OUTSIDE TUBE (PIPE288)
+MP,EX  ,1,26.875E6                   ! STEEL
+MP,PRXY,1,0.3
+MP,EX  ,2,11E6                       ! ALUMINUM
+MP,PRXY,2,0.3
+TB,BKIN,1,1                          ! DEFINE NON-LINEAR MATERIAL PROPERTY FOR STEEL
+TBTEMP,0
+TBDATA,1,86000,0
+TB,BKIN,2,1                          ! DEFINE NON-LINEAR MATERIAL PROPERTY FOR ALUMINUM
+TBTEMP,0
+TBDATA,1,55000,0
+N,1                                  ! GENERATE NODES AND ELEMENTS FOR PIPE288
+N,2,,,10
+MAT,1
+SECNUM,3                             ! STEEL (INSIDE) TUBE
+E,1,2
+MAT,2
+SECNUM,4                             ! ALUMINUM (OUTSIDE) TUBE
+E,1,2
+CSYS,1
+N,101,1.9781692                      ! GENERATE NODES AND ELEMENTS FOR SOLID185
+N,102,2.4781692
+N,103,3.5697185
+N,104,4.0697185
+N,105,1.9781692,,10
+N,106,2.4781692,,10
+N,107,3.5697185,,10
+N,108,4.0697185,,10
+NGEN,2,10,101,108,,,THETA            ! GENERATE 2ND SET OF NODES TO FORM A THETA DEGREE SLICE
+NROTAT,101,118,1
+TYPE,2
+MAT,1                                ! INSIDE (STEEL) TUBE
+E,101,102,112,111,105,106,116,115
+MAT,2                                ! OUTSIDE (ALUMINUM) TUBE
+E,103,104,114,113,107,108,118,117
+N,201,2.2281692                      ! GENERATE NODES AND ELEMENTS FOR SHELL181
+N,203,2.2281692,,10
+N,202,3.8197185
+N,204,3.8197185,,10
+NGEN,2,4,201,204,,,THETA             ! GENERATE NODES TO FORM A THETA DEGREE SLICE
+TYPE,3
+SECNUM,1                             ! INSIDE (STEEL) TUBE
+E,203,201,205,207
+SECNUM,2                             ! OUTSIDE (ALUMINUM) TUBE
+E,204,202,206,208
+C*** APPLY CONSTRAINTS TO PIPE288 MODEL
+D,1,ALL                              ! FIX ALL DOFS FOR BOTTOM END OF PIPE288
+D,2,UX,,,,,UY,ROTX,ROTY,ROTZ         ! ALLOW ONLY UZ DOF AT TOP END OF PIPE288 MODEL
+C*** APPLY CONSTRAINTS TO SOLID185 AND SHELL181 MODELS
+CP,1,UX,101,111,105,115              ! COUPLE NODES AT BOUNDARY IN RADIAL DIR FOR SOLID185
+CPSGEN,4,,1
+CP,5,UX,201,205,203,20               ! COUPLE NODES AT BOUNDARY IN RADIAL DIR FOR SHELL181
+CPSGEN,2,,5
+CP,7,ROTY,201,205                    ! COUPLE NODES AT BOUNDARY IN ROTY DIR FOR SHELL181
+CPSGEN,4,,7
+NSEL,S,NODE,,101,212                 ! SELECT ONLY NODES IN SOLID185 AND SHELL181 MODELS
+NSEL,R,LOC,Y,0                       ! SELECT NODES AT THETA = 0 FROM THE SELECTED SET
+DSYM,SYMM,Y,1                        ! APPLY SYMMETRY BOUNDARY CONDITIONS
+NSEL,S,NODE,,101,212                 ! SELECT ONLY NODES IN SOLID185 AND SHELL181 MODELS
+NSEL,R,LOC,Y,THETA                   ! SELECT NODES AT THETA FROM THE SELECTED SET
+DSYM,SYMM,Y,1                        ! APPLY SYMMETRY BOUNDARY CONDITIONS
+NSEL,ALL
+NSEL,R,LOC,Z,0                       ! SELECT ONLY NODES AT Z = 0
+D,ALL,UZ,0                           ! CONSTRAIN BOTTOM NODES IN Z DIRECTION
+NSEL,ALL
+FINISH
+/SOLU
+OUTPR,BASIC,LAST                     ! PRINT BASIC SOLUTION AT END OF LOAD STEP
+C*** APPLY DISPLACEMENT LOADS TO ALL MODELS
+*CREATE,DISP
+NSEL,R,LOC,Z,10                      ! SELECT NODES AT Z = 10 TO APPLY DISPLACEMENT
+D,ALL,UZ,ARG1
+NSEL,ALL
+/OUT,SCRATCH
+SOLVE
+*END
+*USE,DISP,-.032
+*USE,DISP,-.05
+*USE,DISP,-.1
+FINISH
+/OUT,
+/POST1
+C*** CREATE MACRO TO GET RESULTS FOR EACH MODEL
+*CREATE,GETLOAD
+NSEL,S,NODE,,1,2                    ! SELECT NODES IN PIPE288 MODEL
+NSEL,R,LOC,Z,0
+/OUT,SCRATCH
+FSUM                                ! FZ IS TOTAL LOAD FOR PIPE288 MODEL
+*GET,LOAD_288,FSUM,,ITEM,FZ
+NSEL,S,NODE,,101,118                ! SELECT NODES IN SOLID185 MODEL
+NSEL,R,LOC,Z,0
+FSUM
+*GET,ZFRC,FSUM,0,ITEM,FZ
+LOAD=ZFRC*360/THETA                 ! MULTIPLY BY 360/THETA FOR FULL 360 DEGREE RESULTS
+*STATUS,LOAD
+LOAD_185 = LOAD
+NSEL,S,NODE,,201,212                ! SELECT NODES IN SHELL181 MODEL
+NSEL,R,LOC,Z,0
+FSUM
+/OUT,
+*GET,ZFRC,FSUM,0,ITEM,FZ
+LOAD=ZFRC*360/THETA                 ! MULTIPLY BY 360/THETA FOR FULL 360 DEGREE RESULTS
+*STATUS,LOAD
+LOAD_181 = LOAD
+*VFILL,VALUE_288(1,1),DATA,1024400,1262000,1262000
+*VFILL,VALUE_288(I,2),DATA,ABS(LOAD_288)
+*VFILL,VALUE_288(I,3),DATA,ABS(LOAD_288)/(VALUE_288(I,1))
+*VFILL,VALUE_185(1,1),DATA,1024400,1262000,1262000
+*VFILL,VALUE_185(J,2),DATA,ABS(LOAD_185)
+*VFILL,VALUE_185(J,3),DATA,ABS(LOAD_185)/(VALUE_185(J,1))
+*VFILL,VALUE_181(1,1),DATA,1024400,1262000,1262000
+*VFILL,VALUE_181(K,2),DATA,ABS(LOAD_181)
+*VFILL,VALUE_181(K,3),DATA,ABS(LOAD_181)/(VALUE_181(K,1))
+*END
+C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.032
+C*** ---------------------------------------
+SET,1,1
+I = 1
+J = 1
+K = 1
+*DIM,LABEL,CHAR,3,2
+*DIM,VALUE_288,,3,3
+*DIM,VALUE_185,,3,3
+*DIM,VALUE_181,,3,3
+*USE,GETLOAD
+C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.05
+C*** --------------------------------------
+SET,2,1
+I = I + 1
+J = J + 1
+K = K + 1
+*USE,GETLOAD
+C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.1
+C*** -------------------------------------
+SET,3,1
+I = I +1
+J = J + 1
+K = K + 1
+*USE,GETLOAD
+LABEL(1,1) = &#39;LOAD, lb&#39;,&#39;LOAD, lb&#39;,&#39;LOAD, lb&#39;
+LABEL(1,2) = &#39; UX=.032&#39;,&#39; UX=0.05&#39;,&#39; UX=0.10&#39;
+FINISH
+/OUT,vm7,vrt
+/COM,------------------- VM7 RESULTS COMPARISON ---------------------
+/COM,
+/COM,                 |   TARGET   |   Mechanical APDL   |   RATIO
+/COM,
+/COM,RESULTS FOR PIPE288:
+/COM,
+*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_288(1,1),VALUE_288(1,2),VALUE_288(1,3)
+(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)
+/COM,
+/COM,RESULTS FOR SOLID185:
+/COM,
+*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_185(1,1),VALUE_185(1,2),VALUE_185(1,3)
+(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)
+/COM,
+/COM,RESULTS FOR SHELL181:
+/COM,
+*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_181(1,1),VALUE_181(1,2),VALUE_181(1,3)
+(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)
+/COM,
+/COM,-----------------------------------------------------------------
+/OUT
+*LIST,vm7,vrt
+</pre></div>
+</div>
+<p>Convert the verification file with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyansys</span>
+<span class="n">pyansys</span><span class="o">.</span><span class="n">convert_script</span><span class="p">(</span><span class="s1">&#39;vm7.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;vm7.py&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is the translated Python script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Script generated by ansys-mapdl-core version 0.57.0&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,ANSYS MEDIA REL. 150 (11/8/2013) REF. VERIF. MANUAL: REL. 150&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/VERIFY,VM7&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/PREP7&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/TITLE, VM7, PLASTIC COMPRESSION OF A PIPE ASSEMBLY&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C***          MECHANICS OF SOLIDS, CRANDALL AND DAHL, 1959, PAGE 180, EX. 5.1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C***          USING PIPE288, SOLID185 AND SHELL181 ELEMENTS&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;THETA=6                              &quot;</span><span class="p">)</span>  <span class="c1"># SUBTENDED ANGLE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;PIPE288&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;SOLID185&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;SHELL181&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1">#FULL INTEGRATION</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;SHELL&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1">#THICKNESS (SHELL181)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;SHELL&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1">#THICKNESS (SHELL181)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;PIPE&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mf">4.9563384</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1">#OUTSIDE DIA. AND WALL THICKNESS FOR INSIDE TUBE (PIPE288)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;PIPE&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mf">8.139437</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1">#OUTSIDE DIA. AND WALL THICKNESS FOR OUTSIDE TUBE (PIPE288)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;EX&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">26.875E6</span><span class="p">)</span>  <span class="c1">#STEEL</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;PRXY&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;EX&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">11E6</span><span class="p">)</span>  <span class="c1">#ALUMINUM</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;PRXY&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tb</span><span class="p">(</span><span class="s2">&quot;BKIN&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">#DEFINE NON-LINEAR MATERIAL PROPERTY FOR STEEL</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tbtemp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tbdata</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">86000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tb</span><span class="p">(</span><span class="s2">&quot;BKIN&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">#DEFINE NON-LINEAR MATERIAL PROPERTY FOR ALUMINUM</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tbtemp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">tbdata</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">55000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#GENERATE NODES AND ELEMENTS FOR PIPE288</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secnum</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1">#STEEL (INSIDE) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secnum</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1">#ALUMINUM (OUTSIDE) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">csys</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mf">1.9781692</span><span class="p">)</span>  <span class="c1">#GENERATE NODES AND ELEMENTS FOR SOLID185</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="mf">2.4781692</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="mf">3.5697185</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="mf">4.0697185</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mf">1.9781692</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">106</span><span class="p">,</span> <span class="mf">2.4781692</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">107</span><span class="p">,</span> <span class="mf">3.5697185</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">108</span><span class="p">,</span> <span class="mf">4.0697185</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">ngen</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;THETA&quot;</span><span class="p">)</span>  <span class="c1">#GENERATE 2ND SET OF NODES TO FORM A THETA DEGREE SLICE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nrotat</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#INSIDE (STEEL) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">#OUTSIDE (ALUMINUM) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">117</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="mf">2.2281692</span><span class="p">)</span>  <span class="c1">#GENERATE NODES AND ELEMENTS FOR SHELL181</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">203</span><span class="p">,</span> <span class="mf">2.2281692</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">202</span><span class="p">,</span> <span class="mf">3.8197185</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="mf">3.8197185</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">ngen</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;THETA&quot;</span><span class="p">)</span>  <span class="c1">#GENERATE NODES TO FORM A THETA DEGREE SLICE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secnum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#INSIDE (STEEL) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">203</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">207</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secnum</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1">#OUTSIDE (ALUMINUM) TUBE</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">e</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">208</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** APPLY CONSTRAINTS TO PIPE288 MODEL&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ALL&quot;</span><span class="p">)</span>  <span class="c1">#FIX ALL DOFS FOR BOTTOM END OF PIPE288</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;UX&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;UY&quot;</span><span class="p">,</span> <span class="s2">&quot;ROTX&quot;</span><span class="p">,</span> <span class="s2">&quot;ROTY&quot;</span><span class="p">,</span> <span class="s2">&quot;ROTZ&quot;</span><span class="p">)</span>  <span class="c1">#ALLOW ONLY UZ DOF AT TOP END OF PIPE288 MODEL</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** APPLY CONSTRAINTS TO SOLID185 AND SHELL181 MODELS&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;UX&quot;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>  <span class="c1">#COUPLE NODES AT BOUNDARY IN RADIAL DIR FOR SOLID185</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cpsgen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cp</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;UX&quot;</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1">#COUPLE NODES AT BOUNDARY IN RADIAL DIR FOR SHELL181</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cpsgen</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cp</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;ROTY&quot;</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">205</span><span class="p">)</span>  <span class="c1">#COUPLE NODES AT BOUNDARY IN ROTY DIR FOR SHELL181</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">cpsgen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>  <span class="c1">#SELECT ONLY NODES IN SOLID185 AND SHELL181 MODELS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">#SELECT NODES AT THETA = 0 FROM THE SELECTED SET</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">dsym</span><span class="p">(</span><span class="s2">&quot;SYMM&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">#APPLY SYMMETRY BOUNDARY CONDITIONS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>  <span class="c1">#SELECT ONLY NODES IN SOLID185 AND SHELL181 MODELS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;THETA&quot;</span><span class="p">)</span>  <span class="c1">#SELECT NODES AT THETA FROM THE SELECTED SET</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">dsym</span><span class="p">(</span><span class="s2">&quot;SYMM&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">#APPLY SYMMETRY BOUNDARY CONDITIONS</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">#SELECT ONLY NODES AT Z = 0</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">#CONSTRAIN BOTTOM NODES IN Z DIRECTION</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/SOLU&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">outpr</span><span class="p">(</span><span class="s2">&quot;BASIC&quot;</span><span class="p">,</span> <span class="s2">&quot;LAST&quot;</span><span class="p">)</span>  <span class="c1">#PRINT BASIC SOLUTION AT END OF LOAD STEP</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** APPLY DISPLACEMENT LOADS TO ALL MODELS&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">DISP</span><span class="p">(</span><span class="n">ARG1</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG2</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG3</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG4</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG5</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG6</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+         <span class="n">ARG7</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG8</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG9</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG10</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG11</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG12</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+         <span class="n">ARG13</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG14</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG15</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG16</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG17</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG18</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1">#SELECT NODES AT Z = 10 TO APPLY DISPLACEMENT</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="n">ARG1</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,SCRATCH&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+
+<span class="n">DISP</span><span class="p">(</span><span class="o">-.</span><span class="mi">032</span><span class="p">)</span>
+<span class="n">DISP</span><span class="p">(</span><span class="o">-.</span><span class="mi">05</span><span class="p">)</span>
+<span class="n">DISP</span><span class="p">(</span><span class="o">-.</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/POST1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** CREATE MACRO TO GET RESULTS FOR EACH MODEL&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">GETLOAD</span><span class="p">(</span><span class="n">ARG1</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG2</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG3</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG4</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG5</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG6</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="n">ARG7</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG8</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG9</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG10</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG11</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG12</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="n">ARG13</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG14</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG15</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG16</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG17</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ARG18</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1">#SELECT NODES IN PIPE288 MODEL</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,SCRATCH&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">fsum</span><span class="p">()</span>  <span class="c1">#FZ IS TOTAL LOAD FOR PIPE288 MODEL</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*GET,LOAD_288,FSUM,,ITEM,FZ&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">118</span><span class="p">)</span>  <span class="c1">#SELECT NODES IN SOLID185 MODEL</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">fsum</span><span class="p">()</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*GET,ZFRC,FSUM,0,ITEM,FZ&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LOAD=ZFRC*360/THETA                 &quot;</span><span class="p">)</span>  <span class="c1"># MULTIPLY BY 360/THETA FOR FULL 360 DEGREE RESULTS</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*STATUS,LOAD&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LOAD_185 = LOAD&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>  <span class="c1">#SELECT NODES IN SHELL181 MODEL</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">fsum</span><span class="p">()</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*GET,ZFRC,FSUM,0,ITEM,FZ&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LOAD=ZFRC*360/THETA                 &quot;</span><span class="p">)</span>  <span class="c1"># MULTIPLY BY 360/THETA FOR FULL 360 DEGREE RESULTS</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*STATUS,LOAD&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LOAD_181 = LOAD&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_288(1,1),DATA,1024400,1262000,1262000&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_288(I,2),DATA,ABS(LOAD_288)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_288(I,3),DATA,ABS(LOAD_288)/(VALUE_288(I,1))&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_185(1,1),DATA,1024400,1262000,1262000&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_185(J,2),DATA,ABS(LOAD_185)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_185(J,3),DATA,ABS(LOAD_185)/(VALUE_185(J,1))&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_181(1,1),DATA,1024400,1262000,1262000&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_181(K,2),DATA,ABS(LOAD_181)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VFILL,VALUE_181(K,3),DATA,ABS(LOAD_181)/(VALUE_181(K,1))&quot;</span><span class="p">)</span>
+
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.032&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** ---------------------------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;I = 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;J = 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;K = 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,LABEL,CHAR,3,2&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,VALUE_288,,3,3&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,VALUE_185,,3,3&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*DIM,VALUE_181,,3,3&quot;</span><span class="p">)</span>
+<span class="n">GETLOAD</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.05&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** --------------------------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;I = I + 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;J = J + 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;K = K + 1&quot;</span><span class="p">)</span>
+<span class="n">GETLOAD</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** GET TOTAL LOAD FOR DISPLACEMENT = 0.1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;C*** -------------------------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;I = I +1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;J = J + 1&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;K = K + 1&quot;</span><span class="p">)</span>
+<span class="n">GETLOAD</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LABEL(1,1) = &#39;LOAD, lb&#39;,&#39;LOAD, lb&#39;,&#39;LOAD, lb&#39;&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;LABEL(1,2) = &#39; UX=.032&#39;,&#39; UX=0.05&#39;,&#39; UX=0.10&#39;&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT,vm7,vrt&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,------------------- VM7 RESULTS COMPARISON ---------------------&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,                 |   TARGET   |   Mechanical APDL   |   RATIO&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,RESULTS FOR PIPE288:&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">non_interactive</span><span class="p">:</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_288(1,1),VALUE_288(1,2),VALUE_288(1,3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,RESULTS FOR SOLID185:&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_185(1,1),VALUE_185(1,2),VALUE_185(1,3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,RESULTS FOR SHELL181:&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1,1),LABEL(1,2),VALUE_181(1,1),VALUE_181(1,2),VALUE_181(1,3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,A8,&#39;   &#39;,F10.0,&#39;  &#39;,F14.0,&#39;   &#39;,1F15.3)&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/COM,-----------------------------------------------------------------&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/OUT&quot;</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*LIST,vm7,vrt&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="parameters.html" title="previous page">Setting and Retrieving Parameters</a>
+    <a class='right-next' id="next-link" href="math.html" title="next page">APDL Math Overview</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapdlLocalPool Class &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ansXpl Class" href="xpl.html" />
+    <link rel="prev" title="Math Module" href="math.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="mapdl.html">MAPDL Object</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="launcher.html">MAPDL Launcher</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Convert Function</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">PyMAPDL Plotting Methods</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Parameters Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh.html">Mesh Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="geometry.html">Geometry Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">PyMAPDL Post-Processing API</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="math.html">Math Module</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">MapdlLocalPool Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">ansXpl Class</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="mapdllocalpool-class">
+<span id="ref-pool-api"></span><h1>MapdlLocalPool Class<a class="headerlink" href="#mapdllocalpool-class" title="Permalink to this headline">¶</a></h1>
+<p>The description of the <code class="docutils literal notranslate"><span class="pre">MapdlLocalPool</span></code> class follows:</p>
+<dl class="py class">
+<dt id="ansys.mapdl.core.pool.LocalMapdlPool">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.pool.</code><code class="sig-name descname">LocalMapdlPool</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_instances</span></em>, <em class="sig-param"><span class="n">wait</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">run_location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">50052</span></em>, <em class="sig-param"><span class="n">progress_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">restart_failed</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_temp_files</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.pool.LocalMapdlPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a pool of MAPDL instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_instance</strong> (<em>int</em>) – Number of instances to create.</p></li>
+<li><p><strong>restart_failed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Restarts failed instances.  Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>wait</strong> (<em>bool</em><em>, </em><em>optional</em>) – Wait for pool to be initialized.  Otherwise, pool will start
+in the background and all resources may not be available instantly.</p></li>
+<li><p><strong>run_location</strong> (<em>str</em><em>, </em><em>optional</em>) – Base directory to create additional directories for each MAPDL
+instance.  Defaults to a temporary working directory.</p></li>
+<li><p><strong>starting_port</strong> (<em>int</em><em>, </em><em>optional</em>) – Starting port for the MAPDL instances.  Defaults to 50052.</p></li>
+<li><p><strong>progress_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – Show a progress bar when starting the pool.  Defaults to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.  Will not be shown when <code class="docutils literal notranslate"><span class="pre">wait=False</span></code></p></li>
+<li><p><strong>restart_failed</strong> – Restarts any failed instances in the pool.</p></li>
+<li><p><strong>remove_temp_files</strong> (<em>bool</em><em>, </em><em>optional</em>) – Removes all temporary files on exit.  Default <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Additional Keyword Arguments</em>) – See <code class="docutils literal notranslate"><span class="pre">help(ansys.mapdl.launcher.launch_mapdl)</span></code> for a complete
+listing of all additional keyword arguments.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Simply create a pool of 10 instances to run in the temporary
+directory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">LocalMapdlPool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pool</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">LocalMapdlPool</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create several instances with 1 CPU each running at the current
+directory within their own isolated directories.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcmd</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pool</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">LocalMapdlPool</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">nproc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">run_location</span><span class="o">=</span><span class="n">my_path</span><span class="p">)</span>
+<span class="go">Creating Pool: 100%|████████| 10/10 [00:01&lt;00:00,  1.43it/s]</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.mapdl.core.pool.LocalMapdlPool.exit">
+<code class="sig-name descname">exit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.pool.LocalMapdlPool.exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close out all instances in the pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>block</strong> (<em>bool</em><em>, </em><em>optional</em>) – When <code class="docutils literal notranslate"><span class="pre">True</span></code>, wait until all processes are closed.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pool</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.pool.LocalMapdlPool.map">
+<code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">iterable</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">progress_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">close_when_finished</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wait</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.pool.LocalMapdlPool.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a function for each instance of mapdl within the pool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>function</em>) – User function with an instance of <code class="docutils literal notranslate"><span class="pre">mapdl</span></code> as the first
+argument.  The remaining arguments should match the number
+of items in each iterable (if any).</p></li>
+<li><p><strong>iterable</strong> (<em>list</em><em>, </em><em>tuple</em><em>, </em><em>optional</em>) – An iterable containing a set of arguments for <code class="docutils literal notranslate"><span class="pre">func</span></code>.
+If None, will run <code class="docutils literal notranslate"><span class="pre">func</span></code> once for each instance of
+mapdl.</p></li>
+<li><p><strong>progress_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – Show a progress bar when running the batch.  Defaults to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>close_when_finished</strong> (<em>bool</em><em>, </em><em>optional</em>) – Exit the MAPDL instances when the pool is finished.
+Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum runtime in seconds for each iteration.  If
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, no timeout.  If specified, each iteration will
+be only allowed to run <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds, and then
+killed and treated as a failure.</p></li>
+<li><p><strong>wait</strong> (<em>bool</em><em>, </em><em>optional</em>) – Block execution until the batch is complete.  Default
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>output</strong> – A list containing the return values for <code class="docutils literal notranslate"><span class="pre">func</span></code>.  Failed
+runs will not return an output.  Since the returns are not
+necessarily in the same order as <code class="docutils literal notranslate"><span class="pre">iterable</span></code>, you may
+want to add some sort of tracker to the return of your
+user function``func``.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Run several input files while storing the final routine.  Note
+how the user function to be mapped must use <code class="docutils literal notranslate"><span class="pre">mapdl</span></code> as the
+first argument.  The function can have any number of
+additional arguments.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">completed_indices</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">mapdl</span><span class="p">,</span> <span class="n">input_file</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="go">        # input_file, index = args</span>
+<span class="go">        mapdl.clear()</span>
+<span class="go">        output = mapdl.input(input_file)</span>
+<span class="go">        completed_indices.append(index)</span>
+<span class="go">        return mapdl.parameters.routine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">examples</span><span class="o">.</span><span class="n">vmfiles</span><span class="p">[</span><span class="s1">&#39;vm</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">[&#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;,</span>
+<span class="go"> &#39;Begin level&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.pool.LocalMapdlPool.next_available">
+<code class="sig-name descname">next_available</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">return_index</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.pool.LocalMapdlPool.next_available" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until an instance of mapdl is available and return that instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>return_index</strong> (<em>bool</em><em>, </em><em>optional</em>) – Return the index along with the instance.  Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>mapdl</strong> (<em>MapdlGrpc</em>) – Instance of MAPDL.</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – Index within the pool of the instance of MAPDL.  By
+default this is not returned.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">next_available</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+<span class="go">Product:         ANSYS Mechanical Enterprise</span>
+<span class="go">MAPDL Version:   RELEASE                    BUILD  0.0      UPDATE        0</span>
+<span class="go">PyANSYS Version: 0.55.1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.pool.LocalMapdlPool.run_batch">
+<code class="sig-name descname">run_batch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">files</span></em>, <em class="sig-param"><span class="n">clear_at_start</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">progress_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">close_when_finished</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wait</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.pool.LocalMapdlPool.run_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a batch of input files on the pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> (<em>list</em>) – List of input files to run.</p></li>
+<li><p><strong>clear_at_start</strong> (<em>bool</em><em>, </em><em>optional</em>) – Clear MAPDL at the start of execution.  By default this is
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, and setting this to <code class="docutils literal notranslate"><span class="pre">False</span></code> may lead to
+instability.</p></li>
+<li><p><strong>progress_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – Show a progress bar when starting the pool.  Defaults to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.  Will not be shown when <code class="docutils literal notranslate"><span class="pre">wait=False</span></code></p></li>
+<li><p><strong>progress_bar</strong> – Show a progress bar when running the batch.  Defaults to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>close_when_finished</strong> (<em>bool</em><em>, </em><em>optional</em>) – Exit the MAPDL instances when the pool is finished.
+Default <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum runtime in seconds for each iteration.  If
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, no timeout.  If specified, each iteration will
+be only allowed to run <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds, and then
+killed and treated as a failure.</p></li>
+<li><p><strong>wait</strong> (<em>bool</em><em>, </em><em>optional</em>) – Block execution until the batch is complete.  Default
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>outputs</strong> – List of text outputs from MAPDL for each batch run.  Not
+necessarily in the order of the inputs. Failed runs will
+not return an output.  Since the returns are not
+necessarily in the same order as <code class="docutils literal notranslate"><span class="pre">iterable</span></code>, you may
+want to add some sort of tracker or note within the input files.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Run 20 verification files on the pool</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">examples</span><span class="o">.</span><span class="n">vmfiles</span><span class="p">[</span><span class="s1">&#39;vm</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outputs</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">run_batch</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
+<span class="go">20</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="math.html" title="previous page">Math Module</a>
+    <a class='right-next' id="next-link" href="xpl.html" title="next page">ansXpl Class</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

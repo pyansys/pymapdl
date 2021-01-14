@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Module &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MapdlLocalPool Class" href="pool.html" />
+    <link rel="prev" title="PyMAPDL Post-Processing API" href="post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="mapdl.html">MAPDL Object</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="launcher.html">MAPDL Launcher</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Convert Function</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">PyMAPDL Plotting Methods</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Parameters Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh.html">Mesh Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="geometry.html">Geometry Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">PyMAPDL Post-Processing API</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">Math Module</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">MapdlLocalPool Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">ansXpl Class</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="math-module">
+<span id="ref-math-api"></span><h1>Math Module<a class="headerlink" href="#math-module" title="Permalink to this headline">¶</a></h1>
+<p>The following is a description of the <code class="docutils literal notranslate"><span class="pre">MapdlMath</span></code> module:</p>
+<dl class="py class">
+<dt id="ansys.mapdl.core.math.MapdlMath">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.math.</code><code class="sig-name descname">MapdlMath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapdl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract mapdl math class.  Created from a <code class="docutils literal notranslate"><span class="pre">Mapdl</span></code> instance.</p>
+<p class="rubric">Examples</p>
+<p>Create an instance from an existing mapdl instance</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Alternatively:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.math</span> <span class="kn">import</span> <span class="n">MapdlMath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">MapdlMath</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>  <span class="c1"># from mapdl above</span>
+</pre></div>
+</div>
+<p>Vector addition</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
+</pre></div>
+</div>
+<p>Matrix multiplcation</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">m1</span><span class="o">*</span><span class="n">v1</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add two APDLMath vectors or matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj1</strong> (<em>ansys.mapdl.math.AnsVec</em><em> or </em><em>ansys.mapdl.math.AnsMat</em>) – Ansys object.</p></li>
+<li><p><strong>obj2</strong> (<em>ansys.mapdl.math.AnsVec</em><em> or </em><em>ansys.mapdl.math.AnsMat</em>) – Ansys object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>objout</strong> – Sum of the two input objects.  Type of the output matches type of the input.
+Sum of the two vectors/matrices.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.mapdl.math.AnsVec or ansys.mapdl.math.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.damp">
+<code class="sig-name descname">damp</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">fname='file.full'</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.damp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the damping matrix from the full file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.dot">
+<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vec_a</span></em>, <em class="sig-param"><span class="n">vec_b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dot product between two ANSYS vector objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vec_a</strong> (<em>ansys.mapdl.math.AnsVec</em>) – Ansys vector object.</p></li>
+<li><p><strong>vec_b</strong> (<em>ansys.mapdl.math.AnsVec</em>) – Ansys vector object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dot_product</strong> – Dot product between the two vectors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.eigs">
+<code class="sig-name descname">eigs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nev</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">m</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">c</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">phi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">algo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fmax</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.eigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve an eigenproblem</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nev</strong> (<em>int</em>) – Number of eigenvalues to compute.</p></li>
+<li><p><strong>K</strong> (<em>ansys.AnsMat</em>) – An array representing the operation <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">*</span> <span class="pre">x</span></code> where A is a
+square matrix.</p></li>
+<li><p><strong>M</strong> (<em>ansys.AnsMat</em><em>, </em><em>optional</em>) – <p>An array representing the operation <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">*</span> <span class="pre">x</span></code> for the
+generalized eigenvalue problem:</p>
+<p><code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">M</span> <span class="pre">*</span> <span class="pre">x</span></code></p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Solve an eigenproblem using the mass and stiffness matrices
+stored from a prior ansys run.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">stiff</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mass</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nev</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">nrow</span><span class="p">,</span> <span class="n">nev</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ev</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">nev</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.factorize">
+<code class="sig-name descname">factorize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.factorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factorize a matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mat</strong> (<em>ansys.mapdl.math.AnsMat</em>) – A ansys.mapdl.math matrix</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m3</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.free">
+<code class="sig-name descname">free</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all vectors</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.getVec">
+<code class="sig-name descname">getVec</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">fname='file.full'</em>, <em class="sig-param">matId='RHS'</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.getVec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a vector from a file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.load_matrix_from_file">
+<code class="sig-name descname">load_matrix_from_file</code><span class="sig-paren">(</span><em class="sig-param">type=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">fname='file.full'</em>, <em class="sig-param">matId='STIFF'</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.load_matrix_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a matrix from a file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.mass">
+<code class="sig-name descname">mass</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">fname='file.full'</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the mass matrix from the full file</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">mass</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">APDLMATH Matrix 60 x 60</span>
+</pre></div>
+</div>
+<p>Convert to a scipy array</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span>
+<span class="go">&lt;60x60 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">    with 1734 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.mat">
+<code class="sig-name descname">mat</code><span class="sig-paren">(</span><em class="sig-param">nrow=0</em>, <em class="sig-param">ncol=0</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">init=None</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nrow</strong> (<em>int</em>) – Number of rows.</p></li>
+<li><p><strong>ncol</strong> (<em>int</em>) – Number of columns.</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – Datatype of the vector.  Must be either np.int32, np.int64, or np.double</p></li>
+<li><p><strong>init</strong> (<em>str</em><em>, </em><em>optional</em>) – Initialization options.  Can be ones, zeros, or rand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matrix</strong> – ANSYS matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.math.AnsMat</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.matrix">
+<code class="sig-name descname">matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrix</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">triu</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a scipy matrix or numpy array to MAPDL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>np.ndarray</em>) – Numpy array to send as a matrix to MAPDL.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – APDLMath matrix name.  Optional and defaults to a random name.</p></li>
+<li><p><strong>triu</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> when the matrix is upper triangular, <code class="docutils literal notranslate"><span class="pre">False</span></code>
+when unsymmetric.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ans_mat</strong> – MapdlMath matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>MapdlMath.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Generate a random sparse matrix</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sz</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">sz</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ans_mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ans_mat</span>
+<span class="go">APDLMath Matrix 5000 x 5000</span>
+</pre></div>
+</div>
+<p>Read the matrix back to Python</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ans_mat</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">&lt;500x5000 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">        with 1250000 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.norm">
+<code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">ord</span><span class="o">=</span><span class="default_value">'nrm2'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matrix or vector norm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>ansys.mapdl.math.AnsMat</em><em> or </em><em>ansys.mapdl.math.AnsVec</em>) – </p></li>
+<li><p><strong>ord</strong> (<em>Order of the norm. nrm2</em><em>(</em><em>default</em><em>)</em><em>, </em><em>nrminf</em><em>, </em><em>nrm1</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nrm</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">m2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.ones">
+<code class="sig-name descname">ones</code><span class="sig-paren">(</span><em class="sig-param">nrow</em>, <em class="sig-param">ncol=None</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.ones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a vector or matrix containing all ones</p>
+<dl class="simple">
+<dt>nrow<span class="classifier">int</span></dt><dd><p>Number of rows.</p>
+</dd>
+<dt>ncol<span class="classifier">int, optional</span></dt><dd><p>Number of columns.  If specified, returns a matrix.</p>
+</dd>
+<dt>dtype<span class="classifier">np.dtype, optional</span></dt><dd><p>Datatype of the vector.  Must be either np.int32, np.int64, or np.double</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ans_vec_mat</strong> – ANSYS vector or matrix depending on if “ncol” is specified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ansys.AnsVec or ansys.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a ones vector</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a ones matrix</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.rand">
+<code class="sig-name descname">rand</code><span class="sig-paren">(</span><em class="sig-param">nrow</em>, <em class="sig-param">ncol=None</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.rand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a vector or matrix containing all random values</p>
+<dl class="simple">
+<dt>nrow<span class="classifier">int</span></dt><dd><p>Number of rows.</p>
+</dd>
+<dt>ncol<span class="classifier">int, optional</span></dt><dd><p>Number of columns.  If specified, returns a matrix.</p>
+</dd>
+<dt>dtype<span class="classifier">np.dtype, optional</span></dt><dd><p>Datatype of the vector.  Must be either np.int32, np.int64, or np.double</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ans_vec_mat</strong> – ANSYS vector or matrix depending on if “ncol” is specified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ansys.AnsVec or ansys.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a random vector</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a random matrix</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.set_vec">
+<code class="sig-name descname">set_vec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vname</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.set_vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push a numpy array or Python list to the MAPDL Memory
+Workspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vname</strong> (<em>str</em>) – APDLMath vector name</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em><em>, </em><em>list</em>) – Numpy array or Python list to push to MAPDL.  Must be 1
+dimensional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>vec</strong> – MAPDL vector instance generated from the pushed vector.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.mapdl.math.AnsVec</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">set_vec</span><span class="p">(</span><span class="s1">&#39;NewVec&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">asarray</span><span class="p">(),</span> <span class="n">data</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.status">
+<code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out the status of all APDLMath Objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.stiff">
+<code class="sig-name descname">stiff</code><span class="sig-paren">(</span><em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">fname='file.full'</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.stiff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the stiffness matrix from the full file</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">stiff</span><span class="p">()</span>
+<span class="go">APDLMATH Matrix 60 x 60</span>
+</pre></div>
+</div>
+<p>Convert to a scipy array</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span>
+<span class="go">&lt;60x60 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">    with 1734 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.subtract">
+<code class="sig-name descname">subtract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.subtract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtract two ANSYS vectors or matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj1</strong> (<em>ansys.mapdl.math.AnsVec</em><em> or </em><em>ansys.mapdl.math.AnsMat</em>) – Ansys object.</p></li>
+<li><p><strong>obj2</strong> (<em>ansys.mapdl.math.AnsVec</em><em> or </em><em>ansys.mapdl.math.AnsMat</em>) – Ansys object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>objout</strong> – Difference of the two input vectors or matrices.  Type of the output
+matches the type of the input.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.mapdl.math.AnsVec or ansys.mapdl.math.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.vec">
+<code class="sig-name descname">vec</code><span class="sig-paren">(</span><em class="sig-param">size=0</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">init=None</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size of the vector</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – Datatype of the vector.  Must be either np.int32, np.int64, or np.double</p></li>
+<li><p><strong>init</strong> (<em>str</em><em>, </em><em>optional</em>) – Initialization options.  Can be ones, zeros, or rand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>vector</strong> – ANSYS Vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.mapdl.math.AnsVec</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.MapdlMath.zeros">
+<code class="sig-name descname">zeros</code><span class="sig-paren">(</span><em class="sig-param">nrow</em>, <em class="sig-param">ncol=None</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.MapdlMath.zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a vector or matrix containing all zeros</p>
+<dl class="simple">
+<dt>nrow<span class="classifier">int</span></dt><dd><p>Number of rows.</p>
+</dd>
+<dt>ncol<span class="classifier">int, optional</span></dt><dd><p>Number of columns.  If specified, returns a matrix.</p>
+</dd>
+<dt>dtype<span class="classifier">np.dtype, optional</span></dt><dd><p>Datatype of the vector.  Must be either np.int32, np.int64, or np.double</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ans_vec_mat</strong> – ANSYS vector or matrix depending on if “ncol” is specified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ansys.AnsVec or ansys.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a zero vector</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a zero matrix</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="ansys.mapdl.core.math.ApdlMathObj">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.math.</code><code class="sig-name descname">ApdlMathObj</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">mapdl</em>, <em class="sig-param">type=&lt;ObjType.GEN: 1&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.axpy">
+<code class="sig-name descname">axpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em>, <em class="sig-param"><span class="n">val1</span></em>, <em class="sig-param"><span class="n">val2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.axpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the matrix operation: <code class="docutils literal notranslate"><span class="pre">M2=</span> <span class="pre">v*M1</span> <span class="pre">+</span> <span class="pre">w*M2</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.const">
+<code class="sig-name descname">const</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.const" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all values of the vector to a constant</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the copy of this object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.norm">
+<code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nrmtype</span><span class="o">=</span><span class="default_value">'nrm2'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matrix or vector norm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nrmtype</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Mathematical norm to use.  One of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'NRM2'</span></code>: L2 (Euclidean or SRSS) norm (default).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'NRM1'</span></code>: L1 (absolute sum) norm (vectors only).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'NRMINF'</span></code> Maximum norm.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nrm</strong> – Norm of the matrix or vector(s).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nrm</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span> <span class="n">m2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.ones">
+<code class="sig-name descname">ones</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.ones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all values of the vector to one</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.rand">
+<code class="sig-name descname">rand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.rand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all values of the vector to a random number</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.ApdlMathObj.zeros">
+<code class="sig-name descname">zeros</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.ApdlMathObj.zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all values of the vector to zero</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="ansys.mapdl.core.math.AnsVec">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.math.</code><code class="sig-name descname">AnsVec</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">mapdl</em>, <em class="sig-param">dtype=&lt;class 'numpy.float64'&gt;</em>, <em class="sig-param">init=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsVec" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDLMath Vector Object</p>
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsVec.asarray">
+<code class="sig-name descname">asarray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsVec.asarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector as a numpy array</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">Mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsVec.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsVec.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of this vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsVec.dot">
+<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsVec.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dot product with another ansys vector object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vec</strong> (<em>ansys.mapdl.math.AnsVec</em>) – Ansys vector object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dot_product</strong> – Dot product between this vector and the other vector.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="ansys.mapdl.core.math.AnsMat">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.math.</code><code class="sig-name descname">AnsMat</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">mapdl</em>, <em class="sig-param">type=&lt;ObjType.DMAT: 3&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDLMath Matrix Object</p>
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsMat.T">
+<em class="property">property </em><code class="sig-name descname">T</code><a class="headerlink" href="#ansys.mapdl.core.math.AnsMat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the transpose of a MAPDL matrix.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">Mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat_t</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsMat.asarray">
+<code class="sig-name descname">asarray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsMat.asarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector as a numpy array</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">Mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="go">[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsMat.dot">
+<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsMat.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the matrix multiplication by another vector or matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>ansys.mapdl.math.AnsVec</em><em> or </em><em>ansys.mapdl.math.AnsMat</em>) – Ansys object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dot_product</strong> – Matrix multiplication result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.mapdl.math.AnsVec or ansys.mapdl.math.AnsMat</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Multiplication of a matrix and vector</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">m1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span> <span class="o">@</span> <span class="n">v1</span><span class="o">.</span><span class="n">asarray</span><span class="p">(),</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsMat.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#ansys.mapdl.core.math.AnsMat.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a numpy-like shape.</p>
+<p>Tuple of (rows and columns)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="ansys.mapdl.core.math.AnsSolver">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.math.</code><code class="sig-name descname">AnsSolver</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">mapdl</em>, <em class="sig-param">type=&lt;ObjType.GEN: 1&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDLMath Solver Class</p>
+<dl class="py method">
+<dt id="ansys.mapdl.core.math.AnsSolver.factorize">
+<code class="sig-name descname">factorize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">M</span></em>, <em class="sig-param"><span class="n">Algo</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.math.AnsSolver.factorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factorize a matrix</p>
+<p>Performs the numerical factorization of a linear solver system.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="post.html" title="previous page">PyMAPDL Post-Processing API</a>
+    <a class='right-next' id="next-link" href="pool.html" title="next page">MapdlLocalPool Class</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

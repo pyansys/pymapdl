@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyVista Mesh Integration &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example Thermal Transient Analysis" href="transient_thermal.html" />
+    <link rel="prev" title="Path Operations within pyMAPDL and MAPDL" href="path_operations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api/index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-pyvista-mesh-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="pyvista-mesh-integration">
+<span id="ref-pyvista-mesh"></span><span id="sphx-glr-examples-00-mapdl-examples-pyvista-mesh-py"></span><h1>PyVista Mesh Integration<a class="headerlink" href="#pyvista-mesh-integration" title="Permalink to this headline">¶</a></h1>
+<p>Run a modal analysis on a mesh generated from pyvista within MAPDL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
+
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.reader</span> <span class="kn">import</span> <span class="n">save_as_archive</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="c1"># launch MAPDL as a service</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">loglevel</span><span class="o">=</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a simple plane mesh centered at (0, 0, 0) on the XY plane</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plane</span><span class="p">(</span><span class="n">i_resolution</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">j_resolution</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="pyvista mesh" class="sphx-glr-single-img" src="../../_images/sphx_glr_pyvista_mesh_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1.5773502691896262, 1.5773502691896262, 1.5773502691896262),
+ (0.0, 0.0, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>Write the mesh to a temporary file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">archive_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;tmp.cdb&#39;</span><span class="p">)</span>
+<span class="n">save_as_archive</span><span class="p">(</span><span class="n">archive_filename</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+
+<span class="c1"># Read in the archive file</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cdread</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="n">archive_filename</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">shpp</span><span class="p">(</span><span class="s1">&#39;SUMM&#39;</span><span class="p">))</span>
+
+<span class="c1"># specify shell thickness</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">sectype</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;shell&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">secdata</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">emodif</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">,</span> <span class="s1">&#39;SECNUM&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># specify material properties</span>
+<span class="c1"># using aprox values for AISI 5000 Series Steel</span>
+<span class="c1"># http://www.matweb.com/search/datasheet.aspx?matguid=89d4b891eece40fbbe6b71f028b64e9e</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">units</span><span class="p">(</span><span class="s1">&#39;SI&#39;</span><span class="p">)</span>  <span class="c1"># not necessary, but helpful for book keeping</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;EX&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">200E9</span><span class="p">)</span>  <span class="c1"># Elastic moduli in Pa (kg/(m*s**2))</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;DENS&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7800</span><span class="p">)</span>  <span class="c1"># Density in kg/m3</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s1">&#39;NUXY&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Poissons Ratio</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">emodif</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">,</span> <span class="s1">&#39;MAT&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Run an unconstrained modal analysis</span>
+<span class="c1"># for the first 20 modes above 1 Hz</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">modal_analysis</span><span class="p">(</span><span class="n">nmode</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">freqb</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># you could have also run:</span>
+<span class="c1"># mapdl.run(&#39;/SOLU&#39;)</span>
+<span class="c1"># mapdl.antype(&#39;MODAL&#39;)  # default NEW</span>
+<span class="c1"># mapdl.modopt(&#39;LANB&#39;, 20, 1)</span>
+<span class="c1"># mapdl.solve()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SUMMARIZE SHAPE TESTING FOR ALL SELECTED ELEMENTS
+
+ ------------------------------------------------------------------------------
+            &lt;&lt;&lt;&lt;&lt;&lt;          SHAPE TESTING SUMMARY           &gt;&gt;&gt;&gt;&gt;&gt;
+            &lt;&lt;&lt;&lt;&lt;&lt;        FOR ALL SELECTED ELEMENTS         &gt;&gt;&gt;&gt;&gt;&gt;
+ ------------------------------------------------------------------------------
+                    --------------------------------------
+                    |  Element count     10000 SHELL181  |
+                    --------------------------------------
+
+  Test                Number tested  Warning count  Error count    Warn+Err %
+  ----                -------------  -------------  -----------    ----------
+  Aspect Ratio              10000              0             0         0.00 %
+  Parallel Deviation        10000              0             0         0.00 %
+  Maximum Angle             10000              0             0         0.00 %
+  Jacobian Ratio            10000              0             0         0.00 %
+  Warping Factor            10000              0             0         0.00 %
+
+  Any                       10000              0             0         0.00 %
+ ------------------------------------------------------------------------------
+
+&#39;*****  ANSYS SOLVE    COMMAND  *****\n\n *** NOTE ***                            CP =      73.612   TIME= 19:50:34\n There is no title defined for this analysis.                            \n\n *** NOTE ***                            CP =      73.705   TIME= 19:50:34\n No modes are being expanded (MXPAND command) and therefore the element  \n results will not be written to the mode file.  If you do not intend to  \n use mode selection and for more efficient calculation of element        \n results in the expansion pass of any downstream mode superposition      \n analyses, expand all modes during the modal analysis.                   \n\n *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***\n                ---GIVE SUGGESTIONS ONLY---\n\n ELEMENT TYPE         4 IS SHELL181. IT IS ASSOCIATED WITH ELASTOPLASTIC \n MATERIALS ONLY. KEYOPT(8)=2 IS SUGGESTED AND KEYOPT(3)=2 IS SUGGESTED FOR\n HIGHER ACCURACY OF MEMBRANE STRESSES; OTHERWISE, KEYOPT(3)=0 IS SUGGESTED.\n\n\n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     19:50:34  JAN 14, 2021 CP=     73.730\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n                       S O L U T I O N   O P T I O N S\n\n   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  \n   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ\n   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                \n      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS\n   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .    20\n   SHIFT POINT . . . . . . . . . . . . . . . . . .  1.0000    \n   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  \n\n *** WARNING ***                         CP =      73.750   TIME= 19:50:34\n No constraints have been defined using the D command.                   \n\n *** NOTE ***                            CP =      73.750   TIME= 19:50:34\n The step data was checked and warning messages were found.              \n  Please review output or errors file ( /file.err ) for these warning    \n messages.                                                               \n\n *** NOTE ***                            CP =      73.750   TIME= 19:50:34\n The conditions for direct assembly have been met.  No .emat or .erot    \n files will be produced.                                                 \n\n                      L O A D   S T E P   O P T I O N S\n\n   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1\n   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .   YES\n\n\n\n                         ***********  PRECISE MASS SUMMARY  ***********\n\n   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN\n               Translational mass               |   Coupled translational/rotational mass\n         78.000        0.0000      -0.37801E-30 |    0.66815E-34   0.42948E-31   0.20817E-16\n         0.0000        78.000        0.0000     |   -0.43141E-31    0.0000       0.70300E-15\n       -0.37965E-30    0.0000        78.000     |    0.53776E-15  -0.68391E-15  -0.82755E-34\n     ------------------------------------------ | ------------------------------------------\n                                                |         Rotational mass (inertia)\n                                                |     6.5006       0.22335E-16   0.39789E-15\n                                                |   -0.27105E-16    6.5006      -0.96296E-34\n                                                |    0.39789E-15  -0.20463E-32    12.999    \n\n   TOTAL MASS =  78.000    \n     The mass principal axes coincide with the global Cartesian axes\n\n   CENTER OF MASS (X,Y,Z)=   0.90128E-17  -0.26688E-18   0.55062E-33\n\n   TOTAL INERTIA ABOUT CENTER OF MASS\n         6.5006       0.22335E-16   0.39789E-15\n        0.22335E-16    6.5006      -0.96296E-34\n        0.39789E-15  -0.96296E-34    12.999    \n     The inertia principal axes coincide with the global Cartesian axes\n\n\n  *** MASS SUMMARY BY ELEMENT TYPE ***\n\n  TYPE      MASS\n     4   78.0000    \n\n Range of element maximum matrix coefficients in global coordinates\n Maximum = 749504998 at element 9504.                                    \n Minimum = 749503915 at element 9505.                                    \n\n   *** ELEMENT MATRIX FORMULATION TIMES\n     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP\n\n        4     10000  SHELL181      0.715   0.000071\n Time at end of element matrix formulation CP = 74.7269287.              \n\n  BLOCK LANCZOS CALCULATION OF UP TO    20 EIGENVECTORS.\n  NUMBER OF EQUATIONS              =        61206\n  MAXIMUM WAVEFRONT                =           36\n  MAXIMUM MODES STORED             =           20\n  MINIMUM EIGENVALUE               =  0.10000E+01\n  MAXIMUM EIGENVALUE               =  0.10000E+31\n\n  Memory allocated for solver              =   187.579 MB\n  Memory required for in-core solution     =   178.982 MB\n  Memory required for out-of-core solution =    60.929 MB\n\n *** NOTE ***                            CP =      76.719   TIME= 19:50:37\n The Sparse Matrix Solver used by the Block Lanczos eigensolver is       \n currently running in the in-core memory mode.  This memory mode uses    \n the most amount of memory in order to avoid using the hard drive as     \n much as possible, which most often results in the fastest solution      \n time.  This mode is recommended if enough physical memory is present    \n to accommodate all of the solver data.                                  \n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     19:50:38  JAN 14, 2021 CP=     79.559\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n *** FREQUENCIES FROM BLOCK LANCZOS ITERATION ***\n\n  MODE    FREQUENCY (HERTZ)      \n\n\n   FREQUENCY RANGE REQUESTED=   20 MODES ABOVE   1.00000     HERTZ\n\n    1     32.74664192920    \n    2     47.77804288740    \n    3     59.17108298319    \n    4     84.60790505159    \n    5     84.60790505197    \n    6     148.8927748648    \n    7     148.8927748652    \n    8     154.6519861746    \n    9     168.3840411456    \n   10     187.7790667341    \n   11     255.9751634908    \n   12     255.9751634915    \n   13     285.2444050778    \n   14     298.2943388355    \n   15     319.8023401631    \n   16     319.8023401634    \n   17     370.6023621796    \n   18     391.8457651349    \n   19     409.1039880845    \n   20     482.6516135508    \n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     19:50:38  JAN 14, 2021 CP=     79.953\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****  X  DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****  Y  DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****  Z  DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****ROTX DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****ROTY DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n\n          ***** PARTICIPATION FACTOR CALCULATION *****ROTZ DIRECTION\n                                                                                  CUMULATIVE     RATIO EFF.MASS\n  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS\n     1     32.7466       0.30537E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     2     47.7780       0.20930E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     3     59.1711       0.16900E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     4     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     5     84.6079       0.11819E-01    0.0000        0.000000     0.00000         0.00000         0.00000    \n     6     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     7     148.893       0.67162E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     8     154.652       0.64661E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n     9     168.384       0.59388E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    10     187.779       0.53254E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    11     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    12     255.975       0.39066E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    13     285.244       0.35058E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    14     298.294       0.33524E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    15     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    16     319.802       0.31269E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    17     370.602       0.26983E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    18     391.846       0.25520E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    19     409.104       0.24444E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n    20     482.652       0.20719E-02    0.0000        0.000000     0.00000         0.00000         0.00000    \n\n\n *** ANSYS BINARY FILE STATISTICS\n  BUFFER SIZE USED= 16384\n       19.250 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full\n       26.938 MB WRITTEN ON MODAL MATRIX FILE: file.mode&#39;
+</pre></div>
+</div>
+<p>Load the result file within <code class="docutils literal notranslate"><span class="pre">pyansys</span></code> and plot the 8th mode.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">show_displacement</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">displacement_factor</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="pyvista mesh" class="sphx-glr-single-img" src="../../_images/sphx_glr_pyvista_mesh_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PyMAPDL Result
+Units       : User Defined
+Version     : 21.1
+Cyclic      : False
+Result Sets : 20
+Nodes       : 10201
+Elements    : 10000
+
+
+Available Results:
+NSL : Nodal displacements
+
+
+[(1.6018615354086752, 1.6018615354086783, 1.5911447281348523),
+ (2.1094237467877974e-15, 5.2735593669694936e-15, -0.01071680727382053),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>plot the 1st mode using contours</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_displacement</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                               <span class="n">displacement_factor</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="pyvista mesh" class="sphx-glr-single-img" src="../../_images/sphx_glr_pyvista_mesh_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1.6007557758557112, 1.6007557758557112, 1.6007557758546624),
+ (3.3306690738754696e-16, 2.7755575615628914e-16, -1.0484946244559978e-12),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>Animate a high frequency mode</p>
+<p>Get a smoother plot by disabling movie_filename and increasing <code class="docutils literal notranslate"><span class="pre">nangles</span></code>.
+Enable a continuous plot looping with <code class="docutils literal notranslate"><span class="pre">`loop=True`</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">animate_nodal_displacement</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                  <span class="n">nangles</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">displacement_factor</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+                                  <span class="n">show_axes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+                                  <span class="n">movie_filename</span><span class="o">=</span><span class="s1">&#39;plane_vib.gif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="pyvista mesh" class="sphx-glr-single-img" src="../../_images/sphx_glr_pyvista_mesh_004.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1.5773502691896262, 1.5773502691896262, 1.5773502691896262),
+ (0.0, 0.0, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.294 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-pyvista-mesh-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/828b545ae4ff247e8e05d3d672265cbf/pyvista_mesh.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">pyvista_mesh.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/9712ef245263a637023ecb7924cb758c/pyvista_mesh.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">pyvista_mesh.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="path_operations.html" title="previous page">Path Operations within pyMAPDL and MAPDL</a>
+    <a class='right-next' id="next-link" href="transient_thermal.html" title="next page">Example Thermal Transient Analysis</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

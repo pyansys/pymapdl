@@ -1,0 +1,1846 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyMAPDL Post-Processing API &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Math Module" href="math.html" />
+    <link rel="prev" title="Geometry Class" href="geometry.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="mapdl.html">MAPDL Object</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="launcher.html">MAPDL Launcher</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Convert Function</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">PyMAPDL Plotting Methods</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Parameters Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh.html">Mesh Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="geometry.html">Geometry Class</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">PyMAPDL Post-Processing API</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="math.html">Math Module</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">MapdlLocalPool Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">ansXpl Class</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="pymapdl-post-processing-api">
+<span id="ref-post-processing"></span><h1>PyMAPDL Post-Processing API<a class="headerlink" href="#pymapdl-post-processing-api" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.mapdl.core.post.PostProcessing">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.post.</code><code class="sig-name descname">PostProcessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapdl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post-processing using an active MAPDL session</p>
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.filename">
+<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current result file name without extension.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">filename</span>
+<span class="go">&#39;file&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.freq">
+<em class="property">property </em><code class="sig-name descname">freq</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freqneyc associated with current result in the database.</p>
+<p>Applicable for a Modal, harmonic or spectral analysis.</p>
+<p class="rubric">Examples</p>
+<p>Natural frequency of the current result of a modal analysis</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">freq</span>
+<span class="go">956.86239847</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.load_step">
+<em class="property">property </em><code class="sig-name descname">load_step</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.load_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current load step number</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">load_step</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_component_stress">
+<code class="sig-name descname">nodal_component_stress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_component_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal component stress.</p>
+<p>Equilvanent MAPDL commands:
+*VGET, PARM, NODE, , S, X
+PRNSOL, S, COMP</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Nodal component stress component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Nodal stress in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_component_stress</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_displacement">
+<code class="sig-name descname">nodal_displacement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NORM'</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_displacement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal X, Y, or Z structural displacement</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">U,</span> <span class="pre">X</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Structural displacement component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'NORM'</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">'NORM'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">array([1.07512979e-04, 8.59137773e-05, 5.70690047e-05, ...,</span>
+<span class="go">       5.70333124e-05, 8.58600402e-05, 1.07445726e-04])</span>
+</pre></div>
+</div>
+<p>Displacement in all dimensions</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
+<span class="go">array([[ 1.07512979e-04,  6.05382076e-05, -1.64333622e-11],</span>
+<span class="go">       [ 8.59137773e-05,  7.88053970e-05, -1.93668243e-11],</span>
+<span class="go">       [ 5.70690047e-05,  1.23100157e-04, -1.04703715e-11],</span>
+<span class="go">       ...,</span>
+<span class="go">       [ 5.70333124e-05,  1.23023176e-04, -9.77598660e-12],</span>
+<span class="go">       [ 8.58600402e-05,  7.87561008e-05, -9.12531408e-12],</span>
+<span class="go">       [ 1.07445726e-04,  6.05003408e-05, -1.23634647e-11]])</span>
+</pre></div>
+</div>
+<p>Nodes corresponding to the nodal displacements</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal displacements regardless
+of if the nodes are selected or not.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_elastic_component_strain">
+<code class="sig-name descname">nodal_elastic_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_elastic_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Elastic nodal component strain</p>
+<p>Equivalent MAPDL command:
+PRNSOL, EPEL, PRIN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Elastic component strain in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_elastic_component_strain</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_elastic_eqv_strain">
+<em class="property">property </em><code class="sig-name descname">nodal_elastic_eqv_strain</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_elastic_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elastic nodal equivalent strain of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPEL,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Elastic quivalent strain for the current result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_elastic_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p>Strain from result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_elastic_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_elastic_principal_strain">
+<code class="sig-name descname">nodal_elastic_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_elastic_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal elastic principal elastic strain.</p>
+<p>Equivalent MAPDL commands:
+*VGET, PARM, NODE, , EPEL, 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Principal nodal strain in the S1 direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_elastic_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_elastic_strain_intensity">
+<em class="property">property </em><code class="sig-name descname">nodal_elastic_strain_intensity</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_elastic_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elastic nodal strain intensity of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPEL,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Elastic strain intensity for result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_elastic_strain_intensity</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_eqv_stress">
+<em class="property">property </em><code class="sig-name descname">nodal_eqv_stress</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_eqv_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodal equivalent stress of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">S,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_eqv_stress</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p>Stress from result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_eqv_stress</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero stress.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero stress value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_plastic_component_strain">
+<code class="sig-name descname">nodal_plastic_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_plastic_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plastic nodal component strain</p>
+<p>Equivalent MAPDL command:
+PRNSOL, EPPL, PRIN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plastic component strain in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_plastic_component_strain</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_plastic_eqv_strain">
+<em class="property">property </em><code class="sig-name descname">nodal_plastic_eqv_strain</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_plastic_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>The plastic nodal equivalent strain of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPPL,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Plastic quivalent strain for the current result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_plastic_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p>Strain from result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_plastic_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_plastic_principal_strain">
+<code class="sig-name descname">nodal_plastic_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_plastic_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal plastic principal plastic strain.</p>
+<p>Equivalent MAPDL commands:
+*VGET, PARM, NODE, , EPPL, 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Principal nodal strain in the S1 direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_plastic_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_plastic_strain_intensity">
+<em class="property">property </em><code class="sig-name descname">nodal_plastic_strain_intensity</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_plastic_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The plastic nodal strain intensity of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPPL,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Plastic strain intensity for result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_plastic_strain_intensity</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_pressure">
+<em class="property">property </em><code class="sig-name descname">nodal_pressure</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_pressure" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodal pressure of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">PRES</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">pressure</span>
+<span class="go">array([0., 0., 0., ..., 0., 0., 0.])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_principal_stress">
+<code class="sig-name descname">nodal_principal_stress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_principal_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal principal stress.</p>
+<p>Equilvanent MAPDL commands:
+*VGET, PARM, NODE, , S, 1
+PRNSOL, S, PRIN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Nodal component stress component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Nodal stress in the S1 direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_principal_stress</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_rotation">
+<code class="sig-name descname">nodal_rotation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'ALL'</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal X, Y, or Z structural rotation</p>
+<p>Equilvanent MAPDL commands:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">ROT,</span> <span class="pre">X</span></code>
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">ROT,</span> <span class="pre">Y</span></code>
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">ROT,</span> <span class="pre">Z</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Structural rotational component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code>.  Defaults to <code class="docutils literal notranslate"><span class="pre">'ALL'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Nodal rotation in all dimensions for current result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_rotation</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
+<span class="go">array([[0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       ...,</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.]])</span>
+</pre></div>
+</div>
+<p>Nodes corresponding to the nodal rotations</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_stress_intensity">
+<em class="property">property </em><code class="sig-name descname">nodal_stress_intensity</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_stress_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodal stress intensity of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">S,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Stress intensity for result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_stress_intensity</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero stress.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero stress value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_temperature">
+<em class="property">property </em><code class="sig-name descname">nodal_temperature</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodal temperature of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">TEMP</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">temperature</span>
+<span class="go">array([0., 0., 0., ..., 0., 0., 0.])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_thermal_component_strain">
+<code class="sig-name descname">nodal_thermal_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_thermal_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thermal nodal component strain</p>
+<p>Equivalent MAPDL command:
+PRNSOL, EPTH, PRIN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Thermal component strain in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_thermal_component_strain</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_thermal_eqv_strain">
+<em class="property">property </em><code class="sig-name descname">nodal_thermal_eqv_strain</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_thermal_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>The thermal nodal equivalent strain of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPTH,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Thermal quivalent strain for the current result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_thermal_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p>Strain from result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_thermal_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_thermal_principal_strain">
+<code class="sig-name descname">nodal_thermal_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_thermal_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodal thermal principal thermal strain.</p>
+<p>Equivalent MAPDL commands:
+*VGET, PARM, NODE, , EPTH, 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Principal nodal strain in the S1 direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_thermal_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_thermal_strain_intensity">
+<em class="property">property </em><code class="sig-name descname">nodal_thermal_strain_intensity</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_thermal_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The thermal nodal strain intensity of the current result.</p>
+<p>Equivalent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPTH,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Thermal strain intensity for result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_thermal_strain_intensity</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_total_component_strain">
+<code class="sig-name descname">nodal_total_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_total_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total nodal component strain</p>
+<p>Includes elastic, plastic, and creep strain.</p>
+<p>Equilvanent MAPDL commands:
+*VGET, PARM, NODE, , EPTO, X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Total component strain in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_total_component_strain</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_total_eqv_strain">
+<em class="property">property </em><code class="sig-name descname">nodal_total_eqv_strain</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_total_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total nodal equivalent strain of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPTO,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Total quivalent strain for the current result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_total_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p>Strain from result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_total_eqv_strain</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero stress.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero stress value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_total_principal_strain">
+<code class="sig-name descname">nodal_total_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_total_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total nodal principal total strain.</p>
+<p>Includes elastic, plastic, and creep strain.</p>
+<p>Equilvanent MAPDL commands:
+*VGET, PARM, NODE, , EPTO, 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Component to retrieve.  Must be <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Principal nodal strain in the S1 direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_total_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">    array([0.60024621, 0.61625265, 0.65081825, ...,</span>
+<span class="go">           0.        , 0.        , 0.        ])</span>
+</pre></div>
+</div>
+<p>Corresponding nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nnum_all</span>
+<span class="go">array([   1,    2,    3, ..., 7215, 7216, 7217], dtype=int32)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This command always returns all nodal rotations regardless of
+if the nodes are selected or not.  Use the <code class="docutils literal notranslate"><span class="pre">selected_nodes</span></code>
+mask to get the currently selected nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_total_strain_intensity">
+<em class="property">property </em><code class="sig-name descname">nodal_total_strain_intensity</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_total_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total nodal strain intensity of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">EPTO,</span> <span class="pre">PRIN</span></code></p>
+<p class="rubric">Examples</p>
+<p>Total strain intensity for result 2</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_total_strain_intensity</span>
+<span class="go">array([15488.84357602, 16434.95432337, 15683.2334295 , ...,</span>
+<span class="go">           0.        ,     0.        ,     0.        ])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero stress.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero stress value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nodal_voltage">
+<em class="property">property </em><code class="sig-name descname">nodal_voltage</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nodal_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nodal voltage of the current result.</p>
+<p>Equilvanent MAPDL command:
+<code class="docutils literal notranslate"><span class="pre">PRNSOL,</span> <span class="pre">PRES</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">voltage</span>
+<span class="go">array([0., 0., 0., ..., 0., 0., 0.])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The nodal results are averaged across all selected elements.
+Not all nodes will contain valid results (e.g. midside nodes),
+and those nodes will report a zero value.</p>
+<p>Elements that are not selected will not contribute to the
+averaged nodal values, and if a node’s attached elements are
+all unselected, the element will report a zero value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.nsets">
+<em class="property">property </em><code class="sig-name descname">nsets</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.nsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of data sets on result file.</p>
+<p>Examples
+&gt;&gt;&gt; mapdl.post_processing.nsets
+1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_component_stress">
+<code class="sig-name descname">plot_nodal_component_stress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_component_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal component stress.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal component stress component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the x nodal component stress for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_component_stress</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_displacement">
+<code class="sig-name descname">plot_nodal_displacement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span><span class="o">=</span><span class="default_value">'NORM'</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_displacement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal displacement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em><em>, </em><em>optional</em>) – Structural displacement component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'NORM'</span></code>.  Defaults to
+<code class="docutils literal notranslate"><span class="pre">'NORM'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the normalized nodal displacement for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s1">&#39;NORM&#39;</span><span class="p">,</span>
+<span class="go">                                                  smooth_shading=True)</span>
+</pre></div>
+</div>
+<p>Plot the x displacement without smooth shading with individual
+node numbering</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+<span class="go">                                                  show_node_numbering=True)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_component_strain">
+<code class="sig-name descname">plot_nodal_elastic_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal elastic component strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal elastic component to plot.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal elastic principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_component_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_eqv_strain">
+<code class="sig-name descname">plot_nodal_elastic_eqv_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the elastic nodal equivalent strain of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the elastic equivalent strain for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_eqv_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_eqv_strain</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                      screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_elastic_eqv_strain(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_principal_strain">
+<code class="sig-name descname">plot_nodal_elastic_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot elastic nodal principal strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal principal strain component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_strain_intensity">
+<code class="sig-name descname">plot_nodal_elastic_strain_intensity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_elastic_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the elastic nodal strain intensity of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the elastic strain intensity for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_strain_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_elastic_strain_intensity</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                            screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_elastic_strain_intensity()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_eqv_stress">
+<code class="sig-name descname">plot_nodal_eqv_stress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_eqv_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal equivalent stress of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the equivalent stress for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_eqv_stress</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_eqv_stress</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those stress results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_eqv_stress(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_component_strain">
+<code class="sig-name descname">plot_nodal_plastic_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal plastic component strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal plastic component to plot.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal plastic principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_component_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_eqv_strain">
+<code class="sig-name descname">plot_nodal_plastic_eqv_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the plastic nodal equivalent strain of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the plastic equivalent strain for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_eqv_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_eqv_strain</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                      screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_plastic_eqv_strain(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_principal_strain">
+<code class="sig-name descname">plot_nodal_plastic_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot plastic nodal principal strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal principal strain component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_strain_intensity">
+<code class="sig-name descname">plot_nodal_plastic_strain_intensity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_plastic_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the plastic nodal strain intensity of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the plastic strain intensity for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_strain_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_plastic_strain_intensity</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                            screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_plastic_strain_intensity()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_pressure">
+<code class="sig-name descname">plot_nodal_pressure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_pressure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal pressure of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal pressure for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_pressure</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_pressure</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                           screenshot=&#39;temp_1_2.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those stress results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_pressure(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_principal_stress">
+<code class="sig-name descname">plot_nodal_principal_stress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_principal_stress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal principal stress.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal component stress component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal stress “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_component_stress</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_rotation">
+<code class="sig-name descname">plot_nodal_rotation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Structural rotation component to retrieve.  Must be
+<code class="docutils literal notranslate"><span class="pre">'X'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the x rotation without smooth shading with individual
+node numbering</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_rotation</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">show_node_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_stress_intensity">
+<code class="sig-name descname">plot_nodal_stress_intensity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_stress_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the nodal stress intensity of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the equivalent stress for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_stress_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_stress_intensity</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                      screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those stress results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_stress_intensity(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_temperature">
+<code class="sig-name descname">plot_nodal_temperature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal temperature of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal temperature for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_temperature</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                 screenshot=&#39;temp_1_2.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those stress results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_temperature(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_component_strain">
+<code class="sig-name descname">plot_nodal_thermal_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal thermal component strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal thermal component to plot.  Must be <code class="docutils literal notranslate"><span class="pre">'X'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'Y'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'XY'</span></code>, <code class="docutils literal notranslate"><span class="pre">'YZ'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'XZ'</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal thermal principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_component_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_eqv_strain">
+<code class="sig-name descname">plot_nodal_thermal_eqv_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the thermal nodal equivalent strain of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the thermal equivalent strain for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_eqv_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_eqv_strain</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                      screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_thermal_eqv_strain(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_principal_strain">
+<code class="sig-name descname">plot_nodal_thermal_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot thermal nodal principal strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal principal strain component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal strain “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_principal_strain</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_strain_intensity">
+<code class="sig-name descname">plot_nodal_thermal_strain_intensity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_thermal_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the thermal nodal strain intensity of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the thermal strain intensity for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_strain_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_thermal_strain_intensity</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                            screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_thermal_strain_intensity()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_total_component_strain">
+<code class="sig-name descname">plot_nodal_total_component_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_total_component_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal principal stress.</p>
+<p>Includes elastic, plastic, and creep strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal component stress component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal stress “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_component_stress</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_total_eqv_strain">
+<code class="sig-name descname">plot_nodal_total_eqv_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_total_eqv_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the total nodal equivalent strain of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the total equivalent strain for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_total_eqv_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_total_eqv_strain</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                      screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_total_eqv_strain(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_total_principal_strain">
+<code class="sig-name descname">plot_nodal_total_principal_strain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_total_principal_strain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot total nodal principal strain.</p>
+<p>Includes elastic, plastic, and creep strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<em>str</em>) – Nodal principal strain component to plot.  Must be
+<code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'3'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal principal stress “1” for the second result set</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_component_stress</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_total_strain_intensity">
+<code class="sig-name descname">plot_nodal_total_strain_intensity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_total_strain_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the total nodal strain intensity of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the total strain intensity for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_total_strain_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_total_strain_intensity</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                                            screenshot=&#39;seqv_00.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those strain results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_total_strain_intensity()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.plot_nodal_voltage">
+<code class="sig-name descname">plot_nodal_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.plot_nodal_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot nodal voltage of the current result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>cpos</strong> – Camera position from plotter.  Can be reused as an input
+parameter to use the same camera position for future
+plots.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot the nodal voltage for the second result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_voltage</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot off_screen and save a screenshot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_voltage</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                                           screenshot=&#39;temp_1_2.png&#39;)</span>
+</pre></div>
+</div>
+<p>Subselect a single result type and plot those stress results
+&gt;&gt;&gt; mapdl.esel(‘S’, ‘TYPE’, vmin=1)
+&gt;&gt;&gt; mapdl.post_processing.plot_nodal_voltage(smooth_shading=True)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.selected_nodes">
+<em class="property">property </em><code class="sig-name descname">selected_nodes</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.selected_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mask of the selected nodes.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">node_selection</span>
+<span class="go">array([False, False, False, ..., True, True, True])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.sub_step">
+<em class="property">property </em><code class="sig-name descname">sub_step</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.sub_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current sub step number</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">load_step</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.time">
+<em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time associated with current result in the database.</p>
+<p class="rubric">Examples</p>
+<p>Time of the current result of a modal analysis</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.post.PostProcessing.time_values">
+<em class="property">property </em><code class="sig-name descname">time_values</code><a class="headerlink" href="#ansys.mapdl.core.post.PostProcessing.time_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of the time values for all result sets.</p>
+<p class="rubric">Examples</p>
+<p>Get all the time values after loading POST1.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time_values</span>
+<span class="go">[75.00054133588232,</span>
+<span class="go"> 75.00081189985094,</span>
+<span class="go"> 75.00121680412036,</span>
+<span class="go"> 75.00574491751847,</span>
+<span class="go"> 75.03939292229019,</span>
+<span class="go"> 75.20949687626468]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="geometry.html" title="previous page">Geometry Class</a>
+    <a class='right-next' id="next-link" href="math.html" title="next page">Math Module</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

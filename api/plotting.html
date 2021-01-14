@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyMAPDL Plotting Methods &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parameters Class" href="parameters.html" />
+    <link rel="prev" title="Convert Function" href="convert.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="mapdl.html">MAPDL Object</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="launcher.html">MAPDL Launcher</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="convert.html">Convert Function</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">PyMAPDL Plotting Methods</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="parameters.html">Parameters Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="mesh.html">Mesh Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="geometry.html">Geometry Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="post.html">PyMAPDL Post-Processing API</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="math.html">Math Module</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="pool.html">MapdlLocalPool Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="xpl.html">ansXpl Class</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#general-plotter" class="nav-link">General Plotter</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="pymapdl-plotting-methods">
+<span id="ref-plotting-api"></span><h1>PyMAPDL Plotting Methods<a class="headerlink" href="#pymapdl-plotting-methods" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl.</code><code class="sig-name descname">_MapdlCore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loglevel</span><span class="o">=</span><span class="default_value">'DEBUG'</span></em>, <em class="sig-param"><span class="n">use_vtk</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log_apdl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">local</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">start_parm</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Contains methods in common between all Mapdl subclasses</p>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">aplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">na1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">na2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>APDL Command: APLOT</p>
+<p>Displays the selected areas from <code class="docutils literal notranslate"><span class="pre">na1</span></code> to <code class="docutils literal notranslate"><span class="pre">na2</span></code> in steps
+of <code class="docutils literal notranslate"><span class="pre">ninc</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>na1</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum area to display.</p></li>
+<li><p><strong>na2</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum area to display</p></li>
+<li><p><strong>ninc</strong> (<em>int</em><em>, </em><em>optional</em>) – Increment between minimum and maximum area.</p></li>
+<li><p><strong>degen</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>str</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>optional</strong> – Degeneracy marker.  This option is ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>scale</strong> – Scale factor for the size of the degeneracy-marker star.
+The scale is the size in window space (-1 to 1 in both
+directions) (defaults to .075).  This option is ignored
+when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected areas using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.  As
+this creates a temporary surface mesh, this may have a
+long execution time for large meshes.</p></li>
+<li><p><strong>quality</strong> (<em>int</em><em>, </em><em>optional</em>) – Quality of the mesh to display.  Varies between 1 (worst)
+to 10 (best) when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_area_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display area numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_line_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>color_areas</strong> (<em>bool</em><em>, </em><em>optional</em>) – Randomly color areas when <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_lines</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot lines and areas.  Change the thickness of the lines
+with <code class="docutils literal notranslate"><span class="pre">line_width=</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot areas between 1 and 4 in increments of 2.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot all areas and randomly color the areas.  Label center of
+areas by their number.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_area_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color_areas</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">eplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Plots the currently selected elements.</p>
+<p>APDL Command: EPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected elements using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.
+Defaults to current <code class="docutils literal notranslate"><span class="pre">use_vtk</span></code> setting.</p></li>
+<li><p><strong>show_node_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the node numbers of surface nodes.</p></li>
+<li><p><strong>**kwargs</strong> – See <code class="docutils literal notranslate"><span class="pre">help(ansys.mapdl.core.plotter.general_plotter)</span></code> for more
+keyword arguments related to visualizing using <code class="docutils literal notranslate"><span class="pre">vtk</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">186</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">esize</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vmesh</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vgen</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                show_node_numbering=True)</span>
+</pre></div>
+</div>
+<p>Save a screenshot to disk without showing the plot</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="go">                window_size=[1920, 1080], screenshot=&#39;screenshot.png&#39;,</span>
+<span class="go">                off_screen=True)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">kplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">np2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">lab</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Displays the selected keypoints.</p>
+<p>APDL Command: KPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np1</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>np2</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>ninc</strong> – Display keypoints from NP1 to NP2 (defaults to NP1) in
+steps of NINC (defaults to 1).  If NP1 = ALL (default),
+NP2 and NINC are ignored and all selected keypoints [KSEL]
+are displayed.</p></li>
+<li><p><strong>lab</strong> – <p>Determines what keypoints are plotted (one of the following):</p>
+<p>(blank) - Plots all keypoints.</p>
+<p>HPT - Plots only those keypoints that are hard points.</p>
+</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected lines using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.</p></li>
+<li><p><strong>show_keypoint_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">lplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nl1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nl2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>APDL Command: LPLOT</p>
+<p>Displays the selected lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>nl2</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>ninc</strong> – Display lines from NL1 to NL2 (defaults to NL1) in steps
+of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
+NINC are ignored and display all selected lines [LSEL].</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected lines using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.</p></li>
+<li><p><strong>show_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_keypoints</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display keypoints associated with current lines.  Only
+valid with <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_keypoint_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Number keypoints.  Only valid when show_keypoints is True</p></li>
+<li><p><strong>**kwargs</strong> – See <code class="docutils literal notranslate"><span class="pre">help(pyvista.plot)</span></code> for more keyword arguments
+related to visualizing using <code class="docutils literal notranslate"><span class="pre">vtk</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">vtk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Mesh divisions on plotted lines are controlled by the LDIV option of
+the /PSYMB command.</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">nplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">knum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>APDL Command: NPLOT</p>
+<p>Displays nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>knum</strong> (<em>bool</em><em>, </em><em>int</em><em>, </em><em>optional</em>) – <p>Node number key:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> : No node numbers on display (default).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> : Include node numbers on display.</p></li>
+</ul>
+</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected nodes using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.
+Defaults to current <code class="docutils literal notranslate"><span class="pre">use_vtk</span></code> setting as set on the
+initialization of MAPDL.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot using VTK while showing labels and changing the background</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">knum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vtk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+<span class="go">                show_bounds=True)</span>
+</pre></div>
+</div>
+<p>Plot without using VTK</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">vtk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Only selected nodes [NSEL] are displayed.  Elements need not
+be defined.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">vplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nv1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nv2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Plot the selected volumes.</p>
+<p>APDL Command: VPLOT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nv1</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>nv2</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>ninc</strong> – Display volumes from NV1 to NV2 (defaults to NV1) in steps
+of NINC (defaults to 1).  If NV1 = ALL (default), NV2 and
+NINC are ignored and all selected volumes [VSEL] are
+displayed.  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>degen</strong> – Degeneracy marker.  <code class="docutils literal notranslate"><span class="pre">&quot;blank&quot;</span></code> No degeneracy marker is
+used (default), or <code class="docutils literal notranslate"><span class="pre">&quot;DEGE&quot;</span></code>.  A red star is placed on
+keypoints at degeneracies (see the Modeling and Meshing
+Guide).  Not available if /FACET,WIRE is set.  Ignored
+when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>scale</strong> – Scale factor for the size of the degeneracy-marker star.  The scale
+is the size in window space (-1 to 1 in both directions) (defaults
+to .075).  Ignored when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected volumes using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.  As
+this creates a temporary surface mesh, this may have a
+long execution time for large meshes.</p></li>
+<li><p><strong>quality</strong> (<em>int</em><em>, </em><em>optional</em>) – quality of the mesh to display.  Varies between 1 (worst)
+to 10 (best).  Applicable when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Plot while displaying area numbers</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_area_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="general-plotter">
+<span id="ref-general-plotter"></span><h2>General Plotter<a class="headerlink" href="#general-plotter" title="Permalink to this headline">¶</a></h2>
+<p>This function contains a description of all the additional keyword
+arguments in common with all PyMAPDL plotting methods.</p>
+<dl class="py function">
+<dt>
+<code class="sig-prename descclassname">ansys.mapdl.core.plotting.</code><code class="sig-name descname">general_plotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">meshes</span></em>, <em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">cpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_bounds</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_axes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">background</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">screenshot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notebook</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'w'</span></em>, <em class="sig-param"><span class="n">show_edges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edge_color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">point_size</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">line_width</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">flip_scalars</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">lighting</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_colors</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">interpolate_before_map</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">cmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">render_points_as_spheres</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">stitle</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth_shading</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font_family</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text_color</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span></dt>
+<dd><p>General pyansys plotter for APDL geometry and meshes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cpos</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>floats</em><em>)</em><em>)</em><em>, </em><em>str</em>) – <p>The camera position to use.  You can either use a saved camera
+position or specify one of the following strings:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;xy&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;xz&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;yz&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;yx&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;zx&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;zy&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;iso&quot;</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>off_screen</strong> (<em>bool</em><em>, </em><em>optional</em>) – Renders off screen when <code class="docutils literal notranslate"><span class="pre">True</span></code>.  Useful for automated
+screenshots.</p></li>
+<li><p><strong>window_size</strong> (<em>list</em><em>, </em><em>optional</em>) – Window size in pixels.  Defaults to <code class="docutils literal notranslate"><span class="pre">[1024,</span> <span class="pre">768]</span></code></p></li>
+<li><p><strong>notebook</strong> (<em>bool</em><em>, </em><em>optional</em>) – When True, the resulting plot is placed inline a jupyter
+notebook.  Assumes a jupyter console is active.  Automatically
+enables off_screen.</p></li>
+<li><p><strong>show_bounds</strong> (<em>bool</em><em>, </em><em>optional</em>) – Shows mesh bounds when <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>show_axes</strong> (<em>bool</em><em>, </em><em>optional</em>) – Shows a vtk axes widget.  Enabled by default.</p></li>
+<li><p><strong>screenshot</strong> (<em>str</em><em> or </em><em>bool</em><em>, </em><em>optional</em>) – Saves screenshot to file when enabled.</p></li>
+<li><p><strong>color</strong> (<em>string</em><em> or </em><em>3 item list</em><em>, </em><em>optional</em><em>, </em><em>defaults to white</em>) – Use to make the entire mesh have a single solid color.  Either
+a string, RGB list, or hex color string.  For example:
+<code class="docutils literal notranslate"><span class="pre">color='white'</span></code>, <code class="docutils literal notranslate"><span class="pre">color='w'</span></code>, <code class="docutils literal notranslate"><span class="pre">color=[1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">color='#FFFFFF'</span></code>. Color will be overridden if scalars are
+specified.</p></li>
+<li><p><strong>show_edges</strong> (<em>bool</em><em>, </em><em>optional</em>) – Shows the edges of a mesh.  Does not apply to a wireframe
+representation.</p></li>
+<li><p><strong>edge_color</strong> (<em>string</em><em> or </em><em>3 item list</em><em>, </em><em>optional</em><em>, </em><em>defaults to black</em>) – The solid color to give the edges when <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code>.
+Either a string, RGB list, or hex color string.</p></li>
+<li><p><strong>point_size</strong> (<em>float</em><em>, </em><em>optional</em>) – Point size of any nodes in the dataset plotted. Also applicable
+when style=’points’. Default <code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></li>
+<li><p><strong>line_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Thickness of lines.  Only valid for wireframe and surface
+representations.  Default None.</p></li>
+<li><p><strong>opacity</strong> (<em>float</em><em>, </em><em>str</em><em>, </em><em>array-like</em>) – Opacity of the mesh. If a single float value is given, it will be
+the global opacity of the mesh and uniformly applied everywhere -
+should be between 0 and 1. A string can also be specified to map
+the scalars range to a predefined opacity transfer function
+(options include: ‘linear’, ‘linear_r’, ‘geom’, ‘geom_r’).
+A string could also be used to map a scalars array from the mesh to
+the opacity (must have same number of elements as the
+<code class="docutils literal notranslate"><span class="pre">scalars</span></code> argument). Or you can pass a custom made transfer
+function that is an array either <code class="docutils literal notranslate"><span class="pre">n_colors</span></code> in length or shorter.</p></li>
+<li><p><strong>n_colors</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of colors to use when displaying scalars. Defaults to 256.
+The scalar bar will also have this many colors.</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em>, </em><em>list</em><em>, </em><em>optional</em>) – <p>Name of the Matplotlib colormap to us when mapping the <code class="docutils literal notranslate"><span class="pre">scalars</span></code>.
+See available Matplotlib colormaps.  Only applicable for when
+displaying <code class="docutils literal notranslate"><span class="pre">scalars</span></code>. Requires Matplotlib to be installed.
+<code class="docutils literal notranslate"><span class="pre">colormap</span></code> is also an accepted alias for this. If <code class="docutils literal notranslate"><span class="pre">colorcet</span></code> or
+<code class="docutils literal notranslate"><span class="pre">cmocean</span></code> are installed, their colormaps can be specified by name.</p>
+<blockquote>
+<div><p>You can also specify a list of colors to override an
+existing colormap with a custom one.  For example, to
+create a three color colormap you might specify
+<code class="docutils literal notranslate"><span class="pre">['green',</span> <span class="pre">'red',</span> <span class="pre">'blue']</span></code></p>
+</div></blockquote>
+</p></li>
+<li><p><strong>render_points_as_spheres</strong> (<em>bool</em><em>, </em><em>optional</em>) – Render points as spheres.</p></li>
+<li><p><strong>render_lines_as_tubes</strong> (<em>bool</em><em>, </em><em>optional</em>) – Renders lines as tubes.</p></li>
+<li><p><strong>smooth_shading</strong> (<em>bool</em><em>, </em><em>optional</em>) – Smoothly render curved surfaces when plotting.  Not helpful
+for all meshes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="convert.html" title="previous page">Convert Function</a>
+    <a class='right-next' id="next-link" href="parameters.html" title="next page">Parameters Class</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
