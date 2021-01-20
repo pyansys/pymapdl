@@ -274,6 +274,27 @@ together within the PyMapdl module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows:">
+
+.. only:: html
+
+ .. figure:: /examples/01-apdlmath-examples/images/thumb/sphx_glr_mapdl_vs_scipy_thumb.png
+     :alt: Compute Eigenvalues using MAPDL or SciPy
+
+     :ref:`sphx_glr_examples_01-apdlmath-examples_mapdl_vs_scipy.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/01-apdlmath-examples/mapdl_vs_scipy
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will show how to get APDLMath sparse matrices (typically stiffness or mass matric...">
 
 .. only:: html

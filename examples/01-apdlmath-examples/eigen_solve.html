@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using APDLMath to solve Eigenproblems &#8212; ansys.mapdl.core 0.57.2 documentation</title>
+    <title>Using APDLMath to solve Eigenproblems &#8212; ansys.mapdl.core 0.57.3 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -178,7 +178,8 @@ to download the full example code</p>
 <p>Use APDLMath to solve eigenproblems.</p>
 <p>This example uses a verification manual input file, but you can use
 your own sparse or dense matrices and solve those.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">ansys.mapdl.core.examples</span> <span class="kn">import</span> <span class="n">vmfiles</span>
@@ -230,7 +231,7 @@ properties (e.g. scalar, storage, symmetry…)</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Calling MAPDL to solve the eigenproblem...
-Elapsed time to solve this problem: 0.03831624984741211
+Elapsed time to solve this problem: 0.03229808807373047
 </pre></div>
 </div>
 <p>This is the vector of eigenfrequencies.</p>
@@ -238,7 +239,7 @@ Elapsed time to solve this problem: 0.03831624984741211
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>BGEUWL :
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NHREUS :
  Size : 10
   3.381e+02   3.381e+02   6.266e+02   6.266e+02   9.283e+02      &lt;       5
   9.283e+02   1.250e+03   1.250e+03   1.424e+03   1.424e+03      &lt;       10
@@ -291,7 +292,7 @@ factor and finally compute the normalized residual value
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>3.503338761293556e-11
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>4.213460881317705e-11
 </pre></div>
 </div>
 <p>This residual can be computed for all eigenmodes</p>
@@ -326,26 +327,45 @@ factor and finally compute the normalized residual value
     <span class="k">return</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">/</span><span class="n">kphinrm</span>
 
 
+<span class="n">mapdl_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nev</span><span class="p">)</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nev</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">ev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">get_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">] : Freq = </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="se">\t</span><span class="s1"> - Residual = </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">mapdl_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">] : Freq = </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="se">\t</span><span class="s1"> - Residual = </span><span class="si">{</span><span class="n">mapdl_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq = 338.0666635506364   - Residual = 3.503338761293556e-11
-[1] : Freq = 338.06666355063646  - Residual = 5.095765571157227e-11
-[2] : Freq = 626.6450980927036   - Residual = 1.7852148894677666e-11
-[3] : Freq = 626.645098092704    - Residual = 2.17372918531887e-11
-[4] : Freq = 928.2598500574518   - Residual = 1.72025442075496e-11
-[5] : Freq = 928.2598500574528   - Residual = 6.747910207805831e-12
-[6] : Freq = 1249.8421074363514  - Residual = 2.815524037478371e-11
-[7] : Freq = 1249.8421074363525  - Residual = 7.546271373844357e-12
-[8] : Freq = 1423.993890941669   - Residual = 4.5372004789272195e-10
-[9] : Freq = 1423.9938909416699  - Residual = 1.2160010951553228e-09
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq = 338.06666355063646  - Residual = 4.213460881317705e-11
+[1] : Freq = 338.0666635506367   - Residual = 7.443500321014828e-11
+[2] : Freq = 626.6450980927034   - Residual = 2.922490604842776e-11
+[3] : Freq = 626.6450980927037   - Residual = 3.494043183670196e-11
+[4] : Freq = 928.2598500574522   - Residual = 6.277951523961876e-12
+[5] : Freq = 928.2598500574528   - Residual = 1.6435557628276986e-11
+[6] : Freq = 1249.8421074363503  - Residual = 2.2814357943898076e-11
+[7] : Freq = 1249.8421074363523  - Residual = 1.5048018222778007e-11
+[8] : Freq = 1423.993890941669   - Residual = 5.12994578164195e-10
+[9] : Freq = 1423.99389094167    - Residual = 1.1925689454377402e-09
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.959 seconds)</p>
+<p>Plot Accuracy of Eigenresults</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nev</span><span class="p">,</span> <span class="n">nev</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;APDL Math Residual Error (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">10E-13</span><span class="p">,</span> <span class="mf">10E-7</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency #&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Errors (%)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mapdl_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MAPDL Results&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="APDL Math Residual Error (%)" class="sphx-glr-single-img" src="../../_images/sphx_glr_eigen_solve_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.109 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-eigen-solve-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ef9fd55df8801750a912151e4ce1ff42/eigen_solve.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">eigen_solve.py</span></code></a></p>

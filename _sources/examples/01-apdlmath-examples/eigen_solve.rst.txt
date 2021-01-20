@@ -27,10 +27,11 @@ Use APDLMath to solve eigenproblems.
 This example uses a verification manual input file, but you can use
 your own sparse or dense matrices and solve those.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-23
+.. GENERATED FROM PYTHON SOURCE LINES 12-24
 
 .. code-block:: default
 
+    import matplotlib.pylab as plt
     import time
     import numpy as np
 
@@ -49,13 +50,13 @@ your own sparse or dense matrices and solve those.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-27
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 First we get the `STIFF` and `MASS` matrices from the full file
 after running the input file from Verification Manual 153
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-33
+.. GENERATED FROM PYTHON SOURCE LINES 28-34
 
 .. code-block:: default
 
@@ -72,11 +73,11 @@ after running the input file from Verification Manual 153
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 Display size of the M and K matrices
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
+.. GENERATED FROM PYTHON SOURCE LINES 36-39
 
 .. code-block:: default
 
@@ -99,13 +100,13 @@ Display size of the M and K matrices
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-42
+.. GENERATED FROM PYTHON SOURCE LINES 40-43
 
 Allocate an array to store the eigenshapes.
 where `nev` is the number of eigenvalues requested
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-46
+.. GENERATED FROM PYTHON SOURCE LINES 43-47
 
 .. code-block:: default
 
@@ -128,7 +129,7 @@ where `nev` is the number of eigenvalues requested
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-52
+.. GENERATED FROM PYTHON SOURCE LINES 48-53
 
 Perform the the modal analysis.
 
@@ -136,7 +137,7 @@ The algorithm is automatically chosen with respect to the matrices
 properties (e.g. scalar, storage, symmetry...)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-59
+.. GENERATED FROM PYTHON SOURCE LINES 53-60
 
 .. code-block:: default
 
@@ -158,15 +159,14 @@ properties (e.g. scalar, storage, symmetry...)
  .. code-block:: none
 
     Calling MAPDL to solve the eigenproblem...
-    Elapsed time to solve this problem: 0.03831624984741211
+    Elapsed time to solve this problem: 0.03229808807373047
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-62
+.. GENERATED FROM PYTHON SOURCE LINES 61-62
 
 This is the vector of eigenfrequencies.
-
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-64
 
@@ -184,7 +184,7 @@ This is the vector of eigenfrequencies.
 
  .. code-block:: none
 
-    BGEUWL :
+    NHREUS :
      Size : 10
       3.381e+02   3.381e+02   6.266e+02   6.266e+02   9.283e+02      <       5
       9.283e+02   1.250e+03   1.250e+03   1.424e+03   1.424e+03      <       10
@@ -220,13 +220,12 @@ First, we compute :math:`\lambda_1 = \omega_1^2 = (2.\pi.f_1)^2`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-83
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 Then we get the 1st Eigenshape :math:`\phi_1`, and compute
 :math:`K.\phi_1` and :math:`M.\phi_1`
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 83-94
+.. GENERATED FROM PYTHON SOURCE LINES 82-93
 
 .. code-block:: default
 
@@ -248,12 +247,12 @@ Then we get the 1st Eigenshape :math:`\phi_1`, and compute
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-97
+.. GENERATED FROM PYTHON SOURCE LINES 94-96
 
 Next, compute the `math`:||K.\phi_1||_2 quantity and normalize the
 residual value.
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-106
+.. GENERATED FROM PYTHON SOURCE LINES 96-105
 
 .. code-block:: default
 
@@ -273,13 +272,13 @@ residual value.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-110
+.. GENERATED FROM PYTHON SOURCE LINES 106-109
 
 Then we add these two vectors, using the :math:`\lambda_1` scalar
 factor and finally compute the normalized residual value
 :math:`\frac{R_1}{||K.\phi_1||_2}`
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-119
+.. GENERATED FROM PYTHON SOURCE LINES 109-118
 
 .. code-block:: default
 
@@ -302,17 +301,17 @@ factor and finally compute the normalized residual value
 
  .. code-block:: none
 
-    3.503338761293556e-11
+    4.213460881317705e-11
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-122
+.. GENERATED FROM PYTHON SOURCE LINES 119-121
 
 This residual can be computed for all eigenmodes
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-158
+.. GENERATED FROM PYTHON SOURCE LINES 121-160
 
 .. code-block:: default
 
@@ -348,10 +347,13 @@ This residual can be computed for all eigenmodes
         return kphi.norm()/kphinrm
 
 
+    mapdl_acc = np.zeros(nev)
+
     for i in range(nev):
         f = ev[i]
-        res = get_res(i)
-        print(f'[{i}] : Freq = {f}\t - Residual = {res}')
+        mapdl_acc[i] = get_res(i)
+        print(f'[{i}] : Freq = {f}\t - Residual = {mapdl_acc[i]}')
+
 
 
 
@@ -362,24 +364,61 @@ This residual can be computed for all eigenmodes
 
  .. code-block:: none
 
-    [0] : Freq = 338.0666635506364   - Residual = 3.503338761293556e-11
-    [1] : Freq = 338.06666355063646  - Residual = 5.095765571157227e-11
-    [2] : Freq = 626.6450980927036   - Residual = 1.7852148894677666e-11
-    [3] : Freq = 626.645098092704    - Residual = 2.17372918531887e-11
-    [4] : Freq = 928.2598500574518   - Residual = 1.72025442075496e-11
-    [5] : Freq = 928.2598500574528   - Residual = 6.747910207805831e-12
-    [6] : Freq = 1249.8421074363514  - Residual = 2.815524037478371e-11
-    [7] : Freq = 1249.8421074363525  - Residual = 7.546271373844357e-12
-    [8] : Freq = 1423.993890941669   - Residual = 4.5372004789272195e-10
-    [9] : Freq = 1423.9938909416699  - Residual = 1.2160010951553228e-09
+    [0] : Freq = 338.06666355063646  - Residual = 4.213460881317705e-11
+    [1] : Freq = 338.0666635506367   - Residual = 7.443500321014828e-11
+    [2] : Freq = 626.6450980927034   - Residual = 2.922490604842776e-11
+    [3] : Freq = 626.6450980927037   - Residual = 3.494043183670196e-11
+    [4] : Freq = 928.2598500574522   - Residual = 6.277951523961876e-12
+    [5] : Freq = 928.2598500574528   - Residual = 1.6435557628276986e-11
+    [6] : Freq = 1249.8421074363503  - Residual = 2.2814357943898076e-11
+    [7] : Freq = 1249.8421074363523  - Residual = 1.5048018222778007e-11
+    [8] : Freq = 1423.993890941669   - Residual = 5.12994578164195e-10
+    [9] : Freq = 1423.99389094167    - Residual = 1.1925689454377402e-09
 
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 161-162
+
+Plot Accuracy of Eigenresults
+
+.. GENERATED FROM PYTHON SOURCE LINES 162-172
+
+.. code-block:: default
+
+
+    fig = plt.figure(figsize=(12, 10))
+    ax = plt.axes()
+    x = np.linspace(1, nev, nev)
+    plt.title('APDL Math Residual Error (%)')
+    plt.yscale('log')
+    plt.ylim([10E-13, 10E-7])
+    plt.xlabel('Frequency #')
+    plt.ylabel('Errors (%)')
+    ax.bar(x, mapdl_acc, label='MAPDL Results')
+
+
+
+.. image:: /examples/01-apdlmath-examples/images/sphx_glr_eigen_solve_001.png
+    :alt: APDL Math Residual Error (%)
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    <BarContainer object of 10 artists>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.959 seconds)
+   **Total running time of the script:** ( 0 minutes  1.109 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_eigen_solve.py:

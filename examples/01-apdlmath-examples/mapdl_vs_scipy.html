@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compute Eigenvalues using MAPDL or SciPy &#8212; ansys.mapdl.core 0.57.3 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices" href="scipy_sparse_matrix.html" />
+    <link rel="prev" title="Binary MAPDL File Explorer" href="explore_mapdl_files.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api/index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#use-scipy-to-solve-the-same-eigenproblem" class="nav-link">Use SciPy to Solve the same Eigenproblem</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-01-apdlmath-examples-mapdl-vs-scipy-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="compute-eigenvalues-using-mapdl-or-scipy">
+<span id="ref-mapdl-math-mapdl-vs-scipy"></span><span id="sphx-glr-examples-01-apdlmath-examples-mapdl-vs-scipy-py"></span><h1>Compute Eigenvalues using MAPDL or SciPy<a class="headerlink" href="#compute-eigenvalues-using-mapdl-or-scipy" title="Permalink to this headline">¶</a></h1>
+<p>This example shows:</p>
+<ul class="simple">
+<li><p>How to extract the stiffness and mass matrices from a MAPDL model.</p></li>
+<li><p>How to use the <code class="docutils literal notranslate"><span class="pre">Math</span></code> module of PyMapdl to compute the first
+eigenvalues.</p></li>
+<li><p>How to can get these matrices in the SciPy world, to get the same
+solutions using Python resources.</p></li>
+<li><p>How MAPDL is really faster than SciPy :)</p></li>
+</ul>
+<p>First load python packages we need for this example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse.linalg</span> <span class="kn">import</span> <span class="n">eigsh</span>
+
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">examples</span>
+</pre></div>
+</div>
+<p>Next:</p>
+<ul class="simple">
+<li><p>Load the ansys.mapdl module</p></li>
+<li><p>Get the <code class="docutils literal notranslate"><span class="pre">Math</span></code> module of PyMapdl</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+<span class="n">mm</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">math</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
+MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
+ansys.mapdl Version: 0.57.3
+</pre></div>
+</div>
+<p>APDLMath EigenSolve
+First load the input file using MAPDL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">wing_model</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/INPUT FILE=    LINE=       0
+  *****ANSYS VERIFICATION RUN ONLY*****
+    DO NOT USE RESULTS FOR PRODUCTION
+
+         ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+*** WARNING ***                         CP =       0.000   TIME= 00:00:00
+Deactivation of element shape checking is not recommended.
+
+*** WARNING ***                         CP =       0.000   TIME= 00:00:00
+The mesh of area 1 contains PLANE42 triangles, which are much too stiff
+in bending.  Use quadratic (6- or 8-node) elements if possible.
+
+*** WARNING ***                         CP =       0.000   TIME= 00:00:00
+CLEAR, SELECT, and MESH boundary condition commands are not possible
+after MODMSH.
+
+
+***** ROUTINE COMPLETED *****  CP =         0.000
+</pre></div>
+</div>
+<p>Plot and mesh using the <code class="docutils literal notranslate"><span class="pre">eplot</span></code> method.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="mapdl vs scipy" class="sphx-glr-single-img" src="../../_images/sphx_glr_mapdl_vs_scipy_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(3.933687241492801, 3.0105415922331633, 3.21223669211588),
+ (1.1499194488984512, 0.22677379963881444, 0.4284688995215311),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p>Next, setup a modal Analysis and request the <span class="math notranslate nohighlight">\(K\)</span> and math:<cite>M</cite>
+matrices to be formed. MAPDL stores these matrices in a <code class="docutils literal notranslate"><span class="pre">.FULL</span></code>
+file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">slashsolu</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">antype</span><span class="p">(</span><span class="n">antype</span><span class="o">=</span><span class="s1">&#39;MODAL&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">modopt</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;LANB&#39;</span><span class="p">,</span> <span class="n">nmode</span><span class="o">=</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="n">freqb</span><span class="o">=</span><span class="s1">&#39;1.&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">wrfull</span><span class="p">(</span><span class="n">ldstep</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+
+<span class="c1"># store the output of the solve command</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLUTION ROUTINE  *****
+PERFORM A MODAL ANALYSIS
+  THIS WILL BE A NEW ANALYSIS
+USE SYM. BLOCK LANCZOS MODE EXTRACTION METHOD
+  EXTRACT    10 MODES
+  SHIFT POINT FOR EIGENVALUE CALCULATION=  1.0000
+  NORMALIZE THE MODE SHAPES TO THE MASS MATRIX
+STOP SOLUTION AFTER FULL FILE HAS BEEN WRITTEN
+   LOADSTEP =    1 SUBSTEP =    1 EQ. ITER =    1
+</pre></div>
+</div>
+<p>Read the sparse matrices using PyMapdl.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="n">mm</span><span class="o">.</span><span class="n">free</span><span class="p">()</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">stiff</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s1">&#39;file.full&#39;</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s1">&#39;file.full&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Solve the eigenproblem using PyMapdl with APDLMath.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nev</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">nrow</span><span class="p">,</span> <span class="n">nev</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">nev</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">mapdl_elapsed_time</span> <span class="o">=</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Elapsed time to solve this problem : &#39;</span><span class="p">,</span> <span class="n">mapdl_elapsed_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  0.5285146236419678
+</pre></div>
+</div>
+<p>Print eigenfrequencies and accuracy.</p>
+<p>Accuracy : <span class="math notranslate nohighlight">\(\frac{||(K-\lambda.M).\phi||_2}{||K.\phi||_2}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nev</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nev</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">ev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                            <span class="c1"># Eigenfrequency (Hz)</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span>                    <span class="c1"># omega = 2.pi.Frequency</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span>                       <span class="c1"># lambda = omega^2</span>
+
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                           <span class="c1"># i-th eigenshape</span>
+    <span class="n">kphi</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>                    <span class="c1"># K.Phi</span>
+    <span class="n">mphi</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>                    <span class="c1"># M.Phi</span>
+
+    <span class="n">kphi_nrm</span> <span class="o">=</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>               <span class="c1"># Normalization scalar value</span>
+
+    <span class="n">mphi</span> <span class="o">*=</span> <span class="n">lam</span>                          <span class="c1"># (K-\lambda.M).Phi</span>
+    <span class="n">kphi</span> <span class="o">-=</span> <span class="n">mphi</span>
+
+    <span class="n">mapdl_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">kphi</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">/</span><span class="n">kphi_nrm</span>  <span class="c1"># compute the residual</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">] : Freq = </span><span class="si">{</span><span class="n">f</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> Hz</span><span class="se">\t</span><span class="s2"> Residual = </span><span class="si">{</span><span class="n">mapdl_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq =   352.40 Hz         Residual = 6.4363e-09
+[1] : Freq =   385.20 Hz         Residual = 5.6669e-09
+[2] : Freq =   656.81 Hz         Residual = 6.2898e-09
+[3] : Freq =   764.73 Hz         Residual = 6.6152e-09
+[4] : Freq =   825.47 Hz         Residual = 5.4891e-09
+[5] : Freq =  1039.28 Hz         Residual = 6.2336e-09
+[6] : Freq =  1143.61 Hz         Residual = 2.6386e-08
+[7] : Freq =  1258.00 Hz         Residual = 4.5162e-08
+[8] : Freq =  1334.23 Hz         Residual = 5.2739e-08
+[9] : Freq =  1352.10 Hz         Residual = 3.6164e-08
+</pre></div>
+</div>
+<div class="section" id="use-scipy-to-solve-the-same-eigenproblem">
+<h2>Use SciPy to Solve the same Eigenproblem<a class="headerlink" href="#use-scipy-to-solve-the-same-eigenproblem" title="Permalink to this headline">¶</a></h2>
+<p>First get MAPDL sparse matrices into the Python memory as SciPy
+matrices.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pk</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+
+<span class="c1"># get_ipython().run_line_magic(&#39;matplotlib&#39;, &#39;inline&#39;)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;K and M Matrix profiles&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">pk</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;K Matrix&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;M Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="K and M Matrix profiles, K Matrix, M Matrix" class="sphx-glr-single-img" src="../../_images/sphx_glr_mapdl_vs_scipy_002.png" />
+<p>Make the sparse matrices for SciPy unsymmetric as symmetric matrices in SciPy
+are memory inefficient.</p>
+<p><span class="math notranslate nohighlight">\(K = K + K^T - diag(K)\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pkd</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">diags</span><span class="p">(</span><span class="n">pk</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+<span class="n">pK</span> <span class="o">=</span> <span class="n">pk</span> <span class="o">+</span> <span class="n">pk</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">pkd</span>
+<span class="n">pmd</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">diags</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="n">pm</span> <span class="o">+</span> <span class="n">pm</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">pmd</span>
+</pre></div>
+</div>
+<p>Plot Matrices</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;K and M Matrix profiles&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">pk</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;K Matrix&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;M Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="K and M Matrix profiles, K Matrix, M Matrix" class="sphx-glr-single-img" src="../../_images/sphx_glr_mapdl_vs_scipy_003.png" />
+<p>Solve the eigenproblem</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t3</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="o">=</span> <span class="n">eigsh</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="n">pK</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="n">pm</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;LA&#39;</span><span class="p">)</span>
+<span class="n">t4</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">scipy_elapsed_time</span> <span class="o">=</span> <span class="n">t4</span> <span class="o">-</span> <span class="n">t3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Elapsed time to solve this problem : &#39;</span><span class="p">,</span> <span class="n">scipy_elapsed_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  2.740964412689209
+</pre></div>
+</div>
+<p>Convert Lambda values to Frequency values:
+<span class="math notranslate nohighlight">\(freq = \frac{\sqrt(\lambda)}{2.\pi}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute the residual error for SciPy.</p>
+<p><span class="math notranslate nohighlight">\(Err=\frac{||(K-\lambda.M).\phi||_2}{||K.\phi||_2}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scipy_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nev</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nev</span><span class="p">):</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                       <span class="c1"># i-th eigenvalue</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">vecs</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                     <span class="c1"># i-th eigenshape</span>
+
+    <span class="n">kphi</span> <span class="o">=</span> <span class="n">pk</span><span class="o">*</span><span class="n">phi</span><span class="o">.</span><span class="n">T</span>                     <span class="c1"># K.Phi</span>
+    <span class="n">mphi</span> <span class="o">=</span> <span class="n">pm</span><span class="o">*</span><span class="n">phi</span><span class="o">.</span><span class="n">T</span>                     <span class="c1"># M.Phi</span>
+
+    <span class="n">kphi_nrm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">kphi</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Normalization scalar value</span>
+
+    <span class="n">mphi</span> <span class="o">*=</span> <span class="n">lam</span>                         <span class="c1"># (K-\lambda.M).Phi</span>
+    <span class="n">kphi</span> <span class="o">-=</span> <span class="n">mphi</span>
+
+    <span class="n">scipy_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">kphi</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">kphi_nrm</span>  <span class="c1"># compute the residual</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">] : Freq = </span><span class="si">{</span><span class="n">freqs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> Hz</span><span class="se">\t</span><span class="s2"> Residual = </span><span class="si">{</span><span class="n">scipy_acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq =   352.40 Hz         Residual = 8.007e-05
+[1] : Freq =   385.20 Hz         Residual = 0.00010352
+[2] : Freq =   656.81 Hz         Residual = 0.00024255
+[3] : Freq =   764.73 Hz         Residual = 0.00016257
+[4] : Freq =   825.47 Hz         Residual = 0.0003896
+[5] : Freq =  1039.28 Hz         Residual = 0.00057567
+[6] : Freq =  1143.57 Hz         Residual = 0.0025885
+[7] : Freq =  1258.00 Hz         Residual = 0.00033874
+[8] : Freq =  1334.23 Hz         Residual = 0.00046616
+[9] : Freq =  1352.06 Hz         Residual = 0.001126
+</pre></div>
+</div>
+<p>MAPDL is more accurate than SciPy.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Residual Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mode&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% E</span><span class="s1">rror&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scipy_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SciPy Results&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mapdl_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MAPDL Results&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="Residual Error" class="sphx-glr-single-img" src="../../_images/sphx_glr_mapdl_vs_scipy_004.png" />
+<p>MAPDL is faster than SciPy.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">scipy_elapsed_time</span><span class="o">/</span><span class="n">mapdl_elapsed_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mapdl is </span><span class="si">{</span><span class="n">ratio</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2"> times faster&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Mapdl is 5.19 times faster
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.723 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-mapdl-vs-scipy-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/096b46526b2b4ee2fd41989798894bd1/mapdl_vs_scipy.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mapdl_vs_scipy.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bd9d2aebdd72eab87e247d317da45201/mapdl_vs_scipy.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">mapdl_vs_scipy.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="explore_mapdl_files.html" title="previous page">Binary MAPDL File Explorer</a>
+    <a class='right-next' id="next-link" href="scipy_sparse_matrix.html" title="next page">Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
