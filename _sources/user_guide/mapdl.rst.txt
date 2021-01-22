@@ -96,7 +96,7 @@ using the ``convert_script`` function and setting
 
 .. code:: python
 
-    >>> import ansys.mapdl.core as pymapdl
+    >>> from ansys.mapdl import core as pymapdl
     >>> pymapdl.convert_script(apdl_inputfile, pyscript, macros_as_functions=True)
 
 

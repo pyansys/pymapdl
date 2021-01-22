@@ -32,7 +32,7 @@ the path again.  If you need to change the default ansys path
 
 .. code:: python
 
-    import ansys.mapdl.core as pymapdl
+    from ansys.mapdl import core as pymapdl
     new_path = 'C:\\Program Files\\ANSYS Inc\\v211\\ANSYS\\bin\\winx64\\ansys211.exe'
     pymapdl.change_default_ansys_path(new_path)
 

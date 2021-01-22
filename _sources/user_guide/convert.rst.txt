@@ -131,7 +131,7 @@ This verification file was translated using:
 
 .. code:: python
 
-    >>> import ansys.mapdl.core as pymapdl
+    >>> from ansys.mapdl import core as pymapdl
     >>> from ansys.mapdl.core import examples
     >>> pymapdl.convert_script(examples.vmfiles['vm1'], 'vm1.py')
 

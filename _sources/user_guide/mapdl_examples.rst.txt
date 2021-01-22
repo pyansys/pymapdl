@@ -6,7 +6,7 @@ simply use the built-in ``convert_script`` function within ``ansys-mapdl-core`` 
 
 .. code:: python
 
-    >>> import ansys.mapdl.core as pymapdl
+    >>> from ansys.mapdl import core as pymapdl
     >>> inputfile = 'ansys_inputfile.inp'
     >>> pyscript = 'pyscript.py'
     >>> pymapdl.convert_script(inputfile, pyscript)
