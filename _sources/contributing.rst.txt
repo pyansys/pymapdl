@@ -206,9 +206,9 @@ or in Linux
 
 .. code::
 
-    PYANSYS_START_INSTANCE=False
-    PYMAPDL_PORT=<MAPDL Port> (default 50052)
-    PYMAPDL_IP=<MAPDL IP> (default 127.0.0.1)
+    export PYMAPDL_START_INSTANCE=False
+    export PYMAPDL_PORT=<MAPDL Port> (default 50052)
+    export PYMAPDL_IP=<MAPDL IP> (default 127.0.0.1)
 
 This will tell the ``ansys.mapdl.core`` to attempt to connect to the existing
 MAPDL service by default when the ``launch_mapdl`` function is used.

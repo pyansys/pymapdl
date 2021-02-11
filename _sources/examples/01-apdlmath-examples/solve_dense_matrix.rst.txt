@@ -113,7 +113,7 @@ Solve using APDLMath
  .. code-block:: none
 
     Solving a (10000 x 10000) dense linear system using MAPDL...
-    Elapsed time to solve the linear system using Mapdl: 5.057374715805054 seconds
+    Elapsed time to solve the linear system using Mapdl: 4.421569347381592 seconds
 
 
 
@@ -163,7 +163,7 @@ Solve the solution using numpy
  .. code-block:: none
 
     Solving a (10000 x 10000) dense linear system using numpy...
-    Elapsed time to solve the linear system using numpy: 5.946257591247559 seconds
+    Elapsed time to solve the linear system using numpy: 5.098939895629883 seconds
 
 
 
@@ -196,7 +196,7 @@ Norm of the numpy Solution
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.347 seconds)
+   **Total running time of the script:** ( 0 minutes  12.441 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_solve_dense_matrix.py:

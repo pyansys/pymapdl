@@ -5,22 +5,22 @@
 
 Computation times
 =================
-**00:23.915** total execution time for **examples_01-apdlmath-examples** files:
+**00:20.223** total execution time for **examples_01-apdlmath-examples** files:
 
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_dense_matrix.py` (``solve_dense_matrix.py``)   | 00:14.347 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_dense_matrix.py` (``solve_dense_matrix.py``)   | 00:12.441 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_mapdl_vs_scipy.py` (``mapdl_vs_scipy.py``)           | 00:06.258 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_mapdl_vs_scipy.py` (``mapdl_vs_scipy.py``)           | 00:05.089 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_eigen_solve.py` (``eigen_solve.py``)                 | 00:01.238 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_eigen_solve.py` (``eigen_solve.py``)                 | 00:00.991 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_sparse_matrix.py` (``solve_sparse_matrix.py``) | 00:00.719 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_scipy_sparse_matrix.py` (``scipy_sparse_matrix.py``) | 00:00.598 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_scipy_sparse_matrix.py` (``scipy_sparse_matrix.py``) | 00:00.711 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_solve_sparse_matrix.py` (``solve_sparse_matrix.py``) | 00:00.586 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_explore_mapdl_files.py` (``explore_mapdl_files.py``) | 00:00.280 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_explore_mapdl_files.py` (``explore_mapdl_files.py``) | 00:00.239 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_basic_operations.py` (``basic_operations.py``)       | 00:00.185 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_use_numpy_arrays.py` (``use_numpy_arrays.py``)       | 00:00.144 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-apdlmath-examples_use_numpy_arrays.py` (``use_numpy_arrays.py``)       | 00:00.179 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-apdlmath-examples_basic_operations.py` (``basic_operations.py``)       | 00:00.136 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+--------+

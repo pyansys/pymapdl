@@ -86,7 +86,7 @@ Next:
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-    ansys.mapdl Version: 0.57.5
+    ansys.mapdl Version: 0.57.6
 
 
 
@@ -268,7 +268,7 @@ Solve the eigenproblem using PyMapdl with APDLMath.
  .. code-block:: none
 
 
-    Elapsed time to solve this problem :  0.5592021942138672
+    Elapsed time to solve this problem :  0.45790529251098633
 
 
 
@@ -447,7 +447,7 @@ Solve the eigenproblem
  .. code-block:: none
 
 
-    Elapsed time to solve this problem :  2.9080913066864014
+    Elapsed time to solve this problem :  2.49294114112854
 
 
 
@@ -578,7 +578,7 @@ MAPDL is faster than SciPy.
 
  .. code-block:: none
 
-    Mapdl is 5.2 times faster
+    Mapdl is 5.44 times faster
 
 
 
@@ -586,7 +586,7 @@ MAPDL is faster than SciPy.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.258 seconds)
+   **Total running time of the script:** ( 0 minutes  5.089 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_mapdl_vs_scipy.py:

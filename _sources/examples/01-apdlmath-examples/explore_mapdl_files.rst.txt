@@ -673,7 +673,7 @@ Close an opened file
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.280 seconds)
+   **Total running time of the script:** ( 0 minutes  0.239 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_explore_mapdl_files.py:
