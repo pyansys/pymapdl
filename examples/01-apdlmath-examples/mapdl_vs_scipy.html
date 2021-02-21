@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Compute Eigenvalues using MAPDL or SciPy &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>Compute Eigenvalues using MAPDL or SciPy &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -210,7 +210,7 @@ solutions using Python resources.</p></li>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
 MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-ansys.mapdl Version: 0.57.6
+ansys.mapdl Version: 0.58.0
 </pre></div>
 </div>
 <p>APDLMath EigenSolve
@@ -294,7 +294,7 @@ STOP SOLUTION AFTER FULL FILE HAS BEEN WRITTEN
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  0.45790529251098633
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  0.6131501197814941
 </pre></div>
 </div>
 <p>Print eigenfrequencies and accuracy.</p>
@@ -320,16 +320,16 @@ STOP SOLUTION AFTER FULL FILE HAS BEEN WRITTEN
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq =   352.40 Hz         Residual = 6.4363e-09
-[1] : Freq =   385.20 Hz         Residual = 5.6669e-09
-[2] : Freq =   656.81 Hz         Residual = 6.2898e-09
-[3] : Freq =   764.73 Hz         Residual = 6.6152e-09
-[4] : Freq =   825.47 Hz         Residual = 5.4891e-09
-[5] : Freq =  1039.28 Hz         Residual = 6.2336e-09
-[6] : Freq =  1143.61 Hz         Residual = 2.6386e-08
-[7] : Freq =  1258.00 Hz         Residual = 4.5162e-08
-[8] : Freq =  1334.23 Hz         Residual = 5.2739e-08
-[9] : Freq =  1352.10 Hz         Residual = 3.6164e-08
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq =   352.40 Hz         Residual = 5.3603e-09
+[1] : Freq =   385.20 Hz         Residual = 8.3047e-09
+[2] : Freq =   656.81 Hz         Residual = 3.6904e-09
+[3] : Freq =   764.73 Hz         Residual = 8.2268e-09
+[4] : Freq =   825.47 Hz         Residual = 6.6181e-09
+[5] : Freq =  1039.28 Hz         Residual = 1.908e-09
+[6] : Freq =  1143.61 Hz         Residual = 9.5953e-09
+[7] : Freq =  1258.00 Hz         Residual = 4.4288e-08
+[8] : Freq =  1334.23 Hz         Residual = 4.7728e-08
+[9] : Freq =  1352.10 Hz         Residual = 3.4459e-08
 </pre></div>
 </div>
 <div class="section" id="use-scipy-to-solve-the-same-eigenproblem">
@@ -380,7 +380,7 @@ are memory inefficient.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  2.49294114112854
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Elapsed time to solve this problem :  3.2592735290527344
 </pre></div>
 </div>
 <p>Convert Lambda values to Frequency values:
@@ -442,10 +442,10 @@ are memory inefficient.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Mapdl is 5.44 times faster
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Mapdl is 5.32 times faster
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.089 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.593 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-mapdl-vs-scipy-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/096b46526b2b4ee2fd41989798894bd1/mapdl_vs_scipy.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mapdl_vs_scipy.py</span></code></a></p>
@@ -483,7 +483,7 @@ are memory inefficient.</p>
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

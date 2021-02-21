@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geometry Class &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>Geometry Class &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -42,7 +42,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PyMAPDL Post-Processing API" href="post.html" />
@@ -231,11 +230,11 @@
 <span id="ref-geometry-api"></span><h1>Geometry Class<a class="headerlink" href="#geometry-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl_geometry.</code><code class="sig-name descname">Geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapdl</span></em><span class="sig-paren">)</span></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.mapdl_geometry.</span></code><code class="sig-name descname"><span class="pre">Geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapdl</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Pythonic representation of MAPDL CAD geometry</p>
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">anum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">anum</span></code></dt>
 <dd><p>Array of area numbers.
 .. rubric:: Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -247,7 +246,7 @@
 
 <dl class="py method">
 <dt>
-<code class="sig-name descname">areas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em><span class="sig-paren">)</span></dt>
+<code class="sig-name descname"><span class="pre">areas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>List of areas from MAPDL represented as <code class="docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -266,13 +265,13 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">keypoints</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">keypoints</span></code></dt>
 <dd><p>Keypoint coordinates</p>
 </dd></dl>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">knum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">knum</span></code></dt>
 <dd><p>Array of keypoint numbers.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -284,13 +283,13 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">lines</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lines</span></code></dt>
 <dd><p>Active lines as a pyvista.PolyData</p>
 </dd></dl>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">lnum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lnum</span></code></dt>
 <dd><p>Array of line numbers.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -302,7 +301,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_area</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_area</span></code></dt>
 <dd><p>Number of areas currently selected</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n_area</span>
@@ -313,7 +312,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_keypoint</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_keypoint</span></code></dt>
 <dd><p>Number of keypoints currently selected</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n_keypoint</span>
@@ -324,7 +323,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_line</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_line</span></code></dt>
 <dd><p>Number of lines currently selected</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n_line</span>
@@ -335,7 +334,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_volu</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_volu</span></code></dt>
 <dd><p>Number of volumes currently selected</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">n_area</span>
@@ -346,7 +345,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">vnum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">vnum</span></code></dt>
 <dd><p>Array of volume numbers.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -385,7 +384,7 @@ surface areas selected by <code class="docutils literal notranslate"><span class
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

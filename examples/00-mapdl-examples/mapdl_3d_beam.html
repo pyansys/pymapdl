@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL 3D Beam Example &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>MAPDL 3D Beam Example &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -42,7 +42,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="MAPDL 2D Beam Example" href="mapdl_beam.html" />
@@ -203,7 +202,7 @@ method.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;*****  ANSYS SOLVE    COMMAND  *****\n\n *** NOTE ***                            CP =      50.949   TIME= 22:02:46\n There is no title defined for this analysis.                            \n\n *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***\n                ---GIVE SUGGESTIONS ONLY---\n\n ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED.\n\n\n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     22:02:46  FEB 11, 2021 CP=     50.949\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n                       S O L U T I O N   O P T I O N S\n\n   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  \n   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  \n   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                \n      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS\n   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .     6\n   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  \n   NUMBER OF MODES TO EXPAND . . . . . . . . . . .ALL\n   ELEMENT RESULTS CALCULATION . . . . . . . . . .ON \n\n *** NOTE ***                            CP =      50.949   TIME= 22:02:46\n The conditions for direct assembly have been met.  No .emat or .erot    \n files will be produced.                                                 \n\n                      L O A D   S T E P   O P T I O N S\n\n   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1\n   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .   YES\n   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT\n   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN\n\n\n\n                         ***********  PRECISE MASS SUMMARY  ***********\n\n   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN\n               Translational mass               |   Coupled translational/rotational mass\n         39000.        0.0000        0.0000     |     0.0000        97500.       -19500.    \n         0.0000        39000.        0.0000     |    -97500.        0.0000        19500.    \n         0.0000        0.0000        39000.     |     19500.       -19500.        0.0000    \n     ------------------------------------------ | ------------------------------------------\n                                                |         Rotational mass (inertia)\n                                                |    0.33800E+06   -9750.0       -48750.    \n                                                |    -9750.0       0.33800E+06   -48750.    \n                                                |    -48750.       -48750.        26000.    \n\n   TOTAL MASS =  39000.    \n     The mass principal axes coincide with the global Cartesian axes\n\n   CENTER OF MASS (X,Y,Z)=   0.50000       0.50000        2.5000    \n\n   TOTAL INERTIA ABOUT CENTER OF MASS\n         84500.      -0.92371E-11  -0.79876E-10\n       -0.92371E-11    84500.      -0.32069E-10\n       -0.79876E-10  -0.32069E-10    6500.0    \n     The inertia principal axes coincide with the global Cartesian axes\n\n\n  *** MASS SUMMARY BY ELEMENT TYPE ***\n\n  TYPE      MASS\n     1   39000.0    \n\n Range of element maximum matrix coefficients in global coordinates\n Maximum = 9.116809117E+10 at element 32.                                \n Minimum = 9.116809117E+10 at element 4.                                 \n\n   *** ELEMENT MATRIX FORMULATION TIMES\n     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP\n\n        1        40  SOLID186      0.009   0.000235\n Time at end of element matrix formulation CP = 50.9633369.              \n\n  BLOCK LANCZOS CALCULATION OF UP TO     6 EIGENVECTORS.\n  NUMBER OF EQUATIONS              =          900\n  MAXIMUM WAVEFRONT                =          174\n  MAXIMUM MODES STORED             =            6\n  MINIMUM EIGENVALUE               =  0.00000E+00\n  MAXIMUM EIGENVALUE               =  0.10000E+31\n\n  Memory allocated for solver              =     2.263 MB\n  Memory required for in-core solution     =     2.159 MB\n  Memory required for out-of-core solution =     1.369 MB\n\n *** NOTE ***                            CP =      51.000   TIME= 22:02:46\n The Sparse Matrix Solver used by the Block Lanczos eigensolver is       \n currently running in the in-core memory mode.  This memory mode uses    \n the most amount of memory in order to avoid using the hard drive as     \n much as possible, which most often results in the fastest solution      \n time.  This mode is recommended if enough physical memory is present    \n to accommodate all of the solver data.                                  \n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     22:02:46  FEB 11, 2021 CP=     51.046\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n *** FREQUENCIES FROM BLOCK LANCZOS ITERATION ***\n\n  MODE    FREQUENCY (HERTZ)      \n\n\n    1     32.13951614478    \n    2     32.13951614483    \n    3     145.4783895431    \n    4     173.4557943042    \n    5     173.4557943042    \n    6     254.8511237205    \n\n\n *** ANSYS BINARY FILE STATISTICS\n  BUFFER SIZE USED= 16384\n        0.750 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full\n        0.062 MB WRITTEN ON MODAL MATRIX FILE: file.mode\n        0.312 MB WRITTEN ON RESULTS FILE: file.rst&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;*****  ANSYS SOLVE    COMMAND  *****\n\n *** NOTE ***                            CP =      62.469   TIME= 01:29:59\n There is no title defined for this analysis.                            \n\n *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***\n                ---GIVE SUGGESTIONS ONLY---\n\n ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED.\n\n\n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     01:29:59  FEB 21, 2021 CP=     62.470\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n                       S O L U T I O N   O P T I O N S\n\n   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  \n   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  \n   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                \n      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS\n   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .     6\n   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  \n   NUMBER OF MODES TO EXPAND . . . . . . . . . . .ALL\n   ELEMENT RESULTS CALCULATION . . . . . . . . . .ON \n\n *** NOTE ***                            CP =      62.470   TIME= 01:29:59\n The conditions for direct assembly have been met.  No .emat or .erot    \n files will be produced.                                                 \n\n                      L O A D   S T E P   O P T I O N S\n\n   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1\n   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .   YES\n   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT\n   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN\n\n\n\n                         ***********  PRECISE MASS SUMMARY  ***********\n\n   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN\n               Translational mass               |   Coupled translational/rotational mass\n         39000.        0.0000        0.0000     |     0.0000        97500.       -19500.    \n         0.0000        39000.        0.0000     |    -97500.        0.0000        19500.    \n         0.0000        0.0000        39000.     |     19500.       -19500.        0.0000    \n     ------------------------------------------ | ------------------------------------------\n                                                |         Rotational mass (inertia)\n                                                |    0.33800E+06   -9750.0       -48750.    \n                                                |    -9750.0       0.33800E+06   -48750.    \n                                                |    -48750.       -48750.        26000.    \n\n   TOTAL MASS =  39000.    \n     The mass principal axes coincide with the global Cartesian axes\n\n   CENTER OF MASS (X,Y,Z)=   0.50000       0.50000        2.5000    \n\n   TOTAL INERTIA ABOUT CENTER OF MASS\n         84500.      -0.92371E-11  -0.79876E-10\n       -0.92371E-11    84500.      -0.32069E-10\n       -0.79876E-10  -0.32069E-10    6500.0    \n     The inertia principal axes coincide with the global Cartesian axes\n\n\n  *** MASS SUMMARY BY ELEMENT TYPE ***\n\n  TYPE      MASS\n     1   39000.0    \n\n Range of element maximum matrix coefficients in global coordinates\n Maximum = 9.116809117E+10 at element 32.                                \n Minimum = 9.116809117E+10 at element 4.                                 \n\n   *** ELEMENT MATRIX FORMULATION TIMES\n     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP\n\n        1        40  SOLID186      0.013   0.000330\n Time at end of element matrix formulation CP = 62.4887238.              \n\n  BLOCK LANCZOS CALCULATION OF UP TO     6 EIGENVECTORS.\n  NUMBER OF EQUATIONS              =          900\n  MAXIMUM WAVEFRONT                =          174\n  MAXIMUM MODES STORED             =            6\n  MINIMUM EIGENVALUE               =  0.00000E+00\n  MAXIMUM EIGENVALUE               =  0.10000E+31\n\n  Memory allocated for solver              =     2.263 MB\n  Memory required for in-core solution     =     2.159 MB\n  Memory required for out-of-core solution =     1.369 MB\n\n *** NOTE ***                            CP =      62.533   TIME= 01:29:59\n The Sparse Matrix Solver used by the Block Lanczos eigensolver is       \n currently running in the in-core memory mode.  This memory mode uses    \n the most amount of memory in order to avoid using the hard drive as     \n much as possible, which most often results in the fastest solution      \n time.  This mode is recommended if enough physical memory is present    \n to accommodate all of the solver data.                                  \n\n *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***\n ANSYS Mechanical Enterprise                       \n 00000000  VERSION=LINUX x64     01:29:59  FEB 21, 2021 CP=     62.590\n\n                                                                               \n\n\n\n ** WARNING: PRE-RELEASE VERSION OF ANSYS 21.1BETA\n  ANSYS,INC TESTING IS NOT COMPLETE - CHECK RESULTS CAREFULLY **\n\n *** FREQUENCIES FROM BLOCK LANCZOS ITERATION ***\n\n  MODE    FREQUENCY (HERTZ)      \n\n\n    1     32.13951614478    \n    2     32.13951614483    \n    3     145.4783895431    \n    4     173.4557943042    \n    5     173.4557943042    \n    6     254.8511237205    \n\n\n *** ANSYS BINARY FILE STATISTICS\n  BUFFER SIZE USED= 16384\n        0.750 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full\n        0.062 MB WRITTEN ON MODAL MATRIX FILE: file.mode\n        0.312 MB WRITTEN ON RESULTS FILE: file.rst&#39;
 </pre></div>
 </div>
 <p>View the results using the pyansys result object</p>
@@ -243,16 +242,16 @@ RF  : Nodal reaction forces
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>50 [-0.00118414  0.00208919  0.00134271]
-51 [-0.00143623  0.00255233  0.00144392]
-52 [-0.00170491  0.00304514  0.00153097]
-53 [-0.00198766  0.00356303  0.0016043 ]
-54 [-0.00228208  0.00410167  0.00166479]
-55 [-0.00258591  0.00465688  0.00171318]
-56 [-0.00289709  0.00522485  0.00175064]
-57 [-0.00321369  0.00580202  0.00177814]
-58 [-0.00353406  0.00638538  0.00179711]
-59 [-0.00385671  0.00697215  0.00180876]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>50 [-0.00111018  0.00212727  0.00132799]
+51 [-0.00134529  0.00259955  0.00142809]
+52 [-0.00159593  0.00310205  0.00151419]
+53 [-0.00185973  0.00363011  0.00158671]
+54 [-0.00213448  0.0041793   0.00164654]
+55 [-0.00241804  0.00474535  0.0016944 ]
+56 [-0.00270851  0.0053244   0.00173145]
+57 [-0.00300408  0.00591281  0.00175865]
+58 [-0.00330322  0.00650749  0.00177741]
+59 [-0.00360454  0.00710562  0.00178894]
 </pre></div>
 </div>
 <p>Plot a modal result</p>
@@ -271,7 +270,7 @@ result.animate_nodal_solution(0, show_edges=True, loop=False, displacement_facto
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># movie_filename=&#39;demo.gif&#39;)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.538 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.637 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-mapdl-3d-beam-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0bd877a2fe24abc277f76f9688381098/mapdl_3d_beam.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mapdl_3d_beam.py</span></code></a></p>
@@ -308,7 +307,7 @@ result.animate_nodal_solution(0, show_edges=True, loop=False, displacement_facto
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

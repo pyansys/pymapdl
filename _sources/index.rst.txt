@@ -1,6 +1,17 @@
 PyMAPDL Documentation
 =====================
 
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
+   getting_started/index
+   user_guide/index
+   api/index
+   examples/index
+   contributing
+
+
 Introduction and Purpose
 ------------------------
 PyMAPDL is part of the larger PyAnsys effort to facilitate the use 
@@ -145,11 +156,7 @@ For a full listing of the additional PyMAPDL features, please see the
 :ref:`ref_user_guide`.
 
 
-.. toctree::
-   :hidden:
+Project Index
+*************
 
-   getting_started/index
-   user_guide/index
-   api/index
-   examples/index
-   contributing
+* :ref:`genindex`

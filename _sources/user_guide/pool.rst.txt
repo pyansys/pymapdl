@@ -10,7 +10,7 @@ To create the pool:
 .. code:: python
 
     >>> from ansys.mapdl.core import LocalMapdlPool
-    >>> pool = mapdl.LocalMapdlPool(10)
+    >>> pool = LocalMapdlPool(10)
     'MAPDL Pool with 10 active instances'
 
 You can also supply additional keyword arguments when creating the
@@ -21,7 +21,7 @@ at the current directory within their own isolated directories.
 
     >>> import os
     >>> my_path = os.getcmd()
-    >>> pool = mapdl.LocalMapdlPool(10, nproc=1, run_location=my_path)
+    >>> pool = LocalMapdlPool(10, nproc=1, run_location=my_path)
     Creating Pool: 100%|████████| 10/10 [00:01<00:00,  1.43it/s]
 
 Each individual instance of mapdl can be accessed with:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesh and Geometry &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>Mesh and Geometry &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -42,7 +42,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Post-Processing" href="post.html" />
@@ -218,6 +217,10 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#geometry-commands" class="nav-link">Geometry Commands</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#api-reference" class="nav-link">API Reference</a>
         </li>
     
@@ -283,6 +286,1501 @@ lower level access to MAPDL data.  Access them with:</p>
 <span class="go">   Number of Element Components: 0</span>
 </pre></div>
 </div>
+<div class="section" id="geometry-commands">
+<h2>Geometry Commands<a class="headerlink" href="#geometry-commands" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.geometry_commands.</span></code><code class="sig-name descname"><span class="pre">_MapdlGeometryCommands</span></code><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.a">
+<code class="sig-name descname"><span class="pre">a</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define an area by connecting keypoints.</p>
+<p>APDL Command: A</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If P1 = P,
+graphical picking is enabled and all remaining arguments are
+ignored (valid only in the GUI).</p></li>
+<li><p><strong>p2</strong> – List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If P1 = P,
+graphical picking is enabled and all remaining arguments are
+ignored (valid only in the GUI).</p></li>
+<li><p><strong>p3</strong> – List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If P1 = P,
+graphical picking is enabled and all remaining arguments are
+ignored (valid only in the GUI).</p></li>
+<li><p><strong> .</strong> (<em></em>) – List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If P1 = P,
+graphical picking is enabled and all remaining arguments are
+ignored (valid only in the GUI).</p></li>
+<li><p><strong>p18</strong> – List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If P1 = P,
+graphical picking is enabled and all remaining arguments are
+ignored (valid only in the GUI).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The area number of the created area.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a simple triangle in the XY plane using three keypoints.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a0</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Keypoints (P1 through P18) must be input in a clockwise or
+counterclockwise order around the area.  This order also
+determines the positive normal direction of the area according
+to the right-hand rule.  Existing lines between adjacent
+keypoints will be used; missing lines are generated “straight”
+in the active coordinate system and assigned the lowest
+available numbers [NUMSTR].  If more than one line exists
+between two keypoints, the shorter one will be chosen.  If the
+area is to be defined with more than four keypoints, the
+required keypoints and lines must lie on a constant coordinate
+value in the active coordinate system (such as a plane or a
+cylinder).  Areas may be redefined only if not yet attached to
+a volume.  Solid modeling in a toroidal coordinate system is
+not recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.adrag">
+<code class="sig-name descname"><span class="pre">adrag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlp6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.adrag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate areas by dragging a line pattern along a path.</p>
+<p>APDL Command: ADRAG</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – List of lines in the pattern to be dragged (6 maximum if
+using keyboard entry).  Lines should form a continuous
+pattern (no more than two lines connected to any one
+keypoint.  If NL1 = ALL, all selected lines (except those
+that define the drag path) will be swept along the path.
+A component name may also be substituted for NL1.</p></li>
+<li><p><strong>nl2</strong> – List of lines in the pattern to be dragged (6 maximum if
+using keyboard entry).  Lines should form a continuous
+pattern (no more than two lines connected to any one
+keypoint.  If NL1 = ALL, all selected lines (except those
+that define the drag path) will be swept along the path.
+A component name may also be substituted for NL1.</p></li>
+<li><p><strong>nl3</strong> – List of lines in the pattern to be dragged (6 maximum if
+using keyboard entry).  Lines should form a continuous
+pattern (no more than two lines connected to any one
+keypoint.  If NL1 = ALL, all selected lines (except those
+that define the drag path) will be swept along the path.
+A component name may also be substituted for NL1.</p></li>
+<li><p><strong> .</strong> (<em></em>) – List of lines in the pattern to be dragged (6 maximum if
+using keyboard entry).  Lines should form a continuous
+pattern (no more than two lines connected to any one
+keypoint.  If NL1 = ALL, all selected lines (except those
+that define the drag path) will be swept along the path.
+A component name may also be substituted for NL1.</p></li>
+<li><p><strong>nl6</strong> – List of lines in the pattern to be dragged (6 maximum if
+using keyboard entry).  Lines should form a continuous
+pattern (no more than two lines connected to any one
+keypoint.  If NL1 = ALL, all selected lines (except those
+that define the drag path) will be swept along the path.
+A component name may also be substituted for NL1.</p></li>
+<li><p><strong>nlp1</strong> – List of lines defining the path along which the pattern is
+to be dragged (6 maximum if using keyboard entry).  Must
+be a continuous set of lines.</p></li>
+<li><p><strong>nlp2</strong> – List of lines defining the path along which the pattern is
+to be dragged (6 maximum if using keyboard entry).  Must
+be a continuous set of lines.</p></li>
+<li><p><strong>nlp3</strong> – List of lines defining the path along which the pattern is
+to be dragged (6 maximum if using keyboard entry).  Must
+be a continuous set of lines.</p></li>
+<li><p><strong> .</strong> – List of lines defining the path along which the pattern is
+to be dragged (6 maximum if using keyboard entry).  Must
+be a continuous set of lines.</p></li>
+<li><p><strong>nlp6</strong> – List of lines defining the path along which the pattern is
+to be dragged (6 maximum if using keyboard entry).  Must
+be a continuous set of lines.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">adrag</span><span class="p">(</span><span class="n">carc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nlp1</span><span class="o">=</span><span class="n">l0</span><span class="p">))</span>
+<span class="go">DRAG LINES:</span>
+<span class="go">     1,</span>
+<span class="go">ALONG LINES</span>
+<span class="go">     2,</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates areas (and their corresponding keypoints and lines)
+by sweeping a given line pattern along a characteristic drag
+path.  If the drag path consists of multiple lines, the drag
+direction is determined by the sequence in which the path
+lines are input (NLP1, NLP2, etc.).  If the drag path is a
+single line (NLP1), the drag direction is from the keypoint on
+the drag line that is closest to the first keypoint of the
+given line pattern to the other end of the drag line.</p>
+<p>The magnitude of the vector between the keypoints of the given
+pattern and the first path keypoint remains constant for all
+generated keypoint patterns and the path keypoints.  The
+direction of the vector relative to the path slope also
+remains constant so that patterns may be swept around curves.</p>
+<p>Keypoint, line, and area numbers are automatically assigned
+(beginning with the lowest available values [NUMSTR]).
+Adjacent lines use a common keypoint.  Adjacent areas use a
+common line.  For best results, the entities to be dragged
+should be orthogonal to the start of the drag path.  Drag
+operations that produce an error message may create some of
+the desired entities prior to terminating.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.al">
+<code class="sig-name descname"><span class="pre">al</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l7</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l8</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l9</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.al" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an area bounded by previously defined lines.</p>
+<p>APDL Command: AL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>l1</strong> – List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by
+the direction of L1 using the right-hand rule.  A negative
+value of L1 reverses the normal direction.  If L1 = ALL,
+use all selected lines with L2 defining the normal (L3 to
+L10 are ignored and L2 defaults to the lowest numbered
+selected line).  A component name may also be substituted
+for L1.</p></li>
+<li><p><strong>l2</strong> – List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by
+the direction of L1 using the right-hand rule.  A negative
+value of L1 reverses the normal direction.  If L1 = ALL,
+use all selected lines with L2 defining the normal (L3 to
+L10 are ignored and L2 defaults to the lowest numbered
+selected line).  A component name may also be substituted
+for L1.</p></li>
+<li><p><strong>l3</strong> – List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by
+the direction of L1 using the right-hand rule.  A negative
+value of L1 reverses the normal direction.  If L1 = ALL,
+use all selected lines with L2 defining the normal (L3 to
+L10 are ignored and L2 defaults to the lowest numbered
+selected line).  A component name may also be substituted
+for L1.</p></li>
+<li><p><strong> .</strong> (<em></em>) – List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by
+the direction of L1 using the right-hand rule.  A negative
+value of L1 reverses the normal direction.  If L1 = ALL,
+use all selected lines with L2 defining the normal (L3 to
+L10 are ignored and L2 defaults to the lowest numbered
+selected line).  A component name may also be substituted
+for L1.</p></li>
+<li><p><strong>l10</strong> – List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by
+the direction of L1 using the right-hand rule.  A negative
+value of L1 reverses the normal direction.  If L1 = ALL,
+use all selected lines with L2 defining the normal (L3 to
+L10 are ignored and L2 defaults to the lowest numbered
+selected line).  A component name may also be substituted
+for L1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> – Returns the area number of the created area.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create an area from four lines</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k3</span><span class="p">,</span> <span class="n">k0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">al</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">anum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Lines may be input (once each) in any order and must form a
+simply connected closed curve.  If the area is defined with
+more than four lines, the lines must also lie in the same
+plane or on a constant coordinate value in the active
+coordinate system (such as a plane or a cylinder).</p>
+<p>Solid modeling in a toroidal coordinate system is not
+recommended.  Areas may be redefined only if not yet attached
+to a volume.</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.asba">
+<code class="sig-name descname"><span class="pre">asba</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">na1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sepo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.asba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtracts areas from areas.</p>
+<p>APDL Command: ASBA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>na1</strong> – Area (or areas, if picking is used) to be subtracted from.
+If ALL, use all selected areas.  Areas specified in this
+argument are not available for use in the NA2 argument.  A
+component name may also be substituted for NA1.</p></li>
+<li><p><strong>na2</strong> – Area (or areas, if picking is used) to subtract.  If ALL,
+use all selected areas (except those included in the NA1
+argument).  A component name may also be substituted for
+NA2.</p></li>
+<li><p><strong>sepo</strong> – <p>Behavior if the intersection of the NA1 areas and the NA2 areas is
+a line or lines:</p>
+<p>(blank) - The resulting areas will share line(s) where they touch.</p>
+<dl class="simple">
+<dt>SEPO - The resulting areas will have separate, but</dt><dd><p>coincident line(s) where they touch.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>keep1</strong> – <p>Specifies whether NA1 areas are to be deleted:</p>
+<p>(blank) - Use the setting of KEEP on the BOPTN command.</p>
+<p>DELETE - Delete NA1 areas after ASBA operation (override
+BOPTN command settings).</p>
+<p>KEEP - Keep NA1 areas after ASBA operation (override BOPTN
+command settings).</p>
+</p></li>
+<li><p><strong>keep2</strong> – <p>Specifies whether NA2 areas are to be deleted:</p>
+<p>(blank) - Use the setting of KEEP on the BOPTN command.</p>
+<p>DELETE - Delete NA2 areas after ASBA operation (override
+BOPTN command settings).</p>
+<p>KEEP - Keep NA2 areas after ASBA operation (override BOPTN
+command settings).</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Subtract a 0.5 x 0.5 rectangle from a 1 x 1 rectangle.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">anum0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">anum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aout</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">asba</span><span class="p">(</span><span class="n">anum0</span><span class="p">,</span> <span class="n">anum1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aout</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates new areas by subtracting the regions common to both
+NA1 and NA2 areas (the intersection) from the NA1 areas.  The
+intersection can be an area(s) or line(s).  If the
+intersection is a line and SEPO is blank, the NA1 area is
+divided at the line and the resulting areas will be connected,
+sharing a common line where they touch.  If SEPO is set to
+SEPO, NA1 is divided into two unconnected areas with separate
+lines where they touch.  See Solid Modeling in the Modeling
+and Meshing Guide for an illustration.  See the BOPTN command
+for an explanation of the options available to Boolean
+operations.  Element attributes and solid model boundary
+conditions assigned to the original entities will not be
+transferred to the new entities generated.  ASBA,ALL,ALL will
+have no effect since all the areas (in NA1) will be
+unavailable as NA2 areas.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.blc4">
+<code class="sig-name descname"><span class="pre">blc4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xcorner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycorner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.blc4" title="Permalink to this definition">¶</a></dt>
+<dd><p>APDL Command: BLC4</p>
+<p>Creates a rectangular area or block volume by corner points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xcorner</strong> – Working plane X and Y coordinates of one corner of the
+rectangle or block face.</p></li>
+<li><p><strong>ycorner</strong> – Working plane X and Y coordinates of one corner of the
+rectangle or block face.</p></li>
+<li><p><strong>width</strong> – The distance from XCORNER on or parallel to the working
+plane X-axis that, together with YCORNER, defines a second
+corner of the rectangle or block face.</p></li>
+<li><p><strong>height</strong> – The distance from YCORNER on or parallel to the working
+plane Y-axis that, together with XCORNER, defines a third
+corner of the rectangle or block face.</p></li>
+<li><p><strong>depth</strong> – The perpendicular distance (either positive or negative
+based on the working plane Z direction) from the working
+plane representing the depth of the block.  If DEPTH = 0
+(default), a rectangular area is created on the working
+plane.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a block with dimensions 1 x 2 x 10 with one corner of
+the block at (0, 0) of the current working plane.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">anum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a rectangular area anywhere on the working plane or a
+hexahedral volume with one face anywhere on the working plane.
+A rectangle will be defined with four keypoints and four
+lines.  A volume will be defined with eight keypoints, twelve
+lines, and six areas, with the top and bottom faces parallel
+to the working plane.  See the BLC5, RECTNG, and BLOCK
+commands for alternate ways to create rectangles and blocks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.bsplin">
+<code class="sig-name descname"><span class="pre">bsplin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.bsplin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a single line from a spline fit to a series of keypoints.</p>
+<p>APDL Command: BSPLIN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>p2</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>p3</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>p4</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>p5</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>p6</strong> – Keypoints through which a spline is fit.  At least two
+keypoints must be defined.</p></li>
+<li><p><strong>XV1</strong> – Orientation point of an outward vector tangent to line at
+P1. Vector coordinate system has its origin at the
+keypoint. Coordinate interpretation corresponds to the
+active coordinate system type, i.e., X is R for
+cylindrical, etc. Defaults to zero curvature slope.</p></li>
+<li><p><strong>YV1</strong> – Orientation point of an outward vector tangent to line at
+P1. Vector coordinate system has its origin at the
+keypoint. Coordinate interpretation corresponds to the
+active coordinate system type, i.e., X is R for
+cylindrical, etc. Defaults to zero curvature slope.</p></li>
+<li><p><strong>ZV1</strong> – Orientation point of an outward vector tangent to line at
+P1. Vector coordinate system has its origin at the
+keypoint. Coordinate interpretation corresponds to the
+active coordinate system type, i.e., X is R for
+cylindrical, etc. Defaults to zero curvature slope.</p></li>
+<li><p><strong>XV6</strong> – Orientation point of an outward vector tangent to a line
+at P6 (or the last keypoint specified if fewer than six
+specified). Defaults to zero curvature slope.</p></li>
+<li><p><strong>YV6</strong> – Orientation point of an outward vector tangent to a line
+at P6 (or the last keypoint specified if fewer than six
+specified). Defaults to zero curvature slope.</p></li>
+<li><p><strong>ZV6</strong> – Orientation point of an outward vector tangent to a line
+at P6 (or the last keypoint specified if fewer than six
+specified). Defaults to zero curvature slope.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Line number of the spline generated from the spline fit.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Generate a spline through (0, 0, 0), (0, 1, 0) and (1, 2, 0)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">bsplin</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>One line is generated between keypoint P1 and the last keypoint
+entered.  The line will pass through each entered keypoint.  Solid
+modeling in a toroidal coordinate system is not recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.circle">
+<code class="sig-name descname"><span class="pre">circle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paxis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pzero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nseg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates circular arc lines.</p>
+<p>APDL Command: CIRCLE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pcent</strong> – Keypoint defining the center of the circle (in the plane
+of the circle).</p></li>
+<li><p><strong>rad</strong> – Radius of the circle.  If RAD is blank and PCENT = P, the
+radius is the distance from PCENT to PZERO.</p></li>
+<li><p><strong>paxis</strong> – Keypoint defining axis of circle (along with PCENT).  If
+PCENT = P and PAXIS is omitted, the axis is normal to the
+working plane.</p></li>
+<li><p><strong>pzero</strong> – Keypoint defining the plane normal to circle (along with
+PCENT and PAXIS) and the zero degree location.  Need not
+be in the plane of the circle. This value is not required
+if PAXIS is defined along the Y axis (that is, a circle in
+the XZ plane).</p></li>
+<li><p><strong>arc</strong> – Arc length (in degrees).  Positive follows right-hand rule
+about PCENT-PAXIS vector.  Defaults to 360°.</p></li>
+<li><p><strong>nseg</strong> – Number of lines around circumference (defaults to minimum
+required for 90°-maximum arcs, i.e., 4 for 360°).  Number
+of keypoints generated is NSEG for 360° or NSEG + 1 for
+less than 360°.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of lines of the circular arcs generated from this
+command.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a full circle containing four circular arcs.  Circle
+centered at (0, 0, 0) and generated in the XY plane.  Return
+the lines generated from the circle.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc0</span>
+<span class="go">[1, 2, 3, 4]</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates circular arc lines (and their corresponding
+keypoints).  Keypoints are generated at regular angular
+locations (based on a maximum spacing of 90°).  Arc lines are
+generated connecting the keypoints.  Keypoint and line numbers
+are automatically assigned, beginning with the lowest
+available values [NUMSTR].  Adjacent lines use a common
+keypoint.  Line shapes are generated as arcs, regardless of
+the active coordinate system.  Line shapes are invariant with
+coordinate system after they are generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.cyl4">
+<code class="sig-name descname"><span class="pre">cyl4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xcenter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycenter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.cyl4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a circular area or cylindrical volume anywhere on
+the working plane.</p>
+<p>APDL Command: CYL4</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xcenter</strong> – Working plane X and Y coordinates of the center of the
+circle or cylinder.</p></li>
+<li><p><strong>ycenter</strong> – Working plane X and Y coordinates of the center of the
+circle or cylinder.</p></li>
+<li><p><strong>rad1</strong> – Inner and outer radii (either order) of the circle or
+cylinder.  A value of zero or blank for either RAD1 or
+RAD2, or the same value for both RAD1 and RAD2, defines a
+solid circle or cylinder.</p></li>
+<li><p><strong>rad2</strong> – Inner and outer radii (either order) of the circle or
+cylinder.  A value of zero or blank for either RAD1 or
+RAD2, or the same value for both RAD1 and RAD2, defines a
+solid circle or cylinder.</p></li>
+<li><p><strong>theta1</strong> – Starting and ending angles (either order) of the circle or
+faces of the cylinder.  Used for creating a partial
+annulus or partial cylinder.  The sector begins at the
+algebraically smaller angle, extends in a positive angular
+direction, and ends at the larger angle.  The starting
+angle defaults to 0° and the ending angle defaults to
+360°.  See the Modeling and Meshing Guide for an
+illustration.</p></li>
+<li><p><strong>theta2</strong> – Starting and ending angles (either order) of the circle or
+faces of the cylinder.  Used for creating a partial
+annulus or partial cylinder.  The sector begins at the
+algebraically smaller angle, extends in a positive angular
+direction, and ends at the larger angle.  The starting
+angle defaults to 0° and the ending angle defaults to
+360°.  See the Modeling and Meshing Guide for an
+illustration.</p></li>
+<li><p><strong>depth</strong> – The perpendicular distance (either positive or negative
+based on the working plane Z direction) from the working
+plane representing the depth of the cylinder.  If DEPTH =
+0 (default), a circular area is created on the working
+plane.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a solid cylinder with a depth of 10 at the center of
+the working plane.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Create a cylinder with an inner radius of 1.9 and an outer of
+2.0 with a height of 5 centered at the working plane.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rad1</span><span class="o">=</span><span class="mf">1.9</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a circular area anywhere on the working plane or a
+cylindrical volume with one face anywhere on the working
+plane.  For a solid cylinder of 360°, the top and bottom faces
+will be circular (each area defined with four lines) and they
+will be connected with two surface areas (each spanning 180°).
+See the CYL5, PCIRC, and CYLIND commands for alternate ways to
+create circles and cylinders.</p>
+<p>When working with a model imported from an IGES file (DEFAULT
+import option), you must provide a value for DEPTH or the
+command will be ignored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.k">
+<code class="sig-name descname"><span class="pre">k</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">npt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a keypoint.</p>
+<p>APDL Command: K</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>npt</strong> – Reference number for keypoint.  If zero, the lowest
+available number is assigned [NUMSTR].</p></li>
+<li><p><strong>x</strong> – Keypoint location in the active coordinate system (may be
+R, θ, Z or R, θ, Φ).  If X = P, graphical picking is
+enabled and all other fields (including NPT) are ignored
+(valid only in the GUI).</p></li>
+<li><p><strong>y</strong> – Keypoint location in the active coordinate system (may be
+R, θ, Z or R, θ, Φ).  If X = P, graphical picking is
+enabled and all other fields (including NPT) are ignored
+(valid only in the GUI).</p></li>
+<li><p><strong>z</strong> – Keypoint location in the active coordinate system (may be
+R, θ, Z or R, θ, Φ).  If X = P, graphical picking is
+enabled and all other fields (including NPT) are ignored
+(valid only in the GUI).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The keypoint number of the created keypoint.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create keypoint at (0, 1, 2)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">knum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Create keypoint at (10, 11, 12) while specifying the keypoint
+number.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">knum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a keypoint in the active coordinate system [CSYS] for
+line, area, and volume descriptions.  A previously defined
+keypoint of the same number will be redefined.  Keypoints may
+be redefined only if it is not yet attached to a line or is
+not yet meshed.  Solid modeling in a toroidal system is not
+recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kbetw">
+<code class="sig-name descname"><span class="pre">kbetw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kp1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpnew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kbetw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a keypoint between two existing keypoints.</p>
+<p>APDL Command: KBETW</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kp1</strong> – First keypoint.</p></li>
+<li><p><strong>kp2</strong> – Second keypoint.</p></li>
+<li><p><strong>kpnew</strong> – Number assigned to the new keypoint.  Defaults to the
+lowest available keypoint number.</p></li>
+<li><p><strong>type</strong> – <p>Type of input for VALUE.</p>
+<dl class="simple">
+<dt>RATIO - Value is the ratio of the distances between keypoints as follows:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">(KP1-KPNEW)/(KP1-KP2)</span></code>.</p>
+</dd>
+<dt>DIST - Value is the absolute distance between KP1 and</dt><dd><p>KPNEW (valid only if current coordinate system is
+Cartesian).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>value</strong> – Location of new keypoint, as defined by Type (defaults to
+0.5).  If VALUE is a ratio (Type = RATIO) and is less than
+0 or greater than 1, the keypoint is created on the
+extended line.  Similarly, if VALUE is a distance (Type =
+DIST) and is less than 0 or greater than the distance
+between KP1 and KP2, the keypoint is created on the
+extended line.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a keypoint exactly centered between two keypoints.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">kbetw</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Placement of the new keypoint depends on the currently active
+coordinate system [CSYS].  If the coordinate system is
+Cartesian, the keypoint will lie on a straight line between
+KP1 and KP2.  If the system is not Cartesian (e.g.,
+cylindrical, spherical, etc.), the keypoint will be located as
+if on a line (which may not be straight) created in the
+current coordinate system between KP1 and KP2.  Note that
+solid modeling in a toroidal coordinate system is not
+recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kcenter">
+<code class="sig-name descname"><span class="pre">kcenter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpnew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kcenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a keypoint at the center of a circular arc defined
+by three locations.</p>
+<p>APDL Command: KCENTER</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – <p>Type of entity used to define the circular arc.  The
+meaning of VAL1 through VAL4 will vary depending on Type.</p>
+<p>KP - Arc is defined by keypoints.</p>
+<p>LINE - Arc is defined by locations on a line.</p>
+</p></li>
+<li><p><strong>val1</strong> – Values used to specify three locations on the arc (see table
+below).</p></li>
+<li><p><strong>val2</strong> – Values used to specify three locations on the arc (see table
+below).</p></li>
+<li><p><strong>val3</strong> – Values used to specify three locations on the arc (see table
+below).</p></li>
+<li><p><strong>val4</strong> – Values used to specify three locations on the arc (see table
+below).</p></li>
+<li><p><strong>kpnew</strong> – Number assigned to new keypoint.  Defaults to the lowest available
+keypoint number.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a keypoint at the center of a circle centered at (0, 0, 0)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">kcenter</span><span class="p">(</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>KCENTER should be used in the Cartesian coordinate system
+(CSYS,0) only.  This command provides three methods to define
+a keypoint at the center of three locations.  As shown below,
+the center point can be calculated based on a) three
+keypoints, b) three keypoints and a radius, or c) three
+locations on a line.  Note that for method c, if a circular
+line is specified by VAL1, VAL2 through VAL4 are not needed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kdist">
+<code class="sig-name descname"><span class="pre">kdist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kp1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and lists the distance between two keypoints.</p>
+<p>APDL Command: KDIST</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kp1</strong> – First keypoint in distance calculation.</p></li>
+<li><p><strong>kp2</strong> – Second keypoint in distance calculation.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Compute the distance between two keypoints points</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kp0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kp1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">kp0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">kp1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">kdist</span><span class="p">(</span><span class="n">knum0</span><span class="p">,</span> <span class="n">knum1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span>
+<span class="go">[1.0, -5.0, 13.0]</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>KDIST lists the distance between keypoints KP1 and KP2, as
+well as the current coordinate system offsets from KP1 to KP2,
+where the X, Y, and Z locations of KP1 are subtracted from the
+X, Y, and Z locations of KP2 (respectively) to determine the
+offsets.  KDIST is valid in any coordinate system except
+toroidal [CSYS,3].</p>
+<p>This command is valid in any processor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kl">
+<code class="sig-name descname"><span class="pre">kl</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nk1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.kl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a keypoint at a specified location on an existing line.</p>
+<p>APDL Command: KL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the line.  If negative, the direction of line
+(as interpreted for RATIO) is reversed.</p></li>
+<li><p><strong>ratio</strong> – Ratio of line length to locate keypoint.  Must be between
+0.0 and 1.0.  Defaults to 0.5 (divide the line in half).</p></li>
+<li><p><strong>nk1</strong> – Number to be assigned to keypoint generated at division
+location (defaults to lowest available keypoint number
+[NUMSTR]).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a keypoint on a line from (0, 0, 0) and (10, 0, 0)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kp0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kp1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">kp0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">kp1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">knum0</span><span class="p">,</span> <span class="n">knum1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.knode">
+<code class="sig-name descname"><span class="pre">knode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">npt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.knode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a keypoint at an existing node location.</p>
+<p>APDL Command: KNODE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>npt</strong> – Arbitrary reference number for keypoint.  If zero, the
+lowest available number is assigned [NUMSTR].</p></li>
+<li><p><strong>node</strong> – Node number defining global X, Y, Z keypoint location.  A
+component name may also be substituted for NODE.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a keypoint at a node at (1, 2, 3)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">knode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">nnum</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knum1</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l">
+<code class="sig-name descname"><span class="pre">l</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndiv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a line between two keypoints.</p>
+<p>APDL Command: L</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoint at the beginning of line.</p></li>
+<li><p><strong>p2</strong> – Keypoint at the end of line.</p></li>
+<li><p><strong>ndiv</strong> – Number of element divisions within this line.  Normally
+this field is not used; specifying divisions with LESIZE,
+etc. is recommended.</p></li>
+<li><p><strong>space</strong> – Spacing ratio.  Normally this field is not used, as
+specifying spacing ratios with the LESIZE command is
+recommended.  If positive, space is the nominal ratio of
+the last division size (at P2) to the first division size
+(at P1).  If the ratio is greater than 1, the division
+sizes increase from P1 to P2, and if less than 1, they
+decrease.  If space is negative, then <code class="docutils literal notranslate"><span class="pre">space</span></code> is the
+nominal ratio of the center division size to those at the
+ends.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The line number of the created line.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a line between the two keypoints (0, 0, 0) and (1, 0, 0)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a line between two keypoints from P1 to P2.  The line
+shape may be generated as “straight” (in the active coordinate
+system) or curved.  The line shape is invariant with
+coordinate system after it is generated.  Note that solid
+modeling in a toroidal coordinate system is not recommended.
+A curved line is limited to 180°.  Lines may be redefined only
+if not yet attached to an area.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l2ang">
+<code class="sig-name descname"><span class="pre">l2ang</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phit1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phit2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l2ang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a line at an angle with two existing lines.</p>
+<p>APDL Command: L2ANG</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the first line to be hit (touched by the end of
+the new line).  If negative, assume P1 (see below) is the
+second keypoint of the line instead of the first.</p></li>
+<li><p><strong>nl2</strong> – Number of the second line to be hit.  If negative, assume
+P3 is the second keypoint of the line instead of the
+first.</p></li>
+<li><p><strong>ang1</strong> – Angle of intersection (usually zero or 180) of generated
+line with tangent to first line.</p></li>
+<li><p><strong>ang2</strong> – Angle of intersection (usually zero or 180) of generated
+line with tangent to second line.</p></li>
+<li><p><strong>phit1</strong> – Number to be assigned to keypoint generated at hit
+location on first line (defaults to lowest available
+keypoint number [NUMSTR]).</p></li>
+<li><p><strong>phit2</strong> – Number to be assigned to keypoint generated at hit
+location on second line (defaults to lowest available
+keypoint number [NUMSTR]).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create two circles and join them with a line.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l2ang</span><span class="p">(</span><span class="n">carc0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">carc1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">9</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates a straight line (PHIT1-PHIT2) at an angle (ANG1)
+with an existing line NL1 (P1-P2) and which is also at an
+angle (ANG2) with another existing line NL2 (P3-P4).  If the
+angles are zero the generated line is tangent to the two
+lines.  The PHIT1 and PHIT2 locations on the lines are
+automatically calculated.  Line P1-P2 becomes P1-PHIT1, P3-P4
+becomes P3-PHIT2, and new lines PHIT1-P2, PHIT2-P4, and
+PHIT1-PHIT2 are generated.  Line divisions are set to zero
+(use LESIZE, etc. to modify).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l2tan">
+<code class="sig-name descname"><span class="pre">l2tan</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.l2tan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a line tangent to two lines.</p>
+<p>APDL Command: L2TAN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the first line generated line is tangent to.  If
+negative, assume P1 (see below) is the second keypoint of
+the line instead of the first.  If NL1 = P, graphical
+picking is enabled and all remaining command fields are
+ignored (valid only in the GUI).</p></li>
+<li><p><strong>nl2</strong> – Number of the second line generated line is tangent to.
+If negative, assume P3 is the second keypoint of the line
+instead of the first.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create two circular arcs and connect them with a spline.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l2tan</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>Plot these lines</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates a line (P2-P3) tangent at point P2 to line NL1
+(P1-P2) and tangent at point P3 to line NL2 (P3-P4).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lang">
+<code class="sig-name descname"><span class="pre">lang</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a straight line at an angle with a line.</p>
+<p>APDL Command: LANG</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the line to be hit (touched by the end of the
+new line).  If negative, assume P1 (see below) is the
+second keypoint of the line instead of the first.</p></li>
+<li><p><strong>p3</strong> – Keypoint at which generated line must end.</p></li>
+<li><p><strong>ang</strong> – Angle of intersection of generated line PHIT-P3 with
+tangent to line P1-P2 at PHIT.  If 0 (default), the
+generated line is tangent to NL1 toward end P1; if 90, the
+generated line is perpendicular to NL1.  If 180, the
+generated line is tangent to NL1 toward end P2.  ANG can
+be any value, but is adjusted to the corresponding acute
+angle with respect to LOCAT. See “Notes” for a discussion
+of accuracy.</p></li>
+<li><p><strong>phit</strong> – Number to be assigned to keypoint generated at hit
+location (defaults to lowest available keypoint number
+[NUMSTR]).</p></li>
+<li><p><strong>locat</strong> – Approximate location of PHIT in terms of the ratio of the
+distance along the line (NL1) to the length of the line.
+LOCAT can range from 0 to 1.  If LOCAT is blank, the point
+will be located with less speed and accuracy, and an
+arbitrary location may result.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a line from a line from (0, 0, 0) to (1, 0, 0) to a
+keypoint at (1, 1, 1) at an angle of 60 degrees.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lang</span><span class="p">(</span><span class="n">lnum</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates a straight line (PHIT-P3) at an angle (ANG) with a
+line NL1 (P1-P2).  The location of PHIT on the line is
+automatically calculated.  Line P1-P2 becomes P1-PHIT and new
+lines PHIT-P2 and PHIT-P3 are generated.  Line divisions are
+set to zero (use LESIZE, etc. to modify).</p>
+<p>PHIT is positioned closest to LOCAT for the given angle, ANG.
+To ensure better performance, it is recommended that LOCAT be
+input, even if it is 0.</p>
+<p>The program uses an iterative procedure to position PHIT.  The
+procedure is not exact, with the result that the actual value
+of ANG will sometimes differ slightly from the specified
+value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.larc">
+<code class="sig-name descname"><span class="pre">larc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.larc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a circular arc.</p>
+<p>APDL Command: LARC</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoint at one end of circular arc line.</p></li>
+<li><p><strong>p2</strong> – Keypoint at other end of circular arc line.</p></li>
+<li><p><strong>pc</strong> – Keypoint defining plane of arc and center of curvature
+side (with positive radius).  Must not lie along the
+straight line from P1 to P2.  PC need not be at the center
+of curvature.</p></li>
+<li><p><strong>rad</strong> – Radius of curvature of the arc.  If negative, assume
+center of curvature side is opposite to that defined by
+PC.  If RAD is blank, RAD will be calculated from a curve
+fit through P1, PC, and P2.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a circular arc that travels between (0, 0, 0) and
+(1, 1, 0) with a radius of curvature of 2.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">larc</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a circular arc line from P1 to P2.  The line shape is
+generated as circular, regardless of the active coordinate
+system.  The line shape is invariant with coordinate system
+after it is generated.</p>
+<p>When dealing with a large radius arc (1e3), or if the location
+of the arc you create is far away from the origin of your
+coordinate system, anomalies may occur. You can prevent this
+by creating the arc at a smaller scale, and then scaling the
+model back to full size (LSSCALE).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.larea">
+<code class="sig-name descname"><span class="pre">larea</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">narea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.larea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the shortest line between two keypoints on an area.</p>
+<p>APDL Command: LAREA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – First keypoint of line to be generated.</p></li>
+<li><p><strong>p2</strong> – Second keypoint of line to be generated.</p></li>
+<li><p><strong>narea</strong> – Area containing P1 and P2, or area to which generated line
+is to be parallel.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Generate a line on a square between its two corners.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">larea</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">a0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates the shortest line between two keypoints, P1 and P2,
+both of which lie on an area.  The generated line will also
+lie on the area.  P1 and P2 may also be equidistant (in global
+Cartesian space) from the area (and on the same side of the
+area), in which case a line parallel to the area is generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lcomb">
+<code class="sig-name descname"><span class="pre">lcomb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lcomb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combines adjacent lines into one line.</p>
+<p>APDL Command: LCOMB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the first line to be combined.  If NL1 = ALL,
+NL2 is ignored and all selected lines [LSEL] are combined.
+A component name may also be substituted for NL1 (NL2 is
+ignored).</p></li>
+<li><p><strong>nl2</strong> – Number of the second line to be combined.</p></li>
+<li><p><strong>keep</strong> – <p>Specifies whether to keep the input entities:</p>
+<dl class="simple">
+<dt>0 - Delete lines NL1 and NL2 and their common keypoint.</dt><dd><p>Keypoints will not be deleted if they are meshed or if
+they are attached to other lines.  Lines will not be
+deleted if they are attached to different areas.</p>
+</dd>
+<dt>1 - Keep NL1, NL2, and their common keypoint.  (The common</dt><dd><p>keypoint will not be attached to the output line.)</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create two lines and combine them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lout</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lcomb</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lout</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Combines adjacent lines into one line (the output line).  This
+operation will effectively “undo” the LDIV operation.  Line
+divisions are set to zero (use LESIZE, etc. to modify).  Lines
+attached to the same area(s) can also be combined.  See also
+the LCCAT command for line concatenation capability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.ldiv">
+<code class="sig-name descname"><span class="pre">ldiv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdiv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndiv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.ldiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divides a single line into two or more lines.</p>
+<p>APDL Command: LDIV</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the line to be divided.  If negative, assume P1
+(see below) is the second keypoint of the line instead of
+the first for RATIO.  If ALL, divide all selected lines
+[LSEL].  A component name may also be substituted for NL1.</p></li>
+<li><p><strong>ratio</strong> – Ratio of line length P1-PDIV to line length P1-P2.  Must
+be between 0.0 and 1.0. Input ignored if NDIV &gt; 2.</p></li>
+<li><p><strong>pdiv</strong> – Number to be assigned to keypoint generated at division
+location (defaults to lowest available keypoint number
+[NUMSTR]).  Input ignored if NL1 = ALL or NDIV &gt; 2.  If
+PDIV already exists and lies on line NL1, divide line at
+PDIV (RATIO must also be 0.0).  If PDIV already exists and
+does not lie on line NL1, PDIV is projected and moved to
+the nearest point on line NL1 (if possible). PDIV cannot
+be attached to another line, area, or volume.</p></li>
+<li><p><strong>ndiv</strong> – The number of new lines to be generated from old line
+(defaults to 2).</p></li>
+<li><p><strong>keep</strong> – <p>Specifies whether to keep the input entities:</p>
+<p>0 - Modify old line to use new keypoints and slopes.</p>
+<dl class="simple">
+<dt>1 - Do not modify old line.  New lines will overlay old</dt><dd><p>line and have unique keypoints.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a single line and divide it exactly half.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">ldiv</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a single line and divide it into 5 pieces.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">ldiv</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">ndiv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Divides a single line NL1 (defined from keypoint P1 to
+keypoint P2) into two or more lines.  Line NL1 becomes the new
+line beginning with keypoint P1 and new lines are generated
+ending at keypoint P2.  If the line is attached to an area,
+the area will also be updated.  Line divisions are set to zero
+(use LESIZE, etc. to modify).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lextnd">
+<code class="sig-name descname"><span class="pre">lextnd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nk1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lextnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends a line at one end by using its slope.</p>
+<p>APDL Command: LEXTND</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the line to be extended.</p></li>
+<li><p><strong>nk1</strong> – Number of keypoint at the end of line NL1 to be extended.</p></li>
+<li><p><strong>dist</strong> – Distance that the line will be extended.</p></li>
+<li><p><strong>keep</strong> – <p>Specifies whether to keep the input entities:</p>
+<p>0 - Modify old line to use new keypoints and slopes.</p>
+<dl class="simple">
+<dt>1 - Do not modify old line.  New line will overlay old</dt><dd><p>line and have unique keypoints.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a circular arc and extend it at one of its keypoints</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carcs</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lextnd</span><span class="p">(</span><span class="n">carcs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Extends a line at one end by using its slope.  Lines may be
+redefined only if not yet attached to an area.  Line divisions
+are set to zero (use LESIZE, etc. to modify).  Note that solid
+modeling in a toroidal coordinate system is not recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lfillt">
+<code class="sig-name descname"><span class="pre">lfillt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lfillt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a fillet line between two intersecting lines.</p>
+<p>APDL Command: LFILLT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the first intersecting line.</p></li>
+<li><p><strong>nl2</strong> – Number of the second intersecting line.</p></li>
+<li><p><strong>rad</strong> – Radius of fillet to be generated.  Radius should be less than the
+lengths of the two lines specified with NL1 and NL2.</p></li>
+<li><p><strong>pcent</strong> – Number to be assigned to generated keypoint at fillet arc center.
+If zero (or blank), no keypoint is generated.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create two intersecting lines at a right angle and add a
+fillet between them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lfillt</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates a fillet line between two intersecting lines NL1
+(P1-PINT) and NL2 (P2-PINT).  Three keypoints may be
+generated, two at the fillet tangent points (PTAN1 and PTAN2)
+and one (optional) at the fillet arc center (PCENT).  Line
+P1-PINT becomes P1-PTAN1, P2-PINT becomes P2-PTAN2, and new
+arc line PTAN1-PTAN2 is generated.  Generated keypoint and
+line numbers are automatically assigned (beginning with the
+lowest available values [NUMSTR]).  Line divisions are set to
+zero (use LESIZE, etc. to modify).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lstr">
+<code class="sig-name descname"><span class="pre">lstr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.lstr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a straight line irrespective of the active coordinate system.</p>
+<p>APDL Command: LSTR</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoint at the beginning of line.</p></li>
+<li><p><strong>p2</strong> – Keypoint at the end of line.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Line number of the created line.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a cartesian straight line regardless of the coordinate
+system being in cylindrical.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">csys</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lstr</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a straight line from P1 to P2 using the global
+Cartesian coordinate system.  The active coordinate system
+will be ignored.  The line shape is invariant with the
+coordinate system after it is generated.  Lines may be
+redefined only if not yet attached to an area.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.ltan">
+<code class="sig-name descname"><span class="pre">ltan</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.ltan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a line at the end of, and tangent to, an existing line.</p>
+<p>APDL Command: LTAN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nl1</strong> – Number of the line the generated line is tangent to.  If
+negative, assume P1 (see below), instead of P2, is the
+second keypoint of line NL1.</p></li>
+<li><p><strong>p3</strong> – Keypoint at which generated line must end.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a circular arc and generate a tangent spline at the end
+of it directed to a new keypoint.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carc</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">ltan</span><span class="p">(</span><span class="n">carc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lnum</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Generates a line (P2-P3) tangent at end point (P2) of line NL1
+(P1-P2).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.n">
+<code class="sig-name descname"><span class="pre">n</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thzx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a node.</p>
+<p>APDL Command: N</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – Node number to be assigned.  A previously defined node of
+the same number will be redefined.  Defaults to the
+maximum node number used +1.</p></li>
+<li><p><strong>x</strong> – Node location in the active coordinate system (R, θ, Z for
+cylindrical, R, θ, Φ for spherical or toroidal).  If X =
+P, graphical picking is enabled and all remaining command
+fields are ignored (valid only in the GUI).</p></li>
+<li><p><strong>y</strong> – Node location in the active coordinate system (R, θ, Z for
+cylindrical, R, θ, Φ for spherical or toroidal).  If X =
+P, graphical picking is enabled and all remaining command
+fields are ignored (valid only in the GUI).</p></li>
+<li><p><strong>z</strong> – Node location in the active coordinate system (R, θ, Z for
+cylindrical, R, θ, Φ for spherical or toroidal).  If X =
+P, graphical picking is enabled and all remaining command
+fields are ignored (valid only in the GUI).</p></li>
+<li><p><strong>thxy</strong> – First rotation about nodal Z (positive X toward Y).</p></li>
+<li><p><strong>thyz</strong> – Second rotation about nodal X (positive Y toward Z).</p></li>
+<li><p><strong>thzx</strong> – Third rotation about nodal Y (positive Z toward X).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a node at (0, 1, 1)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Create a node at (4, 5, 1) with a node ID of 10</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a node in the active coordinate system [CSYS].  The
+nodal coordinate system is parallel to the global Cartesian
+system unless rotated.  Rotation angles are in degrees and
+redefine any previous rotation angles.  See the NMODIF, NANG,
+NROTAT, and NORA commands for other rotation options.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.spline">
+<code class="sig-name descname"><span class="pre">spline</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zv6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a segmented spline through a series of keypoints.</p>
+<p>APDL Command: SPLINE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoints through which the spline is fit.  At least two
+must be defined.</p></li>
+<li><p><strong>p2</strong> – Keypoints through which the spline is fit.  At least two
+must be defined.</p></li>
+<li><p><strong>p3</strong> – Keypoints through which the spline is fit.  At least two
+must be defined.</p></li>
+<li><p><strong> .</strong> (<em></em>) – Keypoints through which the spline is fit.  At least two
+must be defined.</p></li>
+<li><p><strong>p6</strong> – Keypoints through which the spline is fit.  At least two
+must be defined.</p></li>
+<li><p><strong>Returns</strong> – </p></li>
+<li><p><strong>list</strong> – List of line numbers generated.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a spline with 5 keypoints.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k4</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">spline</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The output from this command is a series of connected lines
+(one line between each pair of keypoints) that together form a
+spline.  Note that solid modeling in a toroidal coordinate
+system is not recommended.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.v">
+<code class="sig-name descname"><span class="pre">v</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a volume through keypoints.</p>
+<p>APDL Command: V</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Keypoint defining starting corner of volume.</p></li>
+<li><p><strong>p2</strong> – Keypoint defining second corner of volume.</p></li>
+<li><p><strong>p3</strong> – Keypoint defining third corner of volume.</p></li>
+<li><p><strong>p4</strong> – Keypoint defining fourth corner of volume.</p></li>
+<li><p><strong>p5</strong> – Keypoint defining fifth corner of volume.</p></li>
+<li><p><strong>p6</strong> – Keypoint defining sixth corner of volume.</p></li>
+<li><p><strong>p7</strong> – Keypoint defining seventh corner of volume.</p></li>
+<li><p><strong>p8</strong> – Keypoint defining eighth corner of volume.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a simple cube volume.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k4</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k5</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k6</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k7</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k4</span><span class="p">,</span> <span class="n">k5</span><span class="p">,</span> <span class="n">k6</span><span class="p">,</span> <span class="n">k7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Create a triangular prism</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k4</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k5</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k6</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k7</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k4</span><span class="p">,</span> <span class="n">k5</span><span class="p">,</span> <span class="n">k6</span><span class="p">,</span> <span class="n">k6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>Create a tetrahedron
+V,P1,P2,P3,P3,P5,P5,P5,P5  for a tetrahedron.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Defines a volume (and its corresponding lines and areas)
+through eight (or fewer) existing keypoints.  Keypoints must
+be input in a continuous order.  The order of the keypoints
+should be around the bottom and then the top.  Missing lines
+are generated “straight” in the active coordinate system and
+assigned the lowest available numbers [NUMSTR].  Missing areas
+are generated and assigned the lowest available numbers.</p>
+<p>Solid modeling in a toroidal coordinate system is not recommended.</p>
+<p>Certain faces may be condensed to a line or point by repeating
+keypoints.   For example, use V,P1,P2,P3,P3,P5,P6,P7,P7   for a
+triangular prism or V,P1,P2,P3,P3,P5,P5,P5,P5  for a tetrahedron.</p>
+<p>Using keypoints to produce partial sections in CSYS = 2 can generate
+anomalies; check the resulting volumes carefully.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <p>For a full descrption of the <code class="docutils literal notranslate"><span class="pre">Mesh</span></code> and <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> classes, please
@@ -315,7 +1813,7 @@ see <a class="reference internal" href="../api/mesh.html#ref-mesh-api"><span cla
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

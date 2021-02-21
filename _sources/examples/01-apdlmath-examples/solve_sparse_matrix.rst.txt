@@ -89,7 +89,7 @@ List the files in current directory
  .. code-block:: none
 
 
-    ['HexBeam.cdb', 'PRSMEMB.DSP', 'PRSMEMB.emat', 'PRSMEMB.esav', 'PRSMEMB.full', 'PRSMEMB.mntr', 'PRSMEMB.mode', 'PRSMEMB.rst', 'PRSMEMB000.jpg', 'PRSMEMB001.jpg', 'PRSMEMB002.jpg', 'PRSMEMB003.jpg', 'PRSMEMB004.jpg', 'PRSMEMB005.jpg', 'PRSMEMB006.jpg', 'PRSMEMB007.jpg', 'PRSMEMB008.jpg', 'PRSMEMB009.jpg', 'PRSMEMB010.jpg', 'PRSMEMB011.jpg', 'SCRATCH', 'SOLVIT.MAC', 'TABLE_1', 'TABLE_2', '__tmp__.inp', '__tmp_sys_out__', '_input_tmp_.inp', '_input_tmp_.out', '_tmp.dat', '_tmp.iges', 'anaconda-post.log', 'anstmp', 'ansys_inc', 'bin', 'dev', 'etc', 'file.DSP', 'file.err', 'file.esav', 'file.full', 'file.ldhi', 'file.lock', 'file.log', 'file.mlv', 'file.mntr', 'file.mode', 'file.page', 'file.r001', 'file.rdb', 'file.rth', 'file.stat', 'home', 'hzpabrrcys.txt', 'lib', 'lib64', 'media', 'mnt', 'opt', 'proc', 'quhomuegar.txt', 'root', 'run', 'sbin', 'srv', 'sys', 'tmp', 'tmp.cdb', 'usr', 'var', 'vm1.dat', 'vm1.vrt', 'vm153.dat', 'vm153.vrt', 'wing.dat']
+    ['HexBeam.cdb', 'PRSMEMB.DSP', 'PRSMEMB.emat', 'PRSMEMB.esav', 'PRSMEMB.full', 'PRSMEMB.mntr', 'PRSMEMB.mode', 'PRSMEMB.rst', 'PRSMEMB000.jpg', 'PRSMEMB001.jpg', 'PRSMEMB002.jpg', 'PRSMEMB003.jpg', 'PRSMEMB004.jpg', 'PRSMEMB005.jpg', 'PRSMEMB006.jpg', 'PRSMEMB007.jpg', 'PRSMEMB008.jpg', 'PRSMEMB009.jpg', 'PRSMEMB010.jpg', 'PRSMEMB011.jpg', 'SCRATCH', 'SOLVIT.MAC', 'TABLE_1', 'TABLE_2', '__tmp__.inp', '__tmp_sys_out__', '_input_tmp_.inp', '_input_tmp_.out', '_tmp.dat', '_tmp.iges', 'anaconda-post.log', 'anstmp', 'ansys_inc', 'bin', 'dev', 'etc', 'file.DSP', 'file.err', 'file.esav', 'file.full', 'file.grph', 'file.ldhi', 'file.lock', 'file.log', 'file.mlv', 'file.mntr', 'file.mode', 'file.page', 'file.r001', 'file.rdb', 'file.rth', 'file.stat', 'home', 'joeubynbbe.txt', 'lib', 'lib64', 'media', 'mnt', 'opt', 'proc', 'root', 'run', 'rwpvzmtmba.txt', 'sbin', 'srv', 'sys', 'tmp', 'tmp.cdb', 'usr', 'var', 'vm1.dat', 'vm1.vrt', 'vm153.dat', 'vm153.vrt', 'wing.dat']
 
 
 
@@ -258,7 +258,7 @@ Print the **norm** of the solution vector
  .. code-block:: none
 
 
-    5.8159282970298835e-08
+    5.8159282970301184e-08
 
 
 
@@ -287,7 +287,7 @@ We check the accuracy of the solution, by verifying that
 
  .. code-block:: none
 
-    Residual error: 1.4726547870205251e-15
+    Residual error: 1.8243672846957582e-15
 
 
 
@@ -317,11 +317,11 @@ Summary of all allocated APDLMath Objects
 
       Name                   Type            Mem. (MB)       Dims            Workspace
 
-       XAJRMJ                SMAT            0.011           [126:126]               1
-       ANQIPL                VEC             0.001           126             1
-       PUQZKE                VEC             0.001           126             1
-       TFYYFU                VEC             0.001           126             1
-       YBQHDC                LSENGINE        --              --              1
+       BRZIGO                SMAT            0.011           [126:126]               1
+       IWGLSW                VEC             0.001           126             1
+       RXBFVD                VEC             0.001           126             1
+       VXHCVY                VEC             0.001           126             1
+       DNZGKK                LSENGINE        --              --              1
 
 
 
@@ -346,7 +346,7 @@ Delete all APDLMath Objects
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.586 seconds)
+   **Total running time of the script:** ( 0 minutes  0.743 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_solve_sparse_matrix.py:

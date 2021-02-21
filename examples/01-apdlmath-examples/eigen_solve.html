@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using APDLMath to solve Eigenproblems &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>Using APDLMath to solve Eigenproblems &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -231,7 +231,7 @@ properties (e.g. scalar, storage, symmetry…)</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Calling MAPDL to solve the eigenproblem...
-Elapsed time to solve this problem: 0.03291010856628418
+Elapsed time to solve this problem: 0.03732872009277344
 </pre></div>
 </div>
 <p>This is the vector of eigenfrequencies.</p>
@@ -239,7 +239,7 @@ Elapsed time to solve this problem: 0.03291010856628418
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>KYTRBK :
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>IHLTHK :
  Size : 10
   3.381e+02   3.381e+02   6.266e+02   6.266e+02   9.283e+02      &lt;       5
   9.283e+02   1.250e+03   1.250e+03   1.424e+03   1.424e+03      &lt;       10
@@ -292,7 +292,7 @@ factor and finally compute the normalized residual value
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>3.503338761293556e-11
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.3070247813015805e-11
 </pre></div>
 </div>
 <p>This residual can be computed for all eigenmodes</p>
@@ -336,16 +336,16 @@ factor and finally compute the normalized residual value
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq = 338.0666635506364   - Residual = 3.503338761293556e-11
-[1] : Freq = 338.06666355063646  - Residual = 5.095765571157227e-11
-[2] : Freq = 626.6450980927036   - Residual = 1.7852148894677666e-11
-[3] : Freq = 626.645098092704    - Residual = 2.17372918531887e-11
-[4] : Freq = 928.2598500574518   - Residual = 1.72025442075496e-11
-[5] : Freq = 928.2598500574528   - Residual = 6.747910207805831e-12
-[6] : Freq = 1249.8421074363514  - Residual = 2.815524037478371e-11
-[7] : Freq = 1249.8421074363525  - Residual = 7.546271373844357e-12
-[8] : Freq = 1423.993890941669   - Residual = 4.5372004789272195e-10
-[9] : Freq = 1423.9938909416699  - Residual = 1.2160010951553228e-09
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0] : Freq = 338.0666635506365   - Residual = 2.3070247813015805e-11
+[1] : Freq = 338.0666635506367   - Residual = 7.911817709574835e-11
+[2] : Freq = 626.645098092703    - Residual = 1.4338816801861427e-11
+[3] : Freq = 626.6450980927036   - Residual = 3.0909179798841926e-11
+[4] : Freq = 928.2598500574526   - Residual = 1.5073029240215198e-11
+[5] : Freq = 928.2598500574527   - Residual = 1.3866957267529915e-11
+[6] : Freq = 1249.8421074363505  - Residual = 2.3330795208513303e-11
+[7] : Freq = 1249.842107436351   - Residual = 1.3173155997875071e-11
+[8] : Freq = 1423.9938909416678  - Residual = 3.8657651202757016e-10
+[9] : Freq = 1423.9938909416703  - Residual = 1.2400348326967832e-09
 </pre></div>
 </div>
 <p>Plot Accuracy of Eigenresults</p>
@@ -365,7 +365,7 @@ factor and finally compute the normalized residual value
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.991 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.275 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-eigen-solve-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ef9fd55df8801750a912151e4ce1ff42/eigen_solve.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">eigen_solve.py</span></code></a></p>
@@ -403,7 +403,7 @@ factor and finally compute the normalized residual value
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL Object &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>MAPDL Object &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -42,7 +42,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MAPDL Launcher" href="launcher.html" />
@@ -238,11 +237,11 @@
 <span id="ref-mapdl-api"></span><h1>MAPDL Object<a class="headerlink" href="#mapdl-object" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore">
-<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl.</code><code class="sig-name descname">_MapdlCore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loglevel</span><span class="o">=</span><span class="default_value">'DEBUG'</span></em>, <em class="sig-param"><span class="n">use_vtk</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log_apdl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">local</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">start_parm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.mapdl.</span></code><code class="sig-name descname"><span class="pre">_MapdlCore</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DEBUG'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_apdl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">start_parm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Contains methods in common between all Mapdl subclasses</p>
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.add_file_handler">
-<code class="sig-name descname">add_file_handler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">append</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">'DEBUG'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.add_file_handler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_file_handler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DEBUG'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.add_file_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a file handler to the mapdl log.  This allows you to
 redirect the APDL logging to a file.</p>
 <dl class="field-list simple">
@@ -264,7 +263,7 @@ redirect the APDL logging to a file.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.allow_ignore">
-<em class="property">property </em><code class="sig-name descname">allow_ignore</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.allow_ignore" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">allow_ignore</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.allow_ignore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invalid commands will be ignored rather than exceptions</p>
 <p>A command executed in the wrong processor will raise an
 exception when <code class="docutils literal notranslate"><span class="pre">allow_ignore=False</span></code>.  This is the default
@@ -289,7 +288,7 @@ This command will be ignored.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.aplot">
-<code class="sig-name descname">aplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">na1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">na2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.aplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">aplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">na1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ninc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_area_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_line_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_areas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.aplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: APLOT</p>
 <p>Displays the selected areas from <code class="docutils literal notranslate"><span class="pre">na1</span></code> to <code class="docutils literal notranslate"><span class="pre">na2</span></code> in steps
 of <code class="docutils literal notranslate"><span class="pre">ninc</span></code>.</p>
@@ -334,13 +333,13 @@ areas by their number.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.chain_commands">
-<em class="property">property </em><code class="sig-name descname">chain_commands</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.chain_commands" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">chain_commands</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.chain_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chain several mapdl commands.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">read</span><span class="o">=</span><span class="default_value">'NOSTART'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NOSTART'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: /CLEAR</p>
 <p>Clears the database.</p>
 <dl class="field-list simple">
@@ -377,7 +376,7 @@ the most recent value specified on /FILNAME with KEY = 1.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.eplot">
-<code class="sig-name descname">eplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_node_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.eplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_node_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.eplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the currently selected elements.</p>
 <p>APDL Command: EPLOT</p>
 <dl class="field-list simple">
@@ -413,19 +412,19 @@ keyword arguments related to visualizing using <code class="docutils literal not
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.exit">
-<code class="sig-name descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">exit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exit from MAPDL</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.geometry">
-<em class="property">property </em><code class="sig-name descname">geometry</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geometry (CAD) information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par</span><span class="o">=</span><span class="default_value">'__floatparameter__'</span></em>, <em class="sig-param"><span class="n">entity</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">entnum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it1num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it2num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">par</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'__floatparameter__'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it1num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it2num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: *GET</p>
 <p>Retrieves a value and stores it as a scalar parameter or part
 of an array parameter.</p>
@@ -511,7 +510,7 @@ parameters are shown in the following order:</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.get_value">
-<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">entity</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">entnum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it1num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">item2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">it2num</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get_value" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_value</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it1num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it2num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the *GET command and returns a Python value.</p>
 <p>See <code class="docutils literal notranslate"><span class="pre">help(mapdl.starget)</span></code> for more details.</p>
 <dl class="field-list simple">
@@ -559,7 +558,7 @@ level of information.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.ignore_errors">
-<em class="property">property </em><code class="sig-name descname">ignore_errors</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.ignore_errors" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ignore_errors</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.ignore_errors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag to ignore MAPDL errors.</p>
 <p>Normally, any string containing “<strong>* ERROR *</strong>” from MAPDL
 will trigger a <code class="docutils literal notranslate"><span class="pre">MapdlRuntimeError</span></code>.  Set this to <code class="docutils literal notranslate"><span class="pre">True</span></code> to
@@ -568,14 +567,14 @@ ignore these errors.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.jobname">
-<em class="property">property </em><code class="sig-name descname">jobname</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.jobname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">jobname</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.jobname" title="Permalink to this definition">¶</a></dt>
 <dd><p>MAPDL job name.</p>
 <p>This is requested from the active mapdl instance.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.kplot">
-<code class="sig-name descname">kplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">np2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">lab</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.kplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ninc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_keypoint_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.kplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays the selected keypoints.</p>
 <p>APDL Command: KPLOT</p>
 <dl class="field-list simple">
@@ -608,7 +607,7 @@ are displayed.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.last_response">
-<em class="property">property </em><code class="sig-name descname">last_response</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.last_response" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">last_response</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.last_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the last response from MAPDL.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">last_response</span><span class="p">()</span>
@@ -619,15 +618,15 @@ are displayed.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.load_parameters">
-<code class="sig-name descname">load_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">load_parameters</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Depreciated in favor of <code class="docutils literal notranslate"><span class="pre">mapdl.parameters</span></code></p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.load_table">
-<code class="sig-name descname">load_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">var1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">var2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">var3</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a table from Python to MAPDL</p>
-<p>Uses *TREAD to transfer the table.</p>
+<code class="sig-name descname"><span class="pre">load_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.load_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a table from Python to MAPDL.</p>
+<p>Uses TREAD to transfer the table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -684,7 +683,7 @@ primary variable.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.lplot">
-<code class="sig-name descname">lplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nl1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nl2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_lines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.lplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">lplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ninc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_line_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_keypoint_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.lplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: LPLOT</p>
 <p>Displays the selected lines.</p>
 <dl class="field-list simple">
@@ -700,9 +699,7 @@ NINC are ignored and display all selected lines [LSEL].</p></li>
 of NINC (defaults to 1).  If NL1 = ALL (default), NL2 and
 NINC are ignored and display all selected lines [LSEL].</p></li>
 <li><p><strong>vtk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the currently selected lines using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>.</p></li>
-<li><p><strong>show_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
-<li><p><strong>show_keypoints</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display keypoints associated with current lines.  Only
-valid with <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
+<li><p><strong>show_line_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display line and keypoint numbers when <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code>.</p></li>
 <li><p><strong>show_keypoint_numbering</strong> (<em>bool</em><em>, </em><em>optional</em>) – Number keypoints.  Only valid when show_keypoints is True</p></li>
 <li><p><strong>**kwargs</strong> – See <code class="docutils literal notranslate"><span class="pre">help(pyvista.plot)</span></code> for more keyword arguments
 related to visualizing using <code class="docutils literal notranslate"><span class="pre">vtk</span></code>.</p></li>
@@ -714,14 +711,14 @@ related to visualizing using <code class="docutils literal notranslate"><span cl
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>Mesh divisions on plotted lines are controlled by the LDIV option of
-the /PSYMB command.</p>
+<p>Mesh divisions on plotted lines are controlled by the LDIV
+option of the /PSYMB command.</p>
 <p>This command is valid in any processor.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.mesh">
-<em class="property">property </em><code class="sig-name descname">mesh</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.mesh" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mesh</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mesh information.</p>
 <p class="rubric">Examples</p>
 <p>Return an array of the active nodes</p>
@@ -761,7 +758,7 @@ the /PSYMB command.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.modal_analysis">
-<code class="sig-name descname">modal_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'lanb'</span></em>, <em class="sig-param"><span class="n">nmode</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">freqb</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">freqe</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">cpxmod</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nrmkey</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">modtype</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">memory_option</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">elcalc</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.modal_analysis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">modal_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lanb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freqb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freqe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpxmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrmkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elcalc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.modal_analysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a modal with basic settings analysis</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -902,7 +899,7 @@ when eigensolutions are real.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.nplot">
-<code class="sig-name descname">nplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">knum</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.nplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">nplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.nplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: NPLOT</p>
 <p>Displays nodes.</p>
 <dl class="field-list simple">
@@ -945,7 +942,7 @@ be defined.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.open_apdl_log">
-<code class="sig-name descname">open_apdl_log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'w'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_apdl_log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">open_apdl_log</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'w'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_apdl_log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start writing all APDL commands to an ANSYS input file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -956,7 +953,7 @@ be defined.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.open_gui">
-<code class="sig-name descname">open_gui</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_result</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_gui" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">open_gui</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.open_gui" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves existing database and opens up APDL GUI</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -967,7 +964,7 @@ be defined.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.parameters">
-<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parameters</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collection of MAPDL parameters obtainable from the <code class="docutils literal notranslate"><span class="pre">*GET</span></code>
 command or <code class="docutils literal notranslate"><span class="pre">GET</span></code> command.</p>
 <p class="rubric">Examples</p>
@@ -1008,7 +1005,7 @@ command or <code class="docutils literal notranslate"><span class="pre">GET</spa
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.post_processing">
-<em class="property">property </em><code class="sig-name descname">post_processing</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.post_processing" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">post_processing</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.post_processing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Post-process an active MAPDL session.</p>
 <p class="rubric">Examples</p>
 <p>Get the nodal displacement in the X direction for the first
@@ -1023,7 +1020,7 @@ result set.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function">
-<code class="sig-name descname">read_float_from_inline_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function_str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">read_float_from_inline_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use a APDL inline function to get a float value from ANSYS.
 Take note, that internally an APDL parameter
 “__floatparameter__” is created/overwritten.</p>
@@ -1048,19 +1045,19 @@ Take note, that internally an APDL parameter
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter">
-<code class="sig-name descname">read_float_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">read_float_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Depreciated in favor of <code class="docutils literal notranslate"><span class="pre">mapdl.parameters[parameter_name]</span></code></p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler">
-<code class="sig-name descname">remove_file_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_file_handler</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the filehander from the log</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.result">
-<em class="property">property </em><code class="sig-name descname">result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.result" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">result</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Binary interface to the result file using <code class="docutils literal notranslate"><span class="pre">ansys.mapdl.reader.Result</span></code></p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -1092,7 +1089,7 @@ RF  : Nodal reaction forces</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">write_to_log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.run" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs APDL command</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1131,7 +1128,7 @@ command logging is enabled.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.set_log_level">
-<code class="sig-name descname">set_log_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loglevel</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.set_log_level" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_log_level</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglevel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.set_log_level" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets log level</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1159,7 +1156,7 @@ command logging is enabled.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.version">
-<em class="property">property </em><code class="sig-name descname">version</code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.version" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">version</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>MAPDL build version</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">version</span>
@@ -1170,7 +1167,7 @@ command logging is enabled.</p></li>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.vplot">
-<code class="sig-name descname">vplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nv1</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">nv2</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ninc</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">degen</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vtk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quality</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">show_area_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_line_numbering</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_areas</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_lines</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.vplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">vplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nv1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nv2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ninc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_area_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_line_numbering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_areas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.vplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the selected volumes.</p>
 <p>APDL Command: VPLOT</p>
 <dl class="field-list simple">
@@ -1219,7 +1216,7 @@ to 10 (best).  Applicable when <code class="docutils literal notranslate"><span 
 <p>Methods specific to the modern gRPC interface</p>
 <dl class="py class">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc">
-<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.core.mapdl_grpc.</code><code class="sig-name descname">MapdlGrpc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">'127.0.0.1'</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">loglevel</span><span class="o">=</span><span class="default_value">'WARNING'</span></em>, <em class="sig-param"><span class="n">cleanup_on_exit</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">log_apdl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">set_no_abort</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_temp_files</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.mapdl_grpc.</span></code><code class="sig-name descname"><span class="pre">MapdlGrpc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'WARNING'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cleanup_on_exit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_apdl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_no_abort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_temp_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class connects to a GRPC MAPDL server and allows commands
 to be passed to a persistent session.</p>
 <dl class="field-list simple">
@@ -1258,25 +1255,25 @@ default port 50052.</p>
 </div>
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param">
-<code class="sig-name descname">Param</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">Param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var">
-<code class="sig-name descname">Var</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">Var</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy">
-<em class="property">property </em><code class="sig-name descname">busy</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">busy</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy" title="Permalink to this definition">¶</a></dt>
 <dd><p>True when MAPDL gRPC server is executing a command</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.cdread">
-<code class="sig-name descname">cdread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">option</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">fname</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ext</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">fnamei</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">exti</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.cdread" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cdread</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnamei</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.cdread" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL Command: CDREAD</p>
 <p>Reads a file of solid model and database information into the database.</p>
 <dl class="field-list simple">
@@ -1339,13 +1336,13 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download">
-<code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">download</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download_result">
-<code class="sig-name descname">download_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">progress_bar</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">preference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download_result" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">download_result</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download remote result files to a local directory</p>
 <p class="rubric">Examples</p>
 <p>Download remote result files into the current working directory</p>
@@ -1357,7 +1354,7 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.exit">
-<code class="sig-name descname">exit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">exit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exit MAPDL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1372,25 +1369,25 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input">
-<code class="sig-name descname">input</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">input</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.is_alive">
-<em class="property">property </em><code class="sig-name descname">is_alive</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.is_alive" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_alive</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.is_alive" title="Permalink to this definition">¶</a></dt>
 <dd><p>True when there is an active connect to the gRPC server</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_error_file">
-<code class="sig-name descname">list_error_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_error_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">list_error_file</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_error_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Listing of errors written in JOBNAME.err</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files">
-<code class="sig-name descname">list_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">list_files</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the files in the working directory of MAPDL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1418,13 +1415,13 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.locked">
-<em class="property">property </em><code class="sig-name descname">locked</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.locked" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">locked</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.locked" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instance is in use within a pool</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.math">
-<em class="property">property </em><code class="sig-name descname">math</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.math" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">math</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.math" title="Permalink to this definition">¶</a></dt>
 <dd><p>APDL math interface</p>
 <p class="rubric">Examples</p>
 <p>Get the stiffness matrix from MAPDL</p>
@@ -1445,7 +1442,7 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.post_processing">
-<em class="property">property </em><code class="sig-name descname">post_processing</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.post_processing" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">post_processing</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.post_processing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Post-process in an active MAPDL session.</p>
 <p class="rubric">Examples</p>
 <p>Get the nodal displacement in the X direction for the first
@@ -1460,7 +1457,7 @@ result set.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.result">
-<em class="property">property </em><code class="sig-name descname">result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.result" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">result</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Binary interface to the result file using <code class="docutils literal notranslate"><span class="pre">pyansys.Result</span></code></p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -1492,25 +1489,25 @@ RF  : Nodal reaction forces</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param">
-<code class="sig-name descname">scalar_param</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">scalar_param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.thermal_result">
-<em class="property">property </em><code class="sig-name descname">thermal_result</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.thermal_result" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">thermal_result</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.thermal_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>The thermal result object</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload">
-<code class="sig-name descname">upload</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">upload</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.xpl">
-<em class="property">property </em><code class="sig-name descname">xpl</code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.xpl" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">xpl</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.xpl" title="Permalink to this definition">¶</a></dt>
 <dd><p>MAPDL file exploer</p>
 <p>Iteratively navigate through MAPDL files.</p>
 <p class="rubric">Examples</p>
@@ -1557,7 +1554,7 @@ RF  : Nodal reaction forces</p>
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

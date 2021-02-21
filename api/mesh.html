@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesh Class &#8212; ansys.mapdl.core 0.57.6 documentation</title>
+    <title>Mesh Class &#8212; ansys.mapdl.core 0.58.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -42,7 +42,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Geometry Class" href="geometry.html" />
@@ -231,12 +230,12 @@
 <span id="ref-mesh-api"></span><h1>Mesh Class<a class="headerlink" href="#mesh-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt>
-<em class="property">class </em><code class="sig-prename descclassname">ansys.mapdl.reader.mesh.</code><code class="sig-name descname">Mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nnum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nodes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">elem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">elem_off</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ekey</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">node_comps</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">elem_comps</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">rdat</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">rnum</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">keyopt</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.reader.mesh.</span></code><code class="sig-name descname"><span class="pre">Mesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ekey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_comps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_comps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rdat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyopt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Common class between Archive, and result mesh</p>
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">ekey</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ekey</span></code></dt>
 <dd><p>Element type key</p>
 <p>Array containing element type numbers in the first column and
 the element types (like SURF154) in the second column.</p>
@@ -255,7 +254,7 @@ the element types (like SURF154) in the second column.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">elem</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">elem</span></code></dt>
 <dd><p>List of elements containing raw ansys information.</p>
 <p>Each element contains 10 items plus the nodes belonging to the
 element.  The first 10 items are:</p>
@@ -290,7 +289,7 @@ element.  The first 10 items are:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">elem_real_constant</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">elem_real_constant</span></code></dt>
 <dd><p>Real constant reference for each element.</p>
 <p>Use the data within <code class="docutils literal notranslate"><span class="pre">rlblock</span></code> and <code class="docutils literal notranslate"><span class="pre">rlblock_num</span></code> to get the
 real constant datat for each element.</p>
@@ -312,7 +311,7 @@ real constant datat for each element.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">element_components</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">element_components</span></code></dt>
 <dd><p>Element components for the archive.</p>
 <p>Output is a dictionary of element components.  Each entry is an
 array of MAPDL element numbers corresponding to the element
@@ -333,7 +332,7 @@ component.  The keys are element component names.</p>
 
 <dl class="py method">
 <dt>
-<code class="sig-name descname">element_coord_system</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<code class="sig-name descname"><span class="pre">element_coord_system</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Element coordinate system number</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -349,7 +348,7 @@ component.  The keys are element component names.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">enum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">enum</span></code></dt>
 <dd><p>ANSYS element numbers.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -363,7 +362,7 @@ component.  The keys are element component names.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">etype</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">etype</span></code></dt>
 <dd><p>Element type of each element.</p>
 <p>This is the ansys element type for each element.</p>
 <p class="rubric">Examples</p>
@@ -388,7 +387,7 @@ Reference for more details:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">key_option</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">key_option</span></code></dt>
 <dd><p>Additional key options for element types</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -402,7 +401,7 @@ Reference for more details:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">material_type</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">material_type</span></code></dt>
 <dd><p>Material type index of each element in the archive.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -418,19 +417,19 @@ Reference for more details:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_elem</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_elem</span></code></dt>
 <dd><p>Number of nodes</p>
 </dd></dl>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">n_node</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_node</span></code></dt>
 <dd><p>Number of nodes</p>
 </dd></dl>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">nnum</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nnum</span></code></dt>
 <dd><p>Array of node numbers.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -444,7 +443,7 @@ Reference for more details:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">node_angles</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">node_angles</span></code></dt>
 <dd><p>Node angles from the archive file.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -464,7 +463,7 @@ Reference for more details:</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">node_components</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">node_components</span></code></dt>
 <dd><p>Node components for the archive.</p>
 <p>Output is a dictionary of node components.  Each entry is an
 array of MAPDL node numbers corresponding to the node
@@ -492,7 +491,7 @@ component.  The keys are node component names.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">nodes</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nodes</span></code></dt>
 <dd><p>Array of nodes.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -512,7 +511,7 @@ component.  The keys are node component names.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">rlblock</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rlblock</span></code></dt>
 <dd><p>Real constant data from the RLBLOCK.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -529,7 +528,7 @@ component.  The keys are node component names.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">rlblock_num</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rlblock_num</span></code></dt>
 <dd><p>Indices from the real constant data</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -543,7 +542,7 @@ component.  The keys are node component names.</p>
 
 <dl class="py method">
 <dt>
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">binary</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">force_linear</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">allowable_types</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">null_unallowed</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span></dt>
+<code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_linear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowable_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">null_unallowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Save the geometry as a vtk file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -575,7 +574,7 @@ file size.</p>
 
 <dl class="py method">
 <dt>
-<em class="property">property </em><code class="sig-name descname">section</code></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">section</span></code></dt>
 <dd><p>Section number</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl</span> <span class="kn">import</span> <span class="n">reader</span> <span class="k">as</span> <span class="n">pymapdl_reader</span>
@@ -618,7 +617,7 @@ file size.</p>
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>
