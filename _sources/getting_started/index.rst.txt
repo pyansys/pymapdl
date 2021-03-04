@@ -54,6 +54,41 @@ and modify it locally and have the changes reflected in your setup
 after restarting the Python kernel.
 
 
+Offline Installation
+~~~~~~~~~~~~~~~~~~~~
+If you would like to install ``ansys-mapdl-core`` on a computer
+without access to the internet, you can create a ``wheelhouse`` that
+contains all the dependencies necessary to install a python package
+without downloading each package individually.
+
+On the host connected to the internet, run:
+
+.. code::
+
+   pip install wheel
+   python -m pip wheel --wheel-dir=pyansys_wheelhouse ansys-mapdl-core
+
+This creates a new directory called ``pyansys_wheelhouse`` which
+contains every python package necessary to install
+``ansys-mapdl-core``.
+
+Next, zip the ``pyansys_wheelhouse`` directory and upload it to your
+offline computer. On the offline computer, unzip it and then install
+it with:
+
+.. code::
+
+   python -m pip install --no-index --find-links=pyansys_wheelhouse ansys-mapdl-core
+
+This tells Python to install ``ansys-mapdl-core`` by only looking
+within the ``pyansys_wheelhouse`` directory.
+
+.. note::
+
+   The OS and version of Python used to generate the wheelhouse must
+   match the offline machine.
+
+
 ANSYS Software Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For the latest features, you will need a copy of ANSYS 2021R1

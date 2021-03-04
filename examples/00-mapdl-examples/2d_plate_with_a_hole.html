@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL 2D Plane Stress Concentration Analysis &#8212; ansys.mapdl.core 0.58.0 documentation</title>
+    <title>MAPDL 2D Plane Stress Concentration Analysis &#8212; ansys.mapdl.core 0.58.1 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -97,7 +97,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -368,7 +368,7 @@ force of 1 kN in the positive X direction.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =       1.998   TIME= 01:29:00
+ *** NOTE ***                            CP =       1.679   TIME= 06:35:48
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -381,7 +381,7 @@ force of 1 kN in the positive X direction.</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     01:29:00  FEB 21, 2021 CP=      2.010
+ 00000000  VERSION=LINUX x64     06:35:48  MAR 04, 2021 CP=      1.681
 
 
 
@@ -397,11 +397,11 @@ force of 1 kN in the positive X direction.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =       2.014   TIME= 01:29:00
+ *** NOTE ***                            CP =       1.683   TIME= 06:35:48
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =       2.015   TIME= 01:29:00
+ *** NOTE ***                            CP =       1.684   TIME= 06:35:48
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -450,8 +450,8 @@ force of 1 kN in the positive X direction.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.206   0.000211
- Time at end of element matrix formulation CP = 2.16336799.
+        1       977  PLANE183      0.179   0.000183
+ Time at end of element matrix formulation CP = 1.83087707.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =        6124,    Maximum wavefront =     48
@@ -459,7 +459,7 @@ force of 1 kN in the positive X direction.</p>
   Memory required for in-core solution     =     8.134 MB
   Memory required for out-of-core solution =     4.318 MB
 
- *** NOTE ***                            CP =       2.374   TIME= 01:29:01
+ *** NOTE ***                            CP =       2.030   TIME= 06:35:49
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -474,12 +474,12 @@ force of 1 kN in the positive X direction.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.307   0.000315
+        1       977  PLANE183      0.168   0.000172
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.059   0.000060
+        1       977  PLANE183      0.053   0.000054
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -733,7 +733,7 @@ height and width of the plate.</p>
 </pre></div>
 </div>
 <img alt="2d plate with a hole" class="sphx-glr-single-img" src="../../_images/sphx_glr_2d_plate_with_a_hole_004.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.868 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  44.921 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-2d-plate-with-a-hole-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d463fc780909323c9509c882e0f755e2/2d_plate_with_a_hole.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">2d_plate_with_a_hole.py</span></code></a></p>

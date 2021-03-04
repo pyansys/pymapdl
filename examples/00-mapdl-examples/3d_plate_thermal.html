@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Thermal Analysis with pyMAPDL &#8212; ansys.mapdl.core 0.58.0 documentation</title>
+    <title>Basic Thermal Analysis with pyMAPDL &#8212; ansys.mapdl.core 0.58.1 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -96,7 +96,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/pyansys/pymapdl-reader" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/pyansys/pymapdl" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -240,12 +240,12 @@ pyMAPDL.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =      61.924   TIME= 01:29:57
+ *** NOTE ***                            CP =      53.936   TIME= 06:36:39
  There is no title defined for this analysis.
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     01:29:57  FEB 21, 2021 CP=     61.927
+ 00000000  VERSION=LINUX x64     06:36:39  MAR 04, 2021 CP=     53.938
 
 
 
@@ -261,11 +261,11 @@ pyMAPDL.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =      61.927   TIME= 01:29:57
+ *** NOTE ***                            CP =      53.938   TIME= 06:36:39
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =      61.927   TIME= 01:29:57
+ *** NOTE ***                            CP =      53.938   TIME= 06:36:39
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -290,8 +290,8 @@ pyMAPDL.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.038   0.000084
- Time at end of element matrix formulation CP = 61.9738274.
+        1       450  SOLID90       0.046   0.000101
+ Time at end of element matrix formulation CP = 53.9867439.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =        2606,    Maximum wavefront =     72
@@ -299,7 +299,7 @@ pyMAPDL.</p>
   Memory required for in-core solution     =     4.639 MB
   Memory required for out-of-core solution =     2.499 MB
 
- *** NOTE ***                            CP =      62.054   TIME= 01:29:57
+ *** NOTE ***                            CP =      54.044   TIME= 06:36:39
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -314,12 +314,12 @@ pyMAPDL.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.035   0.000078
+        1       450  SOLID90       0.030   0.000067
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.018   0.000041
+        1       450  SOLID90       0.017   0.000037
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -359,7 +359,7 @@ result file using pyansys</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[    1     2     3 ... 12715 12716 12717] [ 0.  0.  0. ... nan nan nan]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.049 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.918 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-3d-plate-thermal-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/91c538c5ed71a5605ff4467121a37338/3d_plate_thermal.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">3d_plate_thermal.py</span></code></a></p>
