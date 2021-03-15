@@ -166,7 +166,7 @@ mapdl.d('ALL', 'UZ')
 mapdl.nsel('S', 'LOC', 'X', length)
 
 # Verify that only the nodes at length have been selected:
-assert np.unique(mapdl.mesh.nodes[:, 0]) == length
+# assert np.unique(mapdl.mesh.nodes[:, 0]) == length
 
 # Next, couple the DOF for these nodes.  This lets us provide a force
 # to one node that will be spread throughout all nodes in this coupled

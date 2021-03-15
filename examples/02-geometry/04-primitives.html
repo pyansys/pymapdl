@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primitives &#8212; ansys.mapdl.core 0.58.2 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contributing" href="../../contributing.html" />
+    <link rel="prev" title="Volumes" href="03-volumes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/2d_plate_with_a_hole.html">
+   MAPDL 2D Plane Stress Concentration Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_notch.html">
+   3D Stress Concentration Analysis for a Notched Plate
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_plate_thermal.html">
+   Basic Thermal Analysis with pyMAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_3d_beam.html">
+   MAPDL 3D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_beam.html">
+   MAPDL 2D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/path_operations.html">
+   Path Operations within pyMAPDL and MAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/pyvista_mesh.html">
+   PyVista Mesh Integration
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/transient_thermal.html">
+   Example Thermal Transient Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/basic_operations.html">
+   PyMAPDL APDLMath Basic Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/eigen_solve.html">
+   Using APDLMath to solve Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/explore_mapdl_files.html">
+   Binary MAPDL File Explorer
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/mapdl_vs_scipy.html">
+   Compute Eigenvalues using MAPDL or SciPy
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/scipy_sparse_matrix.html">
+   Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_dense_matrix.html">
+   Use APDLMath to Solve a Dense Matrix Linear System
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_sparse_matrix.html">
+   Use APDLMath To Perform Sparse Factorization and Solve Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/use_numpy_arrays.html">
+   Manipulate APDLMath vectors or dense matrices as NumPy Arrays
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="00-keypoints.html">
+   Keypoints
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="01-lines.html">
+   Lines
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="02-areas.html">
+   Areas
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="03-volumes.html">
+   Volumes
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   Primitives
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-blc4">
+   APDL Command: BLC4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-blc5">
+   APDL Command: BLC5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-block">
+   APDL Command: BLOCK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-con4">
+   APDL Command: CON4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-cone">
+   APDL Command: CONE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-cyl4">
+   APDL Command: CYL4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-cyl5">
+   APDL Command: CYL5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-cylind">
+   APDL Command: CYLIND
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-pcirc">
+   APDL Command: PCIRC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-rectng">
+   APDL Command: RECTNG
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-sph4">
+   APDL Command: SPH4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-sphere">
+   APDL Command: SPHERE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-sph5">
+   APDL Command: SPH5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-torus">
+   APDL Command: TORUS
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-04-primitives-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="primitives">
+<span id="ref-basic-geometry-volumes"></span><span id="sphx-glr-examples-02-geometry-04-primitives-py"></span><h1>Primitives<a class="headerlink" href="#primitives" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how you can use PyMAPDL to create basic geometry
+using Pythonic PREP7 volume commands.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="c1"># start MAPDL and enter the pre-processing routine</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
+MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
+ansys.mapdl Version: 0.58.2
+</pre></div>
+</div>
+<div class="section" id="apdl-command-blc4">
+<h2>APDL Command: BLC4<a class="headerlink" href="#apdl-command-blc4" title="Permalink to this headline">¶</a></h2>
+<p>Create a rectangular area or block volume by corner points.</p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">x</span> <span class="pre">0.5</span></code> rectangle starting at <code class="docutils literal notranslate"><span class="pre">(0.25,</span> <span class="pre">0.25)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 1.366025403784439),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+<p>Create a block with dimensions <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">4</span> <span class="pre">x</span> <span class="pre">9</span></code> with one corner of
+the block at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> of the current working plane.</p>
+<p>This method returns the volume number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_002.png" />
+</div>
+<div class="section" id="apdl-command-blc5">
+<h2>APDL Command: BLC5<a class="headerlink" href="#apdl-command-blc5" title="Permalink to this headline">¶</a></h2>
+<p>Create a rectangular area or block volume by center and corner points.</p>
+<p>This differs from BLC4 since this describes the center rather than
+the corner points.</p>
+<p>Create a square centered at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> with a width of 0.5 and a
+height of 0.5</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc5</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.0, 0.0, 1.3660254037844388),
+ (0.0, 0.0, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+<p>Create a block with dimensions <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">4</span> <span class="pre">x</span> <span class="pre">9</span></code> with the cetner at
+<code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> of the current working plane.</p>
+<p>This method returns the volume number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc5</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_004.png" />
+</div>
+<div class="section" id="apdl-command-block">
+<h2>APDL Command: BLOCK<a class="headerlink" href="#apdl-command-block" title="Permalink to this headline">¶</a></h2>
+<p>Create a block volume based on working plane coordinates with the
+size <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">x</span> <span class="pre">3)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+            <span class="n">background</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_005.png" />
+</div>
+<div class="section" id="apdl-command-con4">
+<h2>APDL Command: CON4<a class="headerlink" href="#apdl-command-con4" title="Permalink to this headline">¶</a></h2>
+<p>Create a conical volume anywhere on the working plane.</p>
+<p>Create a cone with a bottom radius of 3 and a height of 10.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">con4</span><span class="p">(</span><span class="n">rad1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_006.png" />
+</div>
+<div class="section" id="apdl-command-cone">
+<h2>APDL Command: CONE<a class="headerlink" href="#apdl-command-cone" title="Permalink to this headline">¶</a></h2>
+<p>Create a conical volume centered about the working plane origin.</p>
+<p>Create a quarter cone with a bottom radius of 3, top radius of 1 and
+a height of 10 centered at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cone</span><span class="p">(</span><span class="n">rbot</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">rtop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z2</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_007.png" />
+</div>
+<div class="section" id="apdl-command-cyl4">
+<h2>APDL Command: CYL4<a class="headerlink" href="#apdl-command-cyl4" title="Permalink to this headline">¶</a></h2>
+<p>Creates a circular area or cylindrical volume anywhere on the working plane.</p>
+<p>Create a half arc centered at the origin with an outer radius
+of 2 and an inner radius of 1.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">depth</span></code> keyword argument is unset, which will
+generate an area rather than a volume.  Setting depth to a value
+greater than 0 will generate a volume.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl4</span><span class="p">(</span><span class="n">xcenter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ycenter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rad1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_008.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.0, 0.9997959600081615, 8.639150703161897),
+ (0.0, 0.9997959600081615, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+<p>Create a volumetric half arc centered at the origin with an outer
+radius of 2 and an inner radius of 1, and a thickness of 0.55.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl4</span><span class="p">(</span><span class="n">xcenter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ycenter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rad1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+                  <span class="n">depth</span><span class="o">=</span><span class="mf">0.55</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_009.png" />
+</div>
+<div class="section" id="apdl-command-cyl5">
+<h2>APDL Command: CYL5<a class="headerlink" href="#apdl-command-cyl5" title="Permalink to this headline">¶</a></h2>
+<p>Creates a circular area or cylindrical volume by end points.</p>
+<p>Create a circular with one point of the circle at <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1)</span></code> and the
+other point at <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">2)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl5</span><span class="p">(</span><span class="n">xedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">yedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_010.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(1.5000000000015, 1.5000000000015, 3.8637033051669416),
+ (1.5000000000015, 1.5000000000015, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+<p>Create a cylinder with one point of the circle at <code class="docutils literal notranslate"><span class="pre">(X,</span> <span class="pre">Y)</span> <span class="pre">==</span> <span class="pre">(1,</span> <span class="pre">1)</span></code>
+and the other point at <code class="docutils literal notranslate"><span class="pre">(X,</span> <span class="pre">Y)</span> <span class="pre">==</span> <span class="pre">(2,</span> <span class="pre">2)</span></code> with a height of 3.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cyl5</span><span class="p">(</span><span class="n">xedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">yedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_011.png" />
+</div>
+<div class="section" id="apdl-command-cylind">
+<h2>APDL Command: CYLIND<a class="headerlink" href="#apdl-command-cylind" title="Permalink to this headline">¶</a></h2>
+<p>Create a cylindrical volume centered about the working plane origin.</p>
+<p>Create a hollow cylinder with an inner radius of 0.9 and an
+outer radius of 1.0 with a height of 5</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">cylind</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">z1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z2</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_012.png" />
+</div>
+<div class="section" id="apdl-command-pcirc">
+<h2>APDL Command: PCIRC<a class="headerlink" href="#apdl-command-pcirc" title="Permalink to this headline">¶</a></h2>
+<p>Create a circular area centered about the working plane origin.</p>
+<p>In this example a circular area with an inner radius of 0.95 and an
+outer radius of 1 is created.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">pcirc</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_013.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(3.1547005383792524, 3.1547005383792524, 3.1547005383792524),
+ (0.0, 0.0, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-rectng">
+<h2>APDL Command: RECTNG<a class="headerlink" href="#apdl-command-rectng" title="Permalink to this headline">¶</a></h2>
+<p>Create a rectangular area anywhere on the working plane.</p>
+<p>In this example a rectangle with one corner at <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></code> and
+another at <code class="docutils literal notranslate"><span class="pre">(1.5,</span> <span class="pre">2.5)</span></code> is created.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">rectng</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_014.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(3.4940097592594674, 3.9940097592594674, 2.4940097592594674),
+ (1.0, 1.5, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-sph4">
+<h2>APDL Command: SPH4<a class="headerlink" href="#apdl-command-sph4" title="Permalink to this headline">¶</a></h2>
+<p>Create a spherical volume anywhere on the working plane.</p>
+<p>This example creates a hollow sphere with an inner radius of 0.9 and
+an outer radius of 1.0 centered at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">sph4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rad1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_015.png" />
+</div>
+<div class="section" id="apdl-command-sphere">
+<h2>APDL Command: SPHERE<a class="headerlink" href="#apdl-command-sphere" title="Permalink to this headline">¶</a></h2>
+<p>Create a spherical volume anywhere on the working plane.</p>
+<p>This example creates a half hollow sphere with an inner radius of 0.9 and
+an outer radius of 1.0.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">rad1</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_016.png" />
+</div>
+<div class="section" id="apdl-command-sph5">
+<h2>APDL Command: SPH5<a class="headerlink" href="#apdl-command-sph5" title="Permalink to this headline">¶</a></h2>
+<p>Create a spherical volume anywhere on the working plane.</p>
+<p>This example creates a sphere with one point at <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1)</span></code> and one
+point at <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">2)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">sph5</span><span class="p">(</span><span class="n">xedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yedge1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">yedge2</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_017.png" />
+</div>
+<div class="section" id="apdl-command-torus">
+<h2>APDL Command: TORUS<a class="headerlink" href="#apdl-command-torus" title="Permalink to this headline">¶</a></h2>
+<p>Create a toroidal volume.</p>
+<p>This example creates a torus with an inner minor radius of 1, an
+intermediate radii of 2, and a major radius of 5.  The values 0
+and 180 define the starting and ending angles of the torus.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">torus</span><span class="p">(</span><span class="n">rad1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">rad2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rad3</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="04 primitives" class="sphx-glr-single-img" src="../../_images/sphx_glr_04-primitives_018.png" />
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.915 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-04-primitives-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/6aaeeb2dc18f0caf7d4cdcd52b64aa7b/04-primitives.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">04-primitives.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/38addae07636f65cecbb21d6b84be9a2/04-primitives.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">04-primitives.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="03-volumes.html" title="previous page">Volumes</a>
+    <a class='right-next' id="next-link" href="../../contributing.html" title="next page">Contributing</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

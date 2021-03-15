@@ -264,7 +264,7 @@ force of 1 kN in the positive X direction.
     mapdl.nsel('S', 'LOC', 'X', length)
 
     # Verify that only the nodes at length have been selected:
-    assert np.unique(mapdl.mesh.nodes[:, 0]) == length
+    # assert np.unique(mapdl.mesh.nodes[:, 0]) == length
 
     # Next, couple the DOF for these nodes.  This lets us provide a force
     # to one node that will be spread throughout all nodes in this coupled
@@ -315,7 +315,7 @@ Solve the static analysis
  .. code-block:: none
 
 
-    'FINISH SOLUTION PROCESSING\n\n\n ***** ROUTINE COMPLETED *****  CP =        53.555'
+    'FINISH SOLUTION PROCESSING\n\n\n ***** ROUTINE COMPLETED *****  CP =        73.792'
 
 
 
@@ -491,7 +491,7 @@ width over the modified cross section width.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.545 seconds)
+   **Total running time of the script:** ( 0 minutes  7.622 seconds)
 
 
 .. _sphx_glr_download_examples_00-mapdl-examples_3d_notch.py:

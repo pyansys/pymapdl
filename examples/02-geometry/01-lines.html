@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lines &#8212; ansys.mapdl.core 0.58.2 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Areas" href="02-areas.html" />
+    <link rel="prev" title="Keypoints" href="00-keypoints.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/2d_plate_with_a_hole.html">
+   MAPDL 2D Plane Stress Concentration Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_notch.html">
+   3D Stress Concentration Analysis for a Notched Plate
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_plate_thermal.html">
+   Basic Thermal Analysis with pyMAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_3d_beam.html">
+   MAPDL 3D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_beam.html">
+   MAPDL 2D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/path_operations.html">
+   Path Operations within pyMAPDL and MAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/pyvista_mesh.html">
+   PyVista Mesh Integration
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/transient_thermal.html">
+   Example Thermal Transient Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/basic_operations.html">
+   PyMAPDL APDLMath Basic Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/eigen_solve.html">
+   Using APDLMath to solve Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/explore_mapdl_files.html">
+   Binary MAPDL File Explorer
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/mapdl_vs_scipy.html">
+   Compute Eigenvalues using MAPDL or SciPy
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/scipy_sparse_matrix.html">
+   Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_dense_matrix.html">
+   Use APDLMath to Solve a Dense Matrix Linear System
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_sparse_matrix.html">
+   Use APDLMath To Perform Sparse Factorization and Solve Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/use_numpy_arrays.html">
+   Manipulate APDLMath vectors or dense matrices as NumPy Arrays
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="00-keypoints.html">
+   Keypoints
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   Lines
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="02-areas.html">
+   Areas
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="03-volumes.html">
+   Volumes
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="04-primitives.html">
+   Primitives
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-l">
+   APDL Command: L
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-larc">
+   APDL Command: LARC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-l2ang">
+   APDL Command: L2ANG
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-l2tan">
+   APDL Command: L2TAN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-lang">
+   APDL Command: LANG
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-larea">
+   APDL Command: LAREA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-lcomb">
+   APDL Command: LCOMB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-ldiv">
+   APDL Command: LDIV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-lextnd">
+   APDL Command: LEXTND
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-lfillt">
+   APDL Command: LFILLT
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-ltan">
+   APDL Command: LTAN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-spline">
+   APDL Command: SPLINE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-bsplin">
+   APDL Command: BSPLIN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-ids">
+   Line IDs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-geometry">
+   Line Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-selection">
+   Line Selection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-lplot">
+   APDL Command: LPLOT
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-01-lines-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="lines">
+<span id="ref-basic-geometry-lines"></span><span id="sphx-glr-examples-02-geometry-01-lines-py"></span><h1>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how you can use PyMAPDL to create basic geometry
+using Pythonic PREP7 line commands.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="c1"># start MAPDL and enter the pre-processing routine</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
+MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
+ansys.mapdl Version: 0.58.2
+</pre></div>
+</div>
+<div class="section" id="apdl-command-l">
+<h2>APDL Command: L<a class="headerlink" href="#apdl-command-l" title="Permalink to this headline">¶</a></h2>
+<p>Create a line between the two keypoints <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">lnum</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-larc">
+<h2>APDL Command: LARC<a class="headerlink" href="#apdl-command-larc" title="Permalink to this headline">¶</a></h2>
+<p>Create a circular arc that travels between <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> and
+<code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">0)</span></code> with a radius of curvature of 2.  Plot the result.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">larc</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-l2ang">
+<h2>APDL Command: L2ANG<a class="headerlink" href="#apdl-command-l2ang" title="Permalink to this headline">¶</a></h2>
+<p>Create two circles and join them with a line.  Plot the result.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">carc0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">carc1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l2ang</span><span class="p">(</span><span class="n">carc0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">carc1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(3.203613541114848, 3.203613541114848, 3.453613541114848),
+ (0.0, 0.0, 0.25),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-l2tan">
+<h2>APDL Command: L2TAN<a class="headerlink" href="#apdl-command-l2tan" title="Permalink to this headline">¶</a></h2>
+<p>Create two circular arcs and connect them with a spline.  Plot the result.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">carc0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">carc1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l2tan</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(-0.25, 1.25, 6.830127018922194),
+ (-0.25, 1.25, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-lang">
+<h2>APDL Command: LANG<a class="headerlink" href="#apdl-command-lang" title="Permalink to this headline">¶</a></h2>
+<p>Create a line from a line from <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> to <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> to a
+keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> at an angle of 60 degrees.  Plot the result.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lang</span><span class="p">(</span><span class="n">lnum</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_004.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-larea">
+<h2>APDL Command: LAREA<a class="headerlink" href="#apdl-command-larea" title="Permalink to this headline">¶</a></h2>
+<p>Generate a line on a square between its two corners.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">larea</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">a0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_005.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.50000000015, 0.50000000015, 2.7320508083884927),
+ (0.50000000015, 0.50000000015, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-lcomb">
+<h2>APDL Command: LCOMB<a class="headerlink" href="#apdl-command-lcomb" title="Permalink to this headline">¶</a></h2>
+<p>Create two lines and combine them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">lout</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lcomb</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-ldiv">
+<h2>APDL Command: LDIV<a class="headerlink" href="#apdl-command-ldiv" title="Permalink to this headline">¶</a></h2>
+<p>Create a single line and divide it into 5 pieces.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">ldiv</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">ndiv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_006.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.0, 1.9318516525781368),
+ (0.5, 0.0, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-lextnd">
+<h2>APDL Command: LEXTND<a class="headerlink" href="#apdl-command-lextnd" title="Permalink to this headline">¶</a></h2>
+<p>Create a circular arc and extend it at one of its keypoints.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">carcs</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lextnd</span><span class="p">(</span><span class="n">carcs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_007.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.0, 4.319751617610021),
+ (0.5, 0.0, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-lfillt">
+<h2>APDL Command: LFILLT<a class="headerlink" href="#apdl-command-lfillt" title="Permalink to this headline">¶</a></h2>
+<p>Create two intersecting lines at a right angle and add a
+fillet between them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lfillt</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_008.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-ltan">
+<h2>APDL Command: LTAN<a class="headerlink" href="#apdl-command-ltan" title="Permalink to this headline">¶</a></h2>
+<p>Create a circular arc and generate a tangent spline at the end of it
+directed to a new keypoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">carc</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">ltan</span><span class="p">(</span><span class="n">carc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_009.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.0, 0.75, 4.8296291314453415),
+ (0.0, 0.75, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-spline">
+<h2>APDL Command: SPLINE<a class="headerlink" href="#apdl-command-spline" title="Permalink to this headline">¶</a></h2>
+<p>Generate a segmented spline through 5 keypoints.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k4</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">spline</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k4</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_010.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.4, 0.25208733064211125, 1.8267923549699552),
+ (0.4, 0.25208733064211125, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-bsplin">
+<h2>APDL Command: BSPLIN<a class="headerlink" href="#apdl-command-bsplin" title="Permalink to this headline">¶</a></h2>
+<p>Generate a single line from a spline fit to a series of keypoints.
+Generate through <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">0)</span></code></p>
+<p>This is different than the <code class="docutils literal notranslate"><span class="pre">spline</span></code> method as this creates a
+single line rather than multiple lines.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">bsplin</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_011.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.45194711247094027, 1.0, 4.405912813957279),
+ (0.45194711247094027, 1.0, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-ids">
+<h2>Line IDs<a class="headerlink" href="#line-ids" title="Permalink to this headline">¶</a></h2>
+<p>Return an array of the line IDs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lnum</span>
+<span class="n">lnum</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([1], dtype=int32)
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-geometry">
+<h2>Line Geometry<a class="headerlink" href="#line-geometry" title="Permalink to this headline">¶</a></h2>
+<p>Get the VTK <code class="docutils literal notranslate"><span class="pre">PolyData</span></code> containing lines.  This VTK mesh can be
+saved or plotted.  For more details, visit <a class="reference external" href="https://docs.pyvista.com">https://docs.pyvista.com</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lines</span>
+<span class="n">lines</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>1</td></tr>
+<tr><td>N Points</td><td>100</td></tr>
+<tr><td>X Bounds</td><td>-9.611e-02, 1.000e+00</td></tr>
+<tr><td>Y Bounds</td><td>0.000e+00, 2.000e+00</td></tr>
+<tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
+<tr><td>N Arrays</td><td>1</td></tr>
+</table>
+
+</td><td>
+<table>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td><b>entity_num</b></td><td>Cells</td><td>int32</td><td>1</td><td>1.000e+00</td><td>1.000e+00</td></tr>
+</table>
+
+</td></tr> </table>
+</div>
+<br />
+<br /></div>
+<div class="section" id="line-selection">
+<h2>Line Selection<a class="headerlink" href="#line-selection" title="Permalink to this headline">¶</a></h2>
+<p>There are two approaches for selecting lines, the old “legacy”
+style and the new style.  The old style is valuable for those who
+are comfortable with the existing MAPDL commands, and new style is
+useful for selecting lines in a pythonic manner.</p>
+<p>This example generates a series of random lines and selects them</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">generate_random_line</span><span class="p">():</span>
+    <span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+
+<span class="c1"># create 20 random lines</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">generate_random_line</span><span class="p">()</span>
+
+<span class="c1"># Print the line numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lnum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+</pre></div>
+</div>
+<p>Select every other line with the old style command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">ksel</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lnum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+</pre></div>
+</div>
+<p>Select every other line with the new style command.</p>
+<p>Note that the item IDs are 1 based in MAPDL, while Python ranges are
+0 based.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">line_select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lnum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  3  5  7  9 11 13 15 17 19]
+</pre></div>
+</div>
+<p>Select lines from a list</p>
+<p>Note that you can <code class="docutils literal notranslate"><span class="pre">return_selected</span></code> if you want to see what you
+have selected.  This is helpful when reselecting from existing
+areas.</p>
+<p>Note that you could use a numpy array here as well.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">line_select</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">return_selected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  5 10 20]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-lplot">
+<h2>APDL Command: LPLOT<a class="headerlink" href="#apdl-command-lplot" title="Permalink to this headline">¶</a></h2>
+<p>Plot colored lines while displaying the keypoint numbers.</p>
+<p>There are a variety of plotting options available for all the common
+plotting methods.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">show_keypoint_numbering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">color_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">show_line_numbering</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">background</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+            <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+            <span class="n">font_size</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_012.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5304904282093048, 0.4796970235183835, 3.0111661416443902),
+ (0.5304904282093048, 0.4796970235183835, 0.43433777987957),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.713 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-01-lines-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/d8b11f02789313db753014a705b86880/01-lines.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-lines.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/40599c0b589b7f9155e348c65db74105/01-lines.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">01-lines.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="00-keypoints.html" title="previous page">Keypoints</a>
+    <a class='right-next' id="next-link" href="02-areas.html" title="next page">Areas</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

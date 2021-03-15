@@ -13,6 +13,7 @@ getting a licensed copy of Ansys.
    :hidden:
    :maxdepth: 2
 
+   running_mapdl
    versioning
    docker
 

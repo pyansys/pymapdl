@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Areas &#8212; ansys.mapdl.core 0.58.2 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Volumes" href="03-volumes.html" />
+    <link rel="prev" title="Lines" href="01-lines.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/2d_plate_with_a_hole.html">
+   MAPDL 2D Plane Stress Concentration Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_notch.html">
+   3D Stress Concentration Analysis for a Notched Plate
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/3d_plate_thermal.html">
+   Basic Thermal Analysis with pyMAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_3d_beam.html">
+   MAPDL 3D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/mapdl_beam.html">
+   MAPDL 2D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/path_operations.html">
+   Path Operations within pyMAPDL and MAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/pyvista_mesh.html">
+   PyVista Mesh Integration
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../00-mapdl-examples/transient_thermal.html">
+   Example Thermal Transient Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/basic_operations.html">
+   PyMAPDL APDLMath Basic Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/eigen_solve.html">
+   Using APDLMath to solve Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/explore_mapdl_files.html">
+   Binary MAPDL File Explorer
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/mapdl_vs_scipy.html">
+   Compute Eigenvalues using MAPDL or SciPy
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/scipy_sparse_matrix.html">
+   Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_dense_matrix.html">
+   Use APDLMath to Solve a Dense Matrix Linear System
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_sparse_matrix.html">
+   Use APDLMath To Perform Sparse Factorization and Solve Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/use_numpy_arrays.html">
+   Manipulate APDLMath vectors or dense matrices as NumPy Arrays
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="00-keypoints.html">
+   Keypoints
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="01-lines.html">
+   Lines
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   Areas
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="03-volumes.html">
+   Volumes
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="04-primitives.html">
+   Primitives
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-a">
+   APDL Command: A
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-al">
+   APDL Command: AL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-adrag">
+   APDL Command: ADRAG
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-asba">
+   APDL Command: ASBA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#area-ids">
+   Area IDs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#area-geometry">
+   Area Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merged-area-geometry">
+   Merged Area Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#area-selection">
+   Area Selection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apdl-command-aplot">
+   APDL Command: APLOT
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-02-areas-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="areas">
+<span id="ref-basic-geometry-areas"></span><span id="sphx-glr-examples-02-geometry-02-areas-py"></span><h1>Areas<a class="headerlink" href="#areas" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how you can use PyMAPDL to create basic geometry
+using Pythonic PREP7 area commands.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="c1"># start MAPDL and enter the pre-processing routine</span>
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
+MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
+ansys.mapdl Version: 0.58.2
+</pre></div>
+</div>
+<div class="section" id="apdl-command-a">
+<h2>APDL Command: A<a class="headerlink" href="#apdl-command-a" title="Permalink to this headline">¶</a></h2>
+<p>Create a simple triangle in the XY plane using three keypoints.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-al">
+<h2>APDL Command: AL<a class="headerlink" href="#apdl-command-al" title="Permalink to this headline">¶</a></h2>
+<p>Create an area from four lines.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">)</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k3</span><span class="p">,</span> <span class="n">k0</span><span class="p">)</span>
+<span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">al</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-adrag">
+<h2>APDL Command: ADRAG<a class="headerlink" href="#apdl-command-adrag" title="Permalink to this headline">¶</a></h2>
+<p>Generate areas by dragging a line pattern along a path.</p>
+<p>Drag a circle between two keypoints to create an area</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">carc</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">arc</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">adrag</span><span class="p">(</span><span class="n">carc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nlp1</span><span class="o">=</span><span class="n">l0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(2.431851652578137, 2.431851652578137, 2.431851652578137),
+ (0.5, 0.5, 0.5),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-asba">
+<h2>APDL Command: ASBA<a class="headerlink" href="#apdl-command-asba" title="Permalink to this headline">¶</a></h2>
+<p>Subtract a <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">x</span> <span class="pre">0.5</span></code> rectangle from a <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">1</span></code> rectangle.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+<span class="n">anum0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">anum1</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">aout</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">asba</span><span class="p">(</span><span class="n">anum0</span><span class="p">,</span> <span class="n">anum1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_004.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5, 0.5, 2.7320508075688776),
+ (0.5, 0.5, 0.0),
+ (0.0, 1.0, 0.0)]
+</pre></div>
+</div>
+</div>
+<div class="section" id="area-ids">
+<h2>Area IDs<a class="headerlink" href="#area-ids" title="Permalink to this headline">¶</a></h2>
+<p>Return an array of the area IDs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">anum</span>
+<span class="n">anum</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([3], dtype=int32)
+</pre></div>
+</div>
+</div>
+<div class="section" id="area-geometry">
+<h2>Area Geometry<a class="headerlink" href="#area-geometry" title="Permalink to this headline">¶</a></h2>
+<p>Get the VTK <code class="docutils literal notranslate"><span class="pre">PolyData</span></code> containing lines.  This VTK mesh can be
+saved or plotted.  For more details, visit <a class="reference external" href="https://docs.pyvista.com">https://docs.pyvista.com</a></p>
+<p>Note that this is a method so you can select the quality of the
+areas (mesh density), and if you would like a merged output or
+individual meshes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">areas</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">areas</span><span class="p">(</span><span class="n">quality</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">areas</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[UnstructuredGrid (0x7f2abb5a12f0)
+  N Cells:  12
+  N Points: 24
+  X Bounds: 0.000e+00, 1.000e+00
+  Y Bounds: 0.000e+00, 1.000e+00
+  Z Bounds: 0.000e+00, 0.000e+00
+  N Arrays: 3
+]
+</pre></div>
+</div>
+</div>
+<div class="section" id="merged-area-geometry">
+<h2>Merged Area Geometry<a class="headerlink" href="#merged-area-geometry" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">areas</span><span class="p">(</span><span class="n">quality</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">area</span>
+
+<span class="c1"># optionally save the area, or plot it</span>
+<span class="c1"># area.save(&#39;mesh.vtk&#39;)</span>
+<span class="c1"># area.plot()</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>12</td></tr>
+<tr><td>N Points</td><td>24</td></tr>
+<tr><td>X Bounds</td><td>0.000e+00, 1.000e+00</td></tr>
+<tr><td>Y Bounds</td><td>0.000e+00, 1.000e+00</td></tr>
+<tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
+<tr><td>N Arrays</td><td>1</td></tr>
+</table>
+
+</td><td>
+<table>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td><b>entity_num</b></td><td>Cells</td><td>int32</td><td>1</td><td>3.000e+00</td><td>3.000e+00</td></tr>
+</table>
+
+</td></tr> </table>
+</div>
+<br />
+<br /></div>
+<div class="section" id="area-selection">
+<h2>Area Selection<a class="headerlink" href="#area-selection" title="Permalink to this headline">¶</a></h2>
+<p>There are two approaches for selecting areas, the old “legacy” style
+and the new style.  The old style is valuable for those who are
+comfortable with the existing MAPDL commands, and new style is
+useful for selecting areas in a pythonic manner.</p>
+<p>This example generates a series of random squares and selects them</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">generate_random_area</span><span class="p">():</span>
+    <span class="n">start_x</span><span class="p">,</span> <span class="n">start_y</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">blc4</span><span class="p">(</span><span class="n">start_x</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">start_y</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+
+<span class="c1"># create 20 random rectangles</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">generate_random_area</span><span class="p">()</span>
+
+<span class="c1"># Print the area numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">anum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+</pre></div>
+</div>
+<p>Select every other area with the old style command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">asel</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;AREA&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">anum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  3  5  7  9 11 13 15 17 19]
+</pre></div>
+</div>
+<p>Select every other area with the new style command.</p>
+<p>Note that the Area IDs are 1 based in MAPDL, while Python ranges are 0 based.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">area_select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">anum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  3  5  7  9 11 13 15 17 19]
+</pre></div>
+</div>
+<p>Select areas from a list</p>
+<p>Note that you can <code class="docutils literal notranslate"><span class="pre">return_selected</span></code> if you want to see what you
+have selected.  This is helpful when reselecting from existing
+areas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">area_select</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">return_selected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  5 10 20]
+</pre></div>
+</div>
+</div>
+<div class="section" id="apdl-command-aplot">
+<h2>APDL Command: APLOT<a class="headerlink" href="#apdl-command-aplot" title="Permalink to this headline">¶</a></h2>
+<p>This method uses VTK and pyvista to generate a dynamic 3D plot.</p>
+<p>There are a variety of plotting options available for all the common
+plotting methods.  Here, we enable the bounds and show the lines of
+the plot while increasing the plot quality with the <code class="docutils literal notranslate"><span class="pre">quality</span></code>
+parameter.</p>
+<p>Note that the <cite>cpos</cite> keyword argument can be used to describe the
+camera direction from the following:</p>
+<ul class="simple">
+<li><p>‘iso’ - Isometric view</p></li>
+<li><p>‘xy’ - XY Plane view</p></li>
+<li><p>‘xz’ - XZ Plane view</p></li>
+<li><p>‘yx’ - YX Plane view</p></li>
+<li><p>‘yz’ - YZ Plane view</p></li>
+<li><p>‘zx’ - ZX Plane view</p></li>
+<li><p>‘zy’ - ZY Plane view</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">quality</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;iso&#39;</span><span class="p">,</span>
+            <span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_005.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(19.176672267145836, 18.648792185525707, 13.051602475625836),
+ (6.1250697915200005, 5.597189709899871, 0.0),
+ (0.0, 0.0, 1.0)]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.657 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-02-areas-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/204008c55219a8372f3983a6ccdfecb1/02-areas.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-areas.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/73ae78074341962ca2226cef65e9c325/02-areas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">02-areas.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="01-lines.html" title="previous page">Lines</a>
+    <a class='right-next' id="next-link" href="03-volumes.html" title="next page">Volumes</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

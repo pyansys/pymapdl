@@ -74,7 +74,7 @@ result.plot_nodal_displacement(0, show_displacement=True,
 # Get a smoother plot by disabling movie_filename and increasing ``nangles``.
 # Enable a continuous plot looping with ```loop=True```.
 
-# result.animate_nodal_displacement(18, loop=False, add_text=False,
-#                                   nangles=30, displacement_factor=0.4,
-#                                   show_axes=False, background='w',
-#                                   movie_filename='plane_vib.gif')
+result.animate_nodal_displacement(18, loop=False, add_text=False,
+                                  nangles=30, displacement_factor=0.4,
+                                  show_axes=False, background='w',
+                                  movie_filename='plane_vib.gif')

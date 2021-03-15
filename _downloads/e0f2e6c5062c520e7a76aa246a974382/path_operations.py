@@ -61,10 +61,8 @@ mapdl.run("/solu")
 sol_output = mapdl.solve()
 
 # plot the normalized global displacement
-mapdl.result.plot_nodal_displacement(0, lighting=False, show_edges=True)
+mapdl.post_processing.plot_nodal_displacement(lighting=False, show_edges=True)
 
-# same as:
-# mapdl.post_processing.plot_nodal_displacement(lighting=False, show_edges=True)
 
 ###############################################################################
 # Post-Processing - MAPDL Path Operation
@@ -74,7 +72,7 @@ mapdl.result.plot_nodal_displacement(0, lighting=False, show_edges=True)
 
 mapdl.post1()
 mapdl.set(1, 1)
-mapdl.plesol("s", "int")
+# mapdl.plesol("s", "int")
 
 # path definition
 pl_end = (0.5*_width, _height, 0.5*_length)
@@ -135,14 +133,13 @@ stress_yz = stress[:, 5]
 # Assign the YZ stress to the underlying grid within the result instance.
 # For this example, NAN values must be replaced with 0 for the
 # interpolation to succeed
+stress_yz[np.isnan(stress_yz)] = 0
 rst.grid['Stress YZ'] = stress_yz
-mask = np.isnan(stress[:, 0])
-rst.grid['Stress YZ'][mask] = 0
 
 # Create a line and sample over it
 line = pv.Line(pl_start, pl_end, resolution=100)
+out = line.sample(rst.grid)  # bug where the interpolation must be run twice
 out = line.sample(rst.grid)
-
 # Note: We could have used a spline (or really, any dataset), and
 # interpolated over it instead of a simple line.
 

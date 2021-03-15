@@ -19,9 +19,9 @@ Here are a series of examples using MAPDL with ``ansys-mapdl-core``.
 
 .. _sphx_glr_examples_00-mapdl-examples:
 
-ANSYS MAPDL Examples Using Pyansys
-----------------------------------
-These examples demonstrate using MAPDL and pyansys together.
+Full Examples Using PyMAPDL
+---------------------------
+These examples demonstrate full examples using the PyMAPDL module.
 
 
 
@@ -376,6 +376,126 @@ together within the PyMapdl module.
    :hidden:
 
    /examples/01-apdlmath-examples/use_numpy_arrays
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_examples_02-geometry:
+
+.. _ref_pymapdl_geometry_examples:
+
+Geometry Examples
+-----------------
+These examples demonstrate using PyMAPDL to create basic geometry.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This section is focused on creating keypoints.">
+
+.. only:: html
+
+ .. figure:: /examples/02-geometry/images/thumb/sphx_glr_00-keypoints_thumb.png
+     :alt: Keypoints
+
+     :ref:`sphx_glr_examples_02-geometry_00-keypoints.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-geometry/00-keypoints
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Lines">
+
+.. only:: html
+
+ .. figure:: /examples/02-geometry/images/thumb/sphx_glr_01-lines_thumb.png
+     :alt: Lines
+
+     :ref:`sphx_glr_examples_02-geometry_01-lines.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-geometry/01-lines
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Areas">
+
+.. only:: html
+
+ .. figure:: /examples/02-geometry/images/thumb/sphx_glr_02-areas_thumb.png
+     :alt: Areas
+
+     :ref:`sphx_glr_examples_02-geometry_02-areas.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-geometry/02-areas
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Volumes">
+
+.. only:: html
+
+ .. figure:: /examples/02-geometry/images/thumb/sphx_glr_03-volumes_thumb.png
+     :alt: Volumes
+
+     :ref:`sphx_glr_examples_02-geometry_03-volumes.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-geometry/03-volumes
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Primitives">
+
+.. only:: html
+
+ .. figure:: /examples/02-geometry/images/thumb/sphx_glr_04-primitives_thumb.png
+     :alt: Primitives
+
+     :ref:`sphx_glr_examples_02-geometry_04-primitives.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-geometry/04-primitives
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

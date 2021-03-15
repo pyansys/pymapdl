@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL 2D Beam Example &#8212; ansys.mapdl.core 0.58.1 documentation</title>
+    <title>MAPDL 2D Beam Example &#8212; ansys.mapdl.core 0.58.2 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,10 +20,6 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/ansys.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d8bbf5861d671d414e1a.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -51,57 +48,64 @@
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
-    <a class="navbar-brand" href="../../index.html">
+
     
-      <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+      
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+      </a>
+      
     
-    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    
     <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
       <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../getting_started/index.html">Getting Started</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../user_guide/index.html">User Guide</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../api/index.html">API Reference</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Examples</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../contributing.html">Contributing</a>
-        </li>
-        
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contributing.html">
+  Contributing
+ </a>
+</li>
+
         
       </ul>
 
-
-      
-
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/pyansys/pymapdl" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
       </ul>
     </div>
 </div>
@@ -111,33 +115,125 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
-    <div class="bd-toc-item active">
-    
-  
-    <ul class="nav bd-sidenav">
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        
-        
-        
-      </ul>
-  
-  </nav>
-          </div>
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="2d_plate_with_a_hole.html">
+   MAPDL 2D Plane Stress Concentration Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="3d_notch.html">
+   3D Stress Concentration Analysis for a Notched Plate
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="3d_plate_thermal.html">
+   Basic Thermal Analysis with pyMAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="mapdl_3d_beam.html">
+   MAPDL 3D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   MAPDL 2D Beam Example
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="path_operations.html">
+   Path Operations within pyMAPDL and MAPDL
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="pyvista_mesh.html">
+   PyVista Mesh Integration
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="transient_thermal.html">
+   Example Thermal Transient Analysis
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/basic_operations.html">
+   PyMAPDL APDLMath Basic Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/eigen_solve.html">
+   Using APDLMath to solve Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/explore_mapdl_files.html">
+   Binary MAPDL File Explorer
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/mapdl_vs_scipy.html">
+   Compute Eigenvalues using MAPDL or SciPy
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/scipy_sparse_matrix.html">
+   Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_dense_matrix.html">
+   Use APDLMath to Solve a Dense Matrix Linear System
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/solve_sparse_matrix.html">
+   Use APDLMath To Perform Sparse Factorization and Solve Operations
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../01-apdlmath-examples/use_numpy_arrays.html">
+   Manipulate APDLMath vectors or dense matrices as NumPy Arrays
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../02-geometry/00-keypoints.html">
+   Keypoints
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../02-geometry/01-lines.html">
+   Lines
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../02-geometry/02-areas.html">
+   Areas
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../02-geometry/03-volumes.html">
+   Volumes
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="../02-geometry/04-primitives.html">
+   Primitives
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
           
 
           
@@ -145,9 +241,7 @@
               
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
     
-    </ul>
 </nav>
 
 
@@ -155,6 +249,9 @@
           </div>
           
 
+          
+          
+            
           
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
@@ -253,7 +350,7 @@ are sequential</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     06:36:41  MAR 04, 2021 CP=     54.897
+ 00000000  VERSION=LINUX x64     14:25:40  MAR 15, 2021 CP=     75.372
 
 
 
@@ -346,7 +443,7 @@ individual elements</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =      54.902   TIME= 06:36:41
+ *** NOTE ***                            CP =      75.379   TIME= 14:25:40
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -361,7 +458,7 @@ individual elements</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     06:36:41  MAR 04, 2021 CP=     54.903
+ 00000000  VERSION=LINUX x64     14:25:40  MAR 15, 2021 CP=     75.379
 
 
 
@@ -377,11 +474,11 @@ individual elements</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =      54.903   TIME= 06:36:41
+ *** NOTE ***                            CP =      75.380   TIME= 14:25:40
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =      54.903   TIME= 06:36:41
+ *** NOTE ***                            CP =      75.380   TIME= 14:25:40
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -398,7 +495,7 @@ individual elements</p>
 
  SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr
 
- *** NOTE ***                            CP =      54.908   TIME= 06:36:41
+ *** NOTE ***                            CP =      75.386   TIME= 14:25:40
  Predictor is ON by default for structural elements with rotational
  degrees of freedom.  Use the PRED,OFF command to turn the predictor
  OFF if it adversely affects the convergence.
@@ -411,8 +508,8 @@ individual elements</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.011   0.000492
- Time at end of element matrix formulation CP = 54.9148254.
+        1        22  BEAM188       0.012   0.000551
+ Time at end of element matrix formulation CP = 75.3936005.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =          44,    Maximum wavefront =     12
@@ -420,7 +517,7 @@ individual elements</p>
   Memory required for in-core solution     =     0.062 MB
   Memory required for out-of-core solution =     0.062 MB
 
- *** NOTE ***                            CP =      54.919   TIME= 06:36:41
+ *** NOTE ***                            CP =      75.398   TIME= 14:25:40
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -435,12 +532,12 @@ individual elements</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.035   0.001595
+        1        22  BEAM188       0.044   0.002008
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.001   0.000025
+        1        22  BEAM188       0.002   0.000102
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -451,7 +548,7 @@ individual elements</p>
         0.625 MB WRITTEN ON RESULTS FILE: file.rst
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.401 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.585 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-mapdl-beam-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/66374d1a80ad5170be03b29ae6cc7f1c/mapdl_beam.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mapdl_beam.py</span></code></a></p>
@@ -481,14 +578,14 @@ individual elements</p>
     </div>
 
     
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>
