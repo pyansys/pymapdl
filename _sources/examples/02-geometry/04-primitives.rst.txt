@@ -54,7 +54,7 @@ using Pythonic PREP7 volume commands.
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-    ansys.mapdl Version: 0.58.2
+    ansys.mapdl Version: 0.58.3
 
 
 
@@ -655,7 +655,7 @@ and 180 define the starting and ending angles of the torus.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.915 seconds)
+   **Total running time of the script:** ( 0 minutes  18.341 seconds)
 
 
 .. _sphx_glr_download_examples_02-geometry_04-primitives.py:

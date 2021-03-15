@@ -54,7 +54,7 @@ This section is focused on creating keypoints.
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-    ansys.mapdl Version: 0.58.2
+    ansys.mapdl Version: 0.58.3
 
 
 
@@ -434,8 +434,8 @@ plotting methods.
  .. code-block:: none
 
 
-    [(1.7558458708902411, 1.771461786919241, 1.6021337620394411),
-     (0.5141102680845, 0.5297261841134999, 0.3603981592337),
+    [(2.030856719142241, 2.026763488353791, 1.893651684724791),
+     (0.5193880682445, 0.51529483745605, 0.38218303382705004),
      (0.0, 0.0, 1.0)]
 
 
@@ -443,7 +443,7 @@ plotting methods.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.691 seconds)
+   **Total running time of the script:** ( 0 minutes  0.680 seconds)
 
 
 .. _sphx_glr_download_examples_02-geometry_00-keypoints.py:

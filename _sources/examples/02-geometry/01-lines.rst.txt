@@ -52,7 +52,7 @@ using Pythonic PREP7 line commands.
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-    ansys.mapdl Version: 0.58.2
+    ansys.mapdl Version: 0.58.3
 
 
 
@@ -825,8 +825,8 @@ plotting methods.
  .. code-block:: none
 
 
-    [(0.5304904282093048, 0.4796970235183835, 3.0111661416443902),
-     (0.5304904282093048, 0.4796970235183835, 0.43433777987957),
+    [(0.40639557503163815, 0.5519456416368484, 2.5194643008356414),
+     (0.40639557503163815, 0.5519456416368484, 0.22479584673419595),
      (0.0, 1.0, 0.0)]
 
 
@@ -834,7 +834,7 @@ plotting methods.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.713 seconds)
+   **Total running time of the script:** ( 0 minutes  4.405 seconds)
 
 
 .. _sphx_glr_download_examples_02-geometry_01-lines.py:
