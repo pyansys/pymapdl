@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL Object &#8212; ansys.mapdl.core 0.58.3 documentation</title>
+    <title>MAPDL Object &#8212; ansys.mapdl.core 0.58.4 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -323,38 +323,28 @@ areas by their number.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NOSTART'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>APDL Command: /CLEAR</p>
-<p>Clears the database.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>read</strong> – <p>File read option:</p>
-<p>START - Reread startXXX.ans file.</p>
-<p>NOSTART - Do not reread startXXX.ans file (default).</p>
-</p>
-</dd>
-</dl>
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the database.</p>
+<p>APDL Command: <code class="docutils literal notranslate"><span class="pre">/CLEAR</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
 <p class="rubric">Notes</p>
-<p>Resets the ANSYS database to the conditions at the beginning of the
-problem.  Sets the import and Boolean options back to the ANSYS
-default. All items are deleted from the database and memory values are
-set to zero for items derived from database information.  All files are
-left intact.  This command is useful between multiple analyses in the
-same run, or between passes of a multipass analysis (such as between
-the substructure generation, use, and expansion passes).  Should not be
-used in a do-loop since loop counters will be reset.  The start162.ans
-file will be reread (by default) after the database is cleared, unless
-Read is set to NOSTART.  Additional commands cannot be stacked (using
-the $ separator) on the same line as the /CLEAR command.</p>
-<p>Use care when placing the /CLEAR command within branching constructs
-(for example, those employing *DO or *IF commands).  The command
-deletes all parameters including the looping parameter for do-loops.
-(You can preserve your iteration parameter by issuing a PARSAV command
-prior to the /CLEAR command, then following the /CLEAR command with a
-PARRES command.)</p>
-<p>/CLEAR resets the jobname to match the currently open session .LOG and
-.ERR files. This will return the jobname to its original value, or to
-the most recent value specified on /FILNAME with KEY = 1.</p>
+<p>Resets the ANSYS database to the conditions at the beginning
+of the problem.  Sets the import and Boolean options back to
+the ANSYS default. All items are deleted from the database and
+memory values are set to zero for items derived from database
+information.  All files are left intact.  This command is
+useful between multiple analyses in the same run, or between
+passes of a multi-pass analysis (such as between the
+substructure generation, use, and expansion passes).  Should
+not be used in a do-loop since loop counters will be reset.
+on the same line as the <code class="docutils literal notranslate"><span class="pre">/CLEAR</span></code> command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">/CLEAR</span></code> resets the jobname to match the currently open
+session .LOG and .ERR files. This will return the jobname to
+its original value, or to the most recent value specified on
+<code class="docutils literal notranslate"><span class="pre">/FILNAME</span></code> with KEY = 1.</p>
 <p>This command is valid only at the Begin level.</p>
 </dd></dl>
 
@@ -1537,8 +1527,8 @@ RF  : Nodal reaction forces</p>
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
-          &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+          &copy; Copyright 2021, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
     </p>
   </div>
 </footer>

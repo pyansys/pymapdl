@@ -100,6 +100,33 @@ using the ``convert_script`` function and setting
     >>> pymapdl.convert_script(apdl_inputfile, pyscript, macros_as_functions=True)
 
 
+
+Additional Options When Running Commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Commands can be run in ``mute`` or ``verbose`` mode, which allows you
+to suppress or print the output in as it is being run for any MAPDL
+command.  This can be especially helpful for long-running commands
+like ``SOLVE``.  This works for the pythonic wrapping of all commands
+and when using ``run``.
+
+Run a command and suppress its output:
+
+.. code:: python
+
+    >>> mapdl.run('/PREP7', mute=True)
+    >>> mapdl.prep7(mute=True)
+
+Run a command and stream its output while it is being run.
+
+.. code:: python
+
+    >>> mapdl.run('SOLVE', mute=True)
+    >>> mapdl.solve(verbose=True)
+
+.. note::
+    This feature is only available when running MAPDL in gRPC mode.
+
+
 Conditional Statements and Loops
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 APDL conditional statements such as ``*IF`` must be either implemented

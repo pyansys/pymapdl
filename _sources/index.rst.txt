@@ -60,7 +60,7 @@ Quick Code
 ----------
 Here's a brief example of how PyMAPDL works:
 
-.. code:: 
+.. code:: python
 
     >>> from ansys.mapdl.core import launch_mapdl
     >>> mapdl = launch_mapdl()

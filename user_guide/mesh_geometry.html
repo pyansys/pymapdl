@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesh and Geometry &#8212; ansys.mapdl.core 0.58.3 documentation</title>
+    <title>Mesh and Geometry &#8212; ansys.mapdl.core 0.58.4 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -2068,56 +2068,6 @@ of it directed to a new keypoint.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.n">
-<code class="sig-name descname"><span class="pre">n</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thzx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Define a node.</p>
-<p>APDL Command: N</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>node</strong> – Node number to be assigned.  A previously defined node of
-the same number will be redefined.  Defaults to the
-maximum node number used +1.</p></li>
-<li><p><strong>x</strong> – Node location in the active coordinate system (R, θ, Z for
-cylindrical, R, θ, Φ for spherical or toroidal).</p></li>
-<li><p><strong>y</strong> – Node location in the active coordinate system (R, θ, Z for
-cylindrical, R, θ, Φ for spherical or toroidal).</p></li>
-<li><p><strong>z</strong> – Node location in the active coordinate system (R, θ, Z for
-cylindrical, R, θ, Φ for spherical or toroidal).</p></li>
-<li><p><strong>thxy</strong> – First rotation about nodal Z (positive X toward Y).</p></li>
-<li><p><strong>thyz</strong> – Second rotation about nodal X (positive Y toward Z).</p></li>
-<li><p><strong>thzx</strong> – Third rotation about nodal Y (positive Z toward X).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Node number of the generated node.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>Create a node at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">1)</span></code></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span>
-<span class="go">1</span>
-</pre></div>
-</div>
-<p>Create a node at <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">5,</span> <span class="pre">1)</span></code> with a node ID of 10</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nnum</span>
-<span class="go">10</span>
-</pre></div>
-</div>
-<p class="rubric">Notes</p>
-<p>Defines a node in the active coordinate system [CSYS].  The
-nodal coordinate system is parallel to the global Cartesian
-system unless rotated.  Rotation angles are in degrees and
-redefine any previous rotation angles.  See the NMODIF, NANG,
-NROTAT, and NORA commands for other rotation options.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.pcirc">
 <code class="sig-name descname"><span class="pre">pcirc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rad1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#ansys.mapdl.core.geometry_commands._MapdlGeometryCommands.pcirc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a circular area centered about the working plane origin.</p>
@@ -3082,8 +3032,8 @@ see <a class="reference internal" href="../api/mesh.html#ref-mesh-api"><span cla
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
-          &copy; Copyright 2020, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+          &copy; Copyright 2021, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
     </p>
   </div>
 </footer>
