@@ -59,7 +59,19 @@ def get_nparray_chunks(name, array, chunk_size=DEFAULT_FILE_CHUNK_SIZE):
                                          chunk=chunk)
         i += chunk_size
 
-
+def get_nparray_chunks2(name, array, chunk_size=DEFAULT_FILE_CHUNK_SIZE):
+    """Serializes a 2D numpy array into chunks"""
+    stype = NP_VALUE_TYPE[array.dtype.type]
+    sh1 = array.shape[0]
+    sh2 = array.shape[1]
+    i = 0  # position counter
+    byte_array = array.tobytes(order='F')
+    while i < len(byte_array):
+        piece = byte_array[i: i + chunk_size]
+        chunk = anskernel.Chunk(payload=piece, size=len(piece))
+        yield pb_types.SetMatDataRequest( mname=name, stype=stype, nrow=sh1,
+                                          ncol=sh2, chunk=chunk)
+        i += chunk_size
 
 class MapdlMath():
     """Abstract mapdl math class.  Created from a ``Mapdl`` instance.
@@ -346,9 +358,13 @@ class MapdlMath():
             name = id_generator()
         elif not isinstance(name, str):
             raise TypeError('``name`` parameter must be a string')
-
+        
+        from scipy import sparse
         self._set_mat(name, matrix, triu)
-        return AnsSparseMat(name, self._mapdl)
+        if ( sparse.issparse(matrix)) :
+            return AnsSparseMat(name, self._mapdl)
+        else:
+            return AnsDenseMat(name, self._mapdl)
 
     def load_matrix_from_file(self, type=np.double, fname="file.full", matId="STIFF"):
         """Load a matrix from a file"""
@@ -646,7 +662,7 @@ class MapdlMath():
 
     @protect_grpc
     def _set_mat(self, mname, arr, sym, dtype=None, chunk_size=DEFAULT_CHUNKSIZE):
-        """Transfer a scipy array to MAPDL as a MAPDL Math matrix
+        """Transfer a 2D dense of scipy array to MAPDL as a MAPDL Math matrix
 
         Parameters
         ----------
@@ -654,10 +670,10 @@ class MapdlMath():
             Matrix parameter name.  Character ":" is not allowed.
 
         arr : 
-            SciPy array to upload
+            Matrix to upload
 
         sym : bool
-            ``True`` when sparse matrix is symmetric.
+            ``True`` when matrix is symmetric. Unused if Matrix is dense
 
         dtype : np.dtype, optional
             Type to upload array as.  Defaults to the current array type.
@@ -666,6 +682,8 @@ class MapdlMath():
             Chunk size in bytes.  Must be less than 4MB.
 
         """
+        from scipy import sparse
+
         if ':' in mname:
             raise ValueError('The character ":" is not permitted in a MAPDL MATH'
                              ' matrix parameter name')
@@ -679,43 +697,61 @@ class MapdlMath():
             if arr.ndim > 2:
                 raise ValueError('Dense arrays must be 2 dimensional')
 
-            from scipy import sparse
+        if sparse.issparse(arr):
             arr = sparse.csr_matrix(arr)
 
-        if dtype is not None:
-            if arr.data.dtype != dtype:
-                arr.data = arr.data.astype(dtype)
+            if arr.shape[0] != arr.shape[1]:
+                raise ValueError('APDLMath only supports square matrices')
 
-        if arr.data.dtype not in list(NP_VALUE_TYPE.keys()):
-            dtypes = list(NP_VALUE_TYPE.keys())
-            if None in dtypes:
-                dtypes.remove(None)
-            raise TypeError('Invalid array datatype.  Must be one of the following:\n'
-                            + ('\n'.join([str(dtype) for dtype in dtypes])))
+                if dtype is not None:
+                    if arr.data.dtype != dtype:
+                        arr.data = arr.data.astype(dtype)
 
-        if arr.shape[0] != arr.shape[1]:
-            raise ValueError('APDLMath only supports square matrices')
+                if arr.data.dtype not in list(NP_VALUE_TYPE.keys()):
+                    dtypes = list(NP_VALUE_TYPE.keys())
+                    if None in dtypes:
+                        dtypes.remove(None)
+                        raise TypeError('Invalid array datatype.  Must be one of the following:\n'
+                                        + ('\n'.join([str(dtype) for dtype in dtypes])))
 
-        # The data vector
-        dataname = f'{mname}_DATA'
-        self.set_vec(dataname, arr.data)
+            # The data vector
+            dataname = f'{mname}_DATA'
+            self.set_vec(dataname, arr.data)
 
-        # indptr vector
-        indptrname = f'{mname}_IND'
-        indv = arr.indptr.astype('int64') + 1
-        self.set_vec(indptrname, indv)
+            # indptr vector
+            indptrname = f'{mname}_IND'
+            indv = arr.indptr.astype('int64') + 1
+            self.set_vec(indptrname, indv)
 
-        # indices vector
-        indxname = f'{mname}_PTR'
-        idx = arr.indices + 1
-        self.set_vec(indxname, idx)
+            # indices vector
+            indxname = f'{mname}_PTR'
+            idx = arr.indices + 1
+            self.set_vec(indxname, idx)
 
-        flagsym = 'FALSE'
-        if sym is True:
-            flagsym = 'TRUE'
+            flagsym = 'FALSE'
+            if sym is True:
+                flagsym = 'TRUE'
+                self._mapdl.run(f'*SMAT,{mname},D,ALLOC,CSR,{indptrname},{indxname},{dataname},{flagsym}')
+        else:
 
-        self._mapdl.run(f'*SMAT,{mname},D,ALLOC,CSR,{indptrname},{indxname},{dataname},{flagsym}')
+            if self._mapdl._grpc_api_ver < 0.4:
+                    raise TypeError('This feature is not supported.\n')                
+                
+            if dtype is not None:
+                if arr.dtype != dtype:
+                    arr = arr.astype(dtype)
 
+            if arr.dtype not in list(NP_VALUE_TYPE.keys()):
+                dtypes = list(NP_VALUE_TYPE.keys())
+                if None in dtypes:
+                    dtypes.remove(None)
+                    raise TypeError('Invalid array datatype.  Must be one of the following:\n'
+                                    + ('\n'.join([str(dtype) for dtype in dtypes])))
+
+            chunks_generator = get_nparray_chunks2(mname, arr, chunk_size)
+            self._mapdl._stub.SetMatData(chunks_generator)
+            
+            
 
 class ApdlMathObj:
     def __init__(self, id, mapdl, type=ObjType.GEN):
@@ -871,10 +907,42 @@ class AnsVec(ApdlMathObj):
         self._mapdl.run(cmd)
         return self._mapdl.scalar_param("pyval")
 
-    def __mul__(self, vec2):
-        raise AttributeError('Array multiplication is not yet available.  '
-                             'For dot product, please use `dot()`')
+    def __mul__(self, vec):
+        """Element-Wise product with another ansys vector object
+           ( also knowm as Hadamard product )
+        Parameters
+        ----------
+        vec : ansys.mapdl.math.AnsVec
+            Ansys vector object.
 
+        Returns
+        -------
+        hadamard_product : Ansys vector object
+            Hadamard product between this vector and the other vector.
+        """
+
+        if self._mapdl._grpc_api_ver < 0.4:        
+            raise AttributeError('Array multiplication is not yet available.  '
+                                 'For dot product, please use `dot()`')
+
+        if not isinstance(vec, AnsVec):
+            raise TypeError('Must be an Ansys vector object')
+            
+        name = id_generator()  # internal name of the new vector/matrix
+        info = self._mapdl._data_info(self.id)
+        dtype = ANSYS_VALUE_TYPE[info.stype]
+
+        # check size consistency
+        if self.size != vec.size :
+            raise TypeError('Ansys vectors have inconsistent sizes')
+
+        self._mapdl.run(f"*VEC,{name},{MYCTYPE[dtype]},ALLOC,{info.size1}")
+        objout = AnsVec(name, self._mapdl)
+
+        cmd = "*HPROD," + self.id + "," + vec.id + "," + name
+        self._mapdl.run(cmd)
+        return objout
+        
     def copy(self):
         """Return a copy of this vector"""
         return AnsVec(ApdlMathObj.copy(self), self._mapdl)

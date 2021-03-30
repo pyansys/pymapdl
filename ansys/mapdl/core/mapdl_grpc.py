@@ -300,7 +300,13 @@ class MapdlGrpc(_MapdlCore):
         self._xpl = ansXpl(self)
 
         # TODO: version check
+        
+        request = anskernel.CtrlRequest(ctrl='VERSION')
+        resp = self._stub.Ctrl( request)
+        grpc_ver = resp.response.split('.')
+        self._grpc_api_ver = float(grpc_ver[0]) + 0.1*float(grpc_ver[1])
 
+        print('\ngRPC api release :    '  + str(self._grpc_api_ver) + '\n')
 
         # enable health check
         if enable_health_check:
