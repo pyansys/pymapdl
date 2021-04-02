@@ -382,7 +382,6 @@ class MapdlGrpc(_MapdlCore):
                 pass
 
         if not success:
-            breakpoint()
             raise RuntimeError('Unable to reconnect to MAPDL')
 
     @property
@@ -1342,7 +1341,6 @@ class MapdlGrpc(_MapdlCore):
 
         if self._prioritize_thermal:
             if not os.path.isfile(rth_file):
-                breakpoint()
                 raise FileNotFoundError('Thermal Result not available')
             return rth_file
 
