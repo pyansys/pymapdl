@@ -158,7 +158,8 @@ class MapdlCorba(_MapdlCore):
         # critical for collection
         INSTANCES.append(weakref.ref(self))
 
-    def _launch(self, start_parm, verbose):
+    def _launch(self, start_parm, verbose=False):
+        """Launch a CORBA instance using the MAPDL AAS flag"""
         corba_key = launch_corba(verbose=verbose, **start_parm)
 
         orb = CORBA.ORB_init()
