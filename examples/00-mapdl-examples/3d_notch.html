@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Stress Concentration Analysis for a Notched Plate &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>3D Stress Concentration Analysis for a Notched Plate &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -298,7 +299,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-3d-notch-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="d-stress-concentration-analysis-for-a-notched-plate">
+<section class="sphx-glr-example-title" id="d-stress-concentration-analysis-for-a-notched-plate">
 <span id="ref-3d-plane-stress-concentration"></span><span id="sphx-glr-examples-00-mapdl-examples-3d-notch-py"></span><h1>3D Stress Concentration Analysis for a Notched Plate<a class="headerlink" href="#d-stress-concentration-analysis-for-a-notched-plate" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial is the 3D corollary to the 2D plane example
 <a class="reference internal" href="2d_plate_with_a_hole.html#ref-plane-stress-concentration"><span class="std std-ref">MAPDL 2D Plane Stress Concentration Analysis</span></a>, but This example verifies the
@@ -313,7 +314,7 @@ notches in a finite width thin plate</p>
 <span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">loglevel</span><span class="o">=</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="geometry">
+<section id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
 <p>Create a rectangular area with two notches at the top and bottom.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mf">0.4</span>
@@ -387,8 +388,8 @@ notches in a finite width thin plate</p>
 <li><img alt="3d notch" class="sphx-glr-multi-img" src="../../_images/sphx_glr_3d_notch_003.png" />
 </li>
 </ul>
-</div>
-<div class="section" id="meshing">
+</section>
+<section id="meshing">
 <h2>Meshing<a class="headerlink" href="#meshing" title="Permalink to this headline">¶</a></h2>
 <p>This example will use PLANE183 elements as a thin plate can be
 modeled with plane elements provided that KEYOPTION 3 is set to 3
@@ -439,8 +440,8 @@ lines nearby the hole and <code class="docutils literal notranslate"><span class
 <li><img alt="3d notch" class="sphx-glr-multi-img" src="../../_images/sphx_glr_3d_notch_005.png" />
 </li>
 </ul>
-</div>
-<div class="section" id="material-properties-and-boundary-conditions">
+</section>
+<section id="material-properties-and-boundary-conditions">
 <h2>Material Properties and Boundary Conditions<a class="headerlink" href="#material-properties-and-boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Fix the left-hand side of the plate in the X direction and set a
 force of 1 kN in the positive X direction.</p>
@@ -486,8 +487,8 @@ force of 1 kN in the positive X direction.</p>
 <span class="n">_</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">allsel</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="solve-the-static-problem">
+</section>
+<section id="solve-the-static-problem">
 <h2>Solve the Static Problem<a class="headerlink" href="#solve-the-static-problem" title="Permalink to this headline">¶</a></h2>
 <p>Solve the static analysis</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;/SOLU&#39;</span><span class="p">)</span>
@@ -497,11 +498,11 @@ force of 1 kN in the positive X direction.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;FINISH SOLUTION PROCESSING\n\n\n ***** ROUTINE COMPLETED *****  CP =        70.100&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;FINISH SOLUTION PROCESSING\n\n\n ***** ROUTINE COMPLETED *****  CP =        64.047&#39;
 </pre></div>
 </div>
-</div>
-<div class="section" id="post-processing">
+</section>
+<section id="post-processing">
 <h2>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
 <p>The static result can be post-processed both within MAPDL and
 outside of MAPDL using <code class="docutils literal notranslate"><span class="pre">pyansys</span></code>.  This example shows how to
@@ -521,8 +522,8 @@ result reader.</p>
 </pre></div>
 </div>
 <img alt="3d notch" class="sphx-glr-single-img" src="../../_images/sphx_glr_3d_notch_006.png" />
-</div>
-<div class="section" id="compute-the-stress-concentration">
+</section>
+<section id="compute-the-stress-concentration">
 <h2>Compute the Stress Concentration<a class="headerlink" href="#compute-the-stress-concentration" title="Permalink to this headline">¶</a></h2>
 <p>The stress concentration <span class="math notranslate nohighlight">\(K_t\)</span> is the ratio of the maximum
 stress at the hole to the far-field stress, or the mean cross
@@ -618,7 +619,7 @@ width over the modified cross section width.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Stress Concentration: 1.60
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.433 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.430 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-3d-notch-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0ac527485e303b4bbf39cc8c039e8c59/3d_notch.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">3d_notch.py</span></code></a></p>
@@ -628,8 +629,8 @@ width over the modified cross section width.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL 2D Beam Example &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MAPDL 2D Beam Example &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -262,7 +263,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-mapdl-beam-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="mapdl-2d-beam-example">
+<section class="sphx-glr-example-title" id="mapdl-2d-beam-example">
 <span id="ref-mapdl-beam"></span><span id="sphx-glr-examples-00-mapdl-examples-mapdl-beam-py"></span><h1>MAPDL 2D Beam Example<a class="headerlink" href="#mapdl-2d-beam-example" title="Permalink to this headline">¶</a></h1>
 <p>This is an example from FINITE ELEMENT ANALYSIS USING ANSYS 11.0</p>
 <p>Launch MAPDL with interactive plotting</p>
@@ -350,7 +351,7 @@ are sequential</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     16:24:20  MAR 21, 2021 CP=     71.640
+ 00000000  VERSION=LINUX x64     23:35:16  APR 05, 2021 CP=     65.489
 
 
 
@@ -443,7 +444,7 @@ individual elements</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =      71.649   TIME= 16:24:20
+ *** NOTE ***                            CP =      65.494   TIME= 23:35:16
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -458,7 +459,7 @@ individual elements</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     16:24:20  MAR 21, 2021 CP=     71.649
+ 00000000  VERSION=LINUX x64     23:35:16  APR 05, 2021 CP=     65.495
 
 
 
@@ -474,11 +475,11 @@ individual elements</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =      71.650   TIME= 16:24:20
+ *** NOTE ***                            CP =      65.495   TIME= 23:35:16
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =      71.650   TIME= 16:24:20
+ *** NOTE ***                            CP =      65.495   TIME= 23:35:16
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -495,7 +496,7 @@ individual elements</p>
 
  SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr
 
- *** NOTE ***                            CP =      71.656   TIME= 16:24:20
+ *** NOTE ***                            CP =      65.500   TIME= 23:35:16
  Predictor is ON by default for structural elements with rotational
  degrees of freedom.  Use the PRED,OFF command to turn the predictor
  OFF if it adversely affects the convergence.
@@ -508,8 +509,8 @@ individual elements</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.012   0.000565
- Time at end of element matrix formulation CP = 71.6635208.
+        1        22  BEAM188       0.010   0.000444
+ Time at end of element matrix formulation CP = 65.5062637.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =          44,    Maximum wavefront =     12
@@ -517,14 +518,14 @@ individual elements</p>
   Memory required for in-core solution     =     0.062 MB
   Memory required for out-of-core solution =     0.062 MB
 
- *** NOTE ***                            CP =      71.668   TIME= 16:24:20
+ *** NOTE ***                            CP =      65.510   TIME= 23:35:16
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
  results in the fastest solution time.  This mode is recommended if
  enough physical memory is present to accommodate all of the solver
  data.
- Sparse solver maximum pivot= 5.009534302E+10 at node 16 ROTY.
+ Sparse solver maximum pivot= 5.009534302E+10 at node 8 ROTY.
  Sparse solver minimum pivot= 2691965.06 at node 12 UZ.
  Sparse solver minimum pivot in absolute value= 2691965.06 at node 12
  UZ.
@@ -532,12 +533,12 @@ individual elements</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.039   0.001789
+        1        22  BEAM188       0.033   0.001496
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1        22  BEAM188       0.001   0.000036
+        1        22  BEAM188       0.001   0.000029
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -548,7 +549,7 @@ individual elements</p>
         0.625 MB WRITTEN ON RESULTS FILE: file.rst
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.533 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.458 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-mapdl-beam-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/66374d1a80ad5170be03b29ae6cc7f1c/mapdl_beam.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mapdl_beam.py</span></code></a></p>
@@ -558,7 +559,7 @@ individual elements</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</div>
+</section>
 
 
               </div>

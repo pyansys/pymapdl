@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAPDL 2D Plane Stress Concentration Analysis &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MAPDL 2D Plane Stress Concentration Analysis &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -313,7 +314,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-2d-plate-with-a-hole-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="mapdl-2d-plane-stress-concentration-analysis">
+<section class="sphx-glr-example-title" id="mapdl-2d-plane-stress-concentration-analysis">
 <span id="ref-plane-stress-concentration"></span><span id="sphx-glr-examples-00-mapdl-examples-2d-plate-with-a-hole-py"></span><h1>MAPDL 2D Plane Stress Concentration Analysis<a class="headerlink" href="#mapdl-2d-plane-stress-concentration-analysis" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial shows how you can use PyMAPDL to determine and
 verify the “stress concentration factor” when modeling using 2D plane
@@ -329,7 +330,7 @@ elements and then verify this using 3D elements.</p>
 <span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="element-type-and-material-properties">
+<section id="element-type-and-material-properties">
 <h2>Element Type and Material Properties<a class="headerlink" href="#element-type-and-material-properties" title="Permalink to this headline">¶</a></h2>
 <p>This example will use PLANE183 elements as a thin plate can be
 modeled with plane elements provided that KEYOPTION 3 is set to 3
@@ -367,8 +368,8 @@ and a thickness is provided.</p>
                 7800.000
 </pre></div>
 </div>
-</div>
-<div class="section" id="geometry">
+</section>
+<section id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
 <p>Create a rectangular area with the hole in the middle.  To correctly
 approximate an infinite plate, the maximum stress must occur far
@@ -399,8 +400,8 @@ approximate this.</p>
 </pre></div>
 </div>
 <img alt="2d plate with a hole" class="sphx-glr-single-img" src="../../_images/sphx_glr_2d_plate_with_a_hole_001.png" />
-</div>
-<div class="section" id="meshing">
+</section>
+<section id="meshing">
 <h2>Meshing<a class="headerlink" href="#meshing" title="Permalink to this headline">¶</a></h2>
 <p>Mesh the plate using a higher density near the hole and a lower
 density for the remainder of the plate by setting <code class="docutils literal notranslate"><span class="pre">LESIZE</span></code> for the
@@ -426,8 +427,8 @@ lines nearby the hole and <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <img alt="2d plate with a hole" class="sphx-glr-single-img" src="../../_images/sphx_glr_2d_plate_with_a_hole_002.png" />
-</div>
-<div class="section" id="boundary-conditions">
+</section>
+<section id="boundary-conditions">
 <h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Fix the left-hand side of the plate in the X direction and set a
 force of 1 kN in the positive X direction.</p>
@@ -463,8 +464,8 @@ force of 1 kN in the positive X direction.</p>
 <span class="n">_</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">allsel</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="solve-the-static-problem">
+</section>
+<section id="solve-the-static-problem">
 <h2>Solve the Static Problem<a class="headerlink" href="#solve-the-static-problem" title="Permalink to this headline">¶</a></h2>
 <p>Solve the static analysis</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;/SOLU&#39;</span><span class="p">)</span>
@@ -476,7 +477,7 @@ force of 1 kN in the positive X direction.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =       2.344   TIME= 16:23:10
+ *** NOTE ***                            CP =       1.945   TIME= 23:34:13
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -489,7 +490,7 @@ force of 1 kN in the positive X direction.</p>
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     16:23:10  MAR 21, 2021 CP=      2.347
+ 00000000  VERSION=LINUX x64     23:34:13  APR 05, 2021 CP=      1.948
 
 
 
@@ -505,11 +506,11 @@ force of 1 kN in the positive X direction.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =       2.349   TIME= 16:23:10
+ *** NOTE ***                            CP =       1.950   TIME= 23:34:13
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =       2.350   TIME= 16:23:10
+ *** NOTE ***                            CP =       1.951   TIME= 23:34:13
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -558,8 +559,8 @@ force of 1 kN in the positive X direction.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.196   0.000201
- Time at end of element matrix formulation CP = 2.52402997.
+        1       977  PLANE183      0.137   0.000140
+ Time at end of element matrix formulation CP = 2.0596621.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =        6124,    Maximum wavefront =     48
@@ -567,7 +568,7 @@ force of 1 kN in the positive X direction.</p>
   Memory required for in-core solution     =     8.134 MB
   Memory required for out-of-core solution =     4.318 MB
 
- *** NOTE ***                            CP =       2.757   TIME= 16:23:10
+ *** NOTE ***                            CP =       2.238   TIME= 23:34:13
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -582,12 +583,12 @@ force of 1 kN in the positive X direction.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.270   0.000277
+        1       977  PLANE183      0.204   0.000209
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       977  PLANE183      0.040   0.000041
+        1       977  PLANE183      0.038   0.000039
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -598,8 +599,8 @@ force of 1 kN in the positive X direction.</p>
         1.000 MB WRITTEN ON RESULTS FILE: file.rst
 </pre></div>
 </div>
-</div>
-<div class="section" id="post-processing">
+</section>
+<section id="post-processing">
 <h2>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
 <p>The static result can be post-processed both within MAPDL and
 outside of MAPDL using <code class="docutils literal notranslate"><span class="pre">pyansys</span></code>.  This example shows how to
@@ -619,8 +620,8 @@ result reader.</p>
 </pre></div>
 </div>
 <img alt="2d plate with a hole" class="sphx-glr-single-img" src="../../_images/sphx_glr_2d_plate_with_a_hole_003.png" />
-</div>
-<div class="section" id="compute-the-stress-concentration">
+</section>
+<section id="compute-the-stress-concentration">
 <h2>Compute the Stress Concentration<a class="headerlink" href="#compute-the-stress-concentration" title="Permalink to this headline">¶</a></h2>
 <p>The stress concentration <span class="math notranslate nohighlight">\(K_t\)</span> is the ratio of the maximum
 stress at the hole to the far-field stress, or the mean cross
@@ -664,8 +665,8 @@ width over the modified cross section width.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Stress Concentration: 2.34
 </pre></div>
 </div>
-</div>
-<div class="section" id="batch-analysis">
+</section>
+<section id="batch-analysis">
 <h2>Batch Analysis<a class="headerlink" href="#batch-analysis" title="Permalink to this headline">¶</a></h2>
 <p>The above script can be placed within a function to compute the
 stress concentration for a variety of hole diameters.  For each
@@ -811,8 +812,8 @@ batch, MAPDL is reset and the geometry is generated from scratch.</p>
 0.5000 :     2.1609
 </pre></div>
 </div>
-</div>
-<div class="section" id="analytical-comparison">
+</section>
+<section id="analytical-comparison">
 <h2>Analytical Comparison<a class="headerlink" href="#analytical-comparison" title="Permalink to this headline">¶</a></h2>
 <p>Stress concentrations are often obtained by referencing tablular
 results or polynominal fits for a variety of geometries.  According
@@ -841,7 +842,7 @@ height and width of the plate.</p>
 </pre></div>
 </div>
 <img alt="2d plate with a hole" class="sphx-glr-single-img" src="../../_images/sphx_glr_2d_plate_with_a_hole_004.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  0.522 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  53.984 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-2d-plate-with-a-hole-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d463fc780909323c9509c882e0f755e2/2d_plate_with_a_hole.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">2d_plate_with_a_hole.py</span></code></a></p>
@@ -851,8 +852,8 @@ height and width of the plate.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

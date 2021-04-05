@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Volumes &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Volumes &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -317,7 +318,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-03-volumes-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="volumes">
+<section class="sphx-glr-example-title" id="volumes">
 <span id="ref-basic-geometry-volumes"></span><span id="sphx-glr-examples-02-geometry-03-volumes-py"></span><h1>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how you can use PyMAPDL to create basic geometry
 using Pythonic PREP7 volume commands.</p>
@@ -334,10 +335,10 @@ using Pythonic PREP7 volume commands.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
 MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-ansys.mapdl Version: 0.58.4
+ansys.mapdl Version: 0.58.5
 </pre></div>
 </div>
-<div class="section" id="apdl-command-v">
+<section id="apdl-command-v">
 <h2>APDL Command: V<a class="headerlink" href="#apdl-command-v" title="Permalink to this headline">¶</a></h2>
 <p>Define a volume through keypoints.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a simple cube volume.</span>
@@ -383,8 +384,8 @@ ansys.mapdl Version: 0.58.4
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_003.png" />
-</div>
-<div class="section" id="apdl-command-va">
+</section>
+<section id="apdl-command-va">
 <h2>APDL Command: VA<a class="headerlink" href="#apdl-command-va" title="Permalink to this headline">¶</a></h2>
 <p>Generate a volume bounded by existing areas.</p>
 <p>Create a simple tetrahedral bounded by 4 areas</p>
@@ -412,8 +413,8 @@ ansys.mapdl Version: 0.58.4
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-</div>
-<div class="section" id="apdl-command-vdrag">
+</section>
+<section id="apdl-command-vdrag">
 <h2>APDL Command: VDRAG<a class="headerlink" href="#apdl-command-vdrag" title="Permalink to this headline">¶</a></h2>
 <p>Generate volumes by dragging an area pattern along a path.</p>
 <p>Create a square with a hole in it and drag it along an arc.</p>
@@ -433,8 +434,8 @@ ansys.mapdl Version: 0.58.4
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_005.png" />
-</div>
-<div class="section" id="apdl-command-vext">
+</section>
+<section id="apdl-command-vext">
 <h2>APDL Command: VEXT<a class="headerlink" href="#apdl-command-vext" title="Permalink to this headline">¶</a></h2>
 <p>Generate additional volumes by extruding areas.</p>
 <p>Create a basic cylinder by extruding a circle.</p>
@@ -460,8 +461,8 @@ ansys.mapdl Version: 0.58.4
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_007.png" />
-</div>
-<div class="section" id="apdl-command-vrotat">
+</section>
+<section id="apdl-command-vrotat">
 <h2>APDL Command: VROTAT<a class="headerlink" href="#apdl-command-vrotat" title="Permalink to this headline">¶</a></h2>
 <p>Generate cylindrical volumes by rotating an area pattern about an
 axis.</p>
@@ -487,8 +488,8 @@ axis.</p>
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_008.png" />
-</div>
-<div class="section" id="apdl-command-vsymm">
+</section>
+<section id="apdl-command-vsymm">
 <h2>APDL Command: VSYMM<a class="headerlink" href="#apdl-command-vsymm" title="Permalink to this headline">¶</a></h2>
 <p>Generate volumes from a volume pattern by symmetry reflection.</p>
 <p>Create four blocks by reflecting a single block across the YZ and
@@ -503,8 +504,8 @@ then XZ planes.</p>
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_009.png" />
-</div>
-<div class="section" id="volume-ids">
+</section>
+<section id="volume-ids">
 <h2>Volume IDs<a class="headerlink" href="#volume-ids" title="Permalink to this headline">¶</a></h2>
 <p>Return an array of the volume numbers.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">vnum</span>
@@ -515,8 +516,8 @@ then XZ planes.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4], dtype=int32)
 </pre></div>
 </div>
-</div>
-<div class="section" id="volume-geometry">
+</section>
+<section id="volume-geometry">
 <h2>Volume Geometry<a class="headerlink" href="#volume-geometry" title="Permalink to this headline">¶</a></h2>
 <p>Volume geometry can be accessed from the <code class="docutils literal notranslate"><span class="pre">geometry.areas</span></code> method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">volume_mesh</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">areas</span><span class="p">(</span><span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -544,8 +545,8 @@ then XZ planes.</p>
 </td></tr> </table>
 </div>
 <br />
-<br /></div>
-<div class="section" id="volume-selection">
+<br /></section>
+<section id="volume-selection">
 <h2>Volume Selection<a class="headerlink" href="#volume-selection" title="Permalink to this headline">¶</a></h2>
 <p>There are two approaches for selecting volumes, the old “legacy”
 style and the new style.  The old style is valuable for those who
@@ -604,8 +605,8 @@ areas.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  5 10 20]
 </pre></div>
 </div>
-</div>
-<div class="section" id="apdl-command-vplot">
+</section>
+<section id="apdl-command-vplot">
 <h2>APDL Command: VPLOT<a class="headerlink" href="#apdl-command-vplot" title="Permalink to this headline">¶</a></h2>
 <p>Plot colored volumes while displaying the keypoint numbers.</p>
 <p>There are a variety of plotting options available for all the common
@@ -623,7 +624,7 @@ plotting methods.</p>
 </pre></div>
 </div>
 <img alt="03 volumes" class="sphx-glr-single-img" src="../../_images/sphx_glr_03-volumes_010.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  47.913 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  31.245 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-03-volumes-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/25e6761a690cc105a041254a413f4aca/03-volumes.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">03-volumes.py</span></code></a></p>
@@ -633,8 +634,8 @@ plotting methods.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>

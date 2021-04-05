@@ -159,7 +159,7 @@ properties (e.g. scalar, storage, symmetry...)
  .. code-block:: none
 
     Calling MAPDL to solve the eigenproblem...
-    Elapsed time to solve this problem: 0.042180538177490234
+    Elapsed time to solve this problem: 0.03841853141784668
 
 
 
@@ -184,7 +184,7 @@ This is the vector of eigenfrequencies.
 
  .. code-block:: none
 
-    EBEEWP :
+    LSHZJK :
      Size : 10
       3.381e+02   3.381e+02   6.266e+02   6.266e+02   9.283e+02      <       5
       9.283e+02   1.250e+03   1.250e+03   1.424e+03   1.424e+03      <       10
@@ -418,7 +418,7 @@ Plot Accuracy of Eigenresults
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.480 seconds)
+   **Total running time of the script:** ( 0 minutes  1.356 seconds)
 
 
 .. _sphx_glr_download_examples_01-apdlmath-examples_eigen_solve.py:

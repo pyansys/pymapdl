@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Translating Scripts &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Translating Scripts &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -234,14 +235,14 @@
               
               <div>
                 
-  <div class="section" id="translating-scripts">
+  <section id="translating-scripts">
 <h1>Translating Scripts<a class="headerlink" href="#translating-scripts" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code> module contains a few basic functions to translate
 existing MAPDL scripts into PyMAPDL scripts.  Ideally, all math
 and variable setting would take place within Python as much as
 possible as APDL commands are less transparent and more difficult to
 debug.</p>
-<div class="section" id="caveats">
+<section id="caveats">
 <h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
 <p>These examples only show an automatic translation of a verification
 file and not optimized code.  Should it be necessary to pull
@@ -265,8 +266,8 @@ using <code class="docutils literal notranslate"><span class="pre">mapdl.paramet
 <span class="go">4.532094298033</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="script-translation">
+</section>
+<section id="script-translation">
 <h2>Script Translation<a class="headerlink" href="#script-translation" title="Permalink to this headline">¶</a></h2>
 <p>Existing ANSYS scripts can be translated using:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyansys</span>
@@ -284,7 +285,7 @@ interfaces (e.g. CORBA) or are invalid (as in gRPC).</p>
 <p>Also note that APDL macros that use <code class="docutils literal notranslate"><span class="pre">*CREATE</span></code> have been replaced
 with python functions.  This will make the code easier to debug
 should it be necessary to insert a <code class="docutils literal notranslate"><span class="pre">breakpoint</span></code> in the script.</p>
-<div class="section" id="example-vm1-statically-indeterminate-reaction-force-analysis">
+<section id="example-vm1-statically-indeterminate-reaction-force-analysis">
 <h3>Example: VM1 - Statically Indeterminate Reaction Force Analysis<a class="headerlink" href="#example-vm1-statically-indeterminate-reaction-force-analysis" title="Permalink to this headline">¶</a></h3>
 <p>ANSYS MAPDL contains over 200 verification files used for ANSYS
 validation and demonstration.  These validation files are used here to
@@ -440,8 +441,8 @@ to functions and are instead run as “classic” commands like
 requires a command immediately following it.  This normally locks the
 interface, so it’s implemented in the background as an input file
 using <code class="docutils literal notranslate"><span class="pre">mapdl.non_interactive</span></code>.</p>
-</div>
-<div class="section" id="vm7-plastic-compression-of-a-pipe-assembly">
+</section>
+<section id="vm7-plastic-compression-of-a-pipe-assembly">
 <h3>VM7 - Plastic Compression of a Pipe Assembly<a class="headerlink" href="#vm7-plastic-compression-of-a-pipe-assembly" title="Permalink to this headline">¶</a></h3>
 <p>Here is the input file from VM7:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/COM,ANSYS MEDIA REL. 150 (11/8/2013) REF. VERIF. MANUAL: REL. 150
@@ -833,9 +834,9 @@ FINISH
 <span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>

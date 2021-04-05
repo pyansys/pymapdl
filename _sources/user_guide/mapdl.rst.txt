@@ -494,10 +494,10 @@ each command individually.
 Sending Arrays to MAPDL
 -----------------------
 You can send ``numpy`` arrays or Python lists directly to MAPDL using
-``load_array``.  This is far more efficient than individually sending
-parameters to MAPDL through python or MAPDL.  It uses ``*VREAD``
-behind the scenes and will be replaced with a faster interface in the
-future.
+``parameters['MY_ARRAY_NAME']``.  This is far more efficient than
+individually sending parameters to MAPDL through Python with ``run``.
+It uses ``*VREAD`` behind the scenes and will be replaced with a
+faster interface in the future.
 
 .. code:: python
 
@@ -505,20 +505,20 @@ future.
     import numpy as np
     mapdl = launch_mapdl()
     arr = np.random.random((5, 3))
-    mapdl.load_array(arr, 'MYARR')
+    mapdl.parameters['MYARR'] = arr
 
-Verify the data has been properly loaded to MAPDL by accessing the
-first element.  Note that MAPDL uses fortran (1) based indexing.
+Verify the data has been properly loaded to MAPDL by indexing
+``mapdl.parameters`` as if it was a Python dictionary:
 
 .. code:: python
 
-   >>> mapdl.read_float_parameter('MYARR(1, 1)')
-   2020-07-03 21:49:54,387 [INFO] mapdl: MYARR(1, 1) = MYARR(1, 1)
-
-   PARAMETER MYARR(1,1) =    0.7960742456
-
-   >>> arr[0]
-   0.7960742456194109
+   >>> array_from_mapdl = mapdl.parameters['MYARR']
+   >>> array_from_mapdl
+   array([[0.65516567, 0.96977939, 0.3224993 ],
+          [0.58634927, 0.84392263, 0.18152529],
+          [0.76719759, 0.45748876, 0.56432361],
+          [0.78548338, 0.01042177, 0.57420062],
+          [0.33189362, 0.9681039 , 0.47525875]])
 
 
 Downloading a Remote MAPDL File

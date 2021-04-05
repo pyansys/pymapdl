@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Thermal Analysis with pyMAPDL &#8212; ansys.mapdl.core 0.58.4 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Basic Thermal Analysis with pyMAPDL &#8212; ansys.mapdl.core 0.58.5 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -287,7 +288,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-3d-plate-thermal-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="basic-thermal-analysis-with-pymapdl">
+<section class="sphx-glr-example-title" id="basic-thermal-analysis-with-pymapdl">
 <span id="ref-3d-plate-thermal"></span><span id="sphx-glr-examples-00-mapdl-examples-3d-plate-thermal-py"></span><h1>Basic Thermal Analysis with pyMAPDL<a class="headerlink" href="#basic-thermal-analysis-with-pymapdl" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates how you can use MAPDL to create a plate,
 impose thermal boundary conditions, solve, and plot it all within
@@ -299,7 +300,7 @@ pyMAPDL.</p>
 <span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="geometry-and-material-properties">
+<section id="geometry-and-material-properties">
 <h2>Geometry and Material Properties<a class="headerlink" href="#geometry-and-material-properties" title="Permalink to this headline">¶</a></h2>
 <p>Create a simple beam, specify the material properties, and mesh it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -317,8 +318,8 @@ pyMAPDL.</p>
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-</div>
-<div class="section" id="boundary-conditions">
+</section>
+<section id="boundary-conditions">
 <h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Set the thermal boundary conditions</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">asel</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -330,8 +331,8 @@ pyMAPDL.</p>
 <span class="n">out</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">allsel</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="solve">
+</section>
+<section id="solve">
 <h2>Solve<a class="headerlink" href="#solve" title="Permalink to this headline">¶</a></h2>
 <p>Solve the thermal static analysis and print the results</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">vsweep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -343,12 +344,12 @@ pyMAPDL.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  ANSYS SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =      70.497   TIME= 16:24:17
+ *** NOTE ***                            CP =      64.425   TIME= 23:35:13
  There is no title defined for this analysis.
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2021 R1          21.1BETA ***
  ANSYS Mechanical Enterprise
- 00000000  VERSION=LINUX x64     16:24:17  MAR 21, 2021 CP=     70.499
+ 00000000  VERSION=LINUX x64     23:35:13  APR 05, 2021 CP=     64.427
 
 
 
@@ -364,11 +365,11 @@ pyMAPDL.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =      70.500   TIME= 16:24:17
+ *** NOTE ***                            CP =      64.428   TIME= 23:35:13
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =      70.500   TIME= 16:24:17
+ *** NOTE ***                            CP =      64.428   TIME= 23:35:13
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -393,8 +394,8 @@ pyMAPDL.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.068   0.000152
- Time at end of element matrix formulation CP = 70.5674591.
+        1       450  SOLID90       0.054   0.000120
+ Time at end of element matrix formulation CP = 64.4830551.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =        2606,    Maximum wavefront =     72
@@ -402,7 +403,7 @@ pyMAPDL.</p>
   Memory required for in-core solution     =     4.639 MB
   Memory required for out-of-core solution =     2.499 MB
 
- *** NOTE ***                            CP =      70.652   TIME= 16:24:17
+ *** NOTE ***                            CP =      64.561   TIME= 23:35:13
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -417,12 +418,12 @@ pyMAPDL.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.036   0.000080
+        1       450  SOLID90       0.074   0.000165
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1       450  SOLID90       0.023   0.000051
+        1       450  SOLID90       0.033   0.000073
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -433,8 +434,8 @@ pyMAPDL.</p>
         0.750 MB WRITTEN ON RESULTS FILE: file.rth
 </pre></div>
 </div>
-</div>
-<div class="section" id="post-processing-using-mapdl">
+</section>
+<section id="post-processing-using-mapdl">
 <h2>Post-Processing using MAPDL<a class="headerlink" href="#post-processing-using-mapdl" title="Permalink to this headline">¶</a></h2>
 <p>View the thermal solution of the beam by getting the results
 directly through MAPDL.</p>
@@ -462,7 +463,7 @@ result file using pyansys</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[    1     2     3 ... 12715 12716 12717] [ 0.  0.  0. ... nan nan nan]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.179 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.038 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-3d-plate-thermal-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/91c538c5ed71a5605ff4467121a37338/3d_plate_thermal.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">3d_plate_thermal.py</span></code></a></p>
@@ -472,8 +473,8 @@ result file using pyansys</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
