@@ -52,7 +52,7 @@ using Pythonic PREP7 volume commands.
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-    ansys.mapdl Version: 0.58.5
+    ansys.mapdl Version: 0.58.6
 
 
 
@@ -629,7 +629,7 @@ plotting methods.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  31.245 seconds)
+   **Total running time of the script:** ( 2 minutes  39.647 seconds)
 
 
 .. _sphx_glr_download_examples_02-geometry_03-volumes.py:
