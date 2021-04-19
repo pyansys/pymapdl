@@ -5,6 +5,7 @@ import time
 import numpy as np
 import pytest
 
+from ansys.mapdl.core.pool import LocalMapdlInstance
 from ansys.mapdl.core.misc import get_ansys_bin
 from ansys.mapdl.core import LocalMapdlPool, examples
 from ansys.mapdl.core.launcher import get_start_instance
@@ -27,7 +28,7 @@ TWAIT = 90
 
 @pytest.fixture(scope="module")
 def pool():
-    mapdl_pool = LocalMapdlPool(4, exec_file=EXEC_FILE)
+    mapdl_pool = LocalMapdlPool(4, exec_file=EXEC_FILE, nproc=1)
     yield mapdl_pool
 
     ##########################################################################
@@ -48,6 +49,34 @@ def pool():
         pth = mapdl_pool[0].directory
         if mapdl_pool._spawn_kwargs['remove_temp_files']:
             assert not list(Path(pth).rglob("*.page*"))
+
+
+@skip_launch_mapdl
+def test_instance():
+    inst = LocalMapdlInstance()
+    inst.start()
+    assert inst.active
+    assert inst.mapdl_connected
+    assert os.path.isdir(inst.path)
+
+    # test basic commands
+    inst.mapdl.finish(mute=True)
+    inst.mapdl.prep7(mute=True)
+    assert inst.mapdl.parameters.routine == 'PREP7'
+
+    # test stop
+    inst.stop()
+    assert not inst.mapdl_connected
+    # inst.clean()
+    # assert not os.path.isdir(inst.path)
+
+    # test restart
+    inst.start()
+    inst.mapdl.finish(mute=True)
+    inst.mapdl.prep7(mute=True)
+    assert inst.mapdl.parameters.routine == 'PREP7'
+
+    inst.stop()
 
 
 @skip_launch_mapdl
