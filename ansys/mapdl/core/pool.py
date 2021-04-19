@@ -1,18 +1,16 @@
 """This module is for threaded implementations of the mapdl interface"""
 import threading
 import uuid
-import tempfile
 import shutil
-import warnings
 import os
 import time
 import logging
 
+import numpy as np
 from tqdm import tqdm
 
 from ansys.mapdl.core import launch_mapdl
-from ansys.mapdl.core.misc import threaded
-from ansys.mapdl.core.misc import create_temp_dir, threaded_daemon
+from ansys.mapdl.core.misc import create_temp_dir, threaded_daemon, threaded
 from ansys.mapdl.core.launcher import port_in_use, MAPDL_DEFAULT_PORT
 
 LOG = logging.getLogger(__name__)
@@ -43,15 +41,19 @@ class LocalMapdlInstance():
         """Initialize job"""
         self._start_thread = None
         self._spawn_kwargs = kwargs
-
-        if path is None:
-            path = create_temp_dir()
         self.path = path
+        self._locked = False
 
         self.id = str(uuid.uuid4())
         self._port = port
         self._mapdl = None
         self._spawn_kwargs = kwargs
+
+    def new_path(self):
+        """Create a new temporary directory for this instance"""
+        self.path = create_temp_dir()
+        if not os.path.isdir(self.path):
+            os.makedirs(self.path)
 
     @property
     def port(self):
@@ -77,17 +79,17 @@ class LocalMapdlInstance():
         if self.starting:
             self._start_thread.join()
 
-    def start(self, wait=True, clean=False, timeout=60):
+    def start(self, wait=True, clean=True, timeout=60):
         """Spawn a mapdl instance"""
         if self.active:
             raise RuntimeError('MAPDL instance is already active')
 
+        # MAPDL does not handle existing paths well
         self._mapdl = None
-        if clean:
-            self.clean()
-
-        if not os.path.isdir(self.path):
-            os.makedirs(self.path)
+        if self.path is not None:
+            if clean:
+                self.clean()
+        self.new_path()
 
         def start_mapdl():
             self._mapdl = launch_mapdl(run_location=self.path,
@@ -121,12 +123,12 @@ class LocalMapdlInstance():
         """
         def _stop():
             self._mapdl.exit()
+            self._locked = False
 
-        thread = threading.Thread(target=_stop)
+        thread = threading.Thread(target=_stop, daemon=True)
         thread.start()
         if wait:
             thread.join()
-            # time.sleep(1)  # there's some magic that's going on here
         else:
             return thread
 
@@ -163,6 +165,14 @@ class LocalMapdlInstance():
                 shutil.rmtree(self.path)
         except:
             pass
+
+    @property
+    def locked(self):
+        return self._locked
+
+    @locked.setter
+    def locked(self, value):
+        self._locked = value
 
 
 class LocalMapdlPool():
@@ -341,10 +351,8 @@ class LocalMapdlPool():
         """
 
         # check if any instances are available
-        if not len(self):
-            # instances could still be spawning...
-            if not all(v is None for v in self._instances):
-                raise RuntimeError('No MAPDL instances available.')
+        if not self.n_alive:
+            raise RuntimeError('No MAPDL instances available.')
 
         results = []
 
@@ -358,19 +366,21 @@ class LocalMapdlPool():
             pbar = tqdm(total=n, desc='MAPDL Running')
 
         @threaded_daemon
-        def func_wrapper(obj, func, timeout, args=None):
-            """Expect obj to be an instance of Mapdl"""
+        def func_wrapper(inst, func, timeout, args=None):
+            """Expect ``inst`` to be an instance
+
+            """
             complete = [False]
 
             @threaded_daemon
             def run():
                 if args is not None:
                     if isinstance(args, (tuple, list)):
-                        results.append(func(obj, *args))
+                        results.append(func(inst.mapdl, *args))
                     else:
-                        results.append(func(obj, args))
+                        results.append(func(inst.mapdl, args))
                 else:
-                    results.append(func(obj))
+                    results.append(func(inst.mapdl))
                 complete[0] = True
 
             run_thread = run()
@@ -382,29 +392,18 @@ class LocalMapdlPool():
                         break
 
                 if not complete[0]:
-                    LOG.error('Killed instance due to timeout of %f seconds',
-                              timeout)
-                    obj.exit()
+                    LOG.error('Killed instance due to timeout of %f seconds', timeout)
+                    inst.exit()
             else:
                 run_thread.join()
+                # finished without completing
                 if not complete[0]:
                     try:
-                        obj.exit()
+                        inst.mapdl.exit()
                     except:
                         pass
 
-                    # ensure that the directory is cleaned up
-                    if obj._cleanup:
-                        # allow MAPDL to die
-                        time.sleep(5)
-                        if os.path.isdir(obj.directory):
-                            try:
-                                shutil.rmtree(obj.directory)
-                            except Exception as e:
-                                LOG.warning('Unable to remove directory at %s:\n%s',
-                                            obj.directory, str(e))
-
-            obj.locked = False
+            instance.locked = False
             if pbar:
                 pbar.update(1)
 
@@ -419,16 +418,7 @@ class LocalMapdlPool():
 
             if close_when_finished:
                 # start closing any instances that are not in execution
-                while not all(v is None for v in self._instances):
-                    # grab the next available instance of mapdl and close it
-                    instance, i = self.next_available(return_index=True)
-                    self._instances[i] = None
-
-                    try:
-                        instance.exit()
-                    except Exception as e:
-                        LOG.error('Failed to close instance', exc_info=True)
-
+                self.exit()
             else:
                 # wait for all threads to complete
                 if wait:
@@ -539,22 +529,18 @@ class LocalMapdlPool():
         MAPDL Version:   RELEASE                    BUILD  0.0      UPDATE        0
         PyANSYS Version: 0.55.1
         """
-
         # loop until the next instance is available
         while True:
             for i, instance in enumerate(self._instances):
-                if not instance:  # if encounter placeholder
-                    continue
-
-                if not instance.locked and not instance._exited:
+                if not instance.locked and instance.mapdl_connected:
                     # any instance that is not running or exited
                     # should be available
-                    if not instance.busy:
+                    if not instance.mapdl.busy:
                         # double check that this instance is alive:
                         try:
-                            instance.inquire('JOBNAME')
+                            instance.mapdl.inquire('JOBNAME')
                         except:
-                            instance.exit()
+                            instance.stop()
                             continue
 
                         if return_index:
@@ -562,7 +548,7 @@ class LocalMapdlPool():
                         else:
                             return instance
                     else:
-                        instance._exited = True
+                        instance.mapdl._exited = True
 
     def __del__(self):
         self.exit()
@@ -585,12 +571,17 @@ class LocalMapdlPool():
         if block:
             [thread.join() for thread in threads]
 
-    def __len__(self):
+    @property
+    def n_alive(self):
+        """Number of instances of MAPDL that are alive"""
         count = 0
         for instance in self._instances:
-            if not instance.active:
+            if instance.active:
                 count += 1
         return count
+
+    def __len__(self):
+        return len(self._instances)
 
     def __getitem__(self, index):
         """Return MAPDL of an instance by an index"""
@@ -608,12 +599,29 @@ class LocalMapdlPool():
         """
         while self._active:
             for inst in self._instances:
-                if not instance.active:
+                if not inst.active:
                     try:
-                        instance.start(wait=True)
+                        inst.start(wait=True)
                     except Exception as e:
                         logging.error(e, exc_info=True)
             time.sleep(refresh)
 
     def __repr__(self):
-        return 'MAPDL Pool with %d active instances' % len(self)
+        return f'Local MAPDL Pool with {len(self)} active instances'
+
+    def stop(self, block=False):
+        """Alias for exit"""
+        self.exit(block)
+
+    @property
+    def _ports(self):
+        """Ports used by each instance of MAPDL"""
+        ports = []
+        for mapdl in self:
+            if mapdl is not None:
+                ports.append(mapdl._port)
+        return ports
+
+    def _verify_unique_ports(self):
+        if not len(self) == len(np.unique(self._ports)):
+            raise RuntimeError('MAPDL pool ports are non-unique')

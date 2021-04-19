@@ -37,12 +37,12 @@ def pool():
 
     timeout = time.time() + TWAIT
 
-    while len(mapdl_pool) != 0:
+    while mapdl_pool.n_alive != 0:
         time.sleep(0.1)
         if time.time() > timeout:
-            raise TimeoutError(f'Failed to restart instance in {TWAIT} seconds')
+            raise TimeoutError(f'Failed to stop pool in {TWAIT} seconds')
 
-    assert len(mapdl_pool) == 0
+    assert mapdl_pool.n_alive == 0
 
     # check it's been cleaned up
     if mapdl_pool[0] is not None:
@@ -51,32 +51,32 @@ def pool():
             assert not list(Path(pth).rglob("*.page*"))
 
 
-@skip_launch_mapdl
-def test_instance():
-    inst = LocalMapdlInstance()
-    inst.start()
-    assert inst.active
-    assert inst.mapdl_connected
-    assert os.path.isdir(inst.path)
+# @skip_launch_mapdl
+# def test_instance():
+#     inst = LocalMapdlInstance()
+#     inst.start()
+#     assert inst.active
+#     assert inst.mapdl_connected
+#     assert os.path.isdir(inst.path)
 
-    # test basic commands
-    inst.mapdl.finish(mute=True)
-    inst.mapdl.prep7(mute=True)
-    assert inst.mapdl.parameters.routine == 'PREP7'
+#     # test basic commands
+#     inst.mapdl.finish(mute=True)
+#     inst.mapdl.prep7(mute=True)
+#     assert inst.mapdl.parameters.routine == 'PREP7'
 
-    # test stop
-    inst.stop()
-    assert not inst.mapdl_connected
-    # inst.clean()
-    # assert not os.path.isdir(inst.path)
+#     # test stop
+#     inst.stop()
+#     assert not inst.mapdl_connected
+#     # inst.clean()
+#     # assert not os.path.isdir(inst.path)
 
-    # test restart
-    inst.start()
-    inst.mapdl.finish(mute=True)
-    inst.mapdl.prep7(mute=True)
-    assert inst.mapdl.parameters.routine == 'PREP7'
+#     # test restart
+#     inst.start()
+#     inst.mapdl.finish(mute=True)
+#     inst.mapdl.prep7(mute=True)
+#     assert inst.mapdl.parameters.routine == 'PREP7'
 
-    inst.stop()
+#     inst.stop()
 
 
 @skip_launch_mapdl
@@ -88,12 +88,12 @@ def test_heal(pool):
 
     time.sleep(1)  # wait for shutdown
     timeout = time.time() + TWAIT
-    while len(pool) < pool_sz:
+    while pool.n_alive < pool_sz:
         time.sleep(0.1)
         if time.time() > timeout:
             raise TimeoutError(f'Failed to restart instance in {TWAIT} seconds')
 
-    assert len(pool) == pool_sz
+    assert pool.n_alive == pool_sz
     pool._verify_unique_ports()
 
 
