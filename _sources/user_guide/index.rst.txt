@@ -207,3 +207,21 @@ within it.  For example:
         same number will be redefined.  Keypoints may be redefined only if it
         is not yet attached to a line or is not yet meshed.  Solid modeling in
         a toroidal system is not recommended.
+
+
+Stability Considerations
+------------------------
+When connecting to a remote instance of MAPDL, there are some cases
+where the MAPDL server will exit unexpectedly.  These issues are being
+corrected and will be solved in 2021R2, but for the time being, there
+are several ways to improve performance and stability of MADPL:
+
+- When possible, pass ``mute=True`` to individual MAPDL commands or
+  set it globally with ``mapdl.mute = True``.  This disables streaming
+  back the response from MAPDL for each command and will marginally
+  improve performance and stability.  Consider having a debug flag in
+  your program or script so you can enable or disable logging and
+  verbosity when needed.
+- Avoid using input files if possible.  Attempt to ``upload`` nodes
+  and elements and read them in via ``nread`` and ``eread``.  This is
+  less than ideal and will be corrected in 2021R2.

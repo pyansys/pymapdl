@@ -5,3 +5,4 @@ Parameters Class
 ****************
 .. autoclass:: ansys.mapdl.core.parameters.Parameters
     :members:
+    :noindex:

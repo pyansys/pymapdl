@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Path Operations within pyMAPDL and MAPDL &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Path Operations within pyMAPDL and MAPDL &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -291,7 +290,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-mapdl-examples-path-operations-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="path-operations-within-pymapdl-and-mapdl">
+<div class="sphx-glr-example-title section" id="path-operations-within-pymapdl-and-mapdl">
 <span id="ref-path-operation"></span><span id="sphx-glr-examples-00-mapdl-examples-path-operations-py"></span><h1>Path Operations within pyMAPDL and MAPDL<a class="headerlink" href="#path-operations-within-pymapdl-and-mapdl" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial shows how you can use pyansys and MAPDL to interpolate
 along a path for stress.  This shows some advanced features of the
@@ -307,7 +306,7 @@ along a path for stress.  This shows some advanced features of the
 <span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">loglevel</span><span class="o">=</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="mapdl-solve-a-beam-with-a-non-uniform-load">
+<div class="section" id="mapdl-solve-a-beam-with-a-non-uniform-load">
 <h2>MAPDL: Solve a Beam with a Non-Uniform Load<a class="headerlink" href="#mapdl-solve-a-beam-with-a-non-uniform-load" title="Permalink to this headline">¶</a></h2>
 <p>Create a beam, apply a load, and solve for the static solution.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># beam dimensions</span>
@@ -357,8 +356,8 @@ along a path for stress.  This shows some advanced features of the
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-</section>
-<section id="post-processing-mapdl-path-operation">
+</div>
+<div class="section" id="post-processing-mapdl-path-operation">
 <h2>Post-Processing - MAPDL Path Operation<a class="headerlink" href="#post-processing-mapdl-path-operation" title="Permalink to this headline">¶</a></h2>
 <p>Compute the stress along a path within MAPDL and convert the result
 to a numpy array</p>
@@ -404,8 +403,8 @@ to a numpy array</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Numpy Array from MAPDL Shape: (101, 7)
 </pre></div>
 </div>
-</section>
-<section id="comparing-with-path-operation-within-pyvista">
+</div>
+<div class="section" id="comparing-with-path-operation-within-pyvista">
 <h2>Comparing with Path Operation Within <cite>pyvista</cite><a class="headerlink" href="#comparing-with-path-operation-within-pyvista" title="Permalink to this headline">¶</a></h2>
 <p>The same path operation can be performed within <cite>pyvista</cite> by saving
 the resulting stress and storing within the underlying <code class="docutils literal notranslate"><span class="pre">UnstructuredGrid</span></code></p>
@@ -447,8 +446,8 @@ interpolate / compute the point attributes.
 </pre></div>
 </div>
 <img alt="path operations" class="sphx-glr-single-img" src="../../_images/sphx_glr_path_operations_002.png" />
-</section>
-<section id="d-slice-interpolation">
+</div>
+<div class="section" id="d-slice-interpolation">
 <h2>2D Slice Interpolation<a class="headerlink" href="#d-slice-interpolation" title="Permalink to this headline">¶</a></h2>
 <p>Take a 2D slice along the beam and plot it alongside the stress at
 the line.</p>
@@ -481,7 +480,7 @@ extrapolated to the edge nodes of ANSYS FEMs.</p>
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.553 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.822 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-mapdl-examples-path-operations-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e0f2e6c5062c520e7a76aa246a974382/path_operations.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">path_operations.py</span></code></a></p>
@@ -491,8 +490,8 @@ extrapolated to the edge nodes of ANSYS FEMs.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -519,7 +518,7 @@ extrapolated to the edge nodes of ANSYS FEMs.</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

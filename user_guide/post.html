@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Post-Processing &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post-Processing &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -230,7 +229,7 @@
               
               <div>
                 
-  <section id="post-processing">
+  <div class="section" id="post-processing">
 <h1>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h1>
 <p>You can post process using an active MAPDL session using the
 <code class="docutils literal notranslate"><span class="pre">post_processing</span></code> property of a <code class="docutils literal notranslate"><span class="pre">ansys.mapdl.core.Mapdl</span></code> instance.
@@ -250,7 +249,7 @@ modern interface to ANSYS result files using a client/server
 interface using the same software used within ANSYS Workbench, but
 via a Python client.</p>
 </div>
-<section id="examples">
+<div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>Classically, one would request nodal results from MAPDL using the
 <code class="docutils literal notranslate"><span class="pre">PRNSOL</span></code> command.  For example:</p>
@@ -291,14 +290,12 @@ nodal displacement with:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/post_norm_disp.png"><img alt="../_images/post_norm_disp.png" src="../_images/post_norm_disp.png" style="width: 300pt;" /></a>
-<figcaption>
-<p><span class="caption-text">Normalized Displacement of a Cylinder from MAPDL</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="selected-nodes">
+<p class="caption"><span class="caption-text">Normalized Displacement of a Cylinder from MAPDL</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="selected-nodes">
 <h2>Selected Nodes<a class="headerlink" href="#selected-nodes" title="Permalink to this headline">¶</a></h2>
 <p>The ANSYS database processes some results independently of if nodes or
 elements are selected.  If you have subselected a certain component
@@ -310,13 +307,13 @@ get a mask of the currently selected nodes.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">selected_nodes</span>
 </pre></div>
 </div>
-<section id="post-processing-object-methods">
+<div class="section" id="post-processing-object-methods">
 <h3>Post Processing Object Methods<a class="headerlink" href="#post-processing-object-methods" title="Permalink to this headline">¶</a></h3>
 <p>For a full list of all available post-processing methods, see
-<a class="reference internal" href="../api/post.html#ref-post-processing"><span class="std std-ref">PyMAPDL Post-Processing API</span></a>.</p>
-</section>
-</section>
-</section>
+<a class="reference internal" href="../api/post.html#ref-post-processing"><span class="std std-ref">Post-Processing</span></a>.</p>
+</div>
+</div>
+</div>
 
 
               </div>
@@ -343,7 +340,7 @@ get a mask of the currently selected nodes.</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

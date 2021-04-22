@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>MAPDL Object &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAPDL Object &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -42,8 +41,8 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MAPDL Launcher" href="launcher.html" />
-    <link rel="prev" title="API Reference" href="index.html" />
+    <link rel="next" title="Mesh Class" href="mesh.html" />
+    <link rel="prev" title="Math Module" href="math.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -125,34 +124,14 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l2 current active">
-  <a class="current reference internal" href="#">
-   MAPDL Object
-  </a>
- </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="launcher.html">
-   MAPDL Launcher
+  <a class="reference internal" href="ansXpl.html">
+   ansXpl Class
   </a>
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="convert.html">
-   Convert Function
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="plotting.html">
-   PyMAPDL Plotting Methods
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="parameters.html">
-   Parameters Class
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="mesh.html">
-   Mesh Class
+   Convert MAPDL Scripts
   </a>
  </li>
  <li class="toctree-l2">
@@ -161,8 +140,8 @@
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="post.html">
-   PyMAPDL Post-Processing API
+  <a class="reference internal" href="launcher.html">
+   MAPDL Launcher
   </a>
  </li>
  <li class="toctree-l2">
@@ -170,14 +149,39 @@
    Math Module
   </a>
  </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="pool.html">
-   MapdlLocalPool Class
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   MAPDL Object
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="xpl.html">
-   ansXpl Class
+  <a class="reference internal" href="mesh.html">
+   Mesh Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="parameters.html">
+   Parameters Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="plotting.html">
+   Plotting Methods
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="pool.html">
+   Pool and Multiple Instance API
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="post.html">
+   Post-Processing
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="solution.html">
+   Solution Class
   </a>
  </li>
 </ul>
@@ -218,7 +222,7 @@
               
               <div>
                 
-  <section id="mapdl-object">
+  <div class="section" id="mapdl-object">
 <span id="ref-mapdl-api"></span><h1>MAPDL Object<a class="headerlink" href="#mapdl-object" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore">
@@ -346,7 +350,24 @@ on the same line as the <code class="docutils literal notranslate"><span class="
 session .LOG and .ERR files. This will return the jobname to
 its original value, or to the most recent value specified on
 <code class="docutils literal notranslate"><span class="pre">/FILNAME</span></code> with KEY = 1.</p>
-<p>This command is valid only at the Begin level.</p>
+<p>this command is valid only at the Begin level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.directory">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">directory</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current MAPDL directory</p>
+<p class="rubric">Examples</p>
+<p>Directory on Linux</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">directory</span>
+<span class="go">&#39;/tmp/ansys&#39;</span>
+</pre></div>
+</div>
+<p>Directory on Windows</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">directory</span>
+<span class="go">&#39;C:/temp_directory/&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -408,22 +429,23 @@ of an array parameter.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>par</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the resulting parameter. See *SET for name
 restrictions.</p></li>
-<li><p><strong>entity</strong> – Entity keyword. Valid keywords are NODE, ELEM, KP, LINE, AREA,
-VOLU, PDS, etc., as shown for Entity = in the tables below.</p></li>
-<li><p><strong>entnum</strong> – The number or label for the entity (as shown for ENTNUM = in the
-tables below). In some cases, a zero (or blank) ENTNUM represents
-all entities of the set.</p></li>
-<li><p><strong>item1</strong> – The name of a particular item for the given entity. Valid items are
-as shown in the Item1 columns of the tables below.</p></li>
-<li><p><strong>it1num</strong> – The number (or label) for the specified Item1 (if any). Valid
-IT1NUM values are as shown in the IT1NUM columns of the tables
-below. Some Item1 labels do not require an IT1NUM value.</p></li>
-<li><p><strong>item2</strong> – A second set of item labels and numbers to further qualify the item
-for which data are to be retrieved. Most items do not require this
-level of information.</p></li>
-<li><p><strong>it2num</strong> – A second set of item labels and numbers to further qualify the item
-for which data are to be retrieved. Most items do not require this
-level of information.</p></li>
+<li><p><strong>entity</strong> – Entity keyword. Valid keywords are NODE, ELEM, KP, LINE,
+AREA, VOLU, PDS, etc., as shown for Entity = in the tables
+below.</p></li>
+<li><p><strong>entnum</strong> – The number or label for the entity (as shown for ENTNUM =
+in the tables below). In some cases, a zero (or blank)
+ENTNUM represents all entities of the set.</p></li>
+<li><p><strong>item1</strong> – The name of a particular item for the given entity.</p></li>
+<li><p><strong>it1num</strong> – The number (or label) for the specified Item1 (if
+any). Valid IT1NUM values are as shown in the IT1NUM
+columns of the tables below. Some Item1 labels do not
+require an IT1NUM value.</p></li>
+<li><p><strong>item2</strong> – A second set of item labels and numbers to further qualify
+the item for which data are to be retrieved. Most items do
+not require this level of information.</p></li>
+<li><p><strong>it2num</strong> – A second set of item labels and numbers to further qualify
+the item for which data are to be retrieved. Most items do
+not require this level of information.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -448,39 +470,96 @@ parameter name is optional.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>GET retrieves a value for a specified item and stores the value as a
-scalar parameter, or as a value in a user-named array parameter. An
-item is identified by various keyword, label, and number combinations.
-Usage is similar to the SET command except that the parameter values
-are retrieved from previously input or calculated results. For example,
-GET,A,ELEM,5,CENT,X returns the centroid x-location of element 5 and
-stores the result as parameter A. GET command operations, along with
-the associated Get functions return values in the active coordinate
-system unless stated otherwise. A Get function is an alternative in-
-line function that can be used to retrieve a value instead of the GET
-command (see Using In-line Get Functions for more information).</p>
-<p>Both GET and VGET retrieve information from the active data stored in
-memory. The database is often the source, and sometimes the information
-is retrieved from common memory blocks that the program uses to
-manipulate information. Although POST1 and POST26 operations use a
-.rst file, GET data is accessed from the database or from the common
-blocks. Get operations do not access the .rst file directly. For
-repeated gets of sequential items, such as from a series of elements,
-see the VGET command.</p>
-<p>Most items are stored in the database after they are calculated and are
-available anytime thereafter. Items are grouped according to where they
-are usually first defined or calculated. Preprocessing data will often
-not reflect the calculated values generated from section data. Do not
-use GET to obtain data from elements that use calculated section data,
-such as beams or shells. Most of the general items listed below are
-available from all modules. Each of the sections for accessing GET
-parameters are shown in the following order:</p>
-<p>GET General Entity Items</p>
-<p>GET Preprocessing Entity Items</p>
-<p>GET Solution Entity Items</p>
-<p>GET Postprocessing Entity Items</p>
-<p>GET Probabilistic Design Entity Items</p>
-<p>The GET command is valid in any processor.</p>
+<p>GET retrieves a value for a specified item and stores the
+value as a scalar parameter, or as a value in a user-named
+array parameter. An item is identified by various keyword,
+label, and number combinations.  Usage is similar to the SET
+command except that the parameter values are retrieved from
+previously input or calculated results. For example,
+GET,A,ELEM,5,CENT,X returns the centroid x-location of element
+5 and stores the result as parameter A. GET command
+operations, along with the associated Get functions return
+values in the active coordinate system unless stated
+otherwise. A Get function is an alternative in- line function
+that can be used to retrieve a value instead of the GET
+command (see Using In-line Get Functions for more
+information).</p>
+<p>Both GET and VGET retrieve information from the active data
+stored in memory. The database is often the source, and
+sometimes the information is retrieved from common memory
+blocks that the program uses to manipulate
+information. Although POST1 and POST26 operations use a .rst
+file, GET data is accessed from the database or from the
+common blocks. Get operations do not access the .rst file
+directly. For repeated gets of sequential items, such as from
+a series of elements, see the VGET command.</p>
+<p>Most items are stored in the database after they are
+calculated and are available anytime thereafter. Items are
+grouped according to where they are usually first defined or
+calculated. Preprocessing data will often not reflect the
+calculated values generated from section data. Do not use GET
+to obtain data from elements that use calculated section data,
+such as beams or shells. Most of the general items listed
+below are available from all modules.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.get_array">
+<code class="sig-name descname"><span class="pre">get_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it1num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it2num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kloop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.get_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the VGET command to Return an array from ANSYS as a
+Python array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity</strong> – Entity keyword.  Valid keywords are NODE, ELEM, KP, LINE,
+AREA, VOLU, etc</p></li>
+<li><p><strong>entnum</strong> – The number of the entity (as shown for ENTNUM = in the tables
+below).</p></li>
+<li><p><strong>item1</strong> – The name of a particular item for the given entity.  Valid
+items are as shown in the Item1 columns of the tables
+below.</p></li>
+<li><p><strong>it1num</strong> – The number (or label) for the specified Item1 (if any).
+Valid IT1NUM values are as shown in the IT1NUM columns of
+the tables below.  Some Item1 labels do not require an
+IT1NUM value.</p></li>
+<li><p><strong>item2</strong> – A second set of item labels and numbers to further qualify
+the item for which data is to be retrieved.  Most items do
+not require this level of information.</p></li>
+<li><p><strong>it2num</strong> – A second set of item labels and numbers to further qualify
+the item for which data is to be retrieved.  Most items do
+not require this level of information.</p></li>
+<li><p><strong>kloop</strong> – <p>Field to be looped on:</p>
+<ul>
+<li><p>0 or 2 : Loop on the ENTNUM field (default).</p></li>
+<li><p>3 : Loop on the Item1 field.</p></li>
+<li><p>4 : Loop on the IT1NUM field. Successive items are as shown with IT1NUM.</p></li>
+<li><p>5 : Loop on the Item2 field.</p></li>
+<li><p>6 : Loop on the IT2NUM field. Successive items are as shown with IT2NUM.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>List the current selected node numbers</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="s1">&#39;NODE&#39;</span><span class="p">,</span> <span class="n">item1</span><span class="o">=</span><span class="s1">&#39;NLIST&#39;</span><span class="p">)</span>
+<span class="go">array([  1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,</span>
+<span class="go">      ...</span>
+<span class="go">      314., 315., 316., 317., 318., 319., 320., 321.])</span>
+</pre></div>
+</div>
+<p>List the displacement in the X direction for the first result</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_x</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="s1">&#39;NODE&#39;</span><span class="p">,</span> <span class="n">item1</span><span class="o">=</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">it1num</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="go">array([ 0.01605306, -0.01605306,  0.00178402, -0.01605306,</span>
+<span class="go">       ...</span>
+<span class="go">       -0.00178402, -0.01234851,  0.01234851, -0.01234851])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Please reference your ANSYS help manual <a href="#id1"><span class="problematic" id="id2">*</span></a>VGET command tables
+for all the available <a href="#id3"><span class="problematic" id="id4">*</span></a>VGET values</p>
 </dd></dl>
 
 <dl class="py method">
@@ -541,6 +620,53 @@ ignore these errors.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.inquire">
+<code class="sig-name descname"><span class="pre">inquire</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.inquire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns system information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>str</em>) – Specifies the type of system information returned.  See the
+notes section for more information.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>value</strong> – Value of the inquired item.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Allowable func entries
+LOGIN - Returns the pathname of the login directory on Linux
+systems or the pathname of the default directory (including
+drive letter) on Windows systems.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DOCU</span></code> - Pathname of the ANSYS docu directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APDL</span></code> - Pathname of the ANSYS APDL directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROG</span></code> - Pathname of the ANSYS executable directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AUTH</span></code> - Pathname of the directory in which the license file resides.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USER</span></code> - Name of the user currently logged-in.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIRECTORY</span></code> - Pathname of the current directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JOBNAME</span></code> - Current Jobname.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RSTDIR</span></code> - Result file directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RSTFILE</span></code> - Result file name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RSTEXT</span></code> - Result file extension</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUTPUT</span></code> - Current output file name</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<p>Return the job name</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">inquire</span><span class="p">(</span><span class="s1">&#39;JOBNAME&#39;</span><span class="p">)</span>
+<span class="go">file</span>
+</pre></div>
+</div>
+<p>Return the result file name</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">inquire</span><span class="p">(</span><span class="s1">&#39;RSTFILE&#39;</span><span class="p">)</span>
+<span class="go">&#39;file.rst&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.jobname">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">jobname</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.jobname" title="Permalink to this definition">¶</a></dt>
 <dd><p>MAPDL job name.</p>
@@ -589,6 +715,22 @@ are displayed.</p></li>
 <span class="go">&#39;KEYPOINT      1   X,Y,Z=   1.00000       1.00000       1.00000&#39;</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.list">
+<code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the contents of an external, coded file.</p>
+<p>APDL Command: <code class="docutils literal notranslate"><span class="pre">/LIST</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – File name and directory path. An unspecified directory
+path defaults to the working directory.</p></li>
+<li><p><strong>ext</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename extension</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -998,37 +1140,6 @@ result set.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function">
-<code class="sig-name descname"><span class="pre">read_float_from_inline_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_from_inline_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use a APDL inline function to get a float value from ANSYS.
-Take note, that internally an APDL parameter
-“__floatparameter__” is created/overwritten.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>function_str</strong> (<em>str</em>) – String containing an inline function as used in APDL.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>value</strong> – Value returned by inline function.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inline_function</span> <span class="o">=</span> <span class="s2">&quot;node(</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span> <span class="o">=</span> <span class="n">apdl</span><span class="o">.</span><span class="n">read_float_from_inline_function</span><span class="p">(</span><span class="n">inline_function</span><span class="p">)</span>
-<span class="go">75.0</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter">
-<code class="sig-name descname"><span class="pre">read_float_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.read_float_parameter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Depreciated in favor of <code class="docutils literal notranslate"><span class="pre">mapdl.parameters[parameter_name]</span></code></p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler">
 <code class="sig-name descname"><span class="pre">remove_file_handler</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.remove_file_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the filehander from the log</p>
@@ -1069,19 +1180,20 @@ RF  : Nodal reaction forces</p>
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl._MapdlCore.run">
 <code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_to_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs APDL command</p>
+<dd><p>Run single APDL command.</p>
+<p>For multiple commands, use <code class="docutils literal notranslate"><span class="pre">run_multiline</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>command</strong> (<em>str</em>) – ANSYS APDL command.</p></li>
-<li><p><strong>write_to_log</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overrides APDL log writing.  Default True.  When set to
-False, will not write command to log, even if APDL
+<li><p><strong>write_to_log</strong> (<em>bool</em><em>, </em><em>optional</em>) – Overrides APDL log writing.  Default <code class="docutils literal notranslate"><span class="pre">True</span></code>.  When set
+to <code class="docutils literal notranslate"><span class="pre">False</span></code>, will not write command to log, even if APDL
 command logging is enabled.</p></li>
 <li><p><strong>kwargs</strong> (<em>Optional keyword arguments</em>) – These keyword arguments are interface specific.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>command_output</strong> – Command output from ANSYS.</p>
+<dd class="field-even"><p><strong>command_output</strong> – Command output from MAPDL.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>str</p>
@@ -1098,9 +1210,74 @@ command logging is enabled.</p></li>
 <p class="rubric">Notes</p>
 <p>When two or more commands need to be run non-interactively
 (i.e. <code class="docutils literal notranslate"><span class="pre">*VWRITE</span></code>) use</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ansys</span><span class="o">.</span><span class="n">non_interactive</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ansys</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1),VALUE(1,1),VALUE(1,2),VALUE(1,3)&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ansys</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,&#39;   &#39;,F10.1,&#39;  &#39;,F10.1,&#39;   &#39;,1F5.3)&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">non_interactive</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;*VWRITE,LABEL(1),VALUE(1,1),VALUE(1,2),VALUE(1,3)&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">mapdl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;(1X,A8,&#39;   &#39;,F10.1,&#39;  &#39;,F10.1,&#39;   &#39;,1F5.3)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternatively, you can simply run a block of commands with:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">run_multiline</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.run_multiline">
+<code class="sig-name descname"><span class="pre">run_multiline</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">commands</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.run_multiline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run several commands as a single block</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>commands</strong> (<em>str</em>) – Commands separated by new lines.  See example.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Command output from MAPDL.  Includes the output from
+running every command, as if it was an input file.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Run several commands from Python multi-line string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;/prep7</span>
+<span class="go">! Mat</span>
+<span class="go">MP,EX,1,200000</span>
+<span class="go">MP,NUXY,1,0.3</span>
+<span class="go">MP,DENS,1,7.85e-09</span>
+<span class="go">! Elements</span>
+<span class="go">et,1,186</span>
+<span class="go">et,2,154</span>
+<span class="go">! Geometry</span>
+<span class="go">BLC4,0,0,1000,100,10</span>
+<span class="go">! Mesh</span>
+<span class="go">esize,5</span>
+<span class="go">vmesh,all</span>
+<span class="go">nsel,s,loc,x,0</span>
+<span class="go">d,all,all</span>
+<span class="go">nsel,s,loc,x,999,1001</span>
+<span class="go">type,2</span>
+<span class="go">esurf</span>
+<span class="go">esel,s,type,,2</span>
+<span class="go">nsle</span>
+<span class="go">sfe,all,3,pres,,-10</span>
+<span class="go">allsel</span>
+<span class="go">/solu</span>
+<span class="go">antype,0</span>
+<span class="go">solve</span>
+<span class="go">/post1</span>
+<span class="go">set,last</span>
+<span class="go">plnsol,u,sum</span>
+<span class="go">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resp</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">run_multiline</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resp</span>
+<span class="go">MATERIAL          1     EX   =   200000.0</span>
+<span class="go">MATERIAL          1     NUXY =  0.3000000</span>
+<span class="go">MATERIAL          1     DENS =  0.7850000E-08</span>
+<span class="go">ELEMENT TYPE          1 IS SOLID186     3-D 20-NODE STRUCTURAL SOLID</span>
+<span class="go"> KEYOPT( 1- 6)=        0      0      0        0      0      0</span>
+<span class="go"> KEYOPT( 7-12)=        0      0      0        0      0      0</span>
+<span class="go"> KEYOPT(13-18)=        0      0      0        0      0      0</span>
+<span class="go">output continues...</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1129,6 +1306,17 @@ command logging is enabled.</p></li>
 </div>
 <p>Set the log level to error</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl._MapdlCore.solution">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">solution</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl._MapdlCore.solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution parameters of MAPDL.</p>
+<p class="rubric">Examples</p>
+<p>Check if a solution has converged.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">converged</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1190,7 +1378,7 @@ to 10 (best).  Applicable when <code class="docutils literal notranslate"><span 
 
 </dd></dl>
 
-<section id="pymapdl-grpc-class">
+<div class="section" id="pymapdl-grpc-class">
 <h2>PyMAPDL gRPC Class<a class="headerlink" href="#pymapdl-grpc-class" title="Permalink to this headline">¶</a></h2>
 <p>Methods specific to the modern gRPC interface</p>
 <dl class="py class">
@@ -1232,18 +1420,6 @@ default port 50052.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">pymapdl</span><span class="o">.</span><span class="n">Mapdl</span><span class="p">(</span><span class="s1">&#39;192.168.1.101&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">60001</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="py method">
-<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param">
-<code class="sig-name descname"><span class="pre">Param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var">
-<code class="sig-name descname"><span class="pre">Var</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.Var" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
-</dd></dl>
-
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">busy</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.busy" title="Permalink to this definition">¶</a></dt>
@@ -1315,8 +1491,27 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download">
-<code class="sig-name descname"><span class="pre">download</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+<code class="sig-name descname"><span class="pre">download</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">262144</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a file from the gRPC instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_name</strong> (<em>str</em>) – Target file on the server.  File must be in the same
+directory as the mapdl instance.  List current files with
+<code class="docutils literal notranslate"><span class="pre">mapdl.list_files()</span></code></p></li>
+<li><p><strong>out_file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Save the filename as a different name other than the
+<code class="docutils literal notranslate"><span class="pre">target_name</span></code>.</p></li>
+<li><p><strong>chunk_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Chunk size in bytes.  Must be less than 4MB.  Defaults to 256 kB.</p></li>
+<li><p><strong>progress_bar</strong> (<em>bool</em><em>, </em><em>optional Display a progress bar using</em>) – <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> when <code class="docutils literal notranslate"><span class="pre">True</span></code>.  Helpful for showing download
+progress.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Download the remote result file “file.rst” as “my_result.rst”</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;file.rst&#39;</span><span class="p">,</span> <span class="s1">&#39;my_result.rst&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1348,8 +1543,46 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input">
-<code class="sig-name descname"><span class="pre">input</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+<code class="sig-name descname"><span class="pre">input</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stream a local input file to a remote mapdl instance.
+Stream the response back and deserialize the output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – MAPDL input file to stream to the MAPDL grpc server.</p></li>
+<li><p><strong>time_step_stream</strong> (<em>int</em>) – <p>Time to wait between streaming updates to send back chunks
+from the listener file.  Larger values mean more data per
+chunk and less chunks, but if the command is short, will
+wait until time_step_stream is finished leading to a long
+execution time.</p>
+<p>Due to stability issues, the default time_step_stream is
+dependent on verbosity.  The defaults are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose=True</span></code>: <code class="docutils literal notranslate"><span class="pre">time_step_stream=500</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose=False</span></code>: <code class="docutils literal notranslate"><span class="pre">time_step_stream=50</span></code></p></li>
+</ul>
+<p>These defaults will be ignored if <code class="docutils literal notranslate"><span class="pre">time_step_stream</span></code> is
+manually set.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>response</strong> – Response from MAPDL.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Load a simple <code class="docutils literal notranslate"><span class="pre">&quot;ds.dat&quot;</span></code> input file generated from Ansys
+Workbench.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s1">&#39;ds.dat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load that same file while streaming the output in real-time.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s1">&#39;ds.dat&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1366,14 +1599,18 @@ and section definitions is not recommended.</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files">
-<code class="sig-name descname"><span class="pre">list_files</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">list_files</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">refresh_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.list_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the files in the working directory of MAPDL.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>files</strong> – List of files in the working directory of MAPDL.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>refresh_cache</strong> (<em>bool</em><em>, </em><em>optional</em>) – If local, refresh local cache by querying MAPDL for its
+current path.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>list</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>files</strong> – List of files in the working directory of MAPDL.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -1415,6 +1652,25 @@ and section definitions is not recommended.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
 <span class="go">&lt;60x60 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
 <span class="go">    with 1734 stored elements in Compressed Sparse Row format&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.mute">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mute</span></code><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.mute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Silence the response from all MAPDL functions unless
+explicitly set to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">mute</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep</span><span class="p">()</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Override this with <code class="docutils literal notranslate"><span class="pre">mute=False</span></code>.  This is useful for methods
+that parse the MAPDL output like <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">1</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1468,8 +1724,41 @@ RF  : Nodal reaction forces</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param">
-<code class="sig-name descname"><span class="pre">scalar_param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+<code class="sig-name descname"><span class="pre">scalar_param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.scalar_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a scalar parameter as a float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.sys">
+<code class="sig-name descname"><span class="pre">sys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.sys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pass a command string to the operating system.
+APDL Command: /SYS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmd</strong> (<em>str</em>) – Command string, up to 639 characters (including blanks,
+commas, etc.). The specified string is passed verbatim to
+the operating system, i.e., no parameter substitution is
+performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>output</strong> – Output from the command.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">sys</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Passes a command string to the operating system for execution
+(see the Operations Guide).  Typical strings are system
+commands such as list, copy, rename, etc.  Control returns to
+the ANSYS program after the system procedure is completed.
+ANSYS may not be aware of your specific user environment. For
+example, on Linux this command may not recognize aliases,
+depending on the hardware platform and user environment.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1480,8 +1769,29 @@ RF  : Nodal reaction forces</p>
 
 <dl class="py method">
 <dt id="ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload">
-<code class="sig-name descname"><span class="pre">upload</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload" title="Permalink to this definition">¶</a></dt>
-<dd><p>Capture gRPC exceptions and KeyboardInterrupt</p>
+<code class="sig-name descname"><span class="pre">upload</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.mapdl_grpc.MapdlGrpc.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a file to the grpc instance</p>
+<dl class="simple">
+<dt>file_name<span class="classifier">str</span></dt><dd><p>Local file to upload.</p>
+</dd>
+<dt>progress_bar<span class="classifier">bool, optional Display a progress bar using</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">tqdm</span></code> when <code class="docutils literal notranslate"><span class="pre">True</span></code>.  Helpful for showing download
+progress.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>basename</strong> – Base name of the file uploaded.  File can be accessed
+relative to the mapdl instance with this file name.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Upload “local_file.inp” while disabling the progress bar</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s1">&#39;local_file.inp&#39;</span><span class="p">,</span> <span class="n">progress_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1505,8 +1815,8 @@ RF  : Nodal reaction forces</p>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -1514,8 +1824,8 @@ RF  : Nodal reaction forces</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">API Reference</a>
-    <a class='right-next' id="next-link" href="launcher.html" title="next page">MAPDL Launcher</a>
+    <a class='left-prev' id="prev-link" href="math.html" title="previous page">Math Module</a>
+    <a class='right-next' id="next-link" href="mesh.html" title="next page">Mesh Class</a>
 
               </div>
               
@@ -1533,7 +1843,7 @@ RF  : Nodal reaction forces</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

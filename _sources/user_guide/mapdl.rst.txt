@@ -124,7 +124,93 @@ Run a command and stream its output while it is being run.
     >>> mapdl.solve(verbose=True)
 
 .. note::
-    This feature is only available when running MAPDL in gRPC mode.
+    The ``verbose`` and ``mute`` features are only available when
+    running MAPDL in gRPC mode.
+
+
+Running Several Commands or an Input File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can run several MAPDL commands as a unified block.  This is useful
+when using PyMAPDL with older MAPDL commands.  For example:
+
+    >>> cmd = '''/prep7
+    ! Mat
+    MP,EX,1,200000
+    MP,NUXY,1,0.3
+    MP,DENS,1,7.85e-09
+    ! Elements
+    et,1,186
+    et,2,154
+    ! Geometry
+    BLC4,0,0,1000,100,10
+    ! Mesh
+    esize,5
+    vmesh,all
+    nsel,s,loc,x,0
+    d,all,all
+    nsel,s,loc,x,999,1001
+    type,2
+    esurf
+    esel,s,type,,2
+    nsle
+    sfe,all,3,pres,,-10
+    allsel
+    /solu
+    antype,0
+    solve
+    /post1
+    set,last
+    plnsol,u,sum
+    '''
+    >>> resp = mapdl.run_multiline(cmd)
+    >>> resp
+
+     You have already entered the general preprocessor (PREP7).
+
+     MATERIAL          1     EX   =   200000.0
+
+     MATERIAL          1     NUXY =  0.3000000
+
+     MATERIAL          1     DENS =  0.7850000E-08
+
+     ELEMENT TYPE          1 IS SOLID186     3-D 20-NODE STRUCTURAL SOLID
+      KEYOPT( 1- 6)=        0      0      0        0      0      0
+      KEYOPT( 7-12)=        0      0      0        0      0      0
+      KEYOPT(13-18)=        0      0      0        0      0      0
+
+     CURRENT NODAL DOF SET IS  UX    UY    UZ
+      THREE-DIMENSIONAL MODEL
+
+     ELEMENT TYPE          2 IS SURF154      3-D STRUCTURAL SURFACE
+      KEYOPT( 1- 6)=        0      0      0        0      0      0
+      KEYOPT( 7-12)=        0      0      0        0      0      0
+      KEYOPT(13-18)=        0      0      0        0      0      0
+
+     CURRENT NODAL DOF SET IS  UX    UY    UZ
+      THREE-DIMENSIONAL MODEL
+
+     CREATE A HEXAHEDRAL VOLUME WITH
+     X-DISTANCES FROM      0.000000000     TO      1000.000000
+     Y-DISTANCES FROM      0.000000000     TO      100.0000000
+     Z-DISTANCES FROM      0.000000000     TO      10.00000000
+
+          OUTPUT VOLUME =     1
+
+     DEFAULT ELEMENT DIVISIONS PER LINE BASED ON ELEMENT SIZE =   5.00
+
+     GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES
+    
+     NUMBER OF VOLUMES MESHED   =         1
+     MAXIMUM NODE NUMBER        =     45765
+     MAXIMUM ELEMENT NUMBER     =      8000
+
+Alternatively, you can simply write the commands to a file and then
+run it.  For example, if you have a ``"ds.dat"`` generated from Ansys
+Workbench, you can run that with:
+
+.. code:: python
+
+    >>> resp = mapdl.input("ds.dat")
 
 
 Conditional Statements and Loops

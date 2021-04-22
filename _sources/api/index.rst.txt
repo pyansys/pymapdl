@@ -1,21 +1,24 @@
+.. _ref_index_api:
+
 =============
 API Reference
 =============
-This section gives an overview of the API of several public PyMAPDL classes,
-functions, and attributes.
+This section gives an overview of the API of several public PyMAPDL
+classes, functions, and attributes.
 
 .. toctree::
    :maxdepth: 1
 
-   mapdl
-   launcher
+   ansXpl
    convert
-   plotting
-   parameters
-   mesh
    geometry
-   post
+   launcher
    math
+   mapdl
+   mesh
+   parameters
+   plotting
    pool
+   post
+   solution
    xpl
-   

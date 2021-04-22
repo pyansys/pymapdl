@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solution Class &#8212; ansys.mapdl.core 0.58.8 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="../examples/index.html" />
+    <link rel="prev" title="Post-Processing" href="post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+      
+      <a class="navbar-brand" href="../index.html">
+        <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+      </a>
+      
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contributing.html">
+  Contributing
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="ansXpl.html">
+   ansXpl Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="convert.html">
+   Convert MAPDL Scripts
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="geometry.html">
+   Geometry Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="launcher.html">
+   MAPDL Launcher
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="math.html">
+   Math Module
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="mapdl.html">
+   MAPDL Object
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="mesh.html">
+   Mesh Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="parameters.html">
+   Parameters Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="plotting.html">
+   Plotting Methods
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="pool.html">
+   Pool and Multiple Instance API
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="post.html">
+   Post-Processing
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   Solution Class
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="solution-class">
+<span id="ref-solution-api"></span><h1>Solution Class<a class="headerlink" href="#solution-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.mapdl.core.solution.Solution">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.solution.</span></code><code class="sig-name descname"><span class="pre">Solution</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapdl</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.solution.Solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collection of parameters specific to the solution.</p>
+<p>Useful for checking the status of a solve after running
+<code class="docutils literal notranslate"><span class="pre">mapdl.solve()</span></code> and determining if it converged, the number of
+iterations to converge, etc.</p>
+<p class="rubric">Examples</p>
+<p>Check if a solution has converged.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">converged</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Get the cumulative number of iterations.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_cmit</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.converged">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">converged</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.converged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convergence indicator.  <code class="docutils literal notranslate"><span class="pre">True</span></code> when converged.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">converged</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.current_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">current_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.current_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">cucv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.current_segment_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">current_segment_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.current_segment_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current segment convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">cscv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.decent_parm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">decent_parm</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.decent_parm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Descent parameter.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">dsprm</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.displacement_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">displacement_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.displacement_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displacement convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">dicv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.fluid_flow_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fluid_flow_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.fluid_flow_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fluid flow convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">ffcv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.force_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">force_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.force_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">focv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.heat_flow_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">heat_flow_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.heat_flow_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heat flow convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">hfcv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.magnetic_flux_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">magnetic_flux_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.magnetic_flux_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnetic flux convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">mfcv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.moment_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">moment_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.moment_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">mocv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.mx_creep_rat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mx_creep_rat</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.mx_creep_rat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum creep ratio.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">mx_creep_rat</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.mx_dof">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mx_dof</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.mx_dof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum degree of freedom value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">mxdvl</span>
+<span class="go">-0.00020707416808476303</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.mx_plastic_inc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mx_plastic_inc</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.mx_plastic_inc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum plastic strain increment.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">mx_plastic_inc</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.n_cg_iter">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_cg_iter</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.n_cg_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of iterations in the PCG and symmetric JCG (non-complex version) solvers.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_cg_iter</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.n_cmit">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_cmit</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.n_cmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative number of iterations.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_cmit</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.n_cmls">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_cmls</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.n_cmls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative number of load steps.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_cmls</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.n_cmss">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_cmss</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.n_cmss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used only for static and transient analyses.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_cmss</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Number of substeps. NOTE</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.n_eqit">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n_eqit</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.n_eqit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of equilibrium iterations.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">n_eqit</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.pressure_conv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">pressure_conv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.pressure_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pressure convergence value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.res_eig">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">res_eig</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.res_eig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response eigenvalue for 1st order systems.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">reseig</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.res_frq">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">res_frq</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.res_frq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response frequency for 2nd order systems.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">resfrq</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.rotation_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rotation_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.rotation_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotation convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">rocv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.smcv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">smcv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.smcv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scalar magnetic potential convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">smcv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.temperature_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">temperature_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.temperature_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temperature convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">tecv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.time_step_size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time_step_size</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.time_step_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time step size.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">time_step_size</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.vector_cnv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">vector_cnv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.vector_cnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vector magnetic potential convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">vmcv</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.velocity_conv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">velocity_conv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.velocity_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Velocity convergence value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.mapdl.core.solution.Solution.voltage_conv">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">voltage_conv</span></code><a class="headerlink" href="#ansys.mapdl.core.solution.Solution.voltage_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voltage convergence value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">solution</span><span class="o">.</span><span class="n">voltage_convergence</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="post.html" title="previous page">Post-Processing</a>
+    <a class='right-next' id="next-link" href="../examples/index.html" title="next page">Examples</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

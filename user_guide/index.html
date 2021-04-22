@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>User Guide &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Guide &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -205,6 +204,13 @@
     <a class="reference internal nav-link" href="#calling-mapdl-pythonically">
      Calling MAPDL Pythonically
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stability-considerations">
+       Stability Considerations
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -225,13 +231,13 @@
               
               <div>
                 
-  <section id="user-guide">
+  <div class="section" id="user-guide">
 <span id="ref-user-guide"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
 <p>This guide provides a general overview of the basics and usage of the
 PyMAPDL module <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code>.</p>
 <div class="toctree-wrapper compound">
 </div>
-<section id="pymapdl-basic-overview">
+<div class="section" id="pymapdl-basic-overview">
 <h2>PyMAPDL Basic Overview<a class="headerlink" href="#pymapdl-basic-overview" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">launch_mapdl</span></code> function within the <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code> module
 creates an instance of of <code class="docutils literal notranslate"><span class="pre">MAPDL</span></code> in the background and sends
@@ -291,7 +297,7 @@ MAPDL and includes higher level wrapping allowing for better scripting
 and interaction with MAPDL.  See the <a class="reference internal" href="../examples/index.html#ref-example-gallery"><span class="std std-ref">Examples</span></a> for an
 overview of the various advanced methods to visualize, script, and
 interact with MAPDL.</p>
-<section id="calling-mapdl-pythonically">
+<div class="section" id="calling-mapdl-pythonically">
 <h3>Calling MAPDL Pythonically<a class="headerlink" href="#calling-mapdl-pythonically" title="Permalink to this headline">¶</a></h3>
 <p>MAPDL functions can be called directly from an <code class="docutils literal notranslate"><span class="pre">Mapdl</span></code> instance in a
 pythonic manner.  This is to simplify calling ANSYS, especially when
@@ -388,9 +394,27 @@ within it.  For example:</p>
 <span class="go">    a toroidal system is not recommended.</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+<div class="section" id="stability-considerations">
+<h4>Stability Considerations<a class="headerlink" href="#stability-considerations" title="Permalink to this headline">¶</a></h4>
+<p>When connecting to a remote instance of MAPDL, there are some cases
+where the MAPDL server will exit unexpectedly.  These issues are being
+corrected and will be solved in 2021R2, but for the time being, there
+are several ways to improve performance and stability of MADPL:</p>
+<ul class="simple">
+<li><p>When possible, pass <code class="docutils literal notranslate"><span class="pre">mute=True</span></code> to individual MAPDL commands or
+set it globally with <code class="docutils literal notranslate"><span class="pre">mapdl.mute</span> <span class="pre">=</span> <span class="pre">True</span></code>.  This disables streaming
+back the response from MAPDL for each command and will marginally
+improve performance and stability.  Consider having a debug flag in
+your program or script so you can enable or disable logging and
+verbosity when needed.</p></li>
+<li><p>Avoid using input files if possible.  Attempt to <code class="docutils literal notranslate"><span class="pre">upload</span></code> nodes
+and elements and read them in via <code class="docutils literal notranslate"><span class="pre">nread</span></code> and <code class="docutils literal notranslate"><span class="pre">eread</span></code>.  This is
+less than ideal and will be corrected in 2021R2.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>
@@ -417,7 +441,7 @@ within it.  For example:</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

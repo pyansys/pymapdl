@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Using PyMAPDL from the Standard Install &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using PyMAPDL from the Standard Install &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -227,24 +226,24 @@
               
               <div>
                 
-  <section id="using-pymapdl-from-the-standard-install">
+  <div class="section" id="using-pymapdl-from-the-standard-install">
 <span id="using-standard-install"></span><h1>Using PyMAPDL from the Standard Install<a class="headerlink" href="#using-pymapdl-from-the-standard-install" title="Permalink to this headline">¶</a></h1>
 <p>The pyansys <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code> package requires either a local or
 remote instance of MAPDL to communicate with it.  This section covers
 launching and interfacing with MAPDL from a local instance by
 launching it from Python.</p>
-<section id="installing-mapdl">
+<div class="section" id="installing-mapdl">
 <h2>Installing MAPDL<a class="headerlink" href="#installing-mapdl" title="Permalink to this headline">¶</a></h2>
 <p>MAPDL is installed by default from the standard installer.  When
 installing ANSYS, verify that the “Mechanical Products” option is
 checked under the “Structural Mechanics” option.  The standard
 installer options may change, but for reference see the following
 figure.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/unified_install_2019R1.jpg"><img alt="../_images/unified_install_2019R1.jpg" src="../_images/unified_install_2019R1.jpg" style="width: 400pt;" /></a>
-</figure>
-</section>
-<section id="launching-mapdl">
+</div>
+</div>
+<div class="section" id="launching-mapdl">
 <h2>Launching MAPDL<a class="headerlink" href="#launching-mapdl" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways to launch MAPDL to use it with pymapdl.  First, you
 can use the <code class="docutils literal notranslate"><span class="pre">launch_mapdl</span></code> function to have Python startup MAPDL and
@@ -302,23 +301,25 @@ computer running MAPDL, you can connect to it with</p>
 <p>Please note that you must have started MAPDL for both of these code
 blocks to work.  If you have MAPDL installed on your local host, you
 can use <code class="docutils literal notranslate"><span class="pre">launch_mapdl</span></code> to both start and connect to MAPDL.</p>
-</section>
-<section id="debugging-launching-mapdl">
+</div>
+<div class="section" id="debugging-launching-mapdl">
 <h2>Debugging Launching MAPDL<a class="headerlink" href="#debugging-launching-mapdl" title="Permalink to this headline">¶</a></h2>
 <p>For any number of reasons, Python may fail to launch MAPDL.  Here’s
 some approaches to debug the start:</p>
-<section id="manually-set-the-executable-location">
+<div class="section" id="manually-set-the-executable-location">
 <h3>Manually Set the Executable Location<a class="headerlink" href="#manually-set-the-executable-location" title="Permalink to this headline">¶</a></h3>
 <p>If you have a non-standard install, <code class="docutils literal notranslate"><span class="pre">pymapdl</span></code> may be unable find
 your installation.  If that’s the case, provide the location of MAPDL
 as the first parameter to <code class="docutils literal notranslate"><span class="pre">launch_mapdl</span></code>.  For example, on Windows,
 this will be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exec_loc</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/ANSYS Inc/v211/ansys/bin/winx64/ANSYS211.exe&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exec_loc</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/ANSYS Inc/v211/ansys/bin/winx64/ANSYS211.exe&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">exec_loc</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For Linux:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exec_loc</span> <span class="o">=</span> <span class="s1">&#39;/usr/ansys_inc/v211/ansys/bin/ansys211&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exec_loc</span> <span class="o">=</span> <span class="s1">&#39;/usr/ansys_inc/v211/ansys/bin/ansys211&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">exec_loc</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -327,8 +328,8 @@ this will be:</p>
 the output of MAPDL within Python and can be used to debug why MAPDL
 isn’t launching.  Output will be limited on Windows due to the way
 MAPDL launches on Windows.</p>
-</section>
-<section id="debug-launch-issues">
+</div>
+<div class="section" id="debug-launch-issues">
 <h3>Debug Launch Issues<a class="headerlink" href="#debug-launch-issues" title="Permalink to this headline">¶</a></h3>
 <p>In some cases, it may be necessary to debug why MAPDL isn’t launching
 by running the launch command manually from the command line.  In
@@ -336,6 +337,10 @@ Windows, open up a command prompt and run the following (version
 dependent) command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files\ANSYS Inc</span><span class="se">\v</span><span class="s2">211</span><span class="se">\a</span><span class="s2">nsys</span><span class="se">\b</span><span class="s2">in\winx64\ANSYS211.exe&quot;</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Powershell users can run the above without quotes.</p>
 </div>
 <p>For Linux:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ansys_inc</span><span class="o">/</span><span class="n">v211</span><span class="o">/</span><span class="n">ansys</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ansys211</span>
@@ -351,38 +356,39 @@ directory as MAPDL creates a several temporary files.</p>
 <li><p>Missing dependencies</p></li>
 </ul>
 </div></blockquote>
-</section>
-</section>
-<section id="licensing-issues">
+</div>
+</div>
+<div class="section" id="licensing-issues">
 <h2>Licensing Issues<a class="headerlink" href="#licensing-issues" title="Permalink to this headline">¶</a></h2>
 <p>PADT generally has a great blog regarding ANSYS issues, and licensing is always a common issue (for example <a class="reference external" href="https://www.padtinc.com/blog/15271-2/">Changes to Licensing at ANSYS 2020R1</a>).  Should you be responsible for maintaining Ansys licensing or have a personal install of Ansys, please check the online Ansys licensing documentation at <a class="reference external" href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/prod_page.html?pn=Installation%20and%20Licensing&amp;pid=InstallationAndLicensing&amp;lang=en">Installation and Licensing</a>.</p>
 <p>For an in-depth explanation, please see the <a class="reference download internal" download="" href="../_downloads/a117b0110f46d19902baf054ee95ddf8/ANSYS_Inc._Licensing_Guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">ANSYS</span> <span class="pre">Licensing</span> <span class="pre">Guide</span></code></a>.</p>
-</section>
-<section id="vpn-issues">
+</div>
+<div class="section" id="vpn-issues">
 <h2>VPN Issues<a class="headerlink" href="#vpn-issues" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, MAPDL has issues starting when VPN software is running.  One
 issue stems from MPI communication and can be solved by passing
 the <code class="docutils literal notranslate"><span class="pre">-smp</span></code> option that sets the execution mode to “Shared Memory
 Parallel”, rather than the default “Distributed Memory Parallel” mode.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">additional_switches</span><span class="o">=</span><span class="s1">&#39;-smp&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">(</span><span class="n">additional_switches</span><span class="o">=</span><span class="s1">&#39;-smp&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>While this approach has the disadvantage of using the potentially slower shared memory parallel mode, you’ll at least be able to run MAPDL.  For more details on shared vs distributed memory, see <a class="reference external" href="https://www.ansys.com/-/media/Ansys/corporate/resourcelibrary/presentation/hpc-for-mechanical-ansys.pdf">High-Performance Computing for Mechanical Simulations using ANSYS</a>.</p>
-</section>
-<section id="missing-dependencies-on-linux">
+</div>
+<div class="section" id="missing-dependencies-on-linux">
 <h2>Missing Dependencies on Linux<a class="headerlink" href="#missing-dependencies-on-linux" title="Permalink to this headline">¶</a></h2>
 <p>Some Linux installations may be missing required dependencies.  Should
 you get errors like <code class="docutils literal notranslate"><span class="pre">libXp.so.6:</span> <span class="pre">cannot</span> <span class="pre">open</span> <span class="pre">shared</span> <span class="pre">object</span> <span class="pre">file:</span> <span class="pre">No</span>
 <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code>, you may be missing some necessary
 dependencies.</p>
-<section id="centos">
+<div class="section" id="centos">
 <h3>CentOS<a class="headerlink" href="#centos" title="Permalink to this headline">¶</a></h3>
 <p>On CentOS 7, you can install these with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">openssl</span> <span class="n">openssh</span><span class="o">-</span><span class="n">clients</span> <span class="n">mesa</span><span class="o">-</span><span class="n">libGL</span> <span class="n">mesa</span><span class="o">-</span><span class="n">libGLU</span> <span class="n">motif</span> <span class="n">libgfortran</span>
 </pre></div>
 </div>
-</section>
-<section id="ubuntu">
+</div>
+<div class="section" id="ubuntu">
 <h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
 <p>Since MAPDL isn’t officially supported on Ubuntu, it’s a bit more
 difficult to setup, but it’s still possible.  On Ubuntu 20.04 with
@@ -409,9 +415,9 @@ then installs it via <code class="docutils literal notranslate"><span class="pre
 <span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">./</span><span class="n">libxp6_1</span><span class="o">.</span><span class="mf">0.2</span><span class="o">-</span><span class="mi">2</span><span class="n">_amd64_mod</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
@@ -438,7 +444,7 @@ then installs it via <code class="docutils literal notranslate"><span class="pre
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

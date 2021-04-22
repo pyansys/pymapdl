@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Areas &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Areas &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -313,7 +312,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-02-areas-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="areas">
+<div class="sphx-glr-example-title section" id="areas">
 <span id="ref-basic-geometry-areas"></span><span id="sphx-glr-examples-02-geometry-02-areas-py"></span><h1>Areas<a class="headerlink" href="#areas" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how you can use PyMAPDL to create basic geometry
 using Pythonic PREP7 area commands.</p>
@@ -330,10 +329,10 @@ using Pythonic PREP7 area commands.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
 MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-ansys.mapdl Version: 0.58.6
+ansys.mapdl Version: 0.58.8
 </pre></div>
 </div>
-<section id="apdl-command-a">
+<div class="section" id="apdl-command-a">
 <h2>APDL Command: A<a class="headerlink" href="#apdl-command-a" title="Permalink to this headline">¶</a></h2>
 <p>Create a simple triangle in the XY plane using three keypoints.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -350,8 +349,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-al">
+</div>
+<div class="section" id="apdl-command-al">
 <h2>APDL Command: AL<a class="headerlink" href="#apdl-command-al" title="Permalink to this headline">¶</a></h2>
 <p>Create an area from four lines.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -375,8 +374,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-adrag">
+</div>
+<div class="section" id="apdl-command-adrag">
 <h2>APDL Command: ADRAG<a class="headerlink" href="#apdl-command-adrag" title="Permalink to this headline">¶</a></h2>
 <p>Generate areas by dragging a line pattern along a path.</p>
 <p>Drag a circle between two keypoints to create an area</p>
@@ -397,8 +396,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-asba">
+</div>
+<div class="section" id="apdl-command-asba">
 <h2>APDL Command: ASBA<a class="headerlink" href="#apdl-command-asba" title="Permalink to this headline">¶</a></h2>
 <p>Subtract a <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">x</span> <span class="pre">0.5</span></code> rectangle from a <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">1</span></code> rectangle.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -416,8 +415,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="area-ids">
+</div>
+<div class="section" id="area-ids">
 <h2>Area IDs<a class="headerlink" href="#area-ids" title="Permalink to this headline">¶</a></h2>
 <p>Return an array of the area IDs</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">anum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">anum</span>
@@ -428,8 +427,8 @@ ansys.mapdl Version: 0.58.6
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([3], dtype=int32)
 </pre></div>
 </div>
-</section>
-<section id="area-geometry">
+</div>
+<div class="section" id="area-geometry">
 <h2>Area Geometry<a class="headerlink" href="#area-geometry" title="Permalink to this headline">¶</a></h2>
 <p>Get the VTK <code class="docutils literal notranslate"><span class="pre">PolyData</span></code> containing lines.  This VTK mesh can be
 saved or plotted.  For more details, visit <a class="reference external" href="https://docs.pyvista.com">https://docs.pyvista.com</a></p>
@@ -441,7 +440,7 @@ individual meshes.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[UnstructuredGrid (0x7f0773074670)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[UnstructuredGrid (0x7fe660d3a830)
   N Cells:  12
   N Points: 24
   X Bounds: 0.000e+00, 1.000e+00
@@ -451,8 +450,8 @@ individual meshes.</p>
 ]
 </pre></div>
 </div>
-</section>
-<section id="merged-area-geometry">
+</div>
+<div class="section" id="merged-area-geometry">
 <h2>Merged Area Geometry<a class="headerlink" href="#merged-area-geometry" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">areas</span><span class="p">(</span><span class="n">quality</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">area</span>
@@ -483,8 +482,8 @@ individual meshes.</p>
 </td></tr> </table>
 </div>
 <br />
-<br /></section>
-<section id="area-selection">
+<br /></div>
+<div class="section" id="area-selection">
 <h2>Area Selection<a class="headerlink" href="#area-selection" title="Permalink to this headline">¶</a></h2>
 <p>There are two approaches for selecting areas, the old “legacy” style
 and the new style.  The old style is valuable for those who are
@@ -541,8 +540,8 @@ areas.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  5 10 20]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-aplot">
+</div>
+<div class="section" id="apdl-command-aplot">
 <h2>APDL Command: APLOT<a class="headerlink" href="#apdl-command-aplot" title="Permalink to this headline">¶</a></h2>
 <p>This method uses VTK and pyvista to generate a dynamic 3D plot.</p>
 <p>There are a variety of plotting options available for all the common
@@ -568,12 +567,12 @@ camera direction from the following:</p>
 </div>
 <img alt="02 areas" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-areas_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(15.643158134274293, 13.80647396325039, 9.915257727467512),
- (5.72790040680678, 3.891216235782872, 0.0),
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(13.825319417251036, 17.231377709760302, 11.02712156254596),
+ (2.798197854705077, 6.204256147214343, 0.0),
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.218 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.821 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-02-areas-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/204008c55219a8372f3983a6ccdfecb1/02-areas.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-areas.py</span></code></a></p>
@@ -583,8 +582,8 @@ camera direction from the following:</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -611,7 +610,7 @@ camera direction from the following:</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

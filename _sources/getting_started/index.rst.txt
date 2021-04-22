@@ -115,7 +115,7 @@ Check that you can start MAPDL from Python by running:
 
     Product:             ANSYS Mechanical Enterprise
     MAPDL Version:       RELEASE  2021 R1           BUILD 21.0
-    PyMAPDL Version:     Version: 0.57.0
+    PyMAPDL Version:     Version: 0.58.0
 
 If you see a response from the server, congratulations!  You're ready
 to get started using MAPDL as a service.  For details regarding the

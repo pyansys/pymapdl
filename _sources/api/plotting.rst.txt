@@ -1,8 +1,8 @@
 .. _ref_plotting_api:
 
-************************
-PyMAPDL Plotting Methods
-************************
+****************
+Plotting Methods
+****************
 .. autoclass:: ansys.mapdl.core.mapdl._MapdlCore
     :noindex:
     :members: kplot, lplot, aplot, vplot, nplot, eplot

@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Geometry Class &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry Class &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -42,8 +41,8 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMAPDL Post-Processing API" href="post.html" />
-    <link rel="prev" title="Mesh Class" href="mesh.html" />
+    <link rel="next" title="MAPDL Launcher" href="launcher.html" />
+    <link rel="prev" title="Convert MAPDL Scripts" href="convert.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -126,33 +125,13 @@
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l2">
-  <a class="reference internal" href="mapdl.html">
-   MAPDL Object
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="launcher.html">
-   MAPDL Launcher
+  <a class="reference internal" href="ansXpl.html">
+   ansXpl Class
   </a>
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="convert.html">
-   Convert Function
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="plotting.html">
-   PyMAPDL Plotting Methods
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="parameters.html">
-   Parameters Class
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="mesh.html">
-   Mesh Class
+   Convert MAPDL Scripts
   </a>
  </li>
  <li class="toctree-l2 current active">
@@ -161,8 +140,8 @@
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="post.html">
-   PyMAPDL Post-Processing API
+  <a class="reference internal" href="launcher.html">
+   MAPDL Launcher
   </a>
  </li>
  <li class="toctree-l2">
@@ -171,13 +150,38 @@
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="pool.html">
-   MapdlLocalPool Class
+  <a class="reference internal" href="mapdl.html">
+   MAPDL Object
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="xpl.html">
-   ansXpl Class
+  <a class="reference internal" href="mesh.html">
+   Mesh Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="parameters.html">
+   Parameters Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="plotting.html">
+   Plotting Methods
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="pool.html">
+   Pool and Multiple Instance API
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="post.html">
+   Post-Processing
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="solution.html">
+   Solution Class
   </a>
  </li>
 </ul>
@@ -208,7 +212,7 @@
               
               <div>
                 
-  <section id="geometry-class">
+  <div class="section" id="geometry-class">
 <span id="ref-geometry-api"></span><h1>Geometry Class<a class="headerlink" href="#geometry-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt>
@@ -339,6 +343,25 @@ UnstructuredGrid.</p>
 <span class="go">  N Arrays:     4</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">generate_surface</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ninc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Generate an all-triangular surface of the active surfaces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>density</strong> (<em>int</em><em>, </em><em>optional</em>) – APDL smart sizing option.  Ranges from 1 (worst) to 10
+(best).</p></li>
+<li><p><strong>amin</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum APDL numbered area to select.  See
+<code class="docutils literal notranslate"><span class="pre">mapdl.anum</span></code> for available areas.</p></li>
+<li><p><strong>amax</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum APDL numbered area to select.  See
+<code class="docutils literal notranslate"><span class="pre">mapdl.anum</span></code> for available areas.</p></li>
+<li><p><strong>ninc</strong> (<em>int</em><em>, </em><em>optional</em>) – Steps to between amin and amax.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -597,7 +620,7 @@ disabled for performance.  Default <code class="docutils literal notranslate"><s
 
 </dd></dl>
 
-</section>
+</div>
 
 
               </div>
@@ -605,8 +628,8 @@ disabled for performance.  Default <code class="docutils literal notranslate"><s
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="mesh.html" title="previous page">Mesh Class</a>
-    <a class='right-next' id="next-link" href="post.html" title="next page">PyMAPDL Post-Processing API</a>
+    <a class='left-prev' id="prev-link" href="convert.html" title="previous page">Convert MAPDL Scripts</a>
+    <a class='right-next' id="next-link" href="launcher.html" title="next page">MAPDL Launcher</a>
 
               </div>
               
@@ -624,7 +647,7 @@ disabled for performance.  Default <code class="docutils literal notranslate"><s
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

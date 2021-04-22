@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -278,7 +277,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-01-apdlmath-examples-scipy-sparse-matrix-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="transfer-apdlmath-sparse-matrices-to-and-from-scipy-sparse-matrices">
+<div class="sphx-glr-example-title section" id="transfer-apdlmath-sparse-matrices-to-and-from-scipy-sparse-matrices">
 <span id="sphx-glr-examples-01-apdlmath-examples-scipy-sparse-matrix-py"></span><h1>Transfer APDLMath Sparse Matrices to and from SciPy Sparse Matrices<a class="headerlink" href="#transfer-apdlmath-sparse-matrices-to-and-from-scipy-sparse-matrices" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial will show how to get APDLMath sparse matrices (typically
 stiffness or mass matrices extracted from APDL .Full Files) into SciPy
@@ -310,7 +309,7 @@ graph of the sparse matrix</p>
 </div>
 <img alt="scipy sparse matrix" class="sphx-glr-single-img" src="../../_images/sphx_glr_scipy_sparse_matrix_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D object at 0x7f0772d52fd0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D object at 0x7fe652b629d0&gt;
 </pre></div>
 </div>
 <p>You can access the 3 vectors that describe this sparse matrix with.</p>
@@ -350,7 +349,7 @@ We compute the norm of the difference, should be zero</p>
 <span class="n">mm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">msub</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="csr-representation-in-mapdl">
+<div class="section" id="csr-representation-in-mapdl">
 <h2>CSR Representation in MAPDL<a class="headerlink" href="#csr-representation-in-mapdl" title="Permalink to this headline">¶</a></h2>
 <p>Printing the list of objects in the MAPDL space, we find:</p>
 <ul class="simple">
@@ -369,16 +368,16 @@ We compute the norm of the difference, should be zero</p>
 
   Name                   Type            Mem. (MB)       Dims            Workspace
 
-   MAXNOX                SMAT            0.011           [126:126]               1
+   JKAKNI                SMAT            0.011           [126:126]               1
    MY_MAT                SMAT            0.000           [126:126]               1
-   NUMMXA                SMAT            0.011           [126:126]               1
+   RDGXCN                SMAT            0.011           [126:126]               1
    MY_MAT_DATA           VEC             0.006           738             1
    MY_MAT_IND            VEC             0.001           127             1
    MY_MAT_PTR            VEC             0.003           738             1
 </pre></div>
 </div>
-</section>
-<section id="mapdl-python-matrix-correspondence">
+</div>
+<div class="section" id="mapdl-python-matrix-correspondence">
 <h2>MAPDL Python Matrix Correspondence<a class="headerlink" href="#mapdl-python-matrix-correspondence" title="Permalink to this headline">¶</a></h2>
 <p>To determine which MAPDL object corresponds to which Python object,
 access the id property of the Python object.</p>
@@ -388,12 +387,12 @@ access the id property of the Python object.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>name(k)=NUMMXA
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>name(k)=RDGXCN
 name(my_mat)=my_mat
-name(msub)=MAXNOX
+name(msub)=JKAKNI
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.772 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.734 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-apdlmath-examples-scipy-sparse-matrix-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a43f44db93b6d446819bd0f8ca94d98b/scipy_sparse_matrix.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">scipy_sparse_matrix.py</span></code></a></p>
@@ -403,8 +402,8 @@ name(msub)=MAXNOX
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -431,7 +430,7 @@ name(msub)=MAXNOX
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

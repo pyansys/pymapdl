@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Lines &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lines &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -353,7 +352,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-02-geometry-01-lines-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="lines">
+<div class="sphx-glr-example-title section" id="lines">
 <span id="ref-basic-geometry-lines"></span><span id="sphx-glr-examples-02-geometry-01-lines-py"></span><h1>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how you can use PyMAPDL to create basic geometry
 using Pythonic PREP7 line commands.</p>
@@ -370,10 +369,10 @@ using Pythonic PREP7 line commands.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             ANSYS Mechanical Enterprise
 MAPDL Version:       RELEASE                    BUILD  0.0      UPDATE        0
-ansys.mapdl Version: 0.58.6
+ansys.mapdl Version: 0.58.8
 </pre></div>
 </div>
-<section id="apdl-command-l">
+<div class="section" id="apdl-command-l">
 <h2>APDL Command: L<a class="headerlink" href="#apdl-command-l" title="Permalink to this headline">¶</a></h2>
 <p>Create a line between the two keypoints <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -386,8 +385,8 @@ ansys.mapdl Version: 0.58.6
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-larc">
+</div>
+<div class="section" id="apdl-command-larc">
 <h2>APDL Command: LARC<a class="headerlink" href="#apdl-command-larc" title="Permalink to this headline">¶</a></h2>
 <p>Create a circular arc that travels between <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> and
 <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">0)</span></code> with a radius of curvature of 2.  Plot the result.</p>
@@ -407,8 +406,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-l2ang">
+</div>
+<div class="section" id="apdl-command-l2ang">
 <h2>APDL Command: L2ANG<a class="headerlink" href="#apdl-command-l2ang" title="Permalink to this headline">¶</a></h2>
 <p>Create two circles and join them with a line.  Plot the result.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -429,8 +428,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 0.0, 1.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-l2tan">
+</div>
+<div class="section" id="apdl-command-l2tan">
 <h2>APDL Command: L2TAN<a class="headerlink" href="#apdl-command-l2tan" title="Permalink to this headline">¶</a></h2>
 <p>Create two circular arcs and connect them with a spline.  Plot the result.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -452,8 +451,8 @@ ansys.mapdl Version: 0.58.6
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-lang">
+</div>
+<div class="section" id="apdl-command-lang">
 <h2>APDL Command: LANG<a class="headerlink" href="#apdl-command-lang" title="Permalink to this headline">¶</a></h2>
 <p>Create a line from a line from <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> to <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> to a
 keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> at an angle of 60 degrees.  Plot the result.</p>
@@ -474,8 +473,8 @@ keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</sp
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-larea">
+</div>
+<div class="section" id="apdl-command-larea">
 <h2>APDL Command: LAREA<a class="headerlink" href="#apdl-command-larea" title="Permalink to this headline">¶</a></h2>
 <p>Generate a line on a square between its two corners.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -496,8 +495,8 @@ keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</sp
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-lcomb">
+</div>
+<div class="section" id="apdl-command-lcomb">
 <h2>APDL Command: LCOMB<a class="headerlink" href="#apdl-command-lcomb" title="Permalink to this headline">¶</a></h2>
 <p>Create two lines and combine them.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k0</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -508,8 +507,8 @@ keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</sp
 <span class="n">lout</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lcomb</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-ldiv">
+</div>
+<div class="section" id="apdl-command-ldiv">
 <h2>APDL Command: LDIV<a class="headerlink" href="#apdl-command-ldiv" title="Permalink to this headline">¶</a></h2>
 <p>Create a single line and divide it into 5 pieces.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -528,8 +527,8 @@ keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</sp
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-lextnd">
+</div>
+<div class="section" id="apdl-command-lextnd">
 <h2>APDL Command: LEXTND<a class="headerlink" href="#apdl-command-lextnd" title="Permalink to this headline">¶</a></h2>
 <p>Create a circular arc and extend it at one of its keypoints.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -548,8 +547,8 @@ keypoint at <code class="docutils literal notranslate"><span class="pre">(1,</sp
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-lfillt">
+</div>
+<div class="section" id="apdl-command-lfillt">
 <h2>APDL Command: LFILLT<a class="headerlink" href="#apdl-command-lfillt" title="Permalink to this headline">¶</a></h2>
 <p>Create two intersecting lines at a right angle and add a
 fillet between them.</p>
@@ -571,8 +570,8 @@ fillet between them.</p>
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-ltan">
+</div>
+<div class="section" id="apdl-command-ltan">
 <h2>APDL Command: LTAN<a class="headerlink" href="#apdl-command-ltan" title="Permalink to this headline">¶</a></h2>
 <p>Create a circular arc and generate a tangent spline at the end of it
 directed to a new keypoint.</p>
@@ -593,8 +592,8 @@ directed to a new keypoint.</p>
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-spline">
+</div>
+<div class="section" id="apdl-command-spline">
 <h2>APDL Command: SPLINE<a class="headerlink" href="#apdl-command-spline" title="Permalink to this headline">¶</a></h2>
 <p>Generate a segmented spline through 5 keypoints.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>
@@ -615,8 +614,8 @@ directed to a new keypoint.</p>
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-bsplin">
+</div>
+<div class="section" id="apdl-command-bsplin">
 <h2>APDL Command: BSPLIN<a class="headerlink" href="#apdl-command-bsplin" title="Permalink to this headline">¶</a></h2>
 <p>Generate a single line from a spline fit to a series of keypoints.
 Generate through <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">0)</span></code></p>
@@ -638,8 +637,8 @@ single line rather than multiple lines.</p>
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-</section>
-<section id="line-ids">
+</div>
+<div class="section" id="line-ids">
 <h2>Line IDs<a class="headerlink" href="#line-ids" title="Permalink to this headline">¶</a></h2>
 <p>Return an array of the line IDs</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lnum</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lnum</span>
@@ -650,8 +649,8 @@ single line rather than multiple lines.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([1], dtype=int32)
 </pre></div>
 </div>
-</section>
-<section id="line-geometry">
+</div>
+<div class="section" id="line-geometry">
 <h2>Line Geometry<a class="headerlink" href="#line-geometry" title="Permalink to this headline">¶</a></h2>
 <p>Get the VTK <code class="docutils literal notranslate"><span class="pre">PolyData</span></code> containing lines.  This VTK mesh can be
 saved or plotted.  For more details, visit <a class="reference external" href="https://docs.pyvista.com">https://docs.pyvista.com</a></p>
@@ -680,8 +679,8 @@ saved or plotted.  For more details, visit <a class="reference external" href="h
 </td></tr> </table>
 </div>
 <br />
-<br /></section>
-<section id="line-selection">
+<br /></div>
+<div class="section" id="line-selection">
 <h2>Line Selection<a class="headerlink" href="#line-selection" title="Permalink to this headline">¶</a></h2>
 <p>There are two approaches for selecting lines, the old “legacy”
 style and the new style.  The old style is valuable for those who
@@ -741,8 +740,8 @@ areas.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1  5 10 20]
 </pre></div>
 </div>
-</section>
-<section id="apdl-command-lplot">
+</div>
+<div class="section" id="apdl-command-lplot">
 <h2>APDL Command: LPLOT<a class="headerlink" href="#apdl-command-lplot" title="Permalink to this headline">¶</a></h2>
 <p>Plot colored lines while displaying the keypoint numbers.</p>
 <p>There are a variety of plotting options available for all the common
@@ -759,12 +758,12 @@ plotting methods.</p>
 </div>
 <img alt="01 lines" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-lines_012.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.41478609945625067, 0.5095669515430927, 3.1539735042309722),
- (0.41478609945625067, 0.5095669515430927, 0.5734040811657906),
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[(0.5050757676362991, 0.5064907558262348, 3.3574531575966278),
+ (0.5050757676362991, 0.5064907558262348, 0.4913999065756798),
  (0.0, 1.0, 0.0)]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.922 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.226 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-geometry-01-lines-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d8b11f02789313db753014a705b86880/01-lines.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-lines.py</span></code></a></p>
@@ -774,8 +773,8 @@ plotting methods.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -802,7 +801,7 @@ plotting methods.</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

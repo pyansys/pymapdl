@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Convert Function &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert MAPDL Scripts &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -42,8 +41,8 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMAPDL Plotting Methods" href="plotting.html" />
-    <link rel="prev" title="MAPDL Launcher" href="launcher.html" />
+    <link rel="next" title="Geometry Class" href="geometry.html" />
+    <link rel="prev" title="ansXpl Class" href="ansXpl.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -126,33 +125,13 @@
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l2">
-  <a class="reference internal" href="mapdl.html">
-   MAPDL Object
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="launcher.html">
-   MAPDL Launcher
+  <a class="reference internal" href="ansXpl.html">
+   ansXpl Class
   </a>
  </li>
  <li class="toctree-l2 current active">
   <a class="current reference internal" href="#">
-   Convert Function
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="plotting.html">
-   PyMAPDL Plotting Methods
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="parameters.html">
-   Parameters Class
-  </a>
- </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="mesh.html">
-   Mesh Class
+   Convert MAPDL Scripts
   </a>
  </li>
  <li class="toctree-l2">
@@ -161,8 +140,8 @@
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="post.html">
-   PyMAPDL Post-Processing API
+  <a class="reference internal" href="launcher.html">
+   MAPDL Launcher
   </a>
  </li>
  <li class="toctree-l2">
@@ -171,13 +150,38 @@
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="pool.html">
-   MapdlLocalPool Class
+  <a class="reference internal" href="mapdl.html">
+   MAPDL Object
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="xpl.html">
-   ansXpl Class
+  <a class="reference internal" href="mesh.html">
+   Mesh Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="parameters.html">
+   Parameters Class
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="plotting.html">
+   Plotting Methods
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="pool.html">
+   Pool and Multiple Instance API
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="post.html">
+   Post-Processing
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="solution.html">
+   Solution Class
   </a>
  </li>
 </ul>
@@ -208,8 +212,8 @@
               
               <div>
                 
-  <section id="convert-function">
-<span id="ref-convert-api"></span><h1>Convert Function<a class="headerlink" href="#convert-function" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="convert-mapdl-scripts">
+<span id="ref-convert-api"></span><h1>Convert MAPDL Scripts<a class="headerlink" href="#convert-mapdl-scripts" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="ansys.mapdl.core.convert.convert_script">
 <code class="sig-prename descclassname"><span class="pre">ansys.mapdl.core.convert.</span></code><code class="sig-name descname"><span class="pre">convert_script</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'WARNING'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_exit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_ending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">macros_as_functions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_function_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mapdl.core.convert.convert_script" title="Permalink to this definition">¶</a></dt>
@@ -245,7 +249,7 @@ converted to <code class="docutils literal notranslate"><span class="pre">mapdl.
 </div>
 </dd></dl>
 
-</section>
+</div>
 
 
               </div>
@@ -253,8 +257,8 @@ converted to <code class="docutils literal notranslate"><span class="pre">mapdl.
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="launcher.html" title="previous page">MAPDL Launcher</a>
-    <a class='right-next' id="next-link" href="plotting.html" title="next page">PyMAPDL Plotting Methods</a>
+    <a class='left-prev' id="prev-link" href="ansXpl.html" title="previous page">ansXpl Class</a>
+    <a class='right-next' id="next-link" href="geometry.html" title="next page">Geometry Class</a>
 
               </div>
               
@@ -272,7 +276,7 @@ converted to <code class="docutils literal notranslate"><span class="pre">mapdl.
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

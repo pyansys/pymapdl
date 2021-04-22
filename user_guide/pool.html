@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Create a Pool of MAPDL Instances &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Pool of MAPDL Instances &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -228,7 +227,7 @@
               
               <div>
                 
-  <section id="create-a-pool-of-mapdl-instances">
+  <div class="section" id="create-a-pool-of-mapdl-instances">
 <h1>Create a Pool of MAPDL Instances<a class="headerlink" href="#create-a-pool-of-mapdl-instances" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">ansys.mapdl.core</span></code> module contains the <code class="docutils literal notranslate"><span class="pre">MapdlLocalPool</span></code> class
 to simplify creating multiple local instances of <code class="docutils literal notranslate"><span class="pre">Mapdl</span></code> for batch
@@ -258,7 +257,7 @@ at the current directory within their own isolated directories.</p>
 during a batch process, that instance will be automatically restarted.
 You can disable this behavior by setting <code class="docutils literal notranslate"><span class="pre">restart_failed=False</span></code> when
 creating the pool.</p>
-<section id="run-a-set-of-input-files">
+<div class="section" id="run-a-set-of-input-files">
 <h2>Run a Set of Input Files<a class="headerlink" href="#run-a-set-of-input-files" title="Permalink to this headline">¶</a></h2>
 <p>You can use the pool to run a set of pre-generated input files using
 <code class="docutils literal notranslate"><span class="pre">run_batch</span></code>.  For example, you can run the first set of 20
@@ -270,8 +269,8 @@ verification files with:</p>
 <span class="go">20</span>
 </pre></div>
 </div>
-</section>
-<section id="run-a-user-function">
+</div>
+<div class="section" id="run-a-user-function">
 <h2>Run a User Function<a class="headerlink" href="#run-a-user-function" title="Permalink to this headline">¶</a></h2>
 <p>You can also use the pool to run a custom user function to run on each
 instance of MAPDL over a set of inputs.  This example again uses set
@@ -298,12 +297,12 @@ output from MAPDL.</p>
 <span class="go"> &#39;Begin level&#39;]</span>
 </pre></div>
 </div>
-</section>
-<section id="api-description">
+</div>
+<div class="section" id="api-description">
 <h2>API Description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h2>
-<p>For a full description of the PyMAPDL Pool API see <a class="reference internal" href="../api/pool.html#ref-pool-api"><span class="std std-ref">MapdlLocalPool Class</span></a>.</p>
-</section>
-</section>
+<p>For a full description of the PyMAPDL Pool API see <a class="reference internal" href="../api/pool.html#ref-pool-api"><span class="std std-ref">Pool and Multiple Instance API</span></a>.</p>
+</div>
+</div>
 
 
               </div>
@@ -330,7 +329,7 @@ output from MAPDL.</p>
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

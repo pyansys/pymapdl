@@ -4,9 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Interactive Plotting &#8212; ansys.mapdl.core 0.58.6 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Plotting &#8212; ansys.mapdl.core 0.58.8 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -240,7 +239,7 @@
               
               <div>
                 
-  <section id="interactive-plotting">
+  <div class="section" id="interactive-plotting">
 <h1>Interactive Plotting<a class="headerlink" href="#interactive-plotting" title="Permalink to this headline">¶</a></h1>
 <p>When generating geometry from scratch within MAPDL, it is often
 necessary to plot the geometry (e.g. keypoints, lines, areas,
@@ -250,7 +249,7 @@ volumes), and <code class="docutils literal notranslate"><span class="pre">PyMAP
 to visualize it.  Combined with the MAPDL geometry commands, you can
 generate and visualize geometry from scratch without opening the GUI
 using <code class="docutils literal notranslate"><span class="pre">open_gui</span></code>.</p>
-<section id="line-plotting">
+<div class="section" id="line-plotting">
 <h2>Line Plotting<a class="headerlink" href="#line-plotting" title="Permalink to this headline">¶</a></h2>
 <p>Plot lines within Python using <code class="docutils literal notranslate"><span class="pre">lplot</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
@@ -268,14 +267,12 @@ using <code class="docutils literal notranslate"><span class="pre">open_gui</spa
 <span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">color_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/lplot_vtk.png"><img alt="../_images/lplot_vtk.png" src="../_images/lplot_vtk.png" style="width: 400pt;" /></a>
-<figcaption>
-<p><span class="caption-text">Line Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="area-and-volume-plotting">
+<p class="caption"><span class="caption-text">Line Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="area-and-volume-plotting">
 <h2>Area and Volume Plotting<a class="headerlink" href="#area-and-volume-plotting" title="Permalink to this headline">¶</a></h2>
 <p>More complex geometry can be obtained using boolean operations and can
 be visualized using <code class="docutils literal notranslate"><span class="pre">mapdl.vplot</span></code>.  In this example, we cut the
@@ -287,14 +284,12 @@ initial area with the 8 circles and then extrude it.</p>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">()</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id2">
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/vplot_vtk.png"><img alt="../_images/vplot_vtk.png" src="../_images/vplot_vtk.png" style="width: 400pt;" /></a>
-<figcaption>
-<p><span class="caption-text">Volume Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="node-and-element-plotting">
+<p class="caption"><span class="caption-text">Volume Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="node-and-element-plotting">
 <h2>Node and Element Plotting<a class="headerlink" href="#node-and-element-plotting" title="Permalink to this headline">¶</a></h2>
 <p>Nodes and elements can also be plotted directly from the <code class="docutils literal notranslate"><span class="pre">mapdl</span></code>
 instance.  We continue the example by defining some element types,
@@ -305,13 +300,11 @@ meshing, and displaying the mesh.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">()</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id3">
+<div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../_images/eplot_vtk.png"><img alt="../_images/eplot_vtk.png" src="../_images/eplot_vtk.png" style="width: 400pt;" /></a>
-<figcaption>
-<p><span class="caption-text">Volume Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<section id="plotting-non-interactively-using-mapdl">
+<p class="caption"><span class="caption-text">Volume Plot from MAPDL using <code class="docutils literal notranslate"><span class="pre">PyMAPDL</span></code> and <code class="docutils literal notranslate"><span class="pre">vtk</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="plotting-non-interactively-using-mapdl">
 <h3>Plotting Non-Interactively using MAPDL<a class="headerlink" href="#plotting-non-interactively-using-mapdl" title="Permalink to this headline">¶</a></h3>
 <p>You can also plot using MAPDL’s native plotting tools.  To use the
 native tools, set <code class="docutils literal notranslate"><span class="pre">vtk=False</span></code> when running plotting commands such as
@@ -345,16 +338,14 @@ then shown using <code class="docutils literal notranslate"><span class="pre">ma
 <span class="n">mapdl</span><span class="o">.</span><span class="n">kplot</span><span class="p">(</span><span class="n">vtk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id4">
+<div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../_images/aplot.png"><img alt="../_images/aplot.png" src="../_images/aplot.png" style="width: 400pt;" /></a>
-<figcaption>
-<p><span class="caption-text">Area Plot from MAPDL displayed using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>For more details on the plotting functions, see <a class="reference internal" href="../api/plotting.html#ref-plotting-api"><span class="std std-ref">PyMAPDL Plotting Methods</span></a>.</p>
-</section>
-</section>
-<section id="plotting-keyword-options">
+<p class="caption"><span class="caption-text">Area Plot from MAPDL displayed using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>For more details on the plotting functions, see <a class="reference internal" href="../api/plotting.html#ref-plotting-api"><span class="std std-ref">Plotting Methods</span></a>.</p>
+</div>
+</div>
+<div class="section" id="plotting-keyword-options">
 <h2>Plotting Keyword Options<a class="headerlink" href="#plotting-keyword-options" title="Permalink to this headline">¶</a></h2>
 <p>When using <code class="docutils literal notranslate"><span class="pre">vtk=True</span></code> (default True), all the MAPDL plotting methods
 allow you to enter in additional keyword arguments to better control
@@ -371,8 +362,8 @@ XY plane with <code class="docutils literal notranslate"><span class="pre">cpos=
 </pre></div>
 </div>
 <p>For all general plotting options, see <a class="reference internal" href="../api/plotting.html#ref-general-plotter"><span class="std std-ref">General Plotter</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -399,7 +390,7 @@ XY plane with <code class="docutils literal notranslate"><span class="pre">cpos=
   <div class="container">
     <p>
           &copy; Copyright 2021, ANSYS.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>
