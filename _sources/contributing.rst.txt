@@ -262,18 +262,26 @@ build and verify the html documentation locally by install ``sphinx``
 and the other documentation build dependencies by running the
 following from the PyMAPDL source directory:
 
+First, optionally install ``ansys-mapdl-core`` in development mode with:
+
+.. code::
+
+   pip install -e .
+
+Then install the build requirements for documentation with:
+
 .. code::
 
    pip install -r requirements_docs.txt
 
 
-Next, if running Linux/Mac OS, build the documentation with 
+Next, if running Linux/Mac OS, build the documentation with:
 
 .. code::
 
     make -C docs html
 
-Otherwise, if running Windows, build the documentation by running
+Otherwise, if running Windows, build the documentation by running:
 
 .. code::
 

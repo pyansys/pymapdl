@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contributing &#8212; ansys.mapdl.core 0.58.8 documentation</title>
+    <title>Contributing &#8212; ansys.mapdl.core 0.58.9 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
@@ -430,13 +430,13 @@ sequence locally to track down any new issues from your changes.</p>
 unit testing, setup the following environment variables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">PYMAPDL_START_INSTANCE</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">SET</span> <span class="n">PYMAPDL_PORT</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">Port</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mi">50052</span><span class="p">)</span>
-<span class="n">SET</span> <span class="n">PYMAPDL_IP</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">SET</span> <span class="n">PYMAPDL_IP</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mf">127.0.0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or in Linux</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PYMAPDL_START_INSTANCE</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">export</span> <span class="n">PYMAPDL_PORT</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">Port</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mi">50052</span><span class="p">)</span>
-<span class="n">export</span> <span class="n">PYMAPDL_IP</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">export</span> <span class="n">PYMAPDL_IP</span><span class="o">=&lt;</span><span class="n">MAPDL</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">default</span> <span class="mf">127.0.0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will tell the <code class="docutils literal notranslate"><span class="pre">ansys.mapdl.core</span></code> to attempt to connect to the existing
@@ -482,14 +482,19 @@ automatically built and deployed using the GitHub Actions.  You can
 build and verify the html documentation locally by install <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>
 and the other documentation build dependencies by running the
 following from the PyMAPDL source directory:</p>
+<p>First, optionally install <code class="docutils literal notranslate"><span class="pre">ansys-mapdl-core</span></code> in development mode with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Then install the build requirements for documentation with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_docs</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>Next, if running Linux/Mac OS, build the documentation with</p>
+<p>Next, if running Linux/Mac OS, build the documentation with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="o">-</span><span class="n">C</span> <span class="n">docs</span> <span class="n">html</span>
 </pre></div>
 </div>
-<p>Otherwise, if running Windows, build the documentation by running</p>
+<p>Otherwise, if running Windows, build the documentation by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span>
 <span class="n">make</span><span class="o">.</span><span class="n">bat</span> <span class="n">html</span>
 </pre></div>
@@ -582,7 +587,7 @@ be merged to master and the <cite>master</cite> branch will be tagged with a
 <cite>MAJOR.MINOR.0</cite> release.  The release branch will not be deleted.
 Tag the release with:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">&lt;</span><span class="n">MAJOR</span><span class="o">.</span><span class="n">MINOR</span><span class="o">.</span><span class="mi">0</span><span class="o">&gt;</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">&lt;</span><span class="n">MAJOR</span><span class="o">.</span><span class="n">MINOR</span><span class="mf">.0</span><span class="o">&gt;</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">tags</span>
 </pre></div>
 </div>

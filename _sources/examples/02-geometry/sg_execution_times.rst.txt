@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**03:08.742** total execution time for **examples_02-geometry** files:
+**02:57.526** total execution time for **examples_02-geometry** files:
 
 +------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_02-geometry_03-volumes.py` (``03-volumes.py``)       | 02:42.930 | 0.0 MB |
+| :ref:`sphx_glr_examples_02-geometry_03-volumes.py` (``03-volumes.py``)       | 02:33.374 | 0.0 MB |
 +------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_02-geometry_04-primitives.py` (``04-primitives.py``) | 00:18.151 | 0.0 MB |
+| :ref:`sphx_glr_examples_02-geometry_04-primitives.py` (``04-primitives.py``) | 00:17.141 | 0.0 MB |
 +------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_02-geometry_01-lines.py` (``01-lines.py``)           | 00:04.226 | 0.0 MB |
+| :ref:`sphx_glr_examples_02-geometry_01-lines.py` (``01-lines.py``)           | 00:03.851 | 0.0 MB |
 +------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_02-geometry_02-areas.py` (``02-areas.py``)           | 00:02.821 | 0.0 MB |
+| :ref:`sphx_glr_examples_02-geometry_02-areas.py` (``02-areas.py``)           | 00:02.565 | 0.0 MB |
 +------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_02-geometry_00-keypoints.py` (``00-keypoints.py``)   | 00:00.613 | 0.0 MB |
+| :ref:`sphx_glr_examples_02-geometry_00-keypoints.py` (``00-keypoints.py``)   | 00:00.596 | 0.0 MB |
 +------------------------------------------------------------------------------+-----------+--------+
