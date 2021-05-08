@@ -656,8 +656,10 @@ class _MapdlCore(_MapdlCommands):
             vtk = self._use_vtk
 
         if vtk:
+            kwargs.setdefault('title', 'MAPDL Node Plot')
             if not self.mesh.n_node:
-                raise RuntimeError('There are no nodes to plot.')
+                warnings.warn('There are no nodes to plot.')
+                return general_plotter([], [], [], **kwargs)
 
             labels = []
             if knum:
@@ -668,8 +670,7 @@ class _MapdlCore(_MapdlCommands):
 
                 labels = [{'points': pcloud.points, 'labels': pcloud['labels']}]
             points = [{'points': self.mesh.nodes}]
-            return general_plotter('MAPDL Node Plot', [], points,
-                                   labels, **kwargs)
+            return general_plotter([], points, labels, **kwargs)
 
         # otherwise, use the built-in nplot
         if isinstance(knum, bool):
@@ -810,6 +811,7 @@ class _MapdlCore(_MapdlCommands):
             vtk = self._use_vtk
 
         if vtk:
+            kwargs.setdefault('title', 'MAPDL Area Plot')
             kwargs.setdefault('stitle', None)
             if quality > 10:
                 quality = 10
@@ -854,7 +856,7 @@ class _MapdlCore(_MapdlCommands):
                     labels.append({'points': lines.points[50::101],
                                    'labels': lines['entity_num']})
 
-            return general_plotter('MAPDL Node Plot', meshes, [],
+            return general_plotter(meshes, [],
                                    labels, **kwargs)
 
         else:
@@ -976,8 +978,10 @@ class _MapdlCore(_MapdlCommands):
             vtk = self._use_vtk
 
         if vtk:
+            kwargs.setdefault('title', 'MAPDL Element Plot')
             if not self._mesh.n_elem:
-                raise RuntimeError('There are no elements to plot.')
+                warnings.warn('There are no elements to plot.')
+                return general_plotter([], [], [], **kwargs)
 
             # TODO: Consider caching the surface
             esurf = self.mesh._grid.linear_copy().extract_surface().clean()
@@ -988,8 +992,7 @@ class _MapdlCore(_MapdlCommands):
             if show_node_numbering:
                 labels = [{'points': esurf.points, 'labels': esurf['ansys_node_num']}]
 
-            return general_plotter('MAPDL Element Plot',
-                                   [{'mesh': esurf}],
+            return general_plotter([{'mesh': esurf}],
                                    [],
                                    labels,
                                    **kwargs)
@@ -1041,9 +1044,11 @@ class _MapdlCore(_MapdlCommands):
             vtk = self._use_vtk
 
         if vtk:
+            kwargs.setdefault('title', 'MAPDL Line Plot')
             if not self.geometry.n_line:
-                raise MapdlRuntimeError('Either no lines have been selected or there '
-                                        'is nothing to plot')
+                warnings.warn('Either no lines have been selected or there '
+                              'is nothing to plot')
+                return general_plotter([], [], [], **kwargs)
 
             lines = self.geometry.lines
             meshes = [{'mesh': lines}]
@@ -1059,8 +1064,7 @@ class _MapdlCore(_MapdlCommands):
                 labels.append({'points': self.geometry.keypoints,
                                'labels': self.geometry.knum})
 
-            return general_plotter('MAPDL Line Plot',
-                                   meshes,
+            return general_plotter(meshes,
                                    [],
                                    labels,
                                    **kwargs)
@@ -1103,10 +1107,12 @@ class _MapdlCore(_MapdlCommands):
             vtk = self._use_vtk
 
         if vtk:
+            kwargs.setdefault('title', 'MAPDL Keypoint Plot')
             if not self.geometry.n_keypoint:
-                raise MapdlRuntimeError('Either no keypoints have been '
-                                        'selected or there are no keypoints in '
-                                        'the database.')
+                warnings.warn('Either no keypoints have been '
+                              'selected or there are no keypoints in '
+                              'the database.')
+                return general_plotter([], [], [], **kwargs)
 
             keypoints = self.geometry.keypoints
             points = [{'points': keypoints}]
@@ -1116,7 +1122,7 @@ class _MapdlCore(_MapdlCommands):
                 labels.append({'points': keypoints,
                                'labels': self.geometry.knum})
 
-            return general_plotter('MAPDL Node Plot', [], points,
+            return general_plotter([], points,
                                    labels, **kwargs)
 
         # otherwise, use the legacy plotter

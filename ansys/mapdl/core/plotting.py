@@ -5,7 +5,8 @@ import numpy as np
 from ansys.mapdl.core.misc import unique_rows
 
 
-def general_plotter(title, meshes, points, labels,
+def general_plotter(meshes, points, labels,
+                    title='',
                     cpos=None,
                     show_bounds=False, show_axes=True,
                     background=None, off_screen=None,
@@ -29,6 +30,9 @@ def general_plotter(title, meshes, points, labels,
 
     Parameters
     ----------
+    title : str, optional
+        Add given title to plot.
+
     cpos : list(tuple(floats)), str
         The camera position to use.  You can either use a saved camera
         position or specify one of the following strings:
@@ -179,10 +183,11 @@ def general_plotter(title, meshes, points, labels,
 
     if show_axes:
         pl.show_axes()
-
+    if title:
+        pl.add_title(title)
     if screenshot:
-        pl.show(title=title, auto_close=False, window_size=window_size)
-        pl.screenshot(screenshot)
+        pl.show(title=title, auto_close=False, window_size=window_size, screenshot=True)
+        pl.screenshot(f'screenshot_{title}')
     else:
         pl.show()
 
